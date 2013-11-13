@@ -213,6 +213,7 @@ public abstract class BaseActivity extends Activity {
 	 */
 	@SuppressWarnings("deprecation")
 	public int getScreenHeight() {
+		
 		return getWindowManager().getDefaultDisplay().getHeight();
 	}
 

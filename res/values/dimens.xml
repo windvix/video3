@@ -5,6 +5,9 @@
     <dimen name="activity_vertical_margin">16dp</dimen>
 
     <dimen name="actionbar_height">46dp</dimen>
+    <dimen name="coverflow_height">240dp</dimen>
     
     <dimen name="loading_dialog_img_size">35dp</dimen>
+    
+    <dimen name="select_img_height">250dp</dimen>
 </resources>

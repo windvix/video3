@@ -1,5 +1,7 @@
 package com.athudong.video;
 
+import com.athudong.video.adapter.CircleHeadAdapter;
+import com.athudong.video.component.CoverFlow;
 import com.athudong.video.task.BaseTask;
 
 import android.content.Intent;
@@ -10,9 +12,16 @@ import android.view.KeyEvent;
 
 public class MainActivity extends BaseActivity {
 
+	private CoverFlow cf;
+	
+	 // 图片间距（控制各图片之间的距离）
+	 private final int GALLERY_SPACING = -10;
+	 
+	@SuppressWarnings("deprecation")
 	@Override
 	protected void initView(Bundle savedInstanceState) {
 		setContentView(R.layout.activity_main);
+		
 	}
 
 	@Override

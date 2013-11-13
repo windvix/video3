@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:gravity="top"
+        android:gravity="center"
         android:orientation="vertical" >
 
         <RelativeLayout
@@ -18,37 +18,55 @@
             android:layout_marginTop="8dp"
             android:layout_weight="1" >
 
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_centerInParent="true"
-                android:layout_marginLeft="70dp"
-                android:layout_marginRight="70dp"
-                android:scaleType="fitCenter"
-                android:src="@drawable/test_head" />
+            
+             <RelativeLayout
+                 android:layout_toLeftOf="@id/center_head_img"
+                android:layout_width="@dimen/select_img_height"
+                android:layout_height="@dimen/select_img_height"
+                android:layout_centerInParent="true" >
 
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_centerInParent="true"
-                android:layout_marginLeft="70dp"
-                android:layout_marginRight="70dp"
-                android:scaleType="fitCenter"
-                android:src="@drawable/head_select_bg" />
+                <com.athudong.video.component.RoundImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerInParent="true"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/test_head_02" />
 
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_centerInParent="true"
-                android:layout_marginLeft="70dp"
-                android:layout_marginRight="70dp"
-                android:scaleType="fitCenter"
-                android:src="@drawable/head_select_bg_trans" />
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerInParent="true"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/head_select_bg_trans" />
+            </RelativeLayout>
+            
+            <RelativeLayout
+                android:id="@+id/center_head_img"
+                android:visibility="invisible"
+                android:layout_width="@dimen/select_img_height"
+                android:layout_height="@dimen/select_img_height"
+                android:layout_centerInParent="true" >
+
+                <com.athudong.video.component.RoundImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerInParent="true"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/test_head_01" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerInParent="true"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/head_select_bg_trans" />
+            </RelativeLayout>
         </RelativeLayout>
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="30dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="8dp"
             android:layout_weight="0" >
 
             <TextView
@@ -89,6 +107,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="65dp"
             android:layout_marginRight="65dp"
+            android:layout_marginTop="8dp"
             android:layout_weight="0"
             android:text="大家好， 我是上海人，我喜欢跳舞，喜欢唱歌，希望成为一名歌手，请大家多多支持"
             android:textColor="#8D8c88" />
@@ -101,23 +120,22 @@
             android:layout_weight="0"
             android:gravity="center" >
 
-            
-            <RelativeLayout 
+            <RelativeLayout
                 android:layout_width="145dp"
                 android:layout_height="50dp"
-                android:background="@drawable/thumb_btn">
-            <TextView
-                android:layout_marginRight="8dp"
-                android:layout_marginBottom="8dp"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="0"
-                android:background="#fff"
-                android:gravity="center"
-                android:text="投我一票"
-                android:textColor="#808080"
-                android:textSize="20sp" />
-            
+                android:background="@drawable/thumb_btn" >
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_weight="0"
+                    android:background="#fff"
+                    android:gravity="center"
+                    android:text="投我一票"
+                    android:textColor="#808080"
+                    android:textSize="20sp" />
             </RelativeLayout>
         </LinearLayout>
     </LinearLayout>
@@ -142,89 +160,83 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_marginTop="23dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1"
             android:layout_marginBottom="23dp"
+            android:layout_marginTop="23dp"
+            android:layout_weight="1"
             android:orientation="horizontal" >
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1" 
+                android:layout_weight="1"
                 android:gravity="center"
-                android:orientation="vertical">
+                android:orientation="vertical" >
 
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:scaleType="fitCenter"
                     android:layout_weight="1"
+                    android:scaleType="fitCenter"
                     android:src="@drawable/main_select_01" />
-                
-                <TextView 
-                    android:layout_marginTop="8dp"
+
+                <TextView
                     android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
                     android:layout_weight="0"
                     android:gravity="center"
-                    android:layout_height="wrap_content"
                     android:text="资料"
-                    android:textColor="#000"
-                    />
-                
+                    android:textColor="#000" />
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1" 
+                android:layout_weight="1"
                 android:gravity="center"
-                android:orientation="vertical">
+                android:orientation="vertical" >
 
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:scaleType="fitCenter"
                     android:layout_weight="1"
+                    android:scaleType="fitCenter"
                     android:src="@drawable/main_select_02" />
-                
-                <TextView 
-                    android:layout_marginTop="8dp"
+
+                <TextView
                     android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
                     android:layout_weight="0"
                     android:gravity="center"
-                    android:layout_height="wrap_content"
                     android:text="视频"
-                    android:textColor="#000"
-                    />
-                
+                    android:textColor="#000" />
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1" 
+                android:layout_weight="1"
                 android:gravity="center"
-                android:orientation="vertical">
+                android:orientation="vertical" >
 
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:scaleType="fitCenter"
                     android:layout_weight="1"
+                    android:scaleType="fitCenter"
                     android:src="@drawable/main_select_03" />
-                
-                <TextView 
-                    android:layout_marginTop="8dp"
+
+                <TextView
                     android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
                     android:layout_weight="0"
                     android:gravity="center"
-                    android:layout_height="wrap_content"
                     android:text="换一个"
-                    android:textColor="#000"
-                    />
-                
+                    android:textColor="#000" />
             </LinearLayout>
         </LinearLayout>
 
