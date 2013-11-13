@@ -25,9 +25,8 @@
             android:textColor="#fff"
             android:textSize="25sp"
             android:textStyle="bold" />
-        
-        
-         <TextView
+
+        <TextView
             android:layout_width="40dp"
             android:layout_height="match_parent"
             android:layout_alignParentRight="true"
@@ -50,7 +49,72 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="97dp"
-        android:layout_above="@id/bottomLayout" >
+        android:layout_above="@id/bottomLayout" 
+        android:paddingBottom="15dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" 
+                    android:background="#7F7367" >
+                </LinearLayout>
+                
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2" >
+                </LinearLayout>
+            </LinearLayout>
+            
+            
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+               <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2" >
+                </LinearLayout>
+                
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" 
+                    android:gravity="center">
+                    
+                    <ImageView 
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/main_select_round"
+                        android:scaleType="centerCrop"
+                        />
+                </LinearLayout>
+                
+  
+            </LinearLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1" >
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1" >
+        </LinearLayout>
     </LinearLayout>
 
 </RelativeLayout>
