@@ -11,10 +11,18 @@ import android.view.View;
 
 public class MainActivity extends BaseActivity{
 
+	private View leftHead;
+	private View midHead;
+	private View rightHead;
+	
+	
 	@Override
 	protected void initView(Bundle savedInstanceState) {
 		setContentView(R.layout.activity_main);
 		findViewById(R.id.main_select_btn_03).setOnClickListener(this);
+		leftHead = findViewById(R.id.left_head_img);
+		midHead = findViewById(R.id.center_head_img);
+		rightHead = findViewById(R.id.right_head_img);
 	}
 
 	@Override
