@@ -9,5 +9,6 @@
     
     <dimen name="loading_dialog_img_size">35dp</dimen>
     
-    <dimen name="select_img_height">250dp</dimen>
+    <dimen name="select_img_height">260dp</dimen>
+    <dimen name="select_left_img_margin">-240dp</dimen>
 </resources>

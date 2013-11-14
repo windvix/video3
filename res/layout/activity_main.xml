@@ -14,16 +14,18 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="@dimen/select_img_height"
             android:layout_marginTop="8dp"
-            android:layout_weight="1" >
+            android:layout_weight="0" >
 
             
              <RelativeLayout
-                 android:layout_toLeftOf="@id/center_head_img"
+                android:id="@+id/left_head_img"
+                android:layout_centerVertical="true"
                 android:layout_width="@dimen/select_img_height"
                 android:layout_height="@dimen/select_img_height"
-                android:layout_centerInParent="true" >
+                android:layout_alignParentLeft="true" 
+                android:layout_marginLeft="@dimen/select_left_img_margin">
 
                 <com.athudong.video.component.RoundImageView
                     android:layout_width="match_parent"
@@ -40,9 +42,31 @@
                     android:src="@drawable/head_select_bg_trans" />
             </RelativeLayout>
             
+              <RelativeLayout
+                  android:layout_centerVertical="true"
+                  android:id="@+id/right_head_img"
+                android:layout_width="@dimen/select_img_height"
+                android:layout_height="@dimen/select_img_height"
+                android:layout_alignParentRight="true" 
+                android:layout_marginRight="@dimen/select_left_img_margin">
+
+                <com.athudong.video.component.RoundImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerInParent="true"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/test_head_03" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerInParent="true"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/head_select_bg_trans" />
+            </RelativeLayout>
+             
             <RelativeLayout
                 android:id="@+id/center_head_img"
-                android:visibility="invisible"
                 android:layout_width="@dimen/select_img_height"
                 android:layout_height="@dimen/select_img_height"
                 android:layout_centerInParent="true" >
@@ -117,12 +141,12 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:layout_marginTop="8dp"
-            android:layout_weight="0"
+            android:layout_weight="1"
             android:gravity="center" >
 
             <RelativeLayout
                 android:layout_width="145dp"
-                android:layout_height="50dp"
+                android:layout_height="55dp"
                 android:background="@drawable/thumb_btn" >
 
                 <TextView
@@ -149,21 +173,22 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="3"
+        android:layout_height="110dp"
+        android:layout_weight="0"
+        android:gravity="center"
         android:background="#F2F1ED" >
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="20dp"
             android:layout_weight="4" >
         </LinearLayout>
 
         <LinearLayout
+            android:layout_marginTop="13dp"
+            android:layout_marginBottom="13dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginBottom="23dp"
-            android:layout_marginTop="23dp"
             android:layout_weight="1"
             android:orientation="horizontal" >
 
@@ -216,6 +241,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/main_select_btn_03"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -242,7 +268,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="20dp"
             android:layout_weight="4" >
         </LinearLayout>
     </LinearLayout>

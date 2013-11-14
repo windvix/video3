@@ -1,7 +1,5 @@
 package com.athudong.video;
 
-import com.athudong.video.adapter.CircleHeadAdapter;
-import com.athudong.video.component.CoverFlow;
 import com.athudong.video.task.BaseTask;
 
 import android.content.Intent;
@@ -9,21 +7,24 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.view.KeyEvent;
+import android.view.View;
 
-public class MainActivity extends BaseActivity {
+public class MainActivity extends BaseActivity{
 
-	private CoverFlow cf;
-	
-	 // 图片间距（控制各图片之间的距离）
-	 private final int GALLERY_SPACING = -10;
-	 
-	@SuppressWarnings("deprecation")
 	@Override
 	protected void initView(Bundle savedInstanceState) {
 		setContentView(R.layout.activity_main);
-		
+		findViewById(R.id.main_select_btn_03).setOnClickListener(this);
 	}
 
+	@Override
+	public void onClick(View v) {
+		int id = v.getId();
+		if(id==R.id.main_select_btn_03){
+			
+		}
+	}
+	
 	@Override
 	protected void beforeEveryVisable() {
 		
@@ -87,4 +88,5 @@ public class MainActivity extends BaseActivity {
 			isExit = false;
 		}
 	};
+
 }

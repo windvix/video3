@@ -27,13 +27,14 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Toast;
 
 /**
  * 公共基类Activity，封装各activity常用到的方法
  */
-public abstract class BaseActivity extends Activity {
+public abstract class BaseActivity extends Activity implements OnClickListener{
 	/**
 	 * 当前界面的任务列表
 	 */
