@@ -20,5 +20,8 @@
     <dimen name="loading_dialog_img_size">35dp</dimen>
     
     <dimen name="select_img_height">260dp</dimen>
-    <dimen name="select_left_img_margin">-240dp</dimen>
+  	<dimen name="select_img_padding">20dp</dimen> 
+  	<dimen name="select_img_left_margin">-240dp</dimen>
+    
+    <dimen name="btn_show_margin">8dp</dimen>
 </resources>

@@ -14,59 +14,34 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="@dimen/select_img_height"
+            android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:layout_weight="0" >
 
-            
-             <RelativeLayout
-                android:id="@+id/left_head_img"
-                android:layout_centerVertical="true"
-                android:layout_width="@dimen/select_img_height"
-                android:layout_height="@dimen/select_img_height"
-                android:layout_alignParentLeft="true" 
-                android:layout_marginLeft="@dimen/select_left_img_margin">
-
-                <com.athudong.video.component.RoundImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_centerInParent="true"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/test_head_02" />
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_centerInParent="true"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/head_select_bg_trans" />
-            </RelativeLayout>
-            
-              <RelativeLayout
-                  android:layout_centerVertical="true"
-                  android:id="@+id/right_head_img"
-                android:layout_width="@dimen/select_img_height"
-                android:layout_height="@dimen/select_img_height"
-                android:layout_alignParentRight="true" 
-                android:layout_marginRight="@dimen/select_left_img_margin">
-
-                <com.athudong.video.component.RoundImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_centerInParent="true"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/test_head_03" />
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_centerInParent="true"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/head_select_bg_trans" />
-            </RelativeLayout>
-             
             <RelativeLayout
-                android:id="@+id/center_head_img"
+                android:id="@+id/leftHead"
+                android:layout_width="@dimen/select_img_height"
+                android:layout_height="@dimen/select_img_height"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/select_img_left_margin" >
+
+                <com.athudong.video.component.RoundImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/test_head_01"
+                    android:tag="head" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/head_select_bg_trans" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/midHead"
                 android:layout_width="@dimen/select_img_height"
                 android:layout_height="@dimen/select_img_height"
                 android:layout_centerInParent="true" >
@@ -74,14 +49,35 @@
                 <com.athudong.video.component.RoundImageView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_centerInParent="true"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/test_head_01" />
+                    android:src="@drawable/test_head_02"
+                    android:tag="head" />
 
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_centerInParent="true"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/head_select_bg_trans" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rightHead"
+                android:layout_width="@dimen/select_img_height"
+                android:layout_height="@dimen/select_img_height"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/select_img_left_margin" >
+
+                <com.athudong.video.component.RoundImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/test_head_03"
+                    android:tag="head" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:scaleType="fitCenter"
                     android:src="@drawable/head_select_bg_trans" />
             </RelativeLayout>
@@ -144,23 +140,12 @@
             android:layout_weight="1"
             android:gravity="center" >
 
-            <RelativeLayout
+            <ImageView
+                android:id="@+id/thumbBtn"
                 android:layout_width="145dp"
                 android:layout_height="55dp"
-                android:background="@drawable/thumb_btn" >
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginBottom="8dp"
-                    android:layout_marginRight="8dp"
-                    android:layout_weight="0"
-                    android:background="#fff"
-                    android:gravity="center"
-                    android:text="投我一票"
-                    android:textColor="#808080"
-                    android:textSize="20sp" />
-            </RelativeLayout>
+                android:scaleType="fitCenter"
+                android:src="@drawable/thumb_btn" />
         </LinearLayout>
     </LinearLayout>
 
@@ -175,8 +160,8 @@
         android:layout_width="match_parent"
         android:layout_height="110dp"
         android:layout_weight="0"
-        android:gravity="center"
-        android:background="#F2F1ED" >
+        android:background="#F2F1ED"
+        android:gravity="center" >
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -185,10 +170,10 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_marginTop="13dp"
-            android:layout_marginBottom="13dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginBottom="13dp"
+            android:layout_marginTop="13dp"
             android:layout_weight="1"
             android:orientation="horizontal" >
 

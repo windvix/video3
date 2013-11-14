@@ -1,6 +1,12 @@
 package com.athudong.video;
 
+
+import java.util.ArrayList;
+import java.util.List;
+
+import com.athudong.video.component.ButtonTouchListener;
 import com.athudong.video.task.BaseTask;
+import com.athudong.video.util.TestUtil;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,30 +14,70 @@ import android.os.Handler;
 import android.os.Message;
 import android.view.KeyEvent;
 import android.view.View;
+import android.widget.ImageView;
+import static com.nineoldandroids.view.ViewPropertyAnimator.animate;
 
 public class MainActivity extends BaseActivity{
-
-	private View leftHead;
-	private View midHead;
-	private View rightHead;
 	
+	
+	private View midHead;
+	private View leftHead;
+	private View rightHead;
 	
 	@Override
 	protected void initView(Bundle savedInstanceState) {
 		setContentView(R.layout.activity_main);
+		midHead = findViewById(R.id.midHead);
+		leftHead  =findViewById(R.id.leftHead);
+		rightHead = findViewById(R.id.rightHead);
+		
 		findViewById(R.id.main_select_btn_03).setOnClickListener(this);
-		leftHead = findViewById(R.id.left_head_img);
-		midHead = findViewById(R.id.center_head_img);
-		rightHead = findViewById(R.id.right_head_img);
+		threeHead = new ArrayList<View>();
+		threeHead.add(leftHead);
+		threeHead.add(midHead);
+		threeHead.add(rightHead);
+		
+		findViewById(R.id.thumbBtn).setOnClickListener(this);
 	}
 
+	private int length = 0;
 	@Override
 	public void onClick(View v) {
 		int id = v.getId();
 		if(id==R.id.main_select_btn_03){
-			
+			left();
+		}else if(id==R.id.thumbBtn){
+			toast("你好");
 		}
 	}
+
+	private List<View> threeHead;
+	
+	private void left(){
+		if(length<=0){
+			length =  rightHead.getLeft()-midHead.getLeft();
+		}
+		View one = threeHead.get(0);
+		View two = threeHead.get(1);
+		View three = threeHead.get(2);
+		
+		
+		animate(one).x(one.getX()-length).x(one.getX()+length*3).x(one.getX()+length*2);
+		animate(two).x(two.getX()-length);
+		animate(three).x(three.getX()-length);
+		
+		threeHead.set(0, two);
+		threeHead.set(1, three);
+		threeHead.set(2, one);
+		
+		changeThree();
+	}
+	
+	private void changeThree(){
+		ImageView img = (ImageView)threeHead.get(2).findViewWithTag("head");
+		img.setImageResource(TestUtil.getRandomHead());
+	}
+	
 	
 	@Override
 	protected void beforeEveryVisable() {
