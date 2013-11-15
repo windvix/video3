@@ -13,7 +13,9 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.view.KeyEvent;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.View.OnTouchListener;
 import android.widget.ImageView;
 import static com.nineoldandroids.view.ViewPropertyAnimator.animate;
 
@@ -38,6 +40,34 @@ public class MainActivity extends BaseActivity{
 		threeHead.add(rightHead);
 		
 		findViewById(R.id.thumbBtn).setOnClickListener(this);
+		findViewById(R.id.headLayout).setOnTouchListener(new OnTouchListener() {
+			float x = 0;
+			float y = 0;
+			
+			@Override
+			public boolean onTouch(View v, MotionEvent event) {
+				
+				int action = event.getAction();
+				if(action==MotionEvent.ACTION_DOWN){
+					x = event.getX();
+					y = event.getY();
+				}
+				if(action==MotionEvent.ACTION_UP){
+					float uX = event.getX();
+					float uY =  event.getY();
+					
+					float temp = uX-x;
+					
+					if(temp>80){
+						left();
+					}else if(temp<-80){
+						right();
+					}
+				}
+				
+				return true;
+			}
+		});
 	}
 
 	private int length = 0;
@@ -71,6 +101,26 @@ public class MainActivity extends BaseActivity{
 		threeHead.set(2, one);
 		
 		changeThree();
+	}
+	
+	private void right(){
+		if(length<=0){
+			length =  rightHead.getLeft()-midHead.getLeft();
+		}
+		View one = threeHead.get(0);
+		View two = threeHead.get(1);
+		View three = threeHead.get(2);
+		
+		animate(three).x(three.getX()+length).x(three.getX()-length*3).x(three.getX()-length*2);
+		animate(two).x(two.getX()+length);
+		animate(one).x(one.getX()+length);
+		
+		threeHead.set(0, three);
+		threeHead.set(1, one);
+		threeHead.set(2, two);
+		
+		ImageView img = (ImageView)threeHead.get(0).findViewWithTag("head");
+		img.setImageResource(TestUtil.getRandomHead());
 	}
 	
 	private void changeThree(){
