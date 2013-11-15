@@ -21,7 +21,7 @@ public class SelectAnim {
 
 	private int length =0;
 	
-	private static final int DUR_TIME = 300;
+	private static final int DUR_TIME = 250;
 	
 	private int round = 1;
 	

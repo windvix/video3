@@ -13,102 +13,153 @@
         android:orientation="vertical" >
 
         <RelativeLayout
-            android:id="@+id/headLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:layout_weight="0" >
 
+            <!-- head click right left layout -->
+
             <RelativeLayout
-                android:id="@+id/oneHead"
+                android:id="@+id/headLayout"
                 android:layout_width="@dimen/select_img_height"
                 android:layout_height="@dimen/select_img_height"
-                android:layout_alignParentLeft="true"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="@dimen/select_img_left_margin" >
-
-                <com.athudong.video.component.RoundImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/test_head_01"
-                    android:tag="head" />
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/head_select_bg_trans" />
-            </RelativeLayout>
+                android:layout_centerInParent="true" />
 
             <RelativeLayout
-                android:id="@+id/twoHead"
-                android:layout_width="@dimen/select_img_height"
+                android:layout_width="match_parent"
                 android:layout_height="@dimen/select_img_height"
                 android:layout_centerInParent="true" >
 
-                <com.athudong.video.component.RoundImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/test_head_02"
-                    android:tag="head" />
+                <!-- left head -->
 
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/head_select_bg_trans" />
+                <RelativeLayout
+                    android:id="@+id/oneHead"
+                    android:layout_width="@dimen/select_img_height"
+                    android:layout_height="@dimen/select_img_height"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/select_img_left_margin" >
+
+                    <com.athudong.video.component.RoundImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/test_head_01"
+                        android:tag="head" />
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/head_select_bg_trans" />
+                </RelativeLayout>
+                <!-- end of left head -->
+
+
+                <!-- mid head -->
+
+                <RelativeLayout
+                    android:id="@+id/twoHead"
+                    android:layout_width="@dimen/select_img_height"
+                    android:layout_height="@dimen/select_img_height"
+                    android:layout_centerInParent="true" >
+
+                    <com.athudong.video.component.RoundImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/test_head_02"
+                        android:tag="head" />
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/head_select_bg_trans" />
+                </RelativeLayout>
+                <!-- end of mid head -->
+
+
+                <!-- four head -->
+
+                <RelativeLayout
+                    android:id="@+id/fourHead"
+                    android:layout_width="@dimen/select_img_height"
+                    android:layout_height="@dimen/select_img_height"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/select_img_left_margin" >
+
+                    <com.athudong.video.component.RoundImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/test_head_04"
+                        android:tag="head" />
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/head_select_bg_trans" />
+                </RelativeLayout>
+                <!-- end of four head -->
+
+
+                <!-- right head -->
+
+                <RelativeLayout
+                    android:id="@+id/threeHead"
+                    android:layout_width="@dimen/select_img_height"
+                    android:layout_height="@dimen/select_img_height"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/select_img_left_margin" >
+
+                    <com.athudong.video.component.RoundImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/test_head_03"
+                        android:tag="head" />
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/head_select_bg_trans" />
+                </RelativeLayout>
+                <!-- end of right head -->
             </RelativeLayout>
 
-            
-                        <RelativeLayout
-                android:id="@+id/fourHead"
-                android:layout_width="@dimen/select_img_height"
-                android:layout_height="@dimen/select_img_height"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
-                android:layout_marginRight="@dimen/select_img_left_margin" >
+            <!-- back btn -->
 
-                <com.athudong.video.component.RoundImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/test_head_04"
-                    android:tag="head" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:orientation="horizontal" >
 
                 <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/head_select_bg_trans" />
-            </RelativeLayout>
-            
-            
-            <RelativeLayout
-                android:id="@+id/threeHead"
-                android:layout_width="@dimen/select_img_height"
-                android:layout_height="@dimen/select_img_height"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
-                android:layout_marginRight="@dimen/select_img_left_margin" >
+                    android:src="@drawable/ic_launcher" />
 
-                <com.athudong.video.component.RoundImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/test_head_03"
-                    android:tag="head" />
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/head_select_bg_trans" />
-            </RelativeLayout>
-            
-
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="2dp"
+                    android:gravity="left|center"
+                    android:text="发现"
+                    android:textColor="#898989"
+                    android:textSize="20sp" />
+            </LinearLayout>
+            <!-- end back ben -->
         </RelativeLayout>
+
+        <!-- name and age layout -->
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -148,6 +199,7 @@
                 android:textColor="#A1919C"
                 android:textSize="24sp" />
         </RelativeLayout>
+        <!-- end of  name and age layout -->
 
         <TextView
             android:layout_width="match_parent"
@@ -157,23 +209,60 @@
             android:layout_marginTop="8dp"
             android:layout_weight="0"
             android:text="大家好， 我是上海人，我喜欢跳舞，喜欢唱歌，希望成为一名歌手，请大家多多支持"
-            android:textColor="#8D8c88" />
+            android:textColor="#8D8c88"
+            android:textSize="15sp" />
 
-        <LinearLayout
+        <!-- thumb layout -->
+
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_weight="1"
-            android:gravity="center" >
+            android:layout_height="match_parent"
+            android:layout_weight="1" >
+
+            <!-- thumb btn -->
 
             <ImageView
                 android:id="@+id/thumbBtn"
                 android:layout_width="145dp"
-                android:layout_height="55dp"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
                 android:scaleType="fitCenter"
                 android:src="@drawable/thumb_btn" />
-        </LinearLayout>
+
+            <!-- less thmub num layout -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="8dp"
+                android:gravity="right|bottom"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="75dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:text="剩余票数："
+                    android:textColor="#454346"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/thumbCountTv"
+                    android:layout_width="35dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:text="10"
+                    android:textColor="#454346"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <!-- end of less thmub num layout -->
+        </RelativeLayout>
+        <!-- thumb layout end -->
     </LinearLayout>
 
     <TextView
@@ -205,6 +294,7 @@
             android:orientation="horizontal" >
 
             <LinearLayout
+                android:id="@+id/main_select_btn_01"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -216,7 +306,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/main_select_01" />
+                    android:src="@drawable/main_select_01_btn" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -229,6 +319,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/main_select_btn_02"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"

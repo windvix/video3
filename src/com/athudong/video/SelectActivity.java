@@ -11,8 +11,9 @@ import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnTouchListener;
+import android.widget.TextView;
 
-public class MainActivity extends BaseActivity {
+public class SelectActivity extends BaseActivity {
 
 	private View oneHead;
 	private View twoHead;
@@ -20,7 +21,11 @@ public class MainActivity extends BaseActivity {
 	private View fourHead;
 
 	private SelectAnim anim;
+	
+	private TextView thumbCountTv;
 
+	private int thumbCount = 10;
+	
 	@Override
 	protected void initView(Bundle savedInstanceState) {
 		setContentView(R.layout.activity_main);
@@ -29,12 +34,19 @@ public class MainActivity extends BaseActivity {
 		threeHead = findViewById(R.id.threeHead);
 		fourHead = findViewById(R.id.fourHead);
 
+		thumbCountTv = (TextView)findViewById(R.id.thumbCountTv);
+		
+		findViewById(R.id.main_select_btn_01).setOnClickListener(this);
+		findViewById(R.id.main_select_btn_02).setOnClickListener(this);
 		findViewById(R.id.main_select_btn_03).setOnClickListener(this);
 
 		findViewById(R.id.thumbBtn).setOnClickListener(this);
 		findViewById(R.id.headLayout).setOnTouchListener(new HeadTouchListener());
 
 		anim = new SelectAnim(oneHead, twoHead, threeHead, fourHead);
+		
+		thumbCount = 10;
+		thumbCountTv.setText(thumbCount+"");
 	}
 
 	@Override
@@ -43,7 +55,13 @@ public class MainActivity extends BaseActivity {
 		if (id == R.id.main_select_btn_03) {
 			anim.next();
 		} else if (id == R.id.thumbBtn) {
-			toast("你好");
+			if(thumbCount>=1){
+				thumbCount--;
+				thumbCountTv.setText(thumbCount+"");
+				anim.next();
+			}else{
+				toast("票数为0");
+			}
 		}
 	}
 
@@ -91,7 +109,7 @@ public class MainActivity extends BaseActivity {
 			new Handler().postDelayed(new Runnable() {
 				@Override
 				public void run() {
-					MainActivity.this.finish();
+					SelectActivity.this.finish();
 					System.exit(0);// 使虚拟机停止运行并退出程序
 				}
 			}, 1500);
