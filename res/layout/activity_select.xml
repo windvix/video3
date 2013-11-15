@@ -136,16 +136,19 @@
             <!-- back btn -->
 
             <LinearLayout
+                android:id="@+id/backBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
+                android:gravity="left|center"
+                android:layout_marginLeft="10dp"
                 android:orientation="horizontal" >
 
                 <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/ic_launcher" />
+                    android:src="@drawable/back_btn" />
 
                 <TextView
                     android:layout_width="wrap_content"

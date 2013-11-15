@@ -40,6 +40,8 @@ public class SelectActivity extends BaseActivity {
 		findViewById(R.id.main_select_btn_02).setOnClickListener(this);
 		findViewById(R.id.main_select_btn_03).setOnClickListener(this);
 
+		findViewById(R.id.backBtn).setOnClickListener(this);
+		
 		findViewById(R.id.thumbBtn).setOnClickListener(this);
 		findViewById(R.id.headLayout).setOnTouchListener(new HeadTouchListener());
 
@@ -62,6 +64,10 @@ public class SelectActivity extends BaseActivity {
 			}else{
 				toast("票数为0");
 			}
+		}else if(id==R.id.backBtn){
+			Intent intent = new Intent(this, MainActivity.class);
+			finish();
+			startActivity(intent);
 		}
 	}
 
@@ -89,45 +95,14 @@ public class SelectActivity extends BaseActivity {
 	@Override
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
 		if (keyCode == KeyEvent.KEYCODE_BACK) {// 当keyCode等于退出事件值时
-			ToQuitTheApp();
-			return false;
-		} else {
-			return super.onKeyDown(keyCode, event);
-		}
-	}
-
-	private boolean isExit = false;
-
-	// 封装ToQuitTheApp方法
-	private void ToQuitTheApp() {
-		if (isExit) {
-			// ACTION_MAIN with category CATEGORY_HOME 启动主屏幕
-			Intent intent = new Intent(Intent.ACTION_MAIN);
-			intent.addCategory(Intent.CATEGORY_HOME);
+			Intent intent = new Intent(this, MainActivity.class);
+			finish();
 			startActivity(intent);
-
-			new Handler().postDelayed(new Runnable() {
-				@Override
-				public void run() {
-					SelectActivity.this.finish();
-					System.exit(0);// 使虚拟机停止运行并退出程序
-				}
-			}, 1500);
-		} else {
-			isExit = true;
-			toast("再按一次退出");
-			mHandler.sendEmptyMessageDelayed(0, 3000);// 3秒后发送消息
-		}
+			return false;
+		} 
+		return true;
 	}
 
-	// 创建Handler对象，用来处理消息
-	private Handler mHandler = new Handler() {
-		@Override
-		public void handleMessage(Message msg) {// 处理消息
-			super.handleMessage(msg);
-			isExit = false;
-		}
-	};
 
 	private class HeadTouchListener implements OnTouchListener {
 		float x_temp01 = 0.0f;
