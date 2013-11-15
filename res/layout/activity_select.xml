@@ -156,7 +156,7 @@
                     android:layout_marginLeft="2dp"
                     android:gravity="left|center"
                     android:text="发现"
-                    android:textColor="#898989"
+                    android:textColor="@drawable/back_btn_text_color"
                     android:textSize="20sp" />
             </LinearLayout>
             <!-- end back ben -->
