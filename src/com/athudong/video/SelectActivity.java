@@ -28,7 +28,7 @@ public class SelectActivity extends BaseActivity {
 	
 	@Override
 	protected void initView(Bundle savedInstanceState) {
-		setContentView(R.layout.activity_main);
+		setContentView(R.layout.activity_select);
 		oneHead = findViewById(R.id.oneHead);
 		twoHead = findViewById(R.id.twoHead);
 		threeHead = findViewById(R.id.threeHead);
