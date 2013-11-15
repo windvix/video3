@@ -1,0 +1,813 @@
+android.support.v4.app.BackStackState
+android.support.v4.app.BackStackState: android.os.Parcelable$Creator CREATOR
+android.support.v4.app.Fragment$SavedState
+android.support.v4.app.Fragment$SavedState: android.os.Parcelable$Creator CREATOR
+android.support.v4.app.FragmentManagerState
+android.support.v4.app.FragmentManagerState: android.os.Parcelable$Creator CREATOR
+android.support.v4.app.FragmentState
+android.support.v4.app.FragmentState: android.os.Parcelable$Creator CREATOR
+android.support.v4.app.FragmentTabHost: void setOnTabChangedListener(android.widget.TabHost$OnTabChangeListener)
+android.support.v4.app.FragmentTabHost$SavedState
+android.support.v4.app.FragmentTabHost$SavedState: android.os.Parcelable$Creator CREATOR
+android.support.v4.content.ModernAsyncTask$Status: android.support.v4.content.ModernAsyncTask$Status[] values()
+android.support.v4.content.ModernAsyncTask$Status: android.support.v4.content.ModernAsyncTask$Status valueOf(java.lang.String)
+android.support.v4.view.PagerTabStrip: void setTabIndicatorColor(int)
+android.support.v4.view.PagerTabStrip: void setTabIndicatorColorResource(int)
+android.support.v4.view.PagerTabStrip: int getTabIndicatorColor()
+android.support.v4.view.PagerTabStrip: void setTextSpacing(int)
+android.support.v4.view.PagerTabStrip: void setBackgroundDrawable(android.graphics.drawable.Drawable)
+android.support.v4.view.PagerTabStrip: void setBackgroundColor(int)
+android.support.v4.view.PagerTabStrip: void setBackgroundResource(int)
+android.support.v4.view.PagerTabStrip: void setDrawFullUnderline(boolean)
+android.support.v4.view.PagerTabStrip: boolean getDrawFullUnderline()
+android.support.v4.view.PagerTabStrip: int getMinHeight()
+android.support.v4.view.PagerTitleStrip: void setSingleLineAllCaps(android.widget.TextView)
+android.support.v4.view.PagerTitleStrip: void setTextSpacing(int)
+android.support.v4.view.PagerTitleStrip: int getTextSpacing()
+android.support.v4.view.PagerTitleStrip: void setNonPrimaryAlpha(float)
+android.support.v4.view.PagerTitleStrip: void setTextColor(int)
+android.support.v4.view.PagerTitleStrip: void setGravity(int)
+android.support.v4.view.PagerTitleStrip: int getMinHeight()
+android.support.v4.view.ViewPager: void setScrollState(int)
+android.support.v4.view.ViewPager: void setAdapter(android.support.v4.view.PagerAdapter)
+android.support.v4.view.ViewPager: android.support.v4.view.PagerAdapter getAdapter()
+android.support.v4.view.ViewPager: void setOnAdapterChangeListener(android.support.v4.view.ViewPager$OnAdapterChangeListener)
+android.support.v4.view.ViewPager: int getClientWidth()
+android.support.v4.view.ViewPager: void setCurrentItem(int)
+android.support.v4.view.ViewPager: int getCurrentItem()
+android.support.v4.view.ViewPager: void setOnPageChangeListener(android.support.v4.view.ViewPager$OnPageChangeListener)
+android.support.v4.view.ViewPager: void setChildrenDrawingOrderEnabledCompat(boolean)
+android.support.v4.view.ViewPager: int getOffscreenPageLimit()
+android.support.v4.view.ViewPager: void setOffscreenPageLimit(int)
+android.support.v4.view.ViewPager: void setPageMargin(int)
+android.support.v4.view.ViewPager: int getPageMargin()
+android.support.v4.view.ViewPager: void setPageMarginDrawable(android.graphics.drawable.Drawable)
+android.support.v4.view.ViewPager: void setPageMarginDrawable(int)
+android.support.v4.view.ViewPager: void setScrollingCacheEnabled(boolean)
+android.support.v4.view.ViewPager$SavedState
+android.support.v4.view.ViewPager$SavedState: android.os.Parcelable$Creator CREATOR
+android.support.v4.widget.DrawerLayout: void setScrimColor(int)
+android.support.v4.widget.DrawerLayout: void setDrawerListener(android.support.v4.widget.DrawerLayout$DrawerListener)
+android.support.v4.widget.DrawerLayout: void setDrawerLockMode(int)
+android.support.v4.widget.DrawerLayout$SavedState
+android.support.v4.widget.DrawerLayout$SavedState: android.os.Parcelable$Creator CREATOR
+android.support.v4.widget.SlidingPaneLayout: void setParallaxDistance(int)
+android.support.v4.widget.SlidingPaneLayout: int getParallaxDistance()
+android.support.v4.widget.SlidingPaneLayout: void setSliderFadeColor(int)
+android.support.v4.widget.SlidingPaneLayout: int getSliderFadeColor()
+android.support.v4.widget.SlidingPaneLayout: void setCoveredFadeColor(int)
+android.support.v4.widget.SlidingPaneLayout: int getCoveredFadeColor()
+android.support.v4.widget.SlidingPaneLayout: void setPanelSlideListener(android.support.v4.widget.SlidingPaneLayout$PanelSlideListener)
+android.support.v4.widget.SlidingPaneLayout: void setShadowDrawable(android.graphics.drawable.Drawable)
+android.support.v4.widget.SlidingPaneLayout: void setShadowResource(int)
+android.support.v4.widget.SlidingPaneLayout$SavedState
+android.support.v4.widget.SlidingPaneLayout$SavedState: android.os.Parcelable$Creator CREATOR
+com.athudong.video.BaseActivity: BaseActivity()
+com.athudong.video.MainActivity
+com.athudong.video.MainActivity: MainActivity()
+com.athudong.video.MainActivity: void onClick(android.view.View)
+com.athudong.video.R$anim: int in_from_left
+com.athudong.video.R$anim: int in_from_right
+com.athudong.video.R$anim: int out_to_left
+com.athudong.video.R$anim: int out_to_right
+com.athudong.video.R$anim: int push_bottom_in
+com.athudong.video.R$anim: int push_bottom_out
+com.athudong.video.R$anim: int slide_in_from_bottom
+com.athudong.video.R$anim: int slide_in_from_top
+com.athudong.video.R$anim: int slide_out_to_bottom
+com.athudong.video.R$anim: int slide_out_to_top
+com.athudong.video.R$attr: int color
+com.athudong.video.R$attr: int ptrAdapterViewBackground
+com.athudong.video.R$attr: int ptrAnimationStyle
+com.athudong.video.R$attr: int ptrDrawable
+com.athudong.video.R$attr: int ptrDrawableBottom
+com.athudong.video.R$attr: int ptrDrawableEnd
+com.athudong.video.R$attr: int ptrDrawableStart
+com.athudong.video.R$attr: int ptrDrawableTop
+com.athudong.video.R$attr: int ptrHeaderBackground
+com.athudong.video.R$attr: int ptrHeaderSubTextColor
+com.athudong.video.R$attr: int ptrHeaderTextAppearance
+com.athudong.video.R$attr: int ptrHeaderTextColor
+com.athudong.video.R$attr: int ptrListViewExtrasEnabled
+com.athudong.video.R$attr: int ptrMode
+com.athudong.video.R$attr: int ptrOverScroll
+com.athudong.video.R$attr: int ptrRefreshableViewBackground
+com.athudong.video.R$attr: int ptrRotateDrawableWhilePulling
+com.athudong.video.R$attr: int ptrScrollingWhileRefreshingEnabled
+com.athudong.video.R$attr: int ptrShowIndicator
+com.athudong.video.R$attr: int ptrSubHeaderTextAppearance
+com.athudong.video.R$attr: int type
+com.athudong.video.R$dimen: int actionbar_height
+com.athudong.video.R$dimen: int activity_horizontal_margin
+com.athudong.video.R$dimen: int activity_vertical_margin
+com.athudong.video.R$dimen: int btn_show_margin
+com.athudong.video.R$dimen: int coverflow_height
+com.athudong.video.R$dimen: int header_footer_left_right_padding
+com.athudong.video.R$dimen: int header_footer_top_bottom_padding
+com.athudong.video.R$dimen: int indicator_corner_radius
+com.athudong.video.R$dimen: int indicator_internal_padding
+com.athudong.video.R$dimen: int indicator_right_padding
+com.athudong.video.R$dimen: int loading_dialog_img_size
+com.athudong.video.R$dimen: int select_img_height
+com.athudong.video.R$dimen: int select_img_left_margin
+com.athudong.video.R$dimen: int select_img_padding
+com.athudong.video.R$drawable: int default_ptr_flip
+com.athudong.video.R$drawable: int default_ptr_rotate
+com.athudong.video.R$drawable: int head_select_bg
+com.athudong.video.R$drawable: int head_select_bg_trans
+com.athudong.video.R$drawable: int ic_launcher
+com.athudong.video.R$drawable: int indicator_arrow
+com.athudong.video.R$drawable: int indicator_bg_bottom
+com.athudong.video.R$drawable: int indicator_bg_top
+com.athudong.video.R$drawable: int loading
+com.athudong.video.R$drawable: int loading_bg
+com.athudong.video.R$drawable: int main_select_01
+com.athudong.video.R$drawable: int main_select_02
+com.athudong.video.R$drawable: int main_select_03
+com.athudong.video.R$drawable: int main_select_03_btn
+com.athudong.video.R$drawable: int main_select_03_press
+com.athudong.video.R$drawable: int main_select_line
+com.athudong.video.R$drawable: int main_select_round
+com.athudong.video.R$drawable: int test_head_01
+com.athudong.video.R$drawable: int test_head_02
+com.athudong.video.R$drawable: int test_head_03
+com.athudong.video.R$drawable: int test_head_04
+com.athudong.video.R$drawable: int test_head_05
+com.athudong.video.R$drawable: int test_head_06
+com.athudong.video.R$drawable: int test_head_07
+com.athudong.video.R$drawable: int test_head_08
+com.athudong.video.R$drawable: int thumb_btn
+com.athudong.video.R$drawable: int thumb_btn_default
+com.athudong.video.R$drawable: int thumb_btn_press
+com.athudong.video.R$id: int ageTv
+com.athudong.video.R$id: int both
+com.athudong.video.R$id: int disabled
+com.athudong.video.R$id: int fl_inner
+com.athudong.video.R$id: int flip
+com.athudong.video.R$id: int gridview
+com.athudong.video.R$id: int headImg
+com.athudong.video.R$id: int headLayout
+com.athudong.video.R$id: int leftHead
+com.athudong.video.R$id: int loading_img
+com.athudong.video.R$id: int loading_layout
+com.athudong.video.R$id: int loading_text
+com.athudong.video.R$id: int main_select_btn_03
+com.athudong.video.R$id: int manualOnly
+com.athudong.video.R$id: int midHead
+com.athudong.video.R$id: int nameTv
+com.athudong.video.R$id: int pullDownFromTop
+com.athudong.video.R$id: int pullFromEnd
+com.athudong.video.R$id: int pullFromStart
+com.athudong.video.R$id: int pullUpFromBottom
+com.athudong.video.R$id: int pull_to_refresh_image
+com.athudong.video.R$id: int pull_to_refresh_progress
+com.athudong.video.R$id: int pull_to_refresh_sub_text
+com.athudong.video.R$id: int pull_to_refresh_text
+com.athudong.video.R$id: int rightHead
+com.athudong.video.R$id: int rotate
+com.athudong.video.R$id: int scrollview
+com.athudong.video.R$id: int sexTv
+com.athudong.video.R$id: int thumbBtn
+com.athudong.video.R$id: int webview
+com.athudong.video.R$layout: int activity_main
+com.athudong.video.R$layout: int dialog_loading
+com.athudong.video.R$layout: int pull_to_refresh_header_horizontal
+com.athudong.video.R$layout: int pull_to_refresh_header_vertical
+com.athudong.video.R$layout: int round_imageview
+com.athudong.video.R$string: int app_name
+com.athudong.video.R$string: int pull_to_refresh_from_bottom_pull_label
+com.athudong.video.R$string: int pull_to_refresh_from_bottom_refreshing_label
+com.athudong.video.R$string: int pull_to_refresh_from_bottom_release_label
+com.athudong.video.R$string: int pull_to_refresh_pull_label
+com.athudong.video.R$string: int pull_to_refresh_refreshing_label
+com.athudong.video.R$string: int pull_to_refresh_release_label
+com.athudong.video.R$string: int server_addr
+com.athudong.video.R$style: int AnimBottom
+com.athudong.video.R$style: int AppBaseTheme
+com.athudong.video.R$style: int AppTheme
+com.athudong.video.R$style: int BottomDialogStyle
+com.athudong.video.R$style: int DimDialog
+com.athudong.video.R$style: int MenuDialog
+com.athudong.video.R$styleable: int[] PullToRefresh
+com.athudong.video.R$styleable: int PullToRefresh_ptrAdapterViewBackground
+com.athudong.video.R$styleable: int PullToRefresh_ptrAnimationStyle
+com.athudong.video.R$styleable: int PullToRefresh_ptrDrawable
+com.athudong.video.R$styleable: int PullToRefresh_ptrDrawableBottom
+com.athudong.video.R$styleable: int PullToRefresh_ptrDrawableEnd
+com.athudong.video.R$styleable: int PullToRefresh_ptrDrawableStart
+com.athudong.video.R$styleable: int PullToRefresh_ptrDrawableTop
+com.athudong.video.R$styleable: int PullToRefresh_ptrHeaderBackground
+com.athudong.video.R$styleable: int PullToRefresh_ptrHeaderSubTextColor
+com.athudong.video.R$styleable: int PullToRefresh_ptrHeaderTextAppearance
+com.athudong.video.R$styleable: int PullToRefresh_ptrHeaderTextColor
+com.athudong.video.R$styleable: int PullToRefresh_ptrListViewExtrasEnabled
+com.athudong.video.R$styleable: int PullToRefresh_ptrMode
+com.athudong.video.R$styleable: int PullToRefresh_ptrOverScroll
+com.athudong.video.R$styleable: int PullToRefresh_ptrRefreshableViewBackground
+com.athudong.video.R$styleable: int PullToRefresh_ptrRotateDrawableWhilePulling
+com.athudong.video.R$styleable: int PullToRefresh_ptrScrollingWhileRefreshingEnabled
+com.athudong.video.R$styleable: int PullToRefresh_ptrShowIndicator
+com.athudong.video.R$styleable: int PullToRefresh_ptrSubHeaderTextAppearance
+com.athudong.video.R$styleable: int[] ShapeView
+com.athudong.video.R$styleable: int ShapeView_color
+com.athudong.video.R$styleable: int ShapeView_type
+com.athudong.video.component.CoverFlow: int getCenterXOfCoverflow()
+com.athudong.video.component.PathPoint
+com.athudong.video.component.RoundImageView
+com.athudong.video.component.RoundImageView: RoundImageView(android.content.Context)
+com.athudong.video.component.RoundImageView: RoundImageView(android.content.Context,android.util.AttributeSet)
+com.athudong.video.component.RoundImageView: RoundImageView(android.content.Context,android.util.AttributeSet,int)
+com.handmark.pulltorefresh.library.ILoadingLayout
+com.handmark.pulltorefresh.library.ILoadingLayout: void setLastUpdatedLabel(java.lang.CharSequence)
+com.handmark.pulltorefresh.library.ILoadingLayout: void setLoadingDrawable(android.graphics.drawable.Drawable)
+com.handmark.pulltorefresh.library.ILoadingLayout: void setPullLabel(java.lang.CharSequence)
+com.handmark.pulltorefresh.library.ILoadingLayout: void setRefreshingLabel(java.lang.CharSequence)
+com.handmark.pulltorefresh.library.ILoadingLayout: void setReleaseLabel(java.lang.CharSequence)
+com.handmark.pulltorefresh.library.ILoadingLayout: void setTextTypeface(android.graphics.Typeface)
+com.handmark.pulltorefresh.library.IPullToRefresh
+com.handmark.pulltorefresh.library.IPullToRefresh: boolean demo()
+com.handmark.pulltorefresh.library.IPullToRefresh: com.handmark.pulltorefresh.library.PullToRefreshBase$Mode getCurrentMode()
+com.handmark.pulltorefresh.library.IPullToRefresh: boolean getFilterTouchEvents()
+com.handmark.pulltorefresh.library.IPullToRefresh: com.handmark.pulltorefresh.library.ILoadingLayout getLoadingLayoutProxy()
+com.handmark.pulltorefresh.library.IPullToRefresh: com.handmark.pulltorefresh.library.ILoadingLayout getLoadingLayoutProxy(boolean,boolean)
+com.handmark.pulltorefresh.library.IPullToRefresh: com.handmark.pulltorefresh.library.PullToRefreshBase$Mode getMode()
+com.handmark.pulltorefresh.library.IPullToRefresh: android.view.View getRefreshableView()
+com.handmark.pulltorefresh.library.IPullToRefresh: boolean getShowViewWhileRefreshing()
+com.handmark.pulltorefresh.library.IPullToRefresh: com.handmark.pulltorefresh.library.PullToRefreshBase$State getState()
+com.handmark.pulltorefresh.library.IPullToRefresh: boolean isPullToRefreshEnabled()
+com.handmark.pulltorefresh.library.IPullToRefresh: boolean isPullToRefreshOverScrollEnabled()
+com.handmark.pulltorefresh.library.IPullToRefresh: boolean isRefreshing()
+com.handmark.pulltorefresh.library.IPullToRefresh: boolean isScrollingWhileRefreshingEnabled()
+com.handmark.pulltorefresh.library.IPullToRefresh: void onRefreshComplete()
+com.handmark.pulltorefresh.library.IPullToRefresh: void setFilterTouchEvents(boolean)
+com.handmark.pulltorefresh.library.IPullToRefresh: void setMode(com.handmark.pulltorefresh.library.PullToRefreshBase$Mode)
+com.handmark.pulltorefresh.library.IPullToRefresh: void setOnPullEventListener(com.handmark.pulltorefresh.library.PullToRefreshBase$OnPullEventListener)
+com.handmark.pulltorefresh.library.IPullToRefresh: void setOnRefreshListener(com.handmark.pulltorefresh.library.PullToRefreshBase$OnRefreshListener)
+com.handmark.pulltorefresh.library.IPullToRefresh: void setOnRefreshListener(com.handmark.pulltorefresh.library.PullToRefreshBase$OnRefreshListener2)
+com.handmark.pulltorefresh.library.IPullToRefresh: void setPullToRefreshOverScrollEnabled(boolean)
+com.handmark.pulltorefresh.library.IPullToRefresh: void setRefreshing()
+com.handmark.pulltorefresh.library.IPullToRefresh: void setRefreshing(boolean)
+com.handmark.pulltorefresh.library.IPullToRefresh: void setScrollAnimationInterpolator(android.view.animation.Interpolator)
+com.handmark.pulltorefresh.library.IPullToRefresh: void setScrollingWhileRefreshingEnabled(boolean)
+com.handmark.pulltorefresh.library.IPullToRefresh: void setShowViewWhileRefreshing(boolean)
+com.handmark.pulltorefresh.library.LoadingLayoutProxy
+com.handmark.pulltorefresh.library.LoadingLayoutProxy: java.util.HashSet mLoadingLayouts
+com.handmark.pulltorefresh.library.LoadingLayoutProxy: LoadingLayoutProxy()
+com.handmark.pulltorefresh.library.LoadingLayoutProxy: void addLayout(com.handmark.pulltorefresh.library.internal.LoadingLayout)
+com.handmark.pulltorefresh.library.LoadingLayoutProxy: void setLastUpdatedLabel(java.lang.CharSequence)
+com.handmark.pulltorefresh.library.LoadingLayoutProxy: void setLoadingDrawable(android.graphics.drawable.Drawable)
+com.handmark.pulltorefresh.library.LoadingLayoutProxy: void setRefreshingLabel(java.lang.CharSequence)
+com.handmark.pulltorefresh.library.LoadingLayoutProxy: void setPullLabel(java.lang.CharSequence)
+com.handmark.pulltorefresh.library.LoadingLayoutProxy: void setReleaseLabel(java.lang.CharSequence)
+com.handmark.pulltorefresh.library.LoadingLayoutProxy: void setTextTypeface(android.graphics.Typeface)
+com.handmark.pulltorefresh.library.OverscrollHelper
+com.handmark.pulltorefresh.library.OverscrollHelper: java.lang.String LOG_TAG
+com.handmark.pulltorefresh.library.OverscrollHelper: float DEFAULT_OVERSCROLL_SCALE
+com.handmark.pulltorefresh.library.OverscrollHelper: int[] $SWITCH_TABLE$com$handmark$pulltorefresh$library$PullToRefreshBase$Orientation
+com.handmark.pulltorefresh.library.OverscrollHelper: OverscrollHelper()
+com.handmark.pulltorefresh.library.OverscrollHelper: void overScrollBy(com.handmark.pulltorefresh.library.PullToRefreshBase,int,int,int,int,boolean)
+com.handmark.pulltorefresh.library.OverscrollHelper: void overScrollBy(com.handmark.pulltorefresh.library.PullToRefreshBase,int,int,int,int,int,boolean)
+com.handmark.pulltorefresh.library.OverscrollHelper: void overScrollBy(com.handmark.pulltorefresh.library.PullToRefreshBase,int,int,int,int,int,int,float,boolean)
+com.handmark.pulltorefresh.library.OverscrollHelper: boolean isAndroidOverScrollEnabled(android.view.View)
+com.handmark.pulltorefresh.library.OverscrollHelper: int[] $SWITCH_TABLE$com$handmark$pulltorefresh$library$PullToRefreshBase$Orientation()
+com.handmark.pulltorefresh.library.PullToRefreshAdapterViewBase
+com.handmark.pulltorefresh.library.PullToRefreshAdapterViewBase: boolean mLastItemVisible
+com.handmark.pulltorefresh.library.PullToRefreshAdapterViewBase: android.widget.AbsListView$OnScrollListener mOnScrollListener
+com.handmark.pulltorefresh.library.PullToRefreshAdapterViewBase: com.handmark.pulltorefresh.library.PullToRefreshBase$OnLastItemVisibleListener mOnLastItemVisibleListener
+com.handmark.pulltorefresh.library.PullToRefreshAdapterViewBase: android.view.View mEmptyView
+com.handmark.pulltorefresh.library.PullToRefreshAdapterViewBase: com.handmark.pulltorefresh.library.internal.IndicatorLayout mIndicatorIvTop
+com.handmark.pulltorefresh.library.PullToRefreshAdapterViewBase: com.handmark.pulltorefresh.library.internal.IndicatorLayout mIndicatorIvBottom
+com.handmark.pulltorefresh.library.PullToRefreshAdapterViewBase: boolean mShowIndicator
+com.handmark.pulltorefresh.library.PullToRefreshAdapterViewBase: boolean mScrollEmptyView
+com.handmark.pulltorefresh.library.PullToRefreshAdapterViewBase: int[] $SWITCH_TABLE$com$handmark$pulltorefresh$library$PullToRefreshBase$Mode
+com.handmark.pulltorefresh.library.PullToRefreshAdapterViewBase: android.widget.FrameLayout$LayoutParams convertEmptyViewLayoutParams(android.view.ViewGroup$LayoutParams)
+com.handmark.pulltorefresh.library.PullToRefreshAdapterViewBase: PullToRefreshAdapterViewBase(android.content.Context)
+com.handmark.pulltorefresh.library.PullToRefreshAdapterViewBase: PullToRefreshAdapterViewBase(android.content.Context,android.util.AttributeSet)
+com.handmark.pulltorefresh.library.PullToRefreshAdapterViewBase: PullToRefreshAdapterViewBase(android.content.Context,com.handmark.pulltorefresh.library.PullToRefreshBase$Mode)
+com.handmark.pulltorefresh.library.PullToRefreshAdapterViewBase: PullToRefreshAdapterViewBase(android.content.Context,com.handmark.pulltorefresh.library.PullToRefreshBase$Mode,com.handmark.pulltorefresh.library.PullToRefreshBase$AnimationStyle)
+com.handmark.pulltorefresh.library.PullToRefreshAdapterViewBase: boolean getShowIndicator()
+com.handmark.pulltorefresh.library.PullToRefreshAdapterViewBase: void onScroll(android.widget.AbsListView,int,int,int)
+com.handmark.pulltorefresh.library.PullToRefreshAdapterViewBase: void onScrollStateChanged(android.widget.AbsListView,int)
+com.handmark.pulltorefresh.library.PullToRefreshAdapterViewBase: void setAdapter(android.widget.ListAdapter)
+com.handmark.pulltorefresh.library.PullToRefreshAdapterViewBase: void setEmptyView(android.view.View)
+com.handmark.pulltorefresh.library.PullToRefreshAdapterViewBase: void setOnItemClickListener(android.widget.AdapterView$OnItemClickListener)
+com.handmark.pulltorefresh.library.PullToRefreshAdapterViewBase: void setOnLastItemVisibleListener(com.handmark.pulltorefresh.library.PullToRefreshBase$OnLastItemVisibleListener)
+com.handmark.pulltorefresh.library.PullToRefreshAdapterViewBase: void setOnScrollListener(android.widget.AbsListView$OnScrollListener)
+com.handmark.pulltorefresh.library.PullToRefreshAdapterViewBase: void setScrollEmptyView(boolean)
+com.handmark.pulltorefresh.library.PullToRefreshAdapterViewBase: void setShowIndicator(boolean)
+com.handmark.pulltorefresh.library.PullToRefreshAdapterViewBase: void onPullToRefresh()
+com.handmark.pulltorefresh.library.PullToRefreshAdapterViewBase: void onRefreshing(boolean)
+com.handmark.pulltorefresh.library.PullToRefreshAdapterViewBase: void onReleaseToRefresh()
+com.handmark.pulltorefresh.library.PullToRefreshAdapterViewBase: void onReset()
+com.handmark.pulltorefresh.library.PullToRefreshAdapterViewBase: void handleStyledAttributes(android.content.res.TypedArray)
+com.handmark.pulltorefresh.library.PullToRefreshAdapterViewBase: boolean isReadyForPullStart()
+com.handmark.pulltorefresh.library.PullToRefreshAdapterViewBase: boolean isReadyForPullEnd()
+com.handmark.pulltorefresh.library.PullToRefreshAdapterViewBase: void onScrollChanged(int,int,int,int)
+com.handmark.pulltorefresh.library.PullToRefreshAdapterViewBase: void updateUIForMode()
+com.handmark.pulltorefresh.library.PullToRefreshAdapterViewBase: void addIndicatorViews()
+com.handmark.pulltorefresh.library.PullToRefreshAdapterViewBase: boolean getShowIndicatorInternal()
+com.handmark.pulltorefresh.library.PullToRefreshAdapterViewBase: boolean isFirstItemVisible()
+com.handmark.pulltorefresh.library.PullToRefreshAdapterViewBase: boolean isLastItemVisible()
+com.handmark.pulltorefresh.library.PullToRefreshAdapterViewBase: void removeIndicatorViews()
+com.handmark.pulltorefresh.library.PullToRefreshAdapterViewBase: void updateIndicatorViewsVisibility()
+com.handmark.pulltorefresh.library.PullToRefreshAdapterViewBase: int[] $SWITCH_TABLE$com$handmark$pulltorefresh$library$PullToRefreshBase$Mode()
+com.handmark.pulltorefresh.library.PullToRefreshBase
+com.handmark.pulltorefresh.library.PullToRefreshBase: boolean DEBUG
+com.handmark.pulltorefresh.library.PullToRefreshBase: boolean USE_HW_LAYERS
+com.handmark.pulltorefresh.library.PullToRefreshBase: java.lang.String LOG_TAG
+com.handmark.pulltorefresh.library.PullToRefreshBase: float FRICTION
+com.handmark.pulltorefresh.library.PullToRefreshBase: int SMOOTH_SCROLL_DURATION_MS
+com.handmark.pulltorefresh.library.PullToRefreshBase: int SMOOTH_SCROLL_LONG_DURATION_MS
+com.handmark.pulltorefresh.library.PullToRefreshBase: int DEMO_SCROLL_INTERVAL
+com.handmark.pulltorefresh.library.PullToRefreshBase: java.lang.String STATE_STATE
+com.handmark.pulltorefresh.library.PullToRefreshBase: java.lang.String STATE_MODE
+com.handmark.pulltorefresh.library.PullToRefreshBase: java.lang.String STATE_CURRENT_MODE
+com.handmark.pulltorefresh.library.PullToRefreshBase: java.lang.String STATE_SCROLLING_REFRESHING_ENABLED
+com.handmark.pulltorefresh.library.PullToRefreshBase: java.lang.String STATE_SHOW_REFRESHING_VIEW
+com.handmark.pulltorefresh.library.PullToRefreshBase: java.lang.String STATE_SUPER
+com.handmark.pulltorefresh.library.PullToRefreshBase: int mTouchSlop
+com.handmark.pulltorefresh.library.PullToRefreshBase: float mLastMotionX
+com.handmark.pulltorefresh.library.PullToRefreshBase: float mLastMotionY
+com.handmark.pulltorefresh.library.PullToRefreshBase: float mInitialMotionX
+com.handmark.pulltorefresh.library.PullToRefreshBase: float mInitialMotionY
+com.handmark.pulltorefresh.library.PullToRefreshBase: boolean mIsBeingDragged
+com.handmark.pulltorefresh.library.PullToRefreshBase: com.handmark.pulltorefresh.library.PullToRefreshBase$State mState
+com.handmark.pulltorefresh.library.PullToRefreshBase: com.handmark.pulltorefresh.library.PullToRefreshBase$Mode mMode
+com.handmark.pulltorefresh.library.PullToRefreshBase: com.handmark.pulltorefresh.library.PullToRefreshBase$Mode mCurrentMode
+com.handmark.pulltorefresh.library.PullToRefreshBase: android.view.View mRefreshableView
+com.handmark.pulltorefresh.library.PullToRefreshBase: android.widget.FrameLayout mRefreshableViewWrapper
+com.handmark.pulltorefresh.library.PullToRefreshBase: boolean mShowViewWhileRefreshing
+com.handmark.pulltorefresh.library.PullToRefreshBase: boolean mScrollingWhileRefreshingEnabled
+com.handmark.pulltorefresh.library.PullToRefreshBase: boolean mFilterTouchEvents
+com.handmark.pulltorefresh.library.PullToRefreshBase: boolean mOverScrollEnabled
+com.handmark.pulltorefresh.library.PullToRefreshBase: boolean mLayoutVisibilityChangesEnabled
+com.handmark.pulltorefresh.library.PullToRefreshBase: android.view.animation.Interpolator mScrollAnimationInterpolator
+com.handmark.pulltorefresh.library.PullToRefreshBase: com.handmark.pulltorefresh.library.PullToRefreshBase$AnimationStyle mLoadingAnimationStyle
+com.handmark.pulltorefresh.library.PullToRefreshBase: com.handmark.pulltorefresh.library.internal.LoadingLayout mHeaderLayout
+com.handmark.pulltorefresh.library.PullToRefreshBase: com.handmark.pulltorefresh.library.internal.LoadingLayout mFooterLayout
+com.handmark.pulltorefresh.library.PullToRefreshBase: com.handmark.pulltorefresh.library.PullToRefreshBase$OnRefreshListener mOnRefreshListener
+com.handmark.pulltorefresh.library.PullToRefreshBase: com.handmark.pulltorefresh.library.PullToRefreshBase$OnRefreshListener2 mOnRefreshListener2
+com.handmark.pulltorefresh.library.PullToRefreshBase: com.handmark.pulltorefresh.library.PullToRefreshBase$OnPullEventListener mOnPullEventListener
+com.handmark.pulltorefresh.library.PullToRefreshBase: com.handmark.pulltorefresh.library.PullToRefreshBase$SmoothScrollRunnable mCurrentSmoothScrollRunnable
+com.handmark.pulltorefresh.library.PullToRefreshBase: int[] $SWITCH_TABLE$com$handmark$pulltorefresh$library$PullToRefreshBase$Orientation
+com.handmark.pulltorefresh.library.PullToRefreshBase: int[] $SWITCH_TABLE$com$handmark$pulltorefresh$library$PullToRefreshBase$State
+com.handmark.pulltorefresh.library.PullToRefreshBase: int[] $SWITCH_TABLE$com$handmark$pulltorefresh$library$PullToRefreshBase$Mode
+com.handmark.pulltorefresh.library.PullToRefreshBase: PullToRefreshBase(android.content.Context)
+com.handmark.pulltorefresh.library.PullToRefreshBase: PullToRefreshBase(android.content.Context,android.util.AttributeSet)
+com.handmark.pulltorefresh.library.PullToRefreshBase: PullToRefreshBase(android.content.Context,com.handmark.pulltorefresh.library.PullToRefreshBase$Mode)
+com.handmark.pulltorefresh.library.PullToRefreshBase: PullToRefreshBase(android.content.Context,com.handmark.pulltorefresh.library.PullToRefreshBase$Mode,com.handmark.pulltorefresh.library.PullToRefreshBase$AnimationStyle)
+com.handmark.pulltorefresh.library.PullToRefreshBase: void addView(android.view.View,int,android.view.ViewGroup$LayoutParams)
+com.handmark.pulltorefresh.library.PullToRefreshBase: boolean demo()
+com.handmark.pulltorefresh.library.PullToRefreshBase: com.handmark.pulltorefresh.library.PullToRefreshBase$Mode getCurrentMode()
+com.handmark.pulltorefresh.library.PullToRefreshBase: boolean getFilterTouchEvents()
+com.handmark.pulltorefresh.library.PullToRefreshBase: com.handmark.pulltorefresh.library.ILoadingLayout getLoadingLayoutProxy()
+com.handmark.pulltorefresh.library.PullToRefreshBase: com.handmark.pulltorefresh.library.ILoadingLayout getLoadingLayoutProxy(boolean,boolean)
+com.handmark.pulltorefresh.library.PullToRefreshBase: com.handmark.pulltorefresh.library.PullToRefreshBase$Mode getMode()
+com.handmark.pulltorefresh.library.PullToRefreshBase: android.view.View getRefreshableView()
+com.handmark.pulltorefresh.library.PullToRefreshBase: boolean getShowViewWhileRefreshing()
+com.handmark.pulltorefresh.library.PullToRefreshBase: com.handmark.pulltorefresh.library.PullToRefreshBase$State getState()
+com.handmark.pulltorefresh.library.PullToRefreshBase: boolean isDisableScrollingWhileRefreshing()
+com.handmark.pulltorefresh.library.PullToRefreshBase: boolean isPullToRefreshEnabled()
+com.handmark.pulltorefresh.library.PullToRefreshBase: boolean isPullToRefreshOverScrollEnabled()
+com.handmark.pulltorefresh.library.PullToRefreshBase: boolean isRefreshing()
+com.handmark.pulltorefresh.library.PullToRefreshBase: boolean isScrollingWhileRefreshingEnabled()
+com.handmark.pulltorefresh.library.PullToRefreshBase: boolean onInterceptTouchEvent(android.view.MotionEvent)
+com.handmark.pulltorefresh.library.PullToRefreshBase: void onRefreshComplete()
+com.handmark.pulltorefresh.library.PullToRefreshBase: boolean onTouchEvent(android.view.MotionEvent)
+com.handmark.pulltorefresh.library.PullToRefreshBase: void setScrollingWhileRefreshingEnabled(boolean)
+com.handmark.pulltorefresh.library.PullToRefreshBase: void setDisableScrollingWhileRefreshing(boolean)
+com.handmark.pulltorefresh.library.PullToRefreshBase: void setFilterTouchEvents(boolean)
+com.handmark.pulltorefresh.library.PullToRefreshBase: void setLastUpdatedLabel(java.lang.CharSequence)
+com.handmark.pulltorefresh.library.PullToRefreshBase: void setLoadingDrawable(android.graphics.drawable.Drawable)
+com.handmark.pulltorefresh.library.PullToRefreshBase: void setLoadingDrawable(android.graphics.drawable.Drawable,com.handmark.pulltorefresh.library.PullToRefreshBase$Mode)
+com.handmark.pulltorefresh.library.PullToRefreshBase: void setLongClickable(boolean)
+com.handmark.pulltorefresh.library.PullToRefreshBase: void setMode(com.handmark.pulltorefresh.library.PullToRefreshBase$Mode)
+com.handmark.pulltorefresh.library.PullToRefreshBase: void setOnPullEventListener(com.handmark.pulltorefresh.library.PullToRefreshBase$OnPullEventListener)
+com.handmark.pulltorefresh.library.PullToRefreshBase: void setOnRefreshListener(com.handmark.pulltorefresh.library.PullToRefreshBase$OnRefreshListener)
+com.handmark.pulltorefresh.library.PullToRefreshBase: void setOnRefreshListener(com.handmark.pulltorefresh.library.PullToRefreshBase$OnRefreshListener2)
+com.handmark.pulltorefresh.library.PullToRefreshBase: void setPullLabel(java.lang.CharSequence)
+com.handmark.pulltorefresh.library.PullToRefreshBase: void setPullLabel(java.lang.CharSequence,com.handmark.pulltorefresh.library.PullToRefreshBase$Mode)
+com.handmark.pulltorefresh.library.PullToRefreshBase: void setPullToRefreshEnabled(boolean)
+com.handmark.pulltorefresh.library.PullToRefreshBase: void setPullToRefreshOverScrollEnabled(boolean)
+com.handmark.pulltorefresh.library.PullToRefreshBase: void setRefreshing()
+com.handmark.pulltorefresh.library.PullToRefreshBase: void setRefreshing(boolean)
+com.handmark.pulltorefresh.library.PullToRefreshBase: void setRefreshingLabel(java.lang.CharSequence)
+com.handmark.pulltorefresh.library.PullToRefreshBase: void setRefreshingLabel(java.lang.CharSequence,com.handmark.pulltorefresh.library.PullToRefreshBase$Mode)
+com.handmark.pulltorefresh.library.PullToRefreshBase: void setReleaseLabel(java.lang.CharSequence)
+com.handmark.pulltorefresh.library.PullToRefreshBase: void setReleaseLabel(java.lang.CharSequence,com.handmark.pulltorefresh.library.PullToRefreshBase$Mode)
+com.handmark.pulltorefresh.library.PullToRefreshBase: void setScrollAnimationInterpolator(android.view.animation.Interpolator)
+com.handmark.pulltorefresh.library.PullToRefreshBase: void setShowViewWhileRefreshing(boolean)
+com.handmark.pulltorefresh.library.PullToRefreshBase: com.handmark.pulltorefresh.library.PullToRefreshBase$Orientation getPullToRefreshScrollDirection()
+com.handmark.pulltorefresh.library.PullToRefreshBase: void setState(com.handmark.pulltorefresh.library.PullToRefreshBase$State,boolean[])
+com.handmark.pulltorefresh.library.PullToRefreshBase: void addViewInternal(android.view.View,int,android.view.ViewGroup$LayoutParams)
+com.handmark.pulltorefresh.library.PullToRefreshBase: void addViewInternal(android.view.View,android.view.ViewGroup$LayoutParams)
+com.handmark.pulltorefresh.library.PullToRefreshBase: com.handmark.pulltorefresh.library.internal.LoadingLayout createLoadingLayout(android.content.Context,com.handmark.pulltorefresh.library.PullToRefreshBase$Mode,android.content.res.TypedArray)
+com.handmark.pulltorefresh.library.PullToRefreshBase: com.handmark.pulltorefresh.library.LoadingLayoutProxy createLoadingLayoutProxy(boolean,boolean)
+com.handmark.pulltorefresh.library.PullToRefreshBase: android.view.View createRefreshableView(android.content.Context,android.util.AttributeSet)
+com.handmark.pulltorefresh.library.PullToRefreshBase: void disableLoadingLayoutVisibilityChanges()
+com.handmark.pulltorefresh.library.PullToRefreshBase: com.handmark.pulltorefresh.library.internal.LoadingLayout getFooterLayout()
+com.handmark.pulltorefresh.library.PullToRefreshBase: int getFooterSize()
+com.handmark.pulltorefresh.library.PullToRefreshBase: com.handmark.pulltorefresh.library.internal.LoadingLayout getHeaderLayout()
+com.handmark.pulltorefresh.library.PullToRefreshBase: int getHeaderSize()
+com.handmark.pulltorefresh.library.PullToRefreshBase: int getPullToRefreshScrollDuration()
+com.handmark.pulltorefresh.library.PullToRefreshBase: int getPullToRefreshScrollDurationLonger()
+com.handmark.pulltorefresh.library.PullToRefreshBase: android.widget.FrameLayout getRefreshableViewWrapper()
+com.handmark.pulltorefresh.library.PullToRefreshBase: void handleStyledAttributes(android.content.res.TypedArray)
+com.handmark.pulltorefresh.library.PullToRefreshBase: boolean isReadyForPullEnd()
+com.handmark.pulltorefresh.library.PullToRefreshBase: boolean isReadyForPullStart()
+com.handmark.pulltorefresh.library.PullToRefreshBase: void onPtrRestoreInstanceState(android.os.Bundle)
+com.handmark.pulltorefresh.library.PullToRefreshBase: void onPtrSaveInstanceState(android.os.Bundle)
+com.handmark.pulltorefresh.library.PullToRefreshBase: void onPullToRefresh()
+com.handmark.pulltorefresh.library.PullToRefreshBase: void onRefreshing(boolean)
+com.handmark.pulltorefresh.library.PullToRefreshBase: void onReleaseToRefresh()
+com.handmark.pulltorefresh.library.PullToRefreshBase: void onReset()
+com.handmark.pulltorefresh.library.PullToRefreshBase: void onRestoreInstanceState(android.os.Parcelable)
+com.handmark.pulltorefresh.library.PullToRefreshBase: android.os.Parcelable onSaveInstanceState()
+com.handmark.pulltorefresh.library.PullToRefreshBase: void onSizeChanged(int,int,int,int)
+com.handmark.pulltorefresh.library.PullToRefreshBase: void refreshLoadingViewsSize()
+com.handmark.pulltorefresh.library.PullToRefreshBase: void refreshRefreshableViewSize(int,int)
+com.handmark.pulltorefresh.library.PullToRefreshBase: void setHeaderScroll(int)
+com.handmark.pulltorefresh.library.PullToRefreshBase: void smoothScrollTo(int)
+com.handmark.pulltorefresh.library.PullToRefreshBase: void smoothScrollTo(int,com.handmark.pulltorefresh.library.PullToRefreshBase$OnSmoothScrollFinishedListener)
+com.handmark.pulltorefresh.library.PullToRefreshBase: void smoothScrollToLonger(int)
+com.handmark.pulltorefresh.library.PullToRefreshBase: void updateUIForMode()
+com.handmark.pulltorefresh.library.PullToRefreshBase: void addRefreshableView(android.content.Context,android.view.View)
+com.handmark.pulltorefresh.library.PullToRefreshBase: void callRefreshListener()
+com.handmark.pulltorefresh.library.PullToRefreshBase: void init(android.content.Context,android.util.AttributeSet)
+com.handmark.pulltorefresh.library.PullToRefreshBase: boolean isReadyForPull()
+com.handmark.pulltorefresh.library.PullToRefreshBase: void pullEvent()
+com.handmark.pulltorefresh.library.PullToRefreshBase: android.widget.LinearLayout$LayoutParams getLoadingLayoutLayoutParams()
+com.handmark.pulltorefresh.library.PullToRefreshBase: int getMaximumPullScroll()
+com.handmark.pulltorefresh.library.PullToRefreshBase: void smoothScrollTo(int,long)
+com.handmark.pulltorefresh.library.PullToRefreshBase: void smoothScrollTo(int,long,long,com.handmark.pulltorefresh.library.PullToRefreshBase$OnSmoothScrollFinishedListener)
+com.handmark.pulltorefresh.library.PullToRefreshBase: void smoothScrollToAndBack(int)
+com.handmark.pulltorefresh.library.PullToRefreshBase: android.view.animation.Interpolator access$0(com.handmark.pulltorefresh.library.PullToRefreshBase)
+com.handmark.pulltorefresh.library.PullToRefreshBase: int[] $SWITCH_TABLE$com$handmark$pulltorefresh$library$PullToRefreshBase$Orientation()
+com.handmark.pulltorefresh.library.PullToRefreshBase: int[] $SWITCH_TABLE$com$handmark$pulltorefresh$library$PullToRefreshBase$State()
+com.handmark.pulltorefresh.library.PullToRefreshBase: int[] $SWITCH_TABLE$com$handmark$pulltorefresh$library$PullToRefreshBase$Mode()
+com.handmark.pulltorefresh.library.PullToRefreshBase: void access$4(com.handmark.pulltorefresh.library.PullToRefreshBase)
+com.handmark.pulltorefresh.library.PullToRefreshBase: void access$5(com.handmark.pulltorefresh.library.PullToRefreshBase,int,long,long,com.handmark.pulltorefresh.library.PullToRefreshBase$OnSmoothScrollFinishedListener)
+com.handmark.pulltorefresh.library.PullToRefreshBase$1
+com.handmark.pulltorefresh.library.PullToRefreshBase$1: com.handmark.pulltorefresh.library.PullToRefreshBase this$0
+com.handmark.pulltorefresh.library.PullToRefreshBase$1: PullToRefreshBase$1(com.handmark.pulltorefresh.library.PullToRefreshBase)
+com.handmark.pulltorefresh.library.PullToRefreshBase$1: void onSmoothScrollFinished()
+com.handmark.pulltorefresh.library.PullToRefreshBase$2
+com.handmark.pulltorefresh.library.PullToRefreshBase$2: com.handmark.pulltorefresh.library.PullToRefreshBase this$0
+com.handmark.pulltorefresh.library.PullToRefreshBase$2: PullToRefreshBase$2(com.handmark.pulltorefresh.library.PullToRefreshBase)
+com.handmark.pulltorefresh.library.PullToRefreshBase$2: void run()
+com.handmark.pulltorefresh.library.PullToRefreshBase$3
+com.handmark.pulltorefresh.library.PullToRefreshBase$3: com.handmark.pulltorefresh.library.PullToRefreshBase this$0
+com.handmark.pulltorefresh.library.PullToRefreshBase$3: PullToRefreshBase$3(com.handmark.pulltorefresh.library.PullToRefreshBase)
+com.handmark.pulltorefresh.library.PullToRefreshBase$3: void onSmoothScrollFinished()
+com.handmark.pulltorefresh.library.PullToRefreshBase$AnimationStyle
+com.handmark.pulltorefresh.library.PullToRefreshBase$AnimationStyle: com.handmark.pulltorefresh.library.PullToRefreshBase$AnimationStyle ROTATE
+com.handmark.pulltorefresh.library.PullToRefreshBase$AnimationStyle: com.handmark.pulltorefresh.library.PullToRefreshBase$AnimationStyle FLIP
+com.handmark.pulltorefresh.library.PullToRefreshBase$AnimationStyle: int[] $SWITCH_TABLE$com$handmark$pulltorefresh$library$PullToRefreshBase$AnimationStyle
+com.handmark.pulltorefresh.library.PullToRefreshBase$AnimationStyle: com.handmark.pulltorefresh.library.PullToRefreshBase$AnimationStyle[] ENUM$VALUES
+com.handmark.pulltorefresh.library.PullToRefreshBase$AnimationStyle: void <clinit>()
+com.handmark.pulltorefresh.library.PullToRefreshBase$AnimationStyle: PullToRefreshBase$AnimationStyle(java.lang.String,int)
+com.handmark.pulltorefresh.library.PullToRefreshBase$AnimationStyle: com.handmark.pulltorefresh.library.PullToRefreshBase$AnimationStyle getDefault()
+com.handmark.pulltorefresh.library.PullToRefreshBase$AnimationStyle: com.handmark.pulltorefresh.library.PullToRefreshBase$AnimationStyle mapIntToValue(int)
+com.handmark.pulltorefresh.library.PullToRefreshBase$AnimationStyle: com.handmark.pulltorefresh.library.internal.LoadingLayout createLoadingLayout(android.content.Context,com.handmark.pulltorefresh.library.PullToRefreshBase$Mode,com.handmark.pulltorefresh.library.PullToRefreshBase$Orientation,android.content.res.TypedArray)
+com.handmark.pulltorefresh.library.PullToRefreshBase$AnimationStyle: com.handmark.pulltorefresh.library.PullToRefreshBase$AnimationStyle[] values()
+com.handmark.pulltorefresh.library.PullToRefreshBase$AnimationStyle: com.handmark.pulltorefresh.library.PullToRefreshBase$AnimationStyle valueOf(java.lang.String)
+com.handmark.pulltorefresh.library.PullToRefreshBase$AnimationStyle: int[] $SWITCH_TABLE$com$handmark$pulltorefresh$library$PullToRefreshBase$AnimationStyle()
+com.handmark.pulltorefresh.library.PullToRefreshBase$Mode
+com.handmark.pulltorefresh.library.PullToRefreshBase$Mode: com.handmark.pulltorefresh.library.PullToRefreshBase$Mode DISABLED
+com.handmark.pulltorefresh.library.PullToRefreshBase$Mode: com.handmark.pulltorefresh.library.PullToRefreshBase$Mode PULL_FROM_START
+com.handmark.pulltorefresh.library.PullToRefreshBase$Mode: com.handmark.pulltorefresh.library.PullToRefreshBase$Mode PULL_FROM_END
+com.handmark.pulltorefresh.library.PullToRefreshBase$Mode: com.handmark.pulltorefresh.library.PullToRefreshBase$Mode BOTH
+com.handmark.pulltorefresh.library.PullToRefreshBase$Mode: com.handmark.pulltorefresh.library.PullToRefreshBase$Mode MANUAL_REFRESH_ONLY
+com.handmark.pulltorefresh.library.PullToRefreshBase$Mode: com.handmark.pulltorefresh.library.PullToRefreshBase$Mode PULL_DOWN_TO_REFRESH
+com.handmark.pulltorefresh.library.PullToRefreshBase$Mode: com.handmark.pulltorefresh.library.PullToRefreshBase$Mode PULL_UP_TO_REFRESH
+com.handmark.pulltorefresh.library.PullToRefreshBase$Mode: int mIntValue
+com.handmark.pulltorefresh.library.PullToRefreshBase$Mode: com.handmark.pulltorefresh.library.PullToRefreshBase$Mode[] ENUM$VALUES
+com.handmark.pulltorefresh.library.PullToRefreshBase$Mode: void <clinit>()
+com.handmark.pulltorefresh.library.PullToRefreshBase$Mode: com.handmark.pulltorefresh.library.PullToRefreshBase$Mode mapIntToValue(int)
+com.handmark.pulltorefresh.library.PullToRefreshBase$Mode: com.handmark.pulltorefresh.library.PullToRefreshBase$Mode getDefault()
+com.handmark.pulltorefresh.library.PullToRefreshBase$Mode: PullToRefreshBase$Mode(java.lang.String,int,int)
+com.handmark.pulltorefresh.library.PullToRefreshBase$Mode: boolean permitsPullToRefresh()
+com.handmark.pulltorefresh.library.PullToRefreshBase$Mode: boolean showHeaderLoadingLayout()
+com.handmark.pulltorefresh.library.PullToRefreshBase$Mode: boolean showFooterLoadingLayout()
+com.handmark.pulltorefresh.library.PullToRefreshBase$Mode: int getIntValue()
+com.handmark.pulltorefresh.library.PullToRefreshBase$Mode: com.handmark.pulltorefresh.library.PullToRefreshBase$Mode[] values()
+com.handmark.pulltorefresh.library.PullToRefreshBase$Mode: com.handmark.pulltorefresh.library.PullToRefreshBase$Mode valueOf(java.lang.String)
+com.handmark.pulltorefresh.library.PullToRefreshBase$OnLastItemVisibleListener
+com.handmark.pulltorefresh.library.PullToRefreshBase$OnLastItemVisibleListener: void onLastItemVisible()
+com.handmark.pulltorefresh.library.PullToRefreshBase$OnPullEventListener
+com.handmark.pulltorefresh.library.PullToRefreshBase$OnPullEventListener: void onPullEvent(com.handmark.pulltorefresh.library.PullToRefreshBase,com.handmark.pulltorefresh.library.PullToRefreshBase$State,com.handmark.pulltorefresh.library.PullToRefreshBase$Mode)
+com.handmark.pulltorefresh.library.PullToRefreshBase$OnRefreshListener
+com.handmark.pulltorefresh.library.PullToRefreshBase$OnRefreshListener: void onRefresh(com.handmark.pulltorefresh.library.PullToRefreshBase)
+com.handmark.pulltorefresh.library.PullToRefreshBase$OnRefreshListener2
+com.handmark.pulltorefresh.library.PullToRefreshBase$OnRefreshListener2: void onPullDownToRefresh(com.handmark.pulltorefresh.library.PullToRefreshBase)
+com.handmark.pulltorefresh.library.PullToRefreshBase$OnRefreshListener2: void onPullUpToRefresh(com.handmark.pulltorefresh.library.PullToRefreshBase)
+com.handmark.pulltorefresh.library.PullToRefreshBase$OnSmoothScrollFinishedListener
+com.handmark.pulltorefresh.library.PullToRefreshBase$OnSmoothScrollFinishedListener: void onSmoothScrollFinished()
+com.handmark.pulltorefresh.library.PullToRefreshBase$Orientation
+com.handmark.pulltorefresh.library.PullToRefreshBase$Orientation: com.handmark.pulltorefresh.library.PullToRefreshBase$Orientation VERTICAL
+com.handmark.pulltorefresh.library.PullToRefreshBase$Orientation: com.handmark.pulltorefresh.library.PullToRefreshBase$Orientation HORIZONTAL
+com.handmark.pulltorefresh.library.PullToRefreshBase$Orientation: com.handmark.pulltorefresh.library.PullToRefreshBase$Orientation[] ENUM$VALUES
+com.handmark.pulltorefresh.library.PullToRefreshBase$Orientation: void <clinit>()
+com.handmark.pulltorefresh.library.PullToRefreshBase$Orientation: PullToRefreshBase$Orientation(java.lang.String,int)
+com.handmark.pulltorefresh.library.PullToRefreshBase$Orientation: com.handmark.pulltorefresh.library.PullToRefreshBase$Orientation[] values()
+com.handmark.pulltorefresh.library.PullToRefreshBase$Orientation: com.handmark.pulltorefresh.library.PullToRefreshBase$Orientation valueOf(java.lang.String)
+com.handmark.pulltorefresh.library.PullToRefreshBase$SmoothScrollRunnable
+com.handmark.pulltorefresh.library.PullToRefreshBase$SmoothScrollRunnable: android.view.animation.Interpolator mInterpolator
+com.handmark.pulltorefresh.library.PullToRefreshBase$SmoothScrollRunnable: int mScrollToY
+com.handmark.pulltorefresh.library.PullToRefreshBase$SmoothScrollRunnable: int mScrollFromY
+com.handmark.pulltorefresh.library.PullToRefreshBase$SmoothScrollRunnable: long mDuration
+com.handmark.pulltorefresh.library.PullToRefreshBase$SmoothScrollRunnable: com.handmark.pulltorefresh.library.PullToRefreshBase$OnSmoothScrollFinishedListener mListener
+com.handmark.pulltorefresh.library.PullToRefreshBase$SmoothScrollRunnable: boolean mContinueRunning
+com.handmark.pulltorefresh.library.PullToRefreshBase$SmoothScrollRunnable: long mStartTime
+com.handmark.pulltorefresh.library.PullToRefreshBase$SmoothScrollRunnable: int mCurrentY
+com.handmark.pulltorefresh.library.PullToRefreshBase$SmoothScrollRunnable: com.handmark.pulltorefresh.library.PullToRefreshBase this$0
+com.handmark.pulltorefresh.library.PullToRefreshBase$SmoothScrollRunnable: PullToRefreshBase$SmoothScrollRunnable(com.handmark.pulltorefresh.library.PullToRefreshBase,int,int,long,com.handmark.pulltorefresh.library.PullToRefreshBase$OnSmoothScrollFinishedListener)
+com.handmark.pulltorefresh.library.PullToRefreshBase$SmoothScrollRunnable: void run()
+com.handmark.pulltorefresh.library.PullToRefreshBase$SmoothScrollRunnable: void stop()
+com.handmark.pulltorefresh.library.PullToRefreshBase$State
+com.handmark.pulltorefresh.library.PullToRefreshBase$State: com.handmark.pulltorefresh.library.PullToRefreshBase$State RESET
+com.handmark.pulltorefresh.library.PullToRefreshBase$State: com.handmark.pulltorefresh.library.PullToRefreshBase$State PULL_TO_REFRESH
+com.handmark.pulltorefresh.library.PullToRefreshBase$State: com.handmark.pulltorefresh.library.PullToRefreshBase$State RELEASE_TO_REFRESH
+com.handmark.pulltorefresh.library.PullToRefreshBase$State: com.handmark.pulltorefresh.library.PullToRefreshBase$State REFRESHING
+com.handmark.pulltorefresh.library.PullToRefreshBase$State: com.handmark.pulltorefresh.library.PullToRefreshBase$State MANUAL_REFRESHING
+com.handmark.pulltorefresh.library.PullToRefreshBase$State: com.handmark.pulltorefresh.library.PullToRefreshBase$State OVERSCROLLING
+com.handmark.pulltorefresh.library.PullToRefreshBase$State: int mIntValue
+com.handmark.pulltorefresh.library.PullToRefreshBase$State: com.handmark.pulltorefresh.library.PullToRefreshBase$State[] ENUM$VALUES
+com.handmark.pulltorefresh.library.PullToRefreshBase$State: void <clinit>()
+com.handmark.pulltorefresh.library.PullToRefreshBase$State: com.handmark.pulltorefresh.library.PullToRefreshBase$State mapIntToValue(int)
+com.handmark.pulltorefresh.library.PullToRefreshBase$State: PullToRefreshBase$State(java.lang.String,int,int)
+com.handmark.pulltorefresh.library.PullToRefreshBase$State: int getIntValue()
+com.handmark.pulltorefresh.library.PullToRefreshBase$State: com.handmark.pulltorefresh.library.PullToRefreshBase$State[] values()
+com.handmark.pulltorefresh.library.PullToRefreshBase$State: com.handmark.pulltorefresh.library.PullToRefreshBase$State valueOf(java.lang.String)
+com.handmark.pulltorefresh.library.PullToRefreshExpandableListView
+com.handmark.pulltorefresh.library.PullToRefreshExpandableListView: PullToRefreshExpandableListView(android.content.Context)
+com.handmark.pulltorefresh.library.PullToRefreshExpandableListView: PullToRefreshExpandableListView(android.content.Context,android.util.AttributeSet)
+com.handmark.pulltorefresh.library.PullToRefreshExpandableListView: PullToRefreshExpandableListView(android.content.Context,com.handmark.pulltorefresh.library.PullToRefreshBase$Mode)
+com.handmark.pulltorefresh.library.PullToRefreshExpandableListView: PullToRefreshExpandableListView(android.content.Context,com.handmark.pulltorefresh.library.PullToRefreshBase$Mode,com.handmark.pulltorefresh.library.PullToRefreshBase$AnimationStyle)
+com.handmark.pulltorefresh.library.PullToRefreshExpandableListView: com.handmark.pulltorefresh.library.PullToRefreshBase$Orientation getPullToRefreshScrollDirection()
+com.handmark.pulltorefresh.library.PullToRefreshExpandableListView: android.widget.ExpandableListView createRefreshableView(android.content.Context,android.util.AttributeSet)
+com.handmark.pulltorefresh.library.PullToRefreshExpandableListView: android.view.View createRefreshableView(android.content.Context,android.util.AttributeSet)
+com.handmark.pulltorefresh.library.PullToRefreshExpandableListView$InternalExpandableListView
+com.handmark.pulltorefresh.library.PullToRefreshExpandableListView$InternalExpandableListView: com.handmark.pulltorefresh.library.PullToRefreshExpandableListView this$0
+com.handmark.pulltorefresh.library.PullToRefreshExpandableListView$InternalExpandableListView: PullToRefreshExpandableListView$InternalExpandableListView(com.handmark.pulltorefresh.library.PullToRefreshExpandableListView,android.content.Context,android.util.AttributeSet)
+com.handmark.pulltorefresh.library.PullToRefreshExpandableListView$InternalExpandableListView: void setEmptyView(android.view.View)
+com.handmark.pulltorefresh.library.PullToRefreshExpandableListView$InternalExpandableListView: void setEmptyViewInternal(android.view.View)
+com.handmark.pulltorefresh.library.PullToRefreshExpandableListView$InternalExpandableListViewSDK9
+com.handmark.pulltorefresh.library.PullToRefreshExpandableListView$InternalExpandableListViewSDK9: com.handmark.pulltorefresh.library.PullToRefreshExpandableListView this$0
+com.handmark.pulltorefresh.library.PullToRefreshExpandableListView$InternalExpandableListViewSDK9: PullToRefreshExpandableListView$InternalExpandableListViewSDK9(com.handmark.pulltorefresh.library.PullToRefreshExpandableListView,android.content.Context,android.util.AttributeSet)
+com.handmark.pulltorefresh.library.PullToRefreshExpandableListView$InternalExpandableListViewSDK9: boolean overScrollBy(int,int,int,int,int,int,int,int,boolean)
+com.handmark.pulltorefresh.library.PullToRefreshGridView
+com.handmark.pulltorefresh.library.PullToRefreshGridView: PullToRefreshGridView(android.content.Context)
+com.handmark.pulltorefresh.library.PullToRefreshGridView: PullToRefreshGridView(android.content.Context,android.util.AttributeSet)
+com.handmark.pulltorefresh.library.PullToRefreshGridView: PullToRefreshGridView(android.content.Context,com.handmark.pulltorefresh.library.PullToRefreshBase$Mode)
+com.handmark.pulltorefresh.library.PullToRefreshGridView: PullToRefreshGridView(android.content.Context,com.handmark.pulltorefresh.library.PullToRefreshBase$Mode,com.handmark.pulltorefresh.library.PullToRefreshBase$AnimationStyle)
+com.handmark.pulltorefresh.library.PullToRefreshGridView: com.handmark.pulltorefresh.library.PullToRefreshBase$Orientation getPullToRefreshScrollDirection()
+com.handmark.pulltorefresh.library.PullToRefreshGridView: android.widget.GridView createRefreshableView(android.content.Context,android.util.AttributeSet)
+com.handmark.pulltorefresh.library.PullToRefreshGridView: android.view.View createRefreshableView(android.content.Context,android.util.AttributeSet)
+com.handmark.pulltorefresh.library.PullToRefreshGridView$InternalGridView
+com.handmark.pulltorefresh.library.PullToRefreshGridView$InternalGridView: com.handmark.pulltorefresh.library.PullToRefreshGridView this$0
+com.handmark.pulltorefresh.library.PullToRefreshGridView$InternalGridView: PullToRefreshGridView$InternalGridView(com.handmark.pulltorefresh.library.PullToRefreshGridView,android.content.Context,android.util.AttributeSet)
+com.handmark.pulltorefresh.library.PullToRefreshGridView$InternalGridView: void setEmptyView(android.view.View)
+com.handmark.pulltorefresh.library.PullToRefreshGridView$InternalGridView: void setEmptyViewInternal(android.view.View)
+com.handmark.pulltorefresh.library.PullToRefreshGridView$InternalGridViewSDK9
+com.handmark.pulltorefresh.library.PullToRefreshGridView$InternalGridViewSDK9: com.handmark.pulltorefresh.library.PullToRefreshGridView this$0
+com.handmark.pulltorefresh.library.PullToRefreshGridView$InternalGridViewSDK9: PullToRefreshGridView$InternalGridViewSDK9(com.handmark.pulltorefresh.library.PullToRefreshGridView,android.content.Context,android.util.AttributeSet)
+com.handmark.pulltorefresh.library.PullToRefreshGridView$InternalGridViewSDK9: boolean overScrollBy(int,int,int,int,int,int,int,int,boolean)
+com.handmark.pulltorefresh.library.PullToRefreshHorizontalScrollView
+com.handmark.pulltorefresh.library.PullToRefreshHorizontalScrollView: PullToRefreshHorizontalScrollView(android.content.Context)
+com.handmark.pulltorefresh.library.PullToRefreshHorizontalScrollView: PullToRefreshHorizontalScrollView(android.content.Context,android.util.AttributeSet)
+com.handmark.pulltorefresh.library.PullToRefreshHorizontalScrollView: PullToRefreshHorizontalScrollView(android.content.Context,com.handmark.pulltorefresh.library.PullToRefreshBase$Mode)
+com.handmark.pulltorefresh.library.PullToRefreshHorizontalScrollView: PullToRefreshHorizontalScrollView(android.content.Context,com.handmark.pulltorefresh.library.PullToRefreshBase$Mode,com.handmark.pulltorefresh.library.PullToRefreshBase$AnimationStyle)
+com.handmark.pulltorefresh.library.PullToRefreshHorizontalScrollView: com.handmark.pulltorefresh.library.PullToRefreshBase$Orientation getPullToRefreshScrollDirection()
+com.handmark.pulltorefresh.library.PullToRefreshHorizontalScrollView: android.widget.HorizontalScrollView createRefreshableView(android.content.Context,android.util.AttributeSet)
+com.handmark.pulltorefresh.library.PullToRefreshHorizontalScrollView: boolean isReadyForPullStart()
+com.handmark.pulltorefresh.library.PullToRefreshHorizontalScrollView: boolean isReadyForPullEnd()
+com.handmark.pulltorefresh.library.PullToRefreshHorizontalScrollView: android.view.View createRefreshableView(android.content.Context,android.util.AttributeSet)
+com.handmark.pulltorefresh.library.PullToRefreshHorizontalScrollView$InternalHorizontalScrollViewSDK9
+com.handmark.pulltorefresh.library.PullToRefreshHorizontalScrollView$InternalHorizontalScrollViewSDK9: com.handmark.pulltorefresh.library.PullToRefreshHorizontalScrollView this$0
+com.handmark.pulltorefresh.library.PullToRefreshHorizontalScrollView$InternalHorizontalScrollViewSDK9: PullToRefreshHorizontalScrollView$InternalHorizontalScrollViewSDK9(com.handmark.pulltorefresh.library.PullToRefreshHorizontalScrollView,android.content.Context,android.util.AttributeSet)
+com.handmark.pulltorefresh.library.PullToRefreshHorizontalScrollView$InternalHorizontalScrollViewSDK9: boolean overScrollBy(int,int,int,int,int,int,int,int,boolean)
+com.handmark.pulltorefresh.library.PullToRefreshHorizontalScrollView$InternalHorizontalScrollViewSDK9: int getScrollRange()
+com.handmark.pulltorefresh.library.PullToRefreshListView
+com.handmark.pulltorefresh.library.PullToRefreshListView: com.handmark.pulltorefresh.library.internal.LoadingLayout mHeaderLoadingView
+com.handmark.pulltorefresh.library.PullToRefreshListView: com.handmark.pulltorefresh.library.internal.LoadingLayout mFooterLoadingView
+com.handmark.pulltorefresh.library.PullToRefreshListView: android.widget.FrameLayout mLvFooterLoadingFrame
+com.handmark.pulltorefresh.library.PullToRefreshListView: boolean mListViewExtrasEnabled
+com.handmark.pulltorefresh.library.PullToRefreshListView: int[] $SWITCH_TABLE$com$handmark$pulltorefresh$library$PullToRefreshBase$Mode
+com.handmark.pulltorefresh.library.PullToRefreshListView: PullToRefreshListView(android.content.Context)
+com.handmark.pulltorefresh.library.PullToRefreshListView: PullToRefreshListView(android.content.Context,android.util.AttributeSet)
+com.handmark.pulltorefresh.library.PullToRefreshListView: PullToRefreshListView(android.content.Context,com.handmark.pulltorefresh.library.PullToRefreshBase$Mode)
+com.handmark.pulltorefresh.library.PullToRefreshListView: PullToRefreshListView(android.content.Context,com.handmark.pulltorefresh.library.PullToRefreshBase$Mode,com.handmark.pulltorefresh.library.PullToRefreshBase$AnimationStyle)
+com.handmark.pulltorefresh.library.PullToRefreshListView: com.handmark.pulltorefresh.library.PullToRefreshBase$Orientation getPullToRefreshScrollDirection()
+com.handmark.pulltorefresh.library.PullToRefreshListView: void onRefreshing(boolean)
+com.handmark.pulltorefresh.library.PullToRefreshListView: void onReset()
+com.handmark.pulltorefresh.library.PullToRefreshListView: com.handmark.pulltorefresh.library.LoadingLayoutProxy createLoadingLayoutProxy(boolean,boolean)
+com.handmark.pulltorefresh.library.PullToRefreshListView: android.widget.ListView createListView(android.content.Context,android.util.AttributeSet)
+com.handmark.pulltorefresh.library.PullToRefreshListView: android.widget.ListView createRefreshableView(android.content.Context,android.util.AttributeSet)
+com.handmark.pulltorefresh.library.PullToRefreshListView: void handleStyledAttributes(android.content.res.TypedArray)
+com.handmark.pulltorefresh.library.PullToRefreshListView: android.view.View createRefreshableView(android.content.Context,android.util.AttributeSet)
+com.handmark.pulltorefresh.library.PullToRefreshListView: android.widget.FrameLayout access$1(com.handmark.pulltorefresh.library.PullToRefreshListView)
+com.handmark.pulltorefresh.library.PullToRefreshListView: int[] $SWITCH_TABLE$com$handmark$pulltorefresh$library$PullToRefreshBase$Mode()
+com.handmark.pulltorefresh.library.PullToRefreshListView$InternalListView
+com.handmark.pulltorefresh.library.PullToRefreshListView$InternalListView: boolean mAddedLvFooter
+com.handmark.pulltorefresh.library.PullToRefreshListView$InternalListView: com.handmark.pulltorefresh.library.PullToRefreshListView this$0
+com.handmark.pulltorefresh.library.PullToRefreshListView$InternalListView: PullToRefreshListView$InternalListView(com.handmark.pulltorefresh.library.PullToRefreshListView,android.content.Context,android.util.AttributeSet)
+com.handmark.pulltorefresh.library.PullToRefreshListView$InternalListView: void dispatchDraw(android.graphics.Canvas)
+com.handmark.pulltorefresh.library.PullToRefreshListView$InternalListView: boolean dispatchTouchEvent(android.view.MotionEvent)
+com.handmark.pulltorefresh.library.PullToRefreshListView$InternalListView: void setAdapter(android.widget.ListAdapter)
+com.handmark.pulltorefresh.library.PullToRefreshListView$InternalListView: void setEmptyView(android.view.View)
+com.handmark.pulltorefresh.library.PullToRefreshListView$InternalListView: void setEmptyViewInternal(android.view.View)
+com.handmark.pulltorefresh.library.PullToRefreshListView$InternalListViewSDK9
+com.handmark.pulltorefresh.library.PullToRefreshListView$InternalListViewSDK9: com.handmark.pulltorefresh.library.PullToRefreshListView this$0
+com.handmark.pulltorefresh.library.PullToRefreshListView$InternalListViewSDK9: PullToRefreshListView$InternalListViewSDK9(com.handmark.pulltorefresh.library.PullToRefreshListView,android.content.Context,android.util.AttributeSet)
+com.handmark.pulltorefresh.library.PullToRefreshListView$InternalListViewSDK9: boolean overScrollBy(int,int,int,int,int,int,int,int,boolean)
+com.handmark.pulltorefresh.library.PullToRefreshScrollView
+com.handmark.pulltorefresh.library.PullToRefreshScrollView: PullToRefreshScrollView(android.content.Context)
+com.handmark.pulltorefresh.library.PullToRefreshScrollView: PullToRefreshScrollView(android.content.Context,android.util.AttributeSet)
+com.handmark.pulltorefresh.library.PullToRefreshScrollView: PullToRefreshScrollView(android.content.Context,com.handmark.pulltorefresh.library.PullToRefreshBase$Mode)
+com.handmark.pulltorefresh.library.PullToRefreshScrollView: PullToRefreshScrollView(android.content.Context,com.handmark.pulltorefresh.library.PullToRefreshBase$Mode,com.handmark.pulltorefresh.library.PullToRefreshBase$AnimationStyle)
+com.handmark.pulltorefresh.library.PullToRefreshScrollView: com.handmark.pulltorefresh.library.PullToRefreshBase$Orientation getPullToRefreshScrollDirection()
+com.handmark.pulltorefresh.library.PullToRefreshScrollView: android.widget.ScrollView createRefreshableView(android.content.Context,android.util.AttributeSet)
+com.handmark.pulltorefresh.library.PullToRefreshScrollView: boolean isReadyForPullStart()
+com.handmark.pulltorefresh.library.PullToRefreshScrollView: boolean isReadyForPullEnd()
+com.handmark.pulltorefresh.library.PullToRefreshScrollView: android.view.View createRefreshableView(android.content.Context,android.util.AttributeSet)
+com.handmark.pulltorefresh.library.PullToRefreshScrollView$InternalScrollViewSDK9
+com.handmark.pulltorefresh.library.PullToRefreshScrollView$InternalScrollViewSDK9: com.handmark.pulltorefresh.library.PullToRefreshScrollView this$0
+com.handmark.pulltorefresh.library.PullToRefreshScrollView$InternalScrollViewSDK9: PullToRefreshScrollView$InternalScrollViewSDK9(com.handmark.pulltorefresh.library.PullToRefreshScrollView,android.content.Context,android.util.AttributeSet)
+com.handmark.pulltorefresh.library.PullToRefreshScrollView$InternalScrollViewSDK9: boolean overScrollBy(int,int,int,int,int,int,int,int,boolean)
+com.handmark.pulltorefresh.library.PullToRefreshScrollView$InternalScrollViewSDK9: int getScrollRange()
+com.handmark.pulltorefresh.library.PullToRefreshWebView
+com.handmark.pulltorefresh.library.PullToRefreshWebView: com.handmark.pulltorefresh.library.PullToRefreshBase$OnRefreshListener defaultOnRefreshListener
+com.handmark.pulltorefresh.library.PullToRefreshWebView: android.webkit.WebChromeClient defaultWebChromeClient
+com.handmark.pulltorefresh.library.PullToRefreshWebView: void <clinit>()
+com.handmark.pulltorefresh.library.PullToRefreshWebView: PullToRefreshWebView(android.content.Context)
+com.handmark.pulltorefresh.library.PullToRefreshWebView: PullToRefreshWebView(android.content.Context,android.util.AttributeSet)
+com.handmark.pulltorefresh.library.PullToRefreshWebView: PullToRefreshWebView(android.content.Context,com.handmark.pulltorefresh.library.PullToRefreshBase$Mode)
+com.handmark.pulltorefresh.library.PullToRefreshWebView: PullToRefreshWebView(android.content.Context,com.handmark.pulltorefresh.library.PullToRefreshBase$Mode,com.handmark.pulltorefresh.library.PullToRefreshBase$AnimationStyle)
+com.handmark.pulltorefresh.library.PullToRefreshWebView: com.handmark.pulltorefresh.library.PullToRefreshBase$Orientation getPullToRefreshScrollDirection()
+com.handmark.pulltorefresh.library.PullToRefreshWebView: android.webkit.WebView createRefreshableView(android.content.Context,android.util.AttributeSet)
+com.handmark.pulltorefresh.library.PullToRefreshWebView: boolean isReadyForPullStart()
+com.handmark.pulltorefresh.library.PullToRefreshWebView: boolean isReadyForPullEnd()
+com.handmark.pulltorefresh.library.PullToRefreshWebView: void onPtrRestoreInstanceState(android.os.Bundle)
+com.handmark.pulltorefresh.library.PullToRefreshWebView: void onPtrSaveInstanceState(android.os.Bundle)
+com.handmark.pulltorefresh.library.PullToRefreshWebView: android.view.View createRefreshableView(android.content.Context,android.util.AttributeSet)
+com.handmark.pulltorefresh.library.PullToRefreshWebView$1
+com.handmark.pulltorefresh.library.PullToRefreshWebView$1: PullToRefreshWebView$1()
+com.handmark.pulltorefresh.library.PullToRefreshWebView$1: void onRefresh(com.handmark.pulltorefresh.library.PullToRefreshBase)
+com.handmark.pulltorefresh.library.PullToRefreshWebView$2
+com.handmark.pulltorefresh.library.PullToRefreshWebView$2: com.handmark.pulltorefresh.library.PullToRefreshWebView this$0
+com.handmark.pulltorefresh.library.PullToRefreshWebView$2: PullToRefreshWebView$2(com.handmark.pulltorefresh.library.PullToRefreshWebView)
+com.handmark.pulltorefresh.library.PullToRefreshWebView$2: void onProgressChanged(android.webkit.WebView,int)
+com.handmark.pulltorefresh.library.PullToRefreshWebView$InternalWebViewSDK9
+com.handmark.pulltorefresh.library.PullToRefreshWebView$InternalWebViewSDK9: int OVERSCROLL_FUZZY_THRESHOLD
+com.handmark.pulltorefresh.library.PullToRefreshWebView$InternalWebViewSDK9: float OVERSCROLL_SCALE_FACTOR
+com.handmark.pulltorefresh.library.PullToRefreshWebView$InternalWebViewSDK9: com.handmark.pulltorefresh.library.PullToRefreshWebView this$0
+com.handmark.pulltorefresh.library.PullToRefreshWebView$InternalWebViewSDK9: PullToRefreshWebView$InternalWebViewSDK9(com.handmark.pulltorefresh.library.PullToRefreshWebView,android.content.Context,android.util.AttributeSet)
+com.handmark.pulltorefresh.library.PullToRefreshWebView$InternalWebViewSDK9: boolean overScrollBy(int,int,int,int,int,int,int,int,boolean)
+com.handmark.pulltorefresh.library.PullToRefreshWebView$InternalWebViewSDK9: int getScrollRange()
+com.handmark.pulltorefresh.library.extras.PullToRefreshWebView2
+com.handmark.pulltorefresh.library.extras.PullToRefreshWebView2: java.lang.String JS_INTERFACE_PKG
+com.handmark.pulltorefresh.library.extras.PullToRefreshWebView2: java.lang.String DEF_JS_READY_PULL_DOWN_CALL
+com.handmark.pulltorefresh.library.extras.PullToRefreshWebView2: java.lang.String DEF_JS_READY_PULL_UP_CALL
+com.handmark.pulltorefresh.library.extras.PullToRefreshWebView2: com.handmark.pulltorefresh.library.extras.PullToRefreshWebView2$JsValueCallback mJsCallback
+com.handmark.pulltorefresh.library.extras.PullToRefreshWebView2: java.util.concurrent.atomic.AtomicBoolean mIsReadyForPullDown
+com.handmark.pulltorefresh.library.extras.PullToRefreshWebView2: java.util.concurrent.atomic.AtomicBoolean mIsReadyForPullUp
+com.handmark.pulltorefresh.library.extras.PullToRefreshWebView2: PullToRefreshWebView2(android.content.Context)
+com.handmark.pulltorefresh.library.extras.PullToRefreshWebView2: PullToRefreshWebView2(android.content.Context,android.util.AttributeSet)
+com.handmark.pulltorefresh.library.extras.PullToRefreshWebView2: PullToRefreshWebView2(android.content.Context,com.handmark.pulltorefresh.library.PullToRefreshBase$Mode)
+com.handmark.pulltorefresh.library.extras.PullToRefreshWebView2: android.webkit.WebView createRefreshableView(android.content.Context,android.util.AttributeSet)
+com.handmark.pulltorefresh.library.extras.PullToRefreshWebView2: boolean isReadyForPullStart()
+com.handmark.pulltorefresh.library.extras.PullToRefreshWebView2: boolean isReadyForPullEnd()
+com.handmark.pulltorefresh.library.extras.PullToRefreshWebView2: java.util.concurrent.atomic.AtomicBoolean access$0(com.handmark.pulltorefresh.library.extras.PullToRefreshWebView2)
+com.handmark.pulltorefresh.library.extras.PullToRefreshWebView2: java.util.concurrent.atomic.AtomicBoolean access$1(com.handmark.pulltorefresh.library.extras.PullToRefreshWebView2)
+com.handmark.pulltorefresh.library.extras.PullToRefreshWebView2$JsValueCallback
+com.handmark.pulltorefresh.library.extras.PullToRefreshWebView2$JsValueCallback: com.handmark.pulltorefresh.library.extras.PullToRefreshWebView2 this$0
+com.handmark.pulltorefresh.library.extras.PullToRefreshWebView2$JsValueCallback: PullToRefreshWebView2$JsValueCallback(com.handmark.pulltorefresh.library.extras.PullToRefreshWebView2)
+com.handmark.pulltorefresh.library.extras.PullToRefreshWebView2$JsValueCallback: void isReadyForPullUpResponse(boolean)
+com.handmark.pulltorefresh.library.extras.PullToRefreshWebView2$JsValueCallback: void isReadyForPullDownResponse(boolean)
+com.handmark.pulltorefresh.library.extras.SoundPullEventListener
+com.handmark.pulltorefresh.library.extras.SoundPullEventListener: android.content.Context mContext
+com.handmark.pulltorefresh.library.extras.SoundPullEventListener: java.util.HashMap mSoundMap
+com.handmark.pulltorefresh.library.extras.SoundPullEventListener: android.media.MediaPlayer mCurrentMediaPlayer
+com.handmark.pulltorefresh.library.extras.SoundPullEventListener: SoundPullEventListener(android.content.Context)
+com.handmark.pulltorefresh.library.extras.SoundPullEventListener: void onPullEvent(com.handmark.pulltorefresh.library.PullToRefreshBase,com.handmark.pulltorefresh.library.PullToRefreshBase$State,com.handmark.pulltorefresh.library.PullToRefreshBase$Mode)
+com.handmark.pulltorefresh.library.extras.SoundPullEventListener: void addSoundEvent(com.handmark.pulltorefresh.library.PullToRefreshBase$State,int)
+com.handmark.pulltorefresh.library.extras.SoundPullEventListener: void clearSounds()
+com.handmark.pulltorefresh.library.extras.SoundPullEventListener: android.media.MediaPlayer getCurrentMediaPlayer()
+com.handmark.pulltorefresh.library.extras.SoundPullEventListener: void playSound(int)
+com.handmark.pulltorefresh.library.internal.EmptyViewMethodAccessor
+com.handmark.pulltorefresh.library.internal.EmptyViewMethodAccessor: void setEmptyViewInternal(android.view.View)
+com.handmark.pulltorefresh.library.internal.EmptyViewMethodAccessor: void setEmptyView(android.view.View)
+com.handmark.pulltorefresh.library.internal.FlipLoadingLayout
+com.handmark.pulltorefresh.library.internal.FlipLoadingLayout: int FLIP_ANIMATION_DURATION
+com.handmark.pulltorefresh.library.internal.FlipLoadingLayout: android.view.animation.Animation mRotateAnimation
+com.handmark.pulltorefresh.library.internal.FlipLoadingLayout: android.view.animation.Animation mResetRotateAnimation
+com.handmark.pulltorefresh.library.internal.FlipLoadingLayout: int[] $SWITCH_TABLE$com$handmark$pulltorefresh$library$PullToRefreshBase$Mode
+com.handmark.pulltorefresh.library.internal.FlipLoadingLayout: FlipLoadingLayout(android.content.Context,com.handmark.pulltorefresh.library.PullToRefreshBase$Mode,com.handmark.pulltorefresh.library.PullToRefreshBase$Orientation,android.content.res.TypedArray)
+com.handmark.pulltorefresh.library.internal.FlipLoadingLayout: void onLoadingDrawableSet(android.graphics.drawable.Drawable)
+com.handmark.pulltorefresh.library.internal.FlipLoadingLayout: void onPullImpl(float)
+com.handmark.pulltorefresh.library.internal.FlipLoadingLayout: void pullToRefreshImpl()
+com.handmark.pulltorefresh.library.internal.FlipLoadingLayout: void refreshingImpl()
+com.handmark.pulltorefresh.library.internal.FlipLoadingLayout: void releaseToRefreshImpl()
+com.handmark.pulltorefresh.library.internal.FlipLoadingLayout: void resetImpl()
+com.handmark.pulltorefresh.library.internal.FlipLoadingLayout: int getDefaultDrawableResId()
+com.handmark.pulltorefresh.library.internal.FlipLoadingLayout: float getDrawableRotationAngle()
+com.handmark.pulltorefresh.library.internal.FlipLoadingLayout: int[] $SWITCH_TABLE$com$handmark$pulltorefresh$library$PullToRefreshBase$Mode()
+com.handmark.pulltorefresh.library.internal.IndicatorLayout
+com.handmark.pulltorefresh.library.internal.IndicatorLayout: int DEFAULT_ROTATION_ANIMATION_DURATION
+com.handmark.pulltorefresh.library.internal.IndicatorLayout: android.view.animation.Animation mInAnim
+com.handmark.pulltorefresh.library.internal.IndicatorLayout: android.view.animation.Animation mOutAnim
+com.handmark.pulltorefresh.library.internal.IndicatorLayout: android.widget.ImageView mArrowImageView
+com.handmark.pulltorefresh.library.internal.IndicatorLayout: android.view.animation.Animation mRotateAnimation
+com.handmark.pulltorefresh.library.internal.IndicatorLayout: android.view.animation.Animation mResetRotateAnimation
+com.handmark.pulltorefresh.library.internal.IndicatorLayout: int[] $SWITCH_TABLE$com$handmark$pulltorefresh$library$PullToRefreshBase$Mode
+com.handmark.pulltorefresh.library.internal.IndicatorLayout: IndicatorLayout(android.content.Context,com.handmark.pulltorefresh.library.PullToRefreshBase$Mode)
+com.handmark.pulltorefresh.library.internal.IndicatorLayout: boolean isVisible()
+com.handmark.pulltorefresh.library.internal.IndicatorLayout: void hide()
+com.handmark.pulltorefresh.library.internal.IndicatorLayout: void show()
+com.handmark.pulltorefresh.library.internal.IndicatorLayout: void onAnimationEnd(android.view.animation.Animation)
+com.handmark.pulltorefresh.library.internal.IndicatorLayout: void onAnimationRepeat(android.view.animation.Animation)
+com.handmark.pulltorefresh.library.internal.IndicatorLayout: void onAnimationStart(android.view.animation.Animation)
+com.handmark.pulltorefresh.library.internal.IndicatorLayout: void releaseToRefresh()
+com.handmark.pulltorefresh.library.internal.IndicatorLayout: void pullToRefresh()
+com.handmark.pulltorefresh.library.internal.IndicatorLayout: int[] $SWITCH_TABLE$com$handmark$pulltorefresh$library$PullToRefreshBase$Mode()
+com.handmark.pulltorefresh.library.internal.LoadingLayout
+com.handmark.pulltorefresh.library.internal.LoadingLayout: java.lang.String LOG_TAG
+com.handmark.pulltorefresh.library.internal.LoadingLayout: android.view.animation.Interpolator ANIMATION_INTERPOLATOR
+com.handmark.pulltorefresh.library.internal.LoadingLayout: android.widget.FrameLayout mInnerLayout
+com.handmark.pulltorefresh.library.internal.LoadingLayout: android.widget.ImageView mHeaderImage
+com.handmark.pulltorefresh.library.internal.LoadingLayout: android.widget.ProgressBar mHeaderProgress
+com.handmark.pulltorefresh.library.internal.LoadingLayout: boolean mUseIntrinsicAnimation
+com.handmark.pulltorefresh.library.internal.LoadingLayout: android.widget.TextView mHeaderText
+com.handmark.pulltorefresh.library.internal.LoadingLayout: android.widget.TextView mSubHeaderText
+com.handmark.pulltorefresh.library.internal.LoadingLayout: com.handmark.pulltorefresh.library.PullToRefreshBase$Mode mMode
+com.handmark.pulltorefresh.library.internal.LoadingLayout: com.handmark.pulltorefresh.library.PullToRefreshBase$Orientation mScrollDirection
+com.handmark.pulltorefresh.library.internal.LoadingLayout: java.lang.CharSequence mPullLabel
+com.handmark.pulltorefresh.library.internal.LoadingLayout: java.lang.CharSequence mRefreshingLabel
+com.handmark.pulltorefresh.library.internal.LoadingLayout: java.lang.CharSequence mReleaseLabel
+com.handmark.pulltorefresh.library.internal.LoadingLayout: int[] $SWITCH_TABLE$com$handmark$pulltorefresh$library$PullToRefreshBase$Orientation
+com.handmark.pulltorefresh.library.internal.LoadingLayout: int[] $SWITCH_TABLE$com$handmark$pulltorefresh$library$PullToRefreshBase$Mode
+com.handmark.pulltorefresh.library.internal.LoadingLayout: void <clinit>()
+com.handmark.pulltorefresh.library.internal.LoadingLayout: LoadingLayout(android.content.Context,com.handmark.pulltorefresh.library.PullToRefreshBase$Mode,com.handmark.pulltorefresh.library.PullToRefreshBase$Orientation,android.content.res.TypedArray)
+com.handmark.pulltorefresh.library.internal.LoadingLayout: void setHeight(int)
+com.handmark.pulltorefresh.library.internal.LoadingLayout: void setWidth(int)
+com.handmark.pulltorefresh.library.internal.LoadingLayout: int getContentSize()
+com.handmark.pulltorefresh.library.internal.LoadingLayout: void hideAllViews()
+com.handmark.pulltorefresh.library.internal.LoadingLayout: void onPull(float)
+com.handmark.pulltorefresh.library.internal.LoadingLayout: void pullToRefresh()
+com.handmark.pulltorefresh.library.internal.LoadingLayout: void refreshing()
+com.handmark.pulltorefresh.library.internal.LoadingLayout: void releaseToRefresh()
+com.handmark.pulltorefresh.library.internal.LoadingLayout: void reset()
+com.handmark.pulltorefresh.library.internal.LoadingLayout: void setLastUpdatedLabel(java.lang.CharSequence)
+com.handmark.pulltorefresh.library.internal.LoadingLayout: void setLoadingDrawable(android.graphics.drawable.Drawable)
+com.handmark.pulltorefresh.library.internal.LoadingLayout: void setPullLabel(java.lang.CharSequence)
+com.handmark.pulltorefresh.library.internal.LoadingLayout: void setRefreshingLabel(java.lang.CharSequence)
+com.handmark.pulltorefresh.library.internal.LoadingLayout: void setReleaseLabel(java.lang.CharSequence)
+com.handmark.pulltorefresh.library.internal.LoadingLayout: void setTextTypeface(android.graphics.Typeface)
+com.handmark.pulltorefresh.library.internal.LoadingLayout: void showInvisibleViews()
+com.handmark.pulltorefresh.library.internal.LoadingLayout: int getDefaultDrawableResId()
+com.handmark.pulltorefresh.library.internal.LoadingLayout: void onLoadingDrawableSet(android.graphics.drawable.Drawable)
+com.handmark.pulltorefresh.library.internal.LoadingLayout: void onPullImpl(float)
+com.handmark.pulltorefresh.library.internal.LoadingLayout: void pullToRefreshImpl()
+com.handmark.pulltorefresh.library.internal.LoadingLayout: void refreshingImpl()
+com.handmark.pulltorefresh.library.internal.LoadingLayout: void releaseToRefreshImpl()
+com.handmark.pulltorefresh.library.internal.LoadingLayout: void resetImpl()
+com.handmark.pulltorefresh.library.internal.LoadingLayout: void setSubHeaderText(java.lang.CharSequence)
+com.handmark.pulltorefresh.library.internal.LoadingLayout: void setSubTextAppearance(int)
+com.handmark.pulltorefresh.library.internal.LoadingLayout: void setSubTextColor(android.content.res.ColorStateList)
+com.handmark.pulltorefresh.library.internal.LoadingLayout: void setTextAppearance(int)
+com.handmark.pulltorefresh.library.internal.LoadingLayout: void setTextColor(android.content.res.ColorStateList)
+com.handmark.pulltorefresh.library.internal.LoadingLayout: int[] $SWITCH_TABLE$com$handmark$pulltorefresh$library$PullToRefreshBase$Orientation()
+com.handmark.pulltorefresh.library.internal.LoadingLayout: int[] $SWITCH_TABLE$com$handmark$pulltorefresh$library$PullToRefreshBase$Mode()
+com.handmark.pulltorefresh.library.internal.RotateLoadingLayout
+com.handmark.pulltorefresh.library.internal.RotateLoadingLayout: int ROTATION_ANIMATION_DURATION
+com.handmark.pulltorefresh.library.internal.RotateLoadingLayout: android.view.animation.Animation mRotateAnimation
+com.handmark.pulltorefresh.library.internal.RotateLoadingLayout: android.graphics.Matrix mHeaderImageMatrix
+com.handmark.pulltorefresh.library.internal.RotateLoadingLayout: float mRotationPivotX
+com.handmark.pulltorefresh.library.internal.RotateLoadingLayout: float mRotationPivotY
+com.handmark.pulltorefresh.library.internal.RotateLoadingLayout: boolean mRotateDrawableWhilePulling
+com.handmark.pulltorefresh.library.internal.RotateLoadingLayout: RotateLoadingLayout(android.content.Context,com.handmark.pulltorefresh.library.PullToRefreshBase$Mode,com.handmark.pulltorefresh.library.PullToRefreshBase$Orientation,android.content.res.TypedArray)
+com.handmark.pulltorefresh.library.internal.RotateLoadingLayout: void onLoadingDrawableSet(android.graphics.drawable.Drawable)
+com.handmark.pulltorefresh.library.internal.RotateLoadingLayout: void onPullImpl(float)
+com.handmark.pulltorefresh.library.internal.RotateLoadingLayout: void refreshingImpl()
+com.handmark.pulltorefresh.library.internal.RotateLoadingLayout: void resetImpl()
+com.handmark.pulltorefresh.library.internal.RotateLoadingLayout: void resetImageRotation()
+com.handmark.pulltorefresh.library.internal.RotateLoadingLayout: void pullToRefreshImpl()
+com.handmark.pulltorefresh.library.internal.RotateLoadingLayout: void releaseToRefreshImpl()
+com.handmark.pulltorefresh.library.internal.RotateLoadingLayout: int getDefaultDrawableResId()
+com.handmark.pulltorefresh.library.internal.Utils
+com.handmark.pulltorefresh.library.internal.Utils: java.lang.String LOG_TAG
+com.handmark.pulltorefresh.library.internal.Utils: Utils()
+com.handmark.pulltorefresh.library.internal.Utils: void warnDeprecation(java.lang.String,java.lang.String)
+com.handmark.pulltorefresh.library.internal.ViewCompat
+com.handmark.pulltorefresh.library.internal.ViewCompat: ViewCompat()
+com.handmark.pulltorefresh.library.internal.ViewCompat: void postOnAnimation(android.view.View,java.lang.Runnable)
+com.handmark.pulltorefresh.library.internal.ViewCompat: void setBackground(android.view.View,android.graphics.drawable.Drawable)
+com.handmark.pulltorefresh.library.internal.ViewCompat: void setLayerType(android.view.View,int)
+com.handmark.pulltorefresh.library.internal.ViewCompat$SDK11
+com.handmark.pulltorefresh.library.internal.ViewCompat$SDK11: ViewCompat$SDK11()
+com.handmark.pulltorefresh.library.internal.ViewCompat$SDK11: void setLayerType(android.view.View,int)
+com.handmark.pulltorefresh.library.internal.ViewCompat$SDK16
+com.handmark.pulltorefresh.library.internal.ViewCompat$SDK16: ViewCompat$SDK16()
+com.handmark.pulltorefresh.library.internal.ViewCompat$SDK16: void postOnAnimation(android.view.View,java.lang.Runnable)
+com.handmark.pulltorefresh.library.internal.ViewCompat$SDK16: void setBackground(android.view.View,android.graphics.drawable.Drawable)

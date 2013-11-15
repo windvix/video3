@@ -17,11 +17,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:focusableInTouchMode="true"
             android:layout_weight="0" >
 
             <RelativeLayout
-                android:id="@+id/leftHead"
+                android:id="@+id/oneHead"
                 android:layout_width="@dimen/select_img_height"
                 android:layout_height="@dimen/select_img_height"
                 android:layout_alignParentLeft="true"
@@ -43,7 +42,7 @@
             </RelativeLayout>
 
             <RelativeLayout
-                android:id="@+id/midHead"
+                android:id="@+id/twoHead"
                 android:layout_width="@dimen/select_img_height"
                 android:layout_height="@dimen/select_img_height"
                 android:layout_centerInParent="true" >
@@ -62,8 +61,32 @@
                     android:src="@drawable/head_select_bg_trans" />
             </RelativeLayout>
 
+            
+                        <RelativeLayout
+                android:id="@+id/fourHead"
+                android:layout_width="@dimen/select_img_height"
+                android:layout_height="@dimen/select_img_height"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/select_img_left_margin" >
+
+                <com.athudong.video.component.RoundImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/test_head_04"
+                    android:tag="head" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/head_select_bg_trans" />
+            </RelativeLayout>
+            
+            
             <RelativeLayout
-                android:id="@+id/rightHead"
+                android:id="@+id/threeHead"
                 android:layout_width="@dimen/select_img_height"
                 android:layout_height="@dimen/select_img_height"
                 android:layout_alignParentRight="true"
@@ -83,6 +106,8 @@
                     android:scaleType="fitCenter"
                     android:src="@drawable/head_select_bg_trans" />
             </RelativeLayout>
+            
+
         </RelativeLayout>
 
         <RelativeLayout

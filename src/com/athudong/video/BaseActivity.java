@@ -128,13 +128,6 @@ public abstract class BaseActivity extends Activity implements OnClickListener{
 		return isVisiable;
 	}
 
-	/**
-	 * 获取当前登录的用户
-	 */
-	public User getUser() {
-		User user = null;
-		return user;
-	}
 
 	/**
 	 * toast显示text字符串

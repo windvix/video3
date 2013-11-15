@@ -1,12 +1,7 @@
 package com.athudong.video;
 
-
-import java.util.ArrayList;
-import java.util.List;
-
-import com.athudong.video.component.ButtonTouchListener;
+import com.athudong.video.component.SelectAnim;
 import com.athudong.video.task.BaseTask;
-import com.athudong.video.util.TestUtil;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -16,137 +11,60 @@ import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnTouchListener;
-import android.widget.ImageView;
-import static com.nineoldandroids.view.ViewPropertyAnimator.animate;
 
-public class MainActivity extends BaseActivity{
-	
-	
-	private View midHead;
-	private View leftHead;
-	private View rightHead;
-	
+public class MainActivity extends BaseActivity {
+
+	private View oneHead;
+	private View twoHead;
+	private View threeHead;
+	private View fourHead;
+
+	private SelectAnim anim;
+
 	@Override
 	protected void initView(Bundle savedInstanceState) {
 		setContentView(R.layout.activity_main);
-		midHead = findViewById(R.id.midHead);
-		leftHead  =findViewById(R.id.leftHead);
-		rightHead = findViewById(R.id.rightHead);
-		
+		oneHead = findViewById(R.id.oneHead);
+		twoHead = findViewById(R.id.twoHead);
+		threeHead = findViewById(R.id.threeHead);
+		fourHead = findViewById(R.id.fourHead);
+
 		findViewById(R.id.main_select_btn_03).setOnClickListener(this);
-		threeHead = new ArrayList<View>();
-		threeHead.add(leftHead);
-		threeHead.add(midHead);
-		threeHead.add(rightHead);
-		
+
 		findViewById(R.id.thumbBtn).setOnClickListener(this);
-		findViewById(R.id.headLayout).setOnTouchListener(new OnTouchListener() {
-			float x = 0;
-			float y = 0;
-			
-			@Override
-			public boolean onTouch(View v, MotionEvent event) {
-				
-				int action = event.getAction();
-				if(action==MotionEvent.ACTION_DOWN){
-					x = event.getX();
-					y = event.getY();
-				}
-				if(action==MotionEvent.ACTION_UP){
-					float uX = event.getX();
-					float uY =  event.getY();
-					
-					float temp = uX-x;
-					
-					if(temp>80){
-						left();
-					}else if(temp<-80){
-						right();
-					}
-				}
-				
-				return true;
-			}
-		});
+		findViewById(R.id.headLayout).setOnTouchListener(new HeadTouchListener());
+
+		anim = new SelectAnim(oneHead, twoHead, threeHead, fourHead);
 	}
 
-	private int length = 0;
 	@Override
 	public void onClick(View v) {
 		int id = v.getId();
-		if(id==R.id.main_select_btn_03){
-			left();
-		}else if(id==R.id.thumbBtn){
+		if (id == R.id.main_select_btn_03) {
+			anim.next();
+		} else if (id == R.id.thumbBtn) {
 			toast("你好");
 		}
 	}
 
-	private List<View> threeHead;
-	
-	private void left(){
-		if(length<=0){
-			length =  rightHead.getLeft()-midHead.getLeft();
-		}
-		View one = threeHead.get(0);
-		View two = threeHead.get(1);
-		View three = threeHead.get(2);
-		
-		
-		animate(one).x(one.getX()-length).x(one.getX()+length*3).x(one.getX()+length*2);
-		animate(two).x(two.getX()-length);
-		animate(three).x(three.getX()-length);
-		
-		threeHead.set(0, two);
-		threeHead.set(1, three);
-		threeHead.set(2, one);
-		
-		changeThree();
-	}
-	
-	private void right(){
-		if(length<=0){
-			length =  rightHead.getLeft()-midHead.getLeft();
-		}
-		View one = threeHead.get(0);
-		View two = threeHead.get(1);
-		View three = threeHead.get(2);
-		
-		animate(three).x(three.getX()+length).x(three.getX()-length*3).x(three.getX()-length*2);
-		animate(two).x(two.getX()+length);
-		animate(one).x(one.getX()+length);
-		
-		threeHead.set(0, three);
-		threeHead.set(1, one);
-		threeHead.set(2, two);
-		
-		ImageView img = (ImageView)threeHead.get(0).findViewWithTag("head");
-		img.setImageResource(TestUtil.getRandomHead());
-	}
-	
-	private void changeThree(){
-		ImageView img = (ImageView)threeHead.get(2).findViewWithTag("head");
-		img.setImageResource(TestUtil.getRandomHead());
-	}
-	
-	
 	@Override
 	protected void beforeEveryVisable() {
-		
+
 	}
 
 	@Override
 	protected void afterEveryInVisable() {
-		
+
 	}
 
 	@Override
 	protected void beforeDestory() {
-		
+
 	}
 
 	@Override
 	public void executeTaskResult(BaseTask task, Object data) {
-		
+
 	}
 
 	// 重写Activity中onKeyDown（）方法
@@ -193,4 +111,46 @@ public class MainActivity extends BaseActivity{
 		}
 	};
 
+	private class HeadTouchListener implements OnTouchListener {
+		float x_temp01 = 0.0f;
+		float y_temp01 = 0.0f;
+		float x_temp02 = 0.0f;
+		float y_temp02 = 0.0f;
+
+		@Override
+		public boolean onTouch(View view, MotionEvent event) {
+			// 获得当前坐标
+			float x = event.getX();
+			float y = event.getY();
+
+			if (event.getAction() == MotionEvent.ACTION_DOWN) {
+				x_temp01 = x;
+				y_temp01 = y;
+			} else if (event.getAction() == MotionEvent.ACTION_UP) {
+				x_temp02 = x;
+				y_temp02 = y;
+				if (x_temp01 != 0 && y_temp01 != 0) {
+					// 比较x_temp01和x_temp02
+					// x_temp01>x_temp02 //向左
+					// x_temp01==x_temp02 //竖直方向或者没动
+					// x_temp01<x_temp02 //向右
+					// 向左
+					if (x_temp01 > x_temp02) {
+						// 移动了x_temp01-x_temp02
+						anim.next();
+					}
+
+					// 向右
+					if (x_temp01 < x_temp02) {
+						// 移动了x_temp02-x_temp01
+						anim.prev();
+					}
+				}
+			} else if (event.getAction() == MotionEvent.ACTION_MOVE) {
+
+			}
+			return true;
+		}
+
+	}
 }

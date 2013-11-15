@@ -5,9 +5,19 @@
 -dontpreverify
 -dontwarn org.apache.**
 -dontwarn android.support.**
+-dontwarn com.handmark.pulltorefresh.**
+
 -keep class org.apache.** { *;}
 -keep class com.baidu.**{*;}
 -keep class vi.com.gdi.bgl.**{*;}
+-keep class com.handmark.pulltorefresh.**{*;}
+#-keep class com.nineoldandroids.**{*;}
+#-keep class com.athudong.video.bean.User
+#-keep class com.athudong.video.component.PathPoint
+#-keep class com.athudong.video.component.AnimatorProxy
+#-keep class com.athudong.video.component.AnimatorProxy
+#-keep class com.athudong.video.component.PathPoint
+
 
 -keepattributes *Annotation*
 -keep public class com.google.vending.licensing.ILicensingService
