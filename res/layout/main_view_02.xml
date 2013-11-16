@@ -7,8 +7,8 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="56dp"
-        android:background="@drawable/title_bar_bg"
-        android:layout_weight="0" >
+        android:layout_weight="0"
+        android:background="@drawable/title_bar_bg" >
 
         <TextView
             android:id="@+id/titleTv"
@@ -21,12 +21,204 @@
             android:textSize="24sp" />
     </RelativeLayout>
 
-    <TextView
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_weight="0"
+        android:background="#62718E" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="票数榜"
+                    android:textColor="#FFFFFF"
+                    android:textSize="23sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="人气榜"
+                    android:textColor="#FFFFFF"
+                    android:textSize="23sp" />
+            </LinearLayout>
+        </LinearLayout>
+        <!-- end of real btn -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal" >
+
+            <LinearLayout
+                android:visibility="invisible"
+                android:id="@+id/leftRankBtn"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="#6C7B9A"
+                        android:gravity="center"
+                        android:text="票数榜"
+                        android:textColor="#FFFFFF"
+                        android:textSize="23sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="8dp"
+                        android:orientation="horizontal" >
+
+                        <LinearLayout
+                            android:layout_width="8dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0"
+                            android:background="@drawable/shape_03" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="#47536B" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="8dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0"
+                    android:orientation="vertical" >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="8dp"
+                        android:layout_weight="0"
+                        android:background="@drawable/shape_05" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="#2C97CD" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="8dp"
+                        android:layout_weight="0"
+                        android:background="@drawable/shape_04" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/rightRankBtn"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="#6C7B9A"
+                        android:gravity="center"
+                        android:text="人气榜"
+                        android:textColor="#FFFFFF"
+                        android:textSize="23sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="8dp"
+                        android:orientation="horizontal" >
+
+                        <LinearLayout
+                            android:layout_width="8dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0"
+                            android:background="@drawable/shape_03" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="#47536B" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="8dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0"
+                    android:orientation="vertical" >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="8dp"
+                        android:layout_weight="0"
+                        android:background="@drawable/shape_05" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="#2C97CD" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="8dp"
+                        android:layout_weight="0"
+                        android:background="@drawable/shape_04" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+    
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_weight="0"
+        android:background="#47536B"/>
+    
+    
+    <com.athudong.video.component.NoScrollViewpager
+        android:id="@+id/starviewpager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:gravity="center"
-        android:text="第二页"
-        android:textSize="25sp" />
-
+        android:layout_weight="1" >
+    </com.athudong.video.component.NoScrollViewpager>
+    
 </LinearLayout>

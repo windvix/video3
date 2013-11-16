@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#63728F"
+        android:gravity="center"
+        android:layout_weight="0"
+        android:orientation="horizontal"
+        android:paddingBottom="8dp"
+        android:paddingTop="8dp" >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="离决赛还有"
+                android:textColor="#fff"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:layout_marginRight="4dp"
+                android:text="4"
+                android:textColor="#fff"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="天"
+                android:textColor="#fff"
+                android:textSize="15sp" />
+        </LinearLayout>
+    </LinearLayout>
+    
+    
+    <LinearLayout 
+     	android:layout_width="match_parent"
+     	android:layout_height="1dp"  
+     	android:background="#312D2C" 
+	/>
+
+</LinearLayout>

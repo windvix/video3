@@ -84,17 +84,88 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentTop="true"
-        android:layout_marginBottom="56dp"
         android:layout_marginTop="109dp"
         android:orientation="horizontal" >
+
+        <!-- thumb btn layout -->
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_alignParentBottom="true"
+            android:gravity="center" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="right|center"
+                    android:paddingBottom="12dp"
+                    android:paddingLeft="8dp"
+                    android:paddingTop="8dp" >
+
+                    <ImageView
+                        android:id="@+id/leftThumbBtn"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/thumb_btn" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" >
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="right|center" >
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:paddingBottom="12dp"
+                    android:paddingRight="8dp"
+                    android:paddingTop="8dp" >
+
+                    <ImageView
+                        android:id="@+id/rightThumbBtn"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/thumb_btn" />
+                </LinearLayout>
+            </LinearLayout>
+        </RelativeLayout>
+        <!-- end of thumb btn layout -->
+
+
+        <!-- two video bg layout -->
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginBottom="60dp"
+            android:layout_marginBottom="70dp"
             android:orientation="horizontal" >
 
             <RelativeLayout
+                android:id="@+id/left_play_btn"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="8dp"
@@ -108,6 +179,12 @@
                     android:scaleType="centerCrop"
                     android:src="@drawable/pk_video_bg_01" />
 
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:alpha="0.5"
+                    android:background="@drawable/video_play_click_bg" />
+
                 <ImageView
                     android:layout_width="65dp"
                     android:layout_height="65dp"
@@ -117,6 +194,7 @@
             </RelativeLayout>
 
             <RelativeLayout
+                android:id="@+id/right_play_btn"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginRight="8dp"
@@ -130,6 +208,12 @@
                     android:scaleType="centerCrop"
                     android:src="@drawable/pk_video_bg_02" />
 
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:alpha="0.5"
+                    android:background="@drawable/video_play_click_bg" />
+
                 <ImageView
                     android:layout_width="65dp"
                     android:layout_height="65dp"
@@ -138,6 +222,59 @@
                     android:src="@drawable/play_btn" />
             </RelativeLayout>
         </LinearLayout>
+        <!-- two video bg layout end -->
+
+
+        <!-- pk name layout -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="40dp"
+            android:gravity="center" >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:paddingRight="10dp"
+                android:shadowColor="#000"
+                android:shadowDx="2"
+                android:shadowDy="2"
+                android:shadowRadius="2"
+                android:text="ANNIE"
+                android:textColor="#fff"
+                android:textSize="22sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:shadowColor="#000"
+                android:shadowDx="2"
+                android:shadowDy="2"
+                android:shadowRadius="2"
+                android:text="&amp;"
+                android:textColor="#fff"
+                android:textSize="22sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="left"
+                android:paddingLeft="10dp"
+                android:shadowColor="#000"
+                android:shadowDx="2"
+                android:shadowDy="2"
+                android:shadowRadius="2"
+                android:text="李倩倩"
+                android:textColor="#fff"
+                android:textSize="22sp" />
+        </LinearLayout>
+        <!-- end pk name layout -->
     </RelativeLayout>
 
     <!-- head bar -->

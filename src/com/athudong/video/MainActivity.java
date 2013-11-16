@@ -11,7 +11,9 @@ import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
 import android.view.KeyEvent;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.View.OnTouchListener;
 import android.view.ViewGroup;
 import com.athudong.video.task.BaseTask;
 
@@ -66,6 +68,10 @@ public class MainActivity extends BaseActivity{
 		viewpager.setCurrentItem(0);
 		
 		findViewById(R.id.bottomBtn01).setSelected(true);
+		
+		new MainActivityDiscover(this, v01);
+		new MainActivityStar(this, v02);
+		
 	}
 
 	@Override
