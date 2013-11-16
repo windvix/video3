@@ -54,13 +54,6 @@ public class MainActivityCircle implements OnClickListener{
 		root.findViewById(R.id.leftCircleBtn).setOnClickListener(this);
 		root.findViewById(R.id.rightCircleBtn).setOnClickListener(this);
 		
-		
-		viewpager.setOnTouchListener(new OnTouchListener() {
-			@Override
-			public boolean onTouch(View v, MotionEvent event) {
-				return true;
-			}
-		});
 	}
 
 

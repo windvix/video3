@@ -54,13 +54,6 @@ public class MainActivityStar implements OnClickListener{
 		root.findViewById(R.id.leftRankBtn).setOnClickListener(this);
 		root.findViewById(R.id.rightRankBtn).setOnClickListener(this);
 		
-		
-		viewpager.setOnTouchListener(new OnTouchListener() {
-			@Override
-			public boolean onTouch(View v, MotionEvent event) {
-				return true;
-			}
-		});
 	}
 
 
