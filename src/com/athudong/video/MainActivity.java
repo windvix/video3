@@ -11,12 +11,13 @@ import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
 import android.view.KeyEvent;
-import android.view.MotionEvent;
 import android.view.View;
-import android.view.View.OnTouchListener;
 import android.view.ViewGroup;
 import com.athudong.video.task.BaseTask;
 
+/**
+ * 主界面
+ */
 public class MainActivity extends BaseActivity{
 
 	private ViewPager viewpager;

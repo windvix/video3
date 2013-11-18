@@ -5,14 +5,15 @@ import com.athudong.video.task.BaseTask;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Message;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnTouchListener;
 import android.widget.TextView;
 
+/**
+ * 海选界面
+ */
 public class SelectActivity extends BaseActivity {
 
 	private View oneHead;
@@ -65,10 +66,10 @@ public class SelectActivity extends BaseActivity {
 				toast("票数为0");
 			}
 		}else if(id==R.id.backBtn){
-			Intent intent = new Intent(this, MainActivity.class);
-			finish();
 			String ex = getIntent().getStringExtra("exist");
+			finish();
 			if(ex==null || ex.equals("")){
+				Intent intent = new Intent(this, MainActivity.class);
 				startActivity(intent);
 			}
 		}
@@ -98,12 +99,13 @@ public class SelectActivity extends BaseActivity {
 	@Override
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
 		if (keyCode == KeyEvent.KEYCODE_BACK) {// 当keyCode等于退出事件值时
-			Intent intent = new Intent(this, MainActivity.class);
-			finish();
 			
 			String ex = getIntent().getStringExtra("exist");
-			if(ex==null || ex.equals("")){
+			finish();
 			
+			
+			if(ex==null || ex.equals("")){
+				Intent intent = new Intent(this, MainActivity.class);
 				startActivity(intent);
 			}
 			return false;

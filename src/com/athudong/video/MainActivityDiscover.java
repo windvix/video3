@@ -1,7 +1,6 @@
 package com.athudong.video;
 
 import android.content.Intent;
-import android.sax.StartElementListener;
 import android.view.View;
 import android.view.View.OnClickListener;
 
@@ -28,6 +27,9 @@ public class MainActivityDiscover implements OnClickListener{
 		if(id==R.id.selectBtn){
 			Intent intent = new Intent(act, SelectActivity.class);
 			intent.putExtra("exist", "exist");
+			act.startActivity(intent);
+		}else if(id==R.id.weekBtn){
+			Intent intent = new Intent(act, WeekActivity.class);
 			act.startActivity(intent);
 		}
 	}

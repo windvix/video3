@@ -3,8 +3,6 @@ package com.athudong.video;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.athudong.video.MainActivity.ViewPagerAdapter;
-import com.athudong.video.MainActivity.ViewPagerPageChangeListener;
 import com.athudong.video.adapter.ListCircleAdapter;
 import com.athudong.video.bean.CircleLine;
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
@@ -15,11 +13,9 @@ import android.os.Handler;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.View.OnClickListener;
-import android.view.View.OnTouchListener;
 import android.widget.ListView;
 
 public class MainActivityCircle implements OnClickListener{

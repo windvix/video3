@@ -104,9 +104,6 @@ public class MainActivityStar implements OnClickListener {
 				}, 2000);
 			}
 		});
-
-		
-		
 	}
 
 	

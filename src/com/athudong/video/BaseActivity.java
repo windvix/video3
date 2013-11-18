@@ -8,7 +8,6 @@ import java.util.List;
 
 import org.apache.http.util.EncodingUtils;
 
-import com.athudong.video.bean.User;
 import com.athudong.video.task.BaseTask;
 
 import android.app.Activity;
