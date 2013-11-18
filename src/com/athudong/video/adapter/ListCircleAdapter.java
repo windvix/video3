@@ -11,6 +11,9 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 
+/**
+ * Adapter: 娱乐圈明星列表
+ */
 public class ListCircleAdapter extends ArrayAdapter<CircleLine> implements OnClickListener {
 
 	private int viewId;

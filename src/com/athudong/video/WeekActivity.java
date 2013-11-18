@@ -5,6 +5,9 @@ import android.view.View;
 
 import com.athudong.video.task.BaseTask;
 
+/**
+ * 周赛PK界面
+ */
 public class WeekActivity extends BaseActivity{
 	
 

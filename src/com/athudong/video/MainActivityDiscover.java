@@ -29,6 +29,7 @@ public class MainActivityDiscover implements OnClickListener{
 	@Override
 	public void onClick(View v) {
 		int id = v.getId();
+		//跳转
 		if(id==R.id.selectBtn){
 			Intent intent = new Intent(act, SelectActivity.class);
 			intent.putExtra("exist", "exist");

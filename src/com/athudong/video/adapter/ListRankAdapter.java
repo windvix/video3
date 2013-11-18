@@ -15,6 +15,10 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+
+/**
+ * adapter: 排行榜
+ */
 public class ListRankAdapter extends ArrayAdapter<Rank> implements OnTouchListener , OnClickListener{
 
 	private int viewId;

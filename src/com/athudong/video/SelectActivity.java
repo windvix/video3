@@ -68,6 +68,7 @@ public class SelectActivity extends BaseActivity {
 		}else if(id==R.id.backBtn){
 			String ex = getIntent().getStringExtra("exist");
 			finish();
+			//从主界面跳转过来。则不需要启动主界面
 			if(ex==null || ex.equals("")){
 				Intent intent = new Intent(this, MainActivity.class);
 				startActivity(intent);
@@ -103,7 +104,7 @@ public class SelectActivity extends BaseActivity {
 			String ex = getIntent().getStringExtra("exist");
 			finish();
 			
-			
+			//从主界面跳转过来。则不需要启动主界面
 			if(ex==null || ex.equals("")){
 				Intent intent = new Intent(this, MainActivity.class);
 				startActivity(intent);
@@ -114,6 +115,9 @@ public class SelectActivity extends BaseActivity {
 	}
 
 
+	/**
+	 * 用于处理头像的左右滑动操作
+	 */
 	private class HeadTouchListener implements OnTouchListener {
 		float x_temp01 = 0.0f;
 		float y_temp01 = 0.0f;

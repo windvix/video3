@@ -45,9 +45,6 @@ public class MainActivity extends BaseActivity{
 		v03 = createView(R.layout.main_view_03);
 		v04 = createView(R.layout.main_view_04);
 		
-		
-		
-		
 		bottomBtnList.add(findViewById(R.id.bottomBtn01));
 		bottomBtnList.add(findViewById(R.id.bottomBtn02));
 		bottomBtnList.add(findViewById(R.id.bottomBtn03));
@@ -56,7 +53,6 @@ public class MainActivity extends BaseActivity{
 		for(View v:bottomBtnList){
 			v.setOnClickListener(this);
 		}
-		
 		
 		list.add(v01);
 		list.add(v02);
@@ -70,6 +66,9 @@ public class MainActivity extends BaseActivity{
 		
 		findViewById(R.id.bottomBtn01).setSelected(true);
 		
+		/**
+		 * 主界面包括四页，将四页分发至四个类处理逻辑
+		 */
 		new MainActivityDiscover(this, v01);
 		new MainActivityStar(this, v02);
 		new MainActivityCircle(this, v03);
@@ -202,6 +201,7 @@ public class MainActivity extends BaseActivity{
 
 		@Override
 		public void onPageSelected(int page) {
+			//bottom tab选中之后颜色改变
 			for(int i=0;i<bottomBtnList.size();i++){
 				if(page==i){
 					bottomBtnList.get(i).setSelected(true);

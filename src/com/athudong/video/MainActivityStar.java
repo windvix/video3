@@ -18,6 +18,9 @@ import android.view.ViewGroup;
 import android.view.View.OnClickListener;
 import android.widget.ListView;
 
+/**
+ * 明星界面操作
+ */
 public class MainActivityStar implements OnClickListener {
 
 	private MainActivity act;
@@ -60,6 +63,9 @@ public class MainActivityStar implements OnClickListener {
 
 	private PullToRefreshListView listView01;
 
+	/**
+	 * 初始化排行榜一
+	 */
 	private void initRank01() {
 		listView01 = (PullToRefreshListView) v01.findViewById(R.id.pull_refresh_list);
 
@@ -110,6 +116,9 @@ public class MainActivityStar implements OnClickListener {
 
 	private PullToRefreshListView listView02;
 
+	/**
+	 * 初始化排行榜二
+	 */
 	private void initRank02() {
 		listView02 = (PullToRefreshListView) v02.findViewById(R.id.pull_refresh_list);
 

@@ -67,6 +67,10 @@ public class MainActivityCircle implements OnClickListener{
 	
 	private PullToRefreshListView listView01;
 	
+	
+	/**
+	 * 初始化我关注的明星
+	 */
 	private void initV01(){
 		listView01 = (PullToRefreshListView)v01.findViewById(R.id.pull_refresh_list);
 		
@@ -99,6 +103,9 @@ public class MainActivityCircle implements OnClickListener{
 	
 	private PullToRefreshListView listView02;
 	
+	/**
+	 * 初始化我喜欢的明星
+	 */
 	private void initV02(){
 		listView02 = (PullToRefreshListView)v02.findViewById(R.id.pull_refresh_list);
 		
