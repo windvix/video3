@@ -203,6 +203,7 @@
                         android:background="@drawable/shape_04" />
                 </LinearLayout>
             </LinearLayout>
+            <!-- end of right btn -->
         </LinearLayout>
     </RelativeLayout>
 

@@ -1,5 +1,7 @@
 package com.athudong.video;
 
+import android.content.Intent;
+import android.sax.StartElementListener;
 import android.view.View;
 import android.view.View.OnClickListener;
 
@@ -14,15 +16,19 @@ public class MainActivityDiscover implements OnClickListener{
 		this.act = act;
 		this.root = root;
 		
-		root.findViewById(R.id.left_play_btn).setOnClickListener(this);
-		root.findViewById(R.id.leftThumbBtn).setOnClickListener(this);
-		root.findViewById(R.id.right_play_btn).setOnClickListener(this);
-		root.findViewById(R.id.rightThumbBtn).setOnClickListener(this);
+		root.findViewById(R.id.selectBtn).setOnClickListener(this);
+		root.findViewById(R.id.weekBtn).setOnClickListener(this);
+		root.findViewById(R.id.actBtn).setOnClickListener(this);
 	}
 
 
 	@Override
 	public void onClick(View v) {
-		
+		int id = v.getId();
+		if(id==R.id.selectBtn){
+			Intent intent = new Intent(act, SelectActivity.class);
+			intent.putExtra("exist", "exist");
+			act.startActivity(intent);
+		}
 	}
 }

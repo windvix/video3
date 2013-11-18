@@ -5,7 +5,13 @@ import java.util.List;
 
 import com.athudong.video.MainActivity.ViewPagerAdapter;
 import com.athudong.video.MainActivity.ViewPagerPageChangeListener;
+import com.athudong.video.adapter.ListCircleAdapter;
+import com.athudong.video.bean.CircleLine;
+import com.handmark.pulltorefresh.library.PullToRefreshBase;
+import com.handmark.pulltorefresh.library.PullToRefreshBase.OnRefreshListener;
+import com.handmark.pulltorefresh.library.PullToRefreshListView;
 
+import android.os.Handler;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
@@ -14,6 +20,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.View.OnClickListener;
 import android.view.View.OnTouchListener;
+import android.widget.ListView;
 
 public class MainActivityCircle implements OnClickListener{
 
@@ -53,9 +60,72 @@ public class MainActivityCircle implements OnClickListener{
 		
 		root.findViewById(R.id.leftCircleBtn).setOnClickListener(this);
 		root.findViewById(R.id.rightCircleBtn).setOnClickListener(this);
-		
+	
+		initV01();
+		initV02();
 	}
 
+	
+	private PullToRefreshListView listView01;
+	
+	private void initV01(){
+		listView01 = (PullToRefreshListView)v01.findViewById(R.id.pull_refresh_list);
+		
+		List<CircleLine> list = new ArrayList<CircleLine>();
+		for(int i=0;i<10;i++){
+			list.add(new CircleLine());
+		}
+		
+		ListCircleAdapter adapter= new ListCircleAdapter(act, R.layout.list_star_template, list);
+		
+		listView01.setAdapter(adapter);
+		
+		listView01.setOnRefreshListener(new OnRefreshListener<ListView>() {
+
+			@Override
+			public void onRefresh(PullToRefreshBase<ListView> refreshView) {
+				new Handler().postDelayed(new Runnable() {
+					
+					@Override
+					public void run() {
+						listView01.onRefreshComplete();
+					}
+				}, 2000);
+			}
+		});
+	}
+	
+	
+	
+	
+	private PullToRefreshListView listView02;
+	
+	private void initV02(){
+		listView02 = (PullToRefreshListView)v02.findViewById(R.id.pull_refresh_list);
+		
+		List<CircleLine> list = new ArrayList<CircleLine>();
+		for(int i=0;i<10;i++){
+			list.add(new CircleLine());
+		}
+		
+		ListCircleAdapter adapter= new ListCircleAdapter(act, R.layout.list_star_template, list);
+		
+		listView02.setAdapter(adapter);
+		
+		listView02.setOnRefreshListener(new OnRefreshListener<ListView>() {
+
+			@Override
+			public void onRefresh(PullToRefreshBase<ListView> refreshView) {
+				new Handler().postDelayed(new Runnable() {
+					
+					@Override
+					public void run() {
+						listView02.onRefreshComplete();
+					}
+				}, 2000);
+			}
+		});
+	}
 
 	@Override
 	public void onClick(View v) {

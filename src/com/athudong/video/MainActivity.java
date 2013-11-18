@@ -72,6 +72,7 @@ public class MainActivity extends BaseActivity{
 		new MainActivityDiscover(this, v01);
 		new MainActivityStar(this, v02);
 		new MainActivityCircle(this, v03);
+		new MainActivityMe(this, v04);
 		
 	}
 

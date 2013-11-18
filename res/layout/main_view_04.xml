@@ -2,8 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" 
-    android:background="#F0EFF5">
+    android:background="#F0EFF5"
+    android:orientation="vertical" >
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -27,12 +27,290 @@
         android:layout_height="1dp"
         android:background="#909092" />
 
-    <TextView
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:gravity="center"
-        android:text="第四页"
-        android:textSize="25sp" />
+        android:fadingEdge="none" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="20dp"
+                android:background="#ADADAD" >
+            </LinearLayout>
+
+            <!-- start -->
+
+            <RelativeLayout
+                android:id="@+id/meBtn01"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:background="@drawable/list_me_bg_default" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerInParent="true"
+                    android:alpha="0.5"
+                    android:background="@drawable/list_item_click_bg" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerInParent="true"
+                    android:gravity="center|left"
+                    android:orientation="horizontal"
+                    android:padding="15dp" >
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0"
+                        android:scaleType="fitStart"
+                        android:src="@drawable/test_head_01" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="left|center"
+                        android:text="账号管理"
+                        android:textColor="#585755"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="right|center"
+                        android:text=""
+                        android:textColor="#585755"
+                        android:textSize="20sp" />
+                </LinearLayout>
+            </RelativeLayout>
+            <!-- end start -->
+
+
+            <!-- start -->
+
+            <RelativeLayout
+                android:id="@+id/meBtn02"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:background="@drawable/list_me_bg_default" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerInParent="true"
+                    android:alpha="0.5"
+                    android:background="@drawable/list_item_click_bg" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerInParent="true"
+                    android:gravity="center|left"
+                    android:orientation="horizontal"
+                    android:padding="15dp" >
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0"
+                        android:scaleType="fitStart"
+                        android:src="@drawable/icon_chat" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="left|center"
+                        android:text="消息通知"
+                        android:textColor="#585755"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="right|center"
+                        android:text=""
+                        android:textColor="#585755"
+                        android:textSize="20sp" />
+                </LinearLayout>
+            </RelativeLayout>
+            <!-- end start -->
+
+
+            <!-- start -->
+
+            <RelativeLayout
+                android:id="@+id/meBtn03"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:background="@drawable/list_me_bg_default" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerInParent="true"
+                    android:alpha="0.5"
+                    android:background="@drawable/list_item_click_bg" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:layout_centerInParent="true"
+                    android:gravity="center|left"
+                    android:orientation="horizontal"
+                    android:padding="15dp" >
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0"
+                        android:scaleType="fitStart"
+                        android:src="@drawable/icon_shop" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="left|center"
+                        android:text="明星商城"
+                        android:textColor="#585755"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="right|center"
+                        android:text=""
+                        android:textColor="#585755"
+                        android:textSize="20sp" />
+                </LinearLayout>
+            </RelativeLayout>
+            <!-- end start -->
+
+
+            <!-- start -->
+
+            <RelativeLayout
+                android:id="@+id/meBtn04"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:background="@drawable/list_me_bg_default" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerInParent="true"
+                    android:alpha="0.5"
+                    android:background="@drawable/list_item_click_bg" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerInParent="true"
+                    android:gravity="center|left"
+                    android:orientation="horizontal"
+                    android:padding="15dp" >
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0"
+                        android:scaleType="fitStart"
+                        android:src="@drawable/icon_wallet" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="left|center"
+                        android:text="我的钱包"
+                        android:textColor="#585755"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="right|center"
+                        android:text="16,200星币"
+                        android:textColor="#585755"
+                        android:textSize="20sp" />
+                </LinearLayout>
+            </RelativeLayout>
+            <!-- end start -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="20dp"
+                android:background="#ADADAD" >
+            </LinearLayout>
+
+            <!-- start -->
+
+            <RelativeLayout
+                android:id="@+id/meBtn05"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:background="@drawable/list_me_bg_default" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerInParent="true"
+                    android:alpha="0.5"
+                    android:background="@drawable/list_item_click_bg" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerInParent="true"
+                    android:gravity="center|left"
+                    android:orientation="horizontal"
+                    android:padding="15dp" >
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0"
+                        android:scaleType="fitStart"
+                        android:src="@drawable/icon_setting" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="left|center"
+                        android:text="通用设置"
+                        android:textColor="#585755"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="right|center"
+                        android:text=""
+                        android:textColor="#585755"
+                        android:textSize="20sp" />
+                </LinearLayout>
+            </RelativeLayout>
+            <!-- end start -->
+
+        </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>

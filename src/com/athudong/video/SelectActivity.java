@@ -67,7 +67,10 @@ public class SelectActivity extends BaseActivity {
 		}else if(id==R.id.backBtn){
 			Intent intent = new Intent(this, MainActivity.class);
 			finish();
-			startActivity(intent);
+			String ex = getIntent().getStringExtra("exist");
+			if(ex==null || ex.equals("")){
+				startActivity(intent);
+			}
 		}
 	}
 
@@ -97,7 +100,12 @@ public class SelectActivity extends BaseActivity {
 		if (keyCode == KeyEvent.KEYCODE_BACK) {// 当keyCode等于退出事件值时
 			Intent intent = new Intent(this, MainActivity.class);
 			finish();
-			startActivity(intent);
+			
+			String ex = getIntent().getStringExtra("exist");
+			if(ex==null || ex.equals("")){
+			
+				startActivity(intent);
+			}
 			return false;
 		} 
 		return true;
