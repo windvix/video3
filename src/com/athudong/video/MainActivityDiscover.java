@@ -4,6 +4,11 @@ import android.content.Intent;
 import android.view.View;
 import android.view.View.OnClickListener;
 
+
+
+/**
+ * 发现界面操作
+ */
 public class MainActivityDiscover implements OnClickListener{
 
 	private MainActivity act;

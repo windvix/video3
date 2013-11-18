@@ -18,6 +18,9 @@ import android.view.ViewGroup;
 import android.view.View.OnClickListener;
 import android.widget.ListView;
 
+/**
+ * 娱乐圈界面操作
+ */
 public class MainActivityCircle implements OnClickListener{
 
 	private MainActivity act;
