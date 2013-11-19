@@ -2,7 +2,6 @@ package com.athudong.video;
 
 import com.athudong.video.task.BaseTask;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
