@@ -31,8 +31,7 @@ public class MainActivityDiscover implements OnClickListener{
 		int id = v.getId();
 		//跳转
 		if(id==R.id.selectBtn){
-			Intent intent = new Intent(act, SelectActivity.class);
-			intent.putExtra("exist", "exist");
+			Intent intent = new Intent(act, SelectNormalActivity.class);
 			act.startActivity(intent);
 		}else if(id==R.id.weekBtn){
 			Intent intent = new Intent(act, WeekActivity.class);

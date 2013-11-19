@@ -138,9 +138,9 @@ public class MainActivityCircle implements OnClickListener{
 		
 		int id = v.getId();
 		if(id==R.id.leftCircleBtn){
-			viewpager.setCurrentItem(0);
+			viewpager.setCurrentItem(0,false);
 		}else if(id==R.id.rightCircleBtn){
-			viewpager.setCurrentItem(1);
+			viewpager.setCurrentItem(1,false);
 		}
 	}
 	

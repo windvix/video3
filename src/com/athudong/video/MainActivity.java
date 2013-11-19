@@ -102,13 +102,13 @@ public class MainActivity extends BaseActivity{
 		int id = view.getId();
 		
 		if(id==R.id.bottomBtn01){
-			viewpager.setCurrentItem(0);
+			viewpager.setCurrentItem(0,false);
 		}else if(id==R.id.bottomBtn02){
-			viewpager.setCurrentItem(1);
+			viewpager.setCurrentItem(1,false);
 		}else if(id==R.id.bottomBtn03){
-			viewpager.setCurrentItem(2);
+			viewpager.setCurrentItem(2,false);
 		}else if(id==R.id.bottomBtn04){
-			viewpager.setCurrentItem(3);
+			viewpager.setCurrentItem(3,false);
 		}
 	}
 	
@@ -138,6 +138,9 @@ public class MainActivity extends BaseActivity{
 				@Override
 				public void run() {
 					MainActivity.this.finish();
+					if(SelectFirstActivity.self!=null){
+						SelectFirstActivity.self.finish();
+					}
 					System.exit(0);// 使虚拟机停止运行并退出程序
 				}
 			}, 1500);

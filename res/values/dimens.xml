@@ -22,6 +22,7 @@
     <dimen name="select_img_height">260dp</dimen>
   	<dimen name="select_img_padding">20dp</dimen> 
   	<dimen name="select_img_left_margin">-240dp</dimen>
+  	<dimen name="select_viewpager_margin">50dp</dimen>
     
     <dimen name="btn_show_margin">8dp</dimen>
     

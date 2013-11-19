@@ -172,9 +172,9 @@ public class MainActivityStar implements OnClickListener {
 
 		int id = v.getId();
 		if (id == R.id.leftRankBtn) {
-			viewpager.setCurrentItem(0);
+			viewpager.setCurrentItem(0,false);
 		} else if (id == R.id.rightRankBtn) {
-			viewpager.setCurrentItem(1);
+			viewpager.setCurrentItem(1,false);
 		}
 	}
 
