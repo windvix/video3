@@ -3,9 +3,11 @@ package com.athudong.video.adapter;
 import java.util.List;
 
 import com.athudong.video.BaseActivity;
+import com.athudong.video.IntroActivity;
 import com.athudong.video.R;
 import com.athudong.video.bean.Rank;
 
+import android.content.Intent;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -89,6 +91,7 @@ public class ListRankAdapter extends ArrayAdapter<Rank> implements OnTouchListen
 
 	@Override
 	public void onClick(View v) {
-		
+		Intent intent  = new Intent(act, IntroActivity.class);
+		act.startActivity(intent);
 	}
 }

@@ -3,9 +3,11 @@ package com.athudong.video.adapter;
 import java.util.List;
 
 import com.athudong.video.BaseActivity;
+import com.athudong.video.IntroActivity;
 import com.athudong.video.R;
 import com.athudong.video.bean.CircleLine;
 
+import android.content.Intent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
@@ -35,13 +37,13 @@ public class ListCircleAdapter extends ArrayAdapter<CircleLine> implements OnCli
 		convertView.findViewById(R.id.starBtn01).setOnClickListener(this);
 		convertView.findViewById(R.id.starBtn02).setOnClickListener(this);
 		convertView.findViewById(R.id.starBtn03).setOnClickListener(this);
-		
 		return convertView;
 	}
 
 	@Override
 	public void onClick(View v) {
-		
+		Intent intent  = new Intent(act, IntroActivity.class);
+		act.startActivity(intent);
 	}
 
 }
