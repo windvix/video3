@@ -7,14 +7,13 @@ import com.athudong.video.task.BaseTask;
 
 
 /**
- * 个人资料界面（主要展示个人图片）
+ * 参赛者的视频列表界面（主要是参赛者的视频）
  */
-public class IntroActivity extends BaseActivity{
+public class VideosActivity extends BaseActivity{
 
 	@Override
 	protected void initView(Bundle savedInstanceState) {
-		setContentView(R.layout.activity_intro);
-		
+		setContentView(R.layout.activity_videos);
 		findViewById(R.id.backBtn).setOnClickListener(this);
 	}
 
@@ -33,6 +32,10 @@ public class IntroActivity extends BaseActivity{
 		
 	}
 
+	@Override
+	public void executeTaskResult(BaseTask task, Object data) {
+		
+	}
 
 	@Override
 	public void onClick(View view) {
@@ -40,12 +43,6 @@ public class IntroActivity extends BaseActivity{
 		if(id==R.id.backBtn){
 			finish();
 		}
-	}
-
-	
-	@Override
-	public void executeTaskResult(BaseTask task, Object data) {
-		
 	}
 
 }

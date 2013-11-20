@@ -74,6 +74,17 @@ public class MainActivity extends BaseActivity{
 		new MainActivityCircle(this, v03);
 		new MainActivityMe(this, v04);
 		
+		
+		/**
+		 * 释放SelectFirstActivity的资源
+		 */
+		new Handler().postDelayed(new Runnable() {
+			@Override
+			public void run() {
+				SelectFirstActivity.self.releaseView();
+			}
+		}, 2000);
+		
 	}
 
 	@Override

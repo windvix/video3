@@ -7,14 +7,13 @@ import com.athudong.video.task.BaseTask;
 
 
 /**
- * 个人资料界面（主要展示个人图片）
+ * 个人空间界面
  */
-public class IntroActivity extends BaseActivity{
+public class ZoneActivity extends BaseActivity{
 
 	@Override
 	protected void initView(Bundle savedInstanceState) {
-		setContentView(R.layout.activity_intro);
-		
+		setContentView(R.layout.activity_zone);
 		findViewById(R.id.backBtn).setOnClickListener(this);
 	}
 
@@ -33,19 +32,15 @@ public class IntroActivity extends BaseActivity{
 		
 	}
 
-
-	@Override
-	public void onClick(View view) {
-		int id = view.getId();
-		if(id==R.id.backBtn){
-			finish();
-		}
-	}
-
-	
 	@Override
 	public void executeTaskResult(BaseTask task, Object data) {
 		
 	}
-
+	@Override
+	public void onClick(View v) {
+		int id = v.getId();
+		if(id==R.id.backBtn){
+			finish();
+		}
+	}
 }

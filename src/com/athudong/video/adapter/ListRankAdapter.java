@@ -5,6 +5,7 @@ import java.util.List;
 import com.athudong.video.BaseActivity;
 import com.athudong.video.IntroActivity;
 import com.athudong.video.R;
+import com.athudong.video.ZoneActivity;
 import com.athudong.video.bean.Rank;
 
 import android.content.Intent;
@@ -91,7 +92,7 @@ public class ListRankAdapter extends ArrayAdapter<Rank> implements OnTouchListen
 
 	@Override
 	public void onClick(View v) {
-		Intent intent  = new Intent(act, IntroActivity.class);
+		Intent  intent  = new Intent(act, ZoneActivity.class);
 		act.startActivity(intent);
 	}
 }

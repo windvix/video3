@@ -1,5 +1,6 @@
 package com.athudong.video;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
@@ -15,8 +16,8 @@ import com.nineoldandroids.animation.ObjectAnimator;
  */
 public class WeekActivity extends BaseActivity{
 	
-	private ImageView leftHead;
-	private ImageView rightHead;
+	private View leftHead;
+	private View rightHead;
 	private View leftVideoLayout;
 	private View rightVideoLayout;
 	private TextView leftName;
@@ -45,7 +46,7 @@ public class WeekActivity extends BaseActivity{
 		
 		leftThumbBtn = findViewById(R.id.leftThumbBtn);
 		leftName = (TextView)findViewById(R.id.leftNameTv);
-		leftHead = (ImageView)findViewById(R.id.leftHeadImg);
+		leftHead = findViewById(R.id.leftHeadImg);
 		leftVideoLayout = findViewById(R.id.left_play_btn);
 		leftStarLayout = findViewById(R.id.leftFiveStar);
 		leftThumbBtn.setOnClickListener(this);
@@ -54,11 +55,17 @@ public class WeekActivity extends BaseActivity{
 		
 		rightThumbBtn = findViewById(R.id.rightThumbBtn);
 		rightName = (TextView)findViewById(R.id.rightNameTv);
-		rightHead = (ImageView)findViewById(R.id.rightHeadImg);
+		rightHead = findViewById(R.id.rightHeadImg);
 		rightVideoLayout = findViewById(R.id.right_play_btn);
 		rightStarLayout = findViewById(R.id.rightFiveStar);
 		rightThumbBtn.setOnClickListener(this);
 		rightVideoLayout.setOnClickListener(this);
+		
+		
+		leftHead.setOnClickListener(this);
+		rightHead.setOnClickListener(this);
+		
+		
 	}
 
 	@Override
@@ -89,6 +96,19 @@ public class WeekActivity extends BaseActivity{
 			moveRight();
 		}else if(id==R.id.rightThumbBtn){
 			moveLeft();
+		}else if(id==R.id.leftHeadImg){
+			Intent intent  = new Intent(this, IntroActivity.class);
+			startActivity(intent);
+			
+		}else if(id==R.id.rightHeadImg){
+			Intent intent = new Intent(this, IntroActivity.class);
+			startActivity(intent);
+		}else if(id==R.id.left_play_btn){
+			Intent intent = new Intent(this, VideosActivity.class);
+			startActivity(intent);
+		}else if(id==R.id.right_play_btn){
+			Intent intent = new Intent(this, VideosActivity.class);
+			startActivity(intent);
 		}
 	}
 	

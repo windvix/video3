@@ -13,7 +13,7 @@ public class SelectFirstActivity extends BaseActivity {
 
 	public static SelectFirstActivity self = null;
 	
-	private SelectActivityCommon common;
+	private static SelectActivityCommon common;
 	
 	@Override
 	protected void initView(Bundle savedInstanceState) {
@@ -57,5 +57,8 @@ public class SelectFirstActivity extends BaseActivity {
 	}
 
 
+	public void releaseView(){
+		common.releaseView();
+	}
 
 }

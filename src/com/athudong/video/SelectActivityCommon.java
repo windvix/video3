@@ -7,6 +7,8 @@ import java.util.List;
 import com.athudong.video.component.FixedSpeedScroller;
 
 import android.content.Intent;
+import android.os.Handler;
+import android.sax.StartElementListener;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
@@ -150,6 +152,12 @@ public class SelectActivityCommon implements OnClickListener{
 			}else{
 				act.toast("票数为0");
 			}
+		}else if(id==R.id.main_select_btn_01){
+			Intent intent  = new Intent(act, IntroActivity.class);
+			act.startActivity(intent);
+		}else if(id==R.id.main_select_btn_02){
+			Intent intent = new Intent(act, VideosActivity.class);
+			act.startActivity(intent);
 		}
 	}
 	
@@ -164,6 +172,12 @@ public class SelectActivityCommon implements OnClickListener{
 		viewpager.removeAllViewsInLayout();
 	}
 	
+	
+	public void releaseView(){
+		viewpager.setOnPageChangeListener(null);
+		viewpager.removeAllViews();
+		viewpager.removeAllViewsInLayout();
+	}
 	
 	class ViewPagerAdapter extends PagerAdapter {
 		private List<View> list = null;
