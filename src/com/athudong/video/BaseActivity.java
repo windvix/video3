@@ -35,19 +35,19 @@ import android.widget.Toast;
 /**
  * 公共基类Activity，封装各activity常用到的方法
  */
-public abstract class BaseActivity extends Activity implements OnClickListener{
+public abstract class BaseActivity extends Activity implements OnClickListener {
 	/**
 	 * 当前界面的任务列表
 	 */
 	private List<BaseTask> taskList = new ArrayList<BaseTask>();
-	
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		initView(savedInstanceState);
 		super.onCreate(savedInstanceState);
+		initView(savedInstanceState);
 	}
-	
-	public Handler getHandler(){
+
+	public Handler getHandler() {
 		return new Handler();
 	}
 
@@ -129,7 +129,6 @@ public abstract class BaseActivity extends Activity implements OnClickListener{
 		return isVisiable;
 	}
 
-
 	/**
 	 * toast显示text字符串
 	 */
@@ -150,8 +149,6 @@ public abstract class BaseActivity extends Activity implements OnClickListener{
 		Log.d(this.getClass().getName(), text);
 	}
 
-	
-	
 	/**
 	 * 返回动画
 	 */
@@ -196,21 +193,20 @@ public abstract class BaseActivity extends Activity implements OnClickListener{
 	private LayoutInflater getInflater() {
 		return getLayoutInflater();
 	}
-	
+
 	/**
 	 * 获取标题栏高度
 	 */
 	public int getTitleBarHeight() {
 		return getResources().getDimensionPixelSize(R.dimen.actionbar_height);
 	}
-	
 
 	/**
 	 * 获取屏幕高度
 	 */
 	@SuppressWarnings("deprecation")
 	public int getScreenHeight() {
-		
+
 		return getWindowManager().getDefaultDisplay().getHeight();
 	}
 
@@ -312,7 +308,7 @@ public abstract class BaseActivity extends Activity implements OnClickListener{
 	 * ROOT
 	 */
 	private static final String PRE_ROOT_KEY = "fxcewsdf41s2x1fs";
-	
+
 	/**
 	 * 获取Preference对象
 	 */
@@ -367,32 +363,31 @@ public abstract class BaseActivity extends Activity implements OnClickListener{
 	 * 界面销毁之前的做的事情
 	 */
 	protected abstract void beforeDestory();
-	
+
 	/**
 	 * 获取asset目录下的图片文件，转成 drawable
 	 */
-	public Drawable getDrawableFromAsset(String filePath){
+	public Drawable getDrawableFromAsset(String filePath) {
 		Drawable drawable = null;
 		AssetManager asm = getAssets();
-		try{
+		try {
 			InputStream is = asm.open(filePath);
 			drawable = Drawable.createFromStream(is, null);
-		}catch(Exception e){
+		} catch (Exception e) {
 		}
 		return drawable;
 	}
-	
-	
+
 	/**
 	 * 获取asset目录下的图片文件，转成 Bitmap
 	 */
-	public Bitmap getBitmapFromAsset(String filePath){
+	public Bitmap getBitmapFromAsset(String filePath) {
 		Bitmap bitmap = null;
 		AssetManager asm = getAssets();
-		try{
+		try {
 			InputStream is = asm.open(filePath);
 			bitmap = BitmapFactory.decodeStream(is);
-		}catch(Exception e){
+		} catch (Exception e) {
 		}
 		return bitmap;
 	}
