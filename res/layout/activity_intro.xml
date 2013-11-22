@@ -215,18 +215,69 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1" >
 
-                <TextView
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:layout_centerInParent="true"
-                    android:background="@drawable/intro_fav_layout_bg" />
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/intro_fav_btn_bg" />
+
+                <LinearLayout
+                   android:id="@+id/favBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center" >
+                    
+                    <ImageView 
+						android:tag="img"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginBottom="0dp"
+                        android:src="@drawable/icon_fav_gray"
+                        android:scaleType="fitCenter"
+                        />
+                    <TextView 
+                        android:tag="num"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="9574"
+                        android:layout_weight="3"
+                        android:gravity="top|center"
+                        
+                        android:textColor="#3E3E3C"
+                        android:textSize="12sp"
+                        />
+                    
+                </LinearLayout>
             </RelativeLayout>
 
-            <LinearLayout
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1" >
-            </LinearLayout>
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerInParent="true"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/intro_fav_btn_bg" />
+                <ImageView
+                    android:id="@+id/addBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerInParent="true"
+                    android:scaleType="fitCenter"
+                    android:layout_margin="12dp"
+                    android:src="@drawable/icon_add" />
+
+                
+            </RelativeLayout>
         </LinearLayout>
     </LinearLayout>
 
@@ -253,7 +304,6 @@
             android:layout_marginBottom="10dp"
             android:clipChildren="false" >
         </android.support.v4.view.ViewPager>
-
     </RelativeLayout>
 
 </LinearLayout>

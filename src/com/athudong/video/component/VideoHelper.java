@@ -19,6 +19,9 @@ import android.widget.SeekBar.OnSeekBarChangeListener;
 import com.athudong.video.BaseActivity;
 import com.athudong.video.R;
 
+/**
+ * 视频播放助手
+ */
 public class VideoHelper implements OnSeekBarChangeListener, Callback, OnClickListener {
 
 	private MediaPlayer player;
@@ -76,7 +79,6 @@ public class VideoHelper implements OnSeekBarChangeListener, Callback, OnClickLi
 			};
 			timer.schedule(timerTask, 0, 50);
 		}
-
 		initSurfaceView();
 	}
 
@@ -175,8 +177,7 @@ public class VideoHelper implements OnSeekBarChangeListener, Callback, OnClickLi
 
 	@Override
 	public void surfaceChanged(SurfaceHolder holder, int format, int width, int height) {
-		// TODO Auto-generated method stub
-
+		
 	}
 
 	@Override
@@ -195,8 +196,7 @@ public class VideoHelper implements OnSeekBarChangeListener, Callback, OnClickLi
 
 	@Override
 	public void surfaceDestroyed(SurfaceHolder holder) {
-		// TODO Auto-generated method stub
-
+		
 	}
 
 	@Override

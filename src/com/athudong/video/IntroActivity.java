@@ -21,35 +21,30 @@ import com.athudong.video.component.ImageViewTouchListener;
 import com.athudong.video.task.BaseTask;
 import com.nineoldandroids.animation.ObjectAnimator;
 
-
 /**
  * 个人资料界面（主要展示个人图片）
  */
-public class IntroActivity extends BaseActivity{
+public class IntroActivity extends BaseActivity {
 
 	private ImageView intrImg;
-	
+
 	private ImageViewTouchListener touch;
-	
+
 	private TextView sayingTv;
-	
+
 	private ViewPager viewpager;
-	
-	
+
 	private List<View> imgViews;
-	
+
 	@Override
 	protected void initView(Bundle savedInstanceState) {
 		setContentView(R.layout.activity_intro);
-		
-		
-		sayingTv = (TextView)findViewById(R.id.introSayingTv);
-		viewpager = (ViewPager)findViewById(R.id.viewpager);
+
+		sayingTv = (TextView) findViewById(R.id.introSayingTv);
+		viewpager = (ViewPager) findViewById(R.id.viewpager);
 		findViewById(R.id.backBtn).setOnClickListener(this);
-		intrImg = (ImageView)findViewById(R.id.introImg);
-		
-		
-		
+		intrImg = (ImageView) findViewById(R.id.introImg);
+
 		imgViews = new ArrayList<View>();
 		View h1 = createView(R.layout.intro_nav_imgveiw);
 		View h2 = createView(R.layout.intro_nav_imgveiw);
@@ -59,16 +54,16 @@ public class IntroActivity extends BaseActivity{
 		View h6 = createView(R.layout.intro_nav_imgveiw);
 		View h7 = createView(R.layout.intro_nav_imgveiw);
 		View h8 = createView(R.layout.intro_nav_imgveiw);
-		
-		((ImageView)h1.findViewById(R.id.intro_headimg)).setImageResource(R.drawable.intro_test_head_05);
-		((ImageView)h2.findViewById(R.id.intro_headimg)).setImageResource(R.drawable.intro_test_head_02);
-		((ImageView)h3.findViewById(R.id.intro_headimg)).setImageResource(R.drawable.intro_test_head_03);
-		((ImageView)h4.findViewById(R.id.intro_headimg)).setImageResource(R.drawable.intro_test_head_04);
-		((ImageView)h5.findViewById(R.id.intro_headimg)).setImageResource(R.drawable.intro_test_head_01);
-		((ImageView)h6.findViewById(R.id.intro_headimg)).setImageResource(R.drawable.intro_test_head_06);
-		((ImageView)h7.findViewById(R.id.intro_headimg)).setImageResource(R.drawable.intro_test_head_07);
-		((ImageView)h8.findViewById(R.id.intro_headimg)).setImageResource(R.drawable.intro_test_head_08);
-		
+
+		((ImageView) h1.findViewById(R.id.intro_headimg)).setImageResource(R.drawable.intro_test_head_05);
+		((ImageView) h2.findViewById(R.id.intro_headimg)).setImageResource(R.drawable.intro_test_head_02);
+		((ImageView) h3.findViewById(R.id.intro_headimg)).setImageResource(R.drawable.intro_test_head_03);
+		((ImageView) h4.findViewById(R.id.intro_headimg)).setImageResource(R.drawable.intro_test_head_04);
+		((ImageView) h5.findViewById(R.id.intro_headimg)).setImageResource(R.drawable.intro_test_head_01);
+		((ImageView) h6.findViewById(R.id.intro_headimg)).setImageResource(R.drawable.intro_test_head_06);
+		((ImageView) h7.findViewById(R.id.intro_headimg)).setImageResource(R.drawable.intro_test_head_07);
+		((ImageView) h8.findViewById(R.id.intro_headimg)).setImageResource(R.drawable.intro_test_head_08);
+
 		h1.setTag("intro_test_img_05.jpg");
 		h2.setTag("intro_test_img_02.jpg");
 		h3.setTag("intro_test_img_03.jpg");
@@ -77,10 +72,7 @@ public class IntroActivity extends BaseActivity{
 		h6.setTag("intro_test_img_06.jpg");
 		h7.setTag("intro_test_img_07.jpg");
 		h8.setTag("intro_test_img_08.jpg");
-		
-		
-		
-		
+
 		imgViews.add(h1);
 		imgViews.add(h2);
 		imgViews.add(h3);
@@ -89,14 +81,13 @@ public class IntroActivity extends BaseActivity{
 		imgViews.add(h6);
 		imgViews.add(h7);
 		imgViews.add(h8);
-		
-		
+
 		viewpager.setAdapter(new ViewPagerAdapter(imgViews));
 		viewpager.setOnPageChangeListener(new ViewPagerPageChangeListener());
 		viewpager.setOffscreenPageLimit(5);
 		viewpager.setPageMargin(getResources().getDimensionPixelSize(R.dimen.intro_img_nav_margin));
-		viewpager.setCurrentItem(imgViews.size()/2);
-		
+		viewpager.setCurrentItem(imgViews.size() / 2);
+
 		new Handler().postDelayed(new Runnable() {
 			@Override
 			public void run() {
@@ -104,65 +95,96 @@ public class IntroActivity extends BaseActivity{
 				touch = new ImageViewTouchListener(IntroActivity.this) {
 					@Override
 					public void touchUp() {
-						
+
 					}
 				};
-				Bitmap bitmap  = getBitmapFromAsset(path);
+				Bitmap bitmap = getBitmapFromAsset(path);
 				touch.initMatrix(intrImg, bitmap);
-				viewpager.setCurrentItem(imgViews.size()/2);
+				viewpager.setCurrentItem(imgViews.size() / 2);
 			}
 		}, 600);
-		
-		
+
 		initImgViewsClick();
+
+		findViewById(R.id.addBtn).setOnClickListener(this);
+		findViewById(R.id.favBtn).setOnClickListener(this);
 	}
-	
-	
-	private void initImgViewsClick(){
-		for(int i=0;i<imgViews.size();i++){
-			View view  = imgViews.get(i);
+
+	private void initImgViewsClick() {
+		for (int i = 0; i < imgViews.size(); i++) {
+			View view = imgViews.get(i);
 			final int index = i;
 			view.findViewById(R.id.intro_headimg).setOnClickListener(new OnClickListener() {
 				@Override
 				public void onClick(View v) {
 					int cur = viewpager.getCurrentItem();
-					if(cur!=index){
+					if (cur != index) {
 						viewpager.setCurrentItem(index);
 					}
 				}
 			});
 		}
 	}
-	
+
 	@Override
 	protected void beforeEveryVisable() {
-		
+
 	}
 
 	@Override
 	protected void afterEveryInVisable() {
-		
+
 	}
 
 	@Override
 	protected void beforeDestory() {
-		
+
 	}
 
+	private boolean isAdd = false;
+
+	private boolean isFav = false;
 
 	@Override
 	public void onClick(View view) {
 		int id = view.getId();
-		if(id==R.id.backBtn){
+		if (id == R.id.backBtn) {
 			finish();
+		} else if (id == R.id.addBtn) {
+			if (isAdd) {
+				isAdd = false;
+				ObjectAnimator.ofFloat(view, "rotation", 45f, 0).start();
+
+				toast("取消关注");
+			} else {
+				ObjectAnimator.ofFloat(view, "rotation", 0, 45f).start();
+				isAdd = true;
+				toast("关注");
+			}
+		} else if (id == R.id.favBtn) {
+			ImageView favIcon = (ImageView) view.findViewWithTag("img");
+			TextView numTv = (TextView)view.findViewWithTag("num");
+			
+			if (!isFav) {
+				
+				favIcon.setImageResource(R.drawable.icon_fav);
+				numTv.setText((Integer.parseInt(numTv.getText().toString())+1)+"");
+				isFav = true;
+			}else{
+				
+				favIcon.setImageResource(R.drawable.icon_fav_gray);
+				numTv.setText((Integer.parseInt(numTv.getText().toString())-1)+"");
+				
+				isFav = false;
+			}
 		}
 	}
 
-	
 	@Override
 	public void executeTaskResult(BaseTask task, Object data) {
-		
+
 	}
+
 	class ViewPagerAdapter extends PagerAdapter {
 		private List<View> list = null;
 
@@ -186,7 +208,6 @@ public class IntroActivity extends BaseActivity{
 			container.removeView(list.get(position));
 		}
 
-		
 		@Override
 		public boolean isViewFromObject(View arg0, Object arg1) {
 			return arg0 == arg1;
@@ -197,7 +218,7 @@ public class IntroActivity extends BaseActivity{
 	class ViewPagerPageChangeListener implements OnPageChangeListener {
 		@Override
 		public void onPageScrollStateChanged(int state) {
-			
+
 		}
 
 		@Override
@@ -206,29 +227,28 @@ public class IntroActivity extends BaseActivity{
 
 		@Override
 		public void onPageSelected(int page) {
-			for(int i=0;i<imgViews.size();i++){
+			for (int i = 0; i < imgViews.size(); i++) {
 				View view = imgViews.get(i);
-				
-				
-				if(page==i){
-					
+
+				if (page == i) {
+
 					String path = view.getTag().toString();
-					
+
 					touch = new ImageViewTouchListener(IntroActivity.this) {
 						@Override
 						public void touchUp() {
-							
+
 						}
 					};
 					intrImg.setImageBitmap(null);
-					Bitmap bitmap  = getBitmapFromAsset(path);
+					Bitmap bitmap = getBitmapFromAsset(path);
 					touch.initMatrix(intrImg, bitmap);
-					
-					ObjectAnimator.ofFloat(view, "scaleX", 1 ,1.3f).start();
-					ObjectAnimator.ofFloat(view, "scaleY", 1 ,1.3f).start();
-				}else{
-					ObjectAnimator.ofFloat(view, "scaleX", 1 ,1f).start();
-					ObjectAnimator.ofFloat(view, "scaleY", 1 ,1f).start();
+
+					ObjectAnimator.ofFloat(view, "scaleX", 1, 1.3f).start();
+					ObjectAnimator.ofFloat(view, "scaleY", 1, 1.3f).start();
+				} else {
+					ObjectAnimator.ofFloat(view, "scaleX", 1, 1f).start();
+					ObjectAnimator.ofFloat(view, "scaleY", 1, 1f).start();
 				}
 			}
 		}

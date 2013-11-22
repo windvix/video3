@@ -35,4 +35,6 @@
     <dimen name="video_img_nav_size">100dp</dimen>
     <dimen name="video_img_nav_margin">15dp</dimen>
     
+    <dimen name="zone_star_size">12dp</dimen>
+    
 </resources>

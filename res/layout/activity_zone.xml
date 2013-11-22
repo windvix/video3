@@ -11,33 +11,35 @@
         android:layout_weight="0"
         android:background="@drawable/title_bar_bg" >
 
-            <!-- back btn -->
-            <LinearLayout
-                android:id="@+id/backBtn"
+        <!-- back btn -->
+
+        <LinearLayout
+            android:id="@+id/backBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="10dp"
+            android:gravity="left|center"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/back_btn" />
+
+            <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_alignParentLeft="true"
-                android:layout_marginLeft="10dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="2dp"
                 android:gravity="left|center"
-                android:orientation="horizontal" >
+                android:text="发现"
+                android:textColor="@drawable/back_btn_text_color"
+                android:textSize="20sp"
+                android:visibility="invisible" />
+        </LinearLayout>
+        <!-- end back ben -->
 
-                <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/back_btn" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="40dp"
-                    android:layout_marginLeft="2dp"
-                    android:gravity="left|center"
-                    android:text="发现"
-                    android:visibility="invisible"
-                    android:textColor="@drawable/back_btn_text_color"
-                    android:textSize="20sp" />
-            </LinearLayout>
-            <!-- end back ben -->
         <TextView
             android:id="@+id/titleTv"
             android:layout_width="wrap_content"
@@ -48,5 +50,270 @@
             android:textColor="#2C97CD"
             android:textSize="24sp" />
     </RelativeLayout>
+
+    <com.handmark.pulltorefresh.library.PullToRefreshScrollView
+        xmlns:ptr="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:id="@+id/scrollview"
+        ptr:ptrAnimationStyle="flip" >
+
+        <!-- content layout -->
+
+        <LinearLayout
+            android:id="@+id/contentLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:layout_weight="0"
+                android:background="@drawable/zone_head_bg" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:layout_alignParentTop="true"
+                    android:gravity="center"
+                    android:orientation="vertical" >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="30dp"
+                        android:layout_marginTop="30dp"
+                        android:alpha="0.5"
+                        android:background="#0f0f0f" >
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/headlayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:layout_alignParentTop="true"
+                    android:orientation="horizontal" >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        android:paddingLeft="8dp"
+                        android:paddingRight="8dp" >
+
+                        <com.athudong.video.component.RoundImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/pk_head_01" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1" >
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical" >
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:orientation="horizontal" >
+
+                                <ImageView
+                                    android:layout_width="@dimen/zone_star_size"
+                                    android:layout_height="@dimen/zone_star_size"
+                                    android:src="@drawable/star" />
+
+                                <ImageView
+                                    android:layout_width="@dimen/zone_star_size"
+                                    android:layout_height="@dimen/zone_star_size"
+                                    android:src="@drawable/star" />
+
+                                <ImageView
+                                    android:layout_width="@dimen/zone_star_size"
+                                    android:layout_height="@dimen/zone_star_size"
+                                    android:src="@drawable/star" />
+
+                                <ImageView
+                                    android:layout_width="@dimen/zone_star_size"
+                                    android:layout_height="@dimen/zone_star_size"
+                                    android:src="@drawable/star" />
+
+                                <ImageView
+                                    android:layout_width="@dimen/zone_star_size"
+                                    android:layout_height="@dimen/zone_star_size"
+                                    android:src="@drawable/star" />
+                            </LinearLayout>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="星级"
+                                android:textColor="#FFF"
+                                android:textSize="15sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical" >
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="56"
+                                android:textColor="#FFF"
+                                android:textSize="15sp" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="粉丝"
+                                android:textColor="#FFF"
+                                android:textSize="15sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical" >
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="15645"
+                                android:textColor="#FFF"
+                                android:textSize="15sp" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="人气"
+                                android:textColor="#FFF"
+                                android:textSize="15sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+                <!-- end of head laout -->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_alignParentBottom="true"
+                    android:gravity="left|center"
+                    android:orientation="horizontal" >
+
+                    <ImageView
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_centerInParent="true"
+                        android:layout_marginLeft="60dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/icon_fav_white" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:gravity="left|center"
+                        android:text="张敬轩、林俊杰、Justin Timberland"
+                        android:textColor="#FFF"
+                        android:textSize="15sp" />
+                </LinearLayout>
+            </RelativeLayout>
+
+            <!-- tab item -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:orientation="horizontal" >
+
+                <LinearLayout
+                    android:id="@+id/tab01"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/zone_tab_item_bg"
+                    android:orientation="horizontal" 
+                    android:gravity="center">
+                    
+                    <ImageView 
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:src="@drawable/zone_tab_01_btn"
+                        android:scaleType="fitCenter"
+                        />
+                    
+                    
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/tab02"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/zone_tab_item_bg"
+                    android:orientation="horizontal"
+                    android:gravity="center" >
+                    
+                    
+                    <ImageView 
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:src="@drawable/zone_tab_02_btn"
+                        android:scaleType="fitCenter"
+                        />
+                    
+                    
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/tab03"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/zone_tab_item_bg"
+                    android:orientation="horizontal"
+                    android:gravity="center" >
+                    
+                    <ImageView 
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:src="@drawable/zone_tab_03_btn"
+                        android:scaleType="fitCenter"
+                        />
+                    
+                    
+                </LinearLayout>
+            </LinearLayout>
+            <!-- tab item end -->
+
+            <com.athudong.video.component.NoScrollViewpager
+                android:id="@+id/viewpager"
+                android:layout_width="match_parent"
+                android:layout_height="400dp" />
+        </LinearLayout>
+        <!-- content Layout end -->
+    </com.handmark.pulltorefresh.library.PullToRefreshScrollView>
 
 </LinearLayout>

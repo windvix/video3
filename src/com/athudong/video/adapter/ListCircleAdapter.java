@@ -34,7 +34,7 @@ public class ListCircleAdapter extends ArrayAdapter<CircleLine> implements OnCli
 		if (convertView == null) {
 			convertView = act.createView(viewId);
 		}
-
+		this.notifyDataSetChanged();
 		convertView.findViewById(R.id.starBtn01).setOnClickListener(this);
 		convertView.findViewById(R.id.starBtn02).setOnClickListener(this);
 		convertView.findViewById(R.id.starBtn03).setOnClickListener(this);
