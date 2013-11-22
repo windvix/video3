@@ -53,10 +53,10 @@
 
     <com.handmark.pulltorefresh.library.PullToRefreshScrollView
         xmlns:ptr="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/scrollview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:id="@+id/scrollview"
         ptr:ptrAnimationStyle="flip" >
 
         <!-- content layout -->
@@ -69,7 +69,7 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="180dp"
+                android:layout_height="160dp"
                 android:layout_weight="0"
                 android:background="@drawable/zone_head_bg" >
 
@@ -103,12 +103,12 @@
                         android:layout_weight="2"
                         android:paddingLeft="8dp"
                         android:paddingRight="8dp" >
+                            <com.athudong.video.component.RoundImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:scaleType="fitCenter"
+                                android:src="@drawable/pk_head_01" />
 
-                        <com.athudong.video.component.RoundImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:scaleType="fitCenter"
-                            android:src="@drawable/pk_head_01" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -217,7 +217,7 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="60dp"
+                    android:layout_height="40dp"
                     android:layout_alignParentBottom="true"
                     android:gravity="left|center"
                     android:orientation="horizontal" >
@@ -254,17 +254,14 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:background="@drawable/zone_tab_item_bg"
-                    android:orientation="horizontal" 
-                    android:gravity="center">
-                    
-                    <ImageView 
+                    android:gravity="center"
+                    android:orientation="horizontal" >
+
+                    <ImageView
                         android:layout_width="25dp"
                         android:layout_height="25dp"
-                        android:src="@drawable/zone_tab_01_btn"
                         android:scaleType="fitCenter"
-                        />
-                    
-                    
+                        android:src="@drawable/zone_tab_01_btn" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -273,18 +270,14 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:background="@drawable/zone_tab_item_bg"
-                    android:orientation="horizontal"
-                    android:gravity="center" >
-                    
-                    
-                    <ImageView 
+                    android:gravity="center"
+                    android:orientation="horizontal" >
+
+                    <ImageView
                         android:layout_width="25dp"
                         android:layout_height="25dp"
-                        android:src="@drawable/zone_tab_02_btn"
                         android:scaleType="fitCenter"
-                        />
-                    
-                    
+                        android:src="@drawable/zone_tab_02_btn" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -293,17 +286,14 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:background="@drawable/zone_tab_item_bg"
-                    android:orientation="horizontal"
-                    android:gravity="center" >
-                    
-                    <ImageView 
+                    android:gravity="center"
+                    android:orientation="horizontal" >
+
+                    <ImageView
                         android:layout_width="25dp"
                         android:layout_height="25dp"
-                        android:src="@drawable/zone_tab_03_btn"
                         android:scaleType="fitCenter"
-                        />
-                    
-                    
+                        android:src="@drawable/zone_tab_03_btn" />
                 </LinearLayout>
             </LinearLayout>
             <!-- tab item end -->

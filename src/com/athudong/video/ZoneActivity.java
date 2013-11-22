@@ -28,41 +28,53 @@ public class ZoneActivity extends BaseActivity implements OnRefreshListener<Scro
 	private PullToRefreshScrollView scrollView;
 
 	private ViewPager viewpager = null;
-	
-	
+
 	private List<View> tabViews = null;
-	
+
 	private List<View> tabIndexView = null;
-	
+
+	private View tab01;
+	private View tab02;
+	private View tab03;
+
 	@Override
 	protected void initView(Bundle savedInstanceState) {
 		setContentView(R.layout.activity_zone);
 		findViewById(R.id.backBtn).setOnClickListener(this);
 		scrollView = (PullToRefreshScrollView) findViewById(R.id.scrollview);
 		scrollView.setOnRefreshListener(this);
-		
-		viewpager = (ViewPager)findViewById(R.id.viewpager);
-		
+
+		viewpager = (ViewPager) findViewById(R.id.viewpager);
+
 		tabViews = new ArrayList<View>();
-		tabViews.add(createView(R.layout.zone_pic));
-		tabViews.add(createView(R.layout.zone_video));
-		tabViews.add(createView(R.layout.zone_gift));
-		
+
+		View tab01 = createView(R.layout.zone_pic);
+		View tab02 = createView(R.layout.zone_video);
+		View tab03 = createView(R.layout.zone_gift);
+
+		tabViews.add(tab01);
+		tabViews.add(tab02);
+		tabViews.add(tab03);
+
 		tabIndexView = new ArrayList<View>();
 		tabIndexView.add(findViewById(R.id.tab01));
 		tabIndexView.add(findViewById(R.id.tab02));
 		tabIndexView.add(findViewById(R.id.tab03));
-		
+
 		viewpager.setAdapter(new ViewPagerAdapter(tabViews));
 		viewpager.setOnPageChangeListener(new ViewPagerPageChangeListener());
-		
-		
-		for(View tab:tabIndexView){
+
+		for (View tab : tabIndexView) {
 			tab.setOnClickListener(this);
 		}
-		
+
 		viewpager.setCurrentItem(0);
 		tabIndexView.get(0).setSelected(true);
+		
+		
+		new ZoneActivityPic(this, tab01);
+		new ZoneActivityVideo(this, tab02);
+		new ZoneActivityPicGift(this, tab03);
 	}
 
 	@Override
@@ -90,12 +102,12 @@ public class ZoneActivity extends BaseActivity implements OnRefreshListener<Scro
 		int id = v.getId();
 		if (id == R.id.backBtn) {
 			finish();
-		}else if(id==R.id.tab01){
-			viewpager.setCurrentItem(0,false);
-		}else if(id==R.id.tab02){
-			viewpager.setCurrentItem(1,false);
-		}else if(id==R.id.tab03){
-			viewpager.setCurrentItem(2,false);
+		} else if (id == R.id.tab01) {
+			viewpager.setCurrentItem(0, false);
+		} else if (id == R.id.tab02) {
+			viewpager.setCurrentItem(1, false);
+		} else if (id == R.id.tab03) {
+			viewpager.setCurrentItem(2, false);
 		}
 	}
 
@@ -105,11 +117,10 @@ public class ZoneActivity extends BaseActivity implements OnRefreshListener<Scro
 			@Override
 			public void run() {
 				scrollView.onRefreshComplete();
-			}	
+			}
 		}, 2000);
 	}
-	
-	
+
 	class ViewPagerAdapter extends PagerAdapter {
 		private List<View> list = null;
 
@@ -152,18 +163,16 @@ public class ZoneActivity extends BaseActivity implements OnRefreshListener<Scro
 
 		@Override
 		public void onPageSelected(int page) {
-			for(int i=0;i<tabIndexView.size();i++){
-				
+			for (int i = 0; i < tabIndexView.size(); i++) {
+
 				View view = tabIndexView.get(i);
-				
-				
-				if(i==page){
+
+				if (i == page) {
 					view.setSelected(true);
-				}else{
+				} else {
 					view.setSelected(false);
 				}
-				
-				
+
 			}
 		}
 	}
