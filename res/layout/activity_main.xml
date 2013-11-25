@@ -29,8 +29,8 @@
             android:orientation="vertical" >
 
             <ImageView
-                android:layout_width="32dp"
-                android:layout_height="25dp"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
                 android:scaleType="fitCenter"
                 android:src="@drawable/bottom_item_icon_01" />
 
@@ -39,7 +39,7 @@
                 android:layout_height="wrap_content"
                 android:text="发现"
                 android:textColor="@drawable/bottom_item_text_color"
-                android:textSize="15sp" />
+                android:textSize="13sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -52,8 +52,8 @@
             android:orientation="vertical" >
 
             <ImageView
-                android:layout_width="25dp"
-                android:layout_height="25dp"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
                 android:scaleType="fitCenter"
                 android:src="@drawable/bottom_item_icon_02" />
 
@@ -62,7 +62,7 @@
                 android:layout_height="wrap_content"
                 android:text="明星"
                 android:textColor="@drawable/bottom_item_text_color"
-                android:textSize="15sp" />
+                android:textSize="13sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -75,8 +75,8 @@
             android:orientation="vertical" >
 
             <ImageView
-                android:layout_width="25dp"
-                android:layout_height="25dp"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
                 android:scaleType="fitCenter"
                 android:src="@drawable/bottom_item_icon_03" />
 
@@ -85,7 +85,7 @@
                 android:layout_height="wrap_content"
                 android:text="娱乐圈"
                 android:textColor="@drawable/bottom_item_text_color"
-                android:textSize="15sp" />
+                android:textSize="13sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -99,8 +99,8 @@
 
             <ImageView
                 android:layout_marginLeft="0dp"
-                android:layout_width="34dp"
-                android:layout_height="25dp"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
                 android:scaleType="fitCenter"
                 android:src="@drawable/bottom_item_icon_04" />
 
@@ -109,7 +109,7 @@
                 android:layout_height="wrap_content"
                 android:text="我"
                 android:textColor="@drawable/bottom_item_text_color"
-                android:textSize="15sp" />
+                android:textSize="13sp" />
         </LinearLayout>
     </LinearLayout>
 

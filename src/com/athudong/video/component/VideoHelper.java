@@ -35,6 +35,8 @@ public class VideoHelper implements OnSeekBarChangeListener, Callback, OnClickLi
 	private Timer timer;
 
 	private TimerTask timerTask;
+	
+	private View root;
 
 	@SuppressLint("HandlerLeak")
 	private Handler handler = new Handler() {
@@ -44,9 +46,10 @@ public class VideoHelper implements OnSeekBarChangeListener, Callback, OnClickLi
 		};
 	};
 
-	public VideoHelper(BaseActivity act) {
+	public VideoHelper(BaseActivity act, View root) {
 		this.act = act;
-		this.seekbar = (SeekBar) act.findViewById(R.id.seekbar);
+		this.root = root;
+		this.seekbar = (SeekBar) root.findViewById(R.id.seekbar);
 
 		timer = new Timer();
 		seekbar.setProgress(0);
@@ -87,7 +90,7 @@ public class VideoHelper implements OnSeekBarChangeListener, Callback, OnClickLi
 	 */
 	@SuppressWarnings("deprecation")
 	private void initSurfaceView() {
-		surfaceView = (SurfaceView) act.findViewById(R.id.surfaceview);
+		surfaceView = (SurfaceView) root.findViewById(R.id.surfaceview);
 		// 设置SurfaceView自己不管理的缓冲区
 		surfaceView.getHolder().setType(SurfaceHolder.SURFACE_TYPE_PUSH_BUFFERS);
 		surfaceView.getHolder().addCallback(this);
@@ -106,8 +109,8 @@ public class VideoHelper implements OnSeekBarChangeListener, Callback, OnClickLi
 			return;
 		}
 		// 显示播放器布局
-		act.findViewById(R.id.videoCoverLayout).setVisibility(View.INVISIBLE);
-		act.findViewById(R.id.videoPlayerLayout).setVisibility(View.VISIBLE);
+		root.findViewById(R.id.videoCoverLayout).setVisibility(View.INVISIBLE);
+		root.findViewById(R.id.videoPlayerLayout).setVisibility(View.VISIBLE);
 
 		try {
 			seekbar.setEnabled(true);
@@ -202,7 +205,7 @@ public class VideoHelper implements OnSeekBarChangeListener, Callback, OnClickLi
 	@Override
 	public void onClick(View v) {
 
-		int getVis = act.findViewById(R.id.videoPlayerLayout).getVisibility();
+		int getVis = root.findViewById(R.id.videoPlayerLayout).getVisibility();
 
 		if (getVis == View.VISIBLE && player!=null) {
 			if (player.isPlaying()) {

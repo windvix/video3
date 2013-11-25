@@ -14,7 +14,6 @@
             android:layout_height="@dimen/select_img_height"
             android:layout_centerInParent="true"
             android:scaleType="fitCenter"
-            android:src="@drawable/test_head_01"
             android:tag="head" />
 
         <ImageView

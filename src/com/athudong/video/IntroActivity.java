@@ -17,8 +17,10 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.athudong.video.bean.User;
 import com.athudong.video.component.ImageViewTouchListener;
 import com.athudong.video.task.BaseTask;
+import com.athudong.video.util.TestDataUtil;
 import com.nineoldandroids.animation.ObjectAnimator;
 
 /**
@@ -35,17 +37,49 @@ public class IntroActivity extends BaseActivity {
 	private ViewPager viewpager;
 
 	private List<View> imgViews;
+	
+	private TextView titleTv;
+	private TextView popularTv;
+	private TextView fansTv;
+	
+	private User user = null;
+	
 
 	@Override
 	protected void initView(Bundle savedInstanceState) {
 		setContentView(R.layout.activity_intro);
+		
+		String id = getIntent().getStringExtra("id");
+		user = TestDataUtil.getUserById(id);
+		
 
 		sayingTv = (TextView) findViewById(R.id.introSayingTv);
 		viewpager = (ViewPager) findViewById(R.id.viewpager);
 		findViewById(R.id.backBtn).setOnClickListener(this);
 		intrImg = (ImageView) findViewById(R.id.introImg);
+		titleTv = (TextView)findViewById(R.id.titleTv);
+		popularTv = (TextView)findViewById(R.id.popularTv);
+		fansTv = (TextView)findViewById(R.id.fansTv);
 
+		
+		sayingTv.setText(user.getSaying());
+		titleTv.setText(user.getName());
+		popularTv.setText(user.getPopular()+"");
+		fansTv.setText(user.getFans()+"");
+		
+		
+		
+		
+		
 		imgViews = new ArrayList<View>();
+		
+		
+		for(int i=0;i<user.getImgCount();i++){
+			View head = createView(R.layout.intro_nav_imgveiw);
+			imgViews.add(head);
+		}
+		
+		/*
 		View h1 = createView(R.layout.intro_nav_imgveiw);
 		View h2 = createView(R.layout.intro_nav_imgveiw);
 		View h3 = createView(R.layout.intro_nav_imgveiw);
@@ -81,25 +115,36 @@ public class IntroActivity extends BaseActivity {
 		imgViews.add(h6);
 		imgViews.add(h7);
 		imgViews.add(h8);
-
+		*/
 		viewpager.setAdapter(new ViewPagerAdapter(imgViews));
 		viewpager.setOnPageChangeListener(new ViewPagerPageChangeListener());
 		viewpager.setOffscreenPageLimit(5);
 		viewpager.setPageMargin(getResources().getDimensionPixelSize(R.dimen.intro_img_nav_margin));
-		viewpager.setCurrentItem(imgViews.size() / 2);
+		//viewpager.setCurrentItem(imgViews.size() / 2);
 
 		new Handler().postDelayed(new Runnable() {
 			@Override
 			public void run() {
-				String path = "intro_test_img_01.jpg";
-				touch = new ImageViewTouchListener(IntroActivity.this) {
-					@Override
-					public void touchUp() {
+				
+				for(int i=0;i<user.getImgCount();i++){
+					View oneHead = imgViews.get(i);
+					ImageView img = (ImageView) oneHead.findViewById(R.id.intro_headimg);
+					String imgPath = getTestPath()+user.getId()+"_"+"0"+(i+1)+".jpg";
+					
+					Bitmap bitmap = readBitmapAutoSize(imgPath, img.getWidth(), img.getHeight());
+					
+					
+					img.setImageBitmap(bitmap);
+					
+					
+					oneHead.setTag(imgPath);
+					touch = new ImageViewTouchListener(IntroActivity.this) {
+						@Override
+						public void touchUp() {
 
-					}
-				};
-				Bitmap bitmap = getBitmapFromAsset(path);
-				touch.initMatrix(intrImg, bitmap);
+						}
+					};
+				}
 				viewpager.setCurrentItem(imgViews.size() / 2);
 			}
 		}, 600);
@@ -108,8 +153,22 @@ public class IntroActivity extends BaseActivity {
 
 		findViewById(R.id.addBtn).setOnClickListener(this);
 		findViewById(R.id.favBtn).setOnClickListener(this);
+		
+		
+		
+		initStarLevel();
 	}
 
+	private void initStarLevel(){
+		ImageView star01 = (ImageView)findViewById(R.id.star01);
+		ImageView star02 = (ImageView)findViewById(R.id.star02);
+		ImageView star03 = (ImageView)findViewById(R.id.star03);
+		ImageView star04 = (ImageView)findViewById(R.id.star04);
+		ImageView star05 = (ImageView)findViewById(R.id.star05);
+		
+	}
+	
+	
 	private void initImgViewsClick() {
 		for (int i = 0; i < imgViews.size(); i++) {
 			View view = imgViews.get(i);
@@ -241,7 +300,7 @@ public class IntroActivity extends BaseActivity {
 						}
 					};
 					intrImg.setImageBitmap(null);
-					Bitmap bitmap = getBitmapFromAsset(path);
+					Bitmap bitmap = readBitmapAutoSize(path, (int)intrImg.getWidth()*2, intrImg.getHeight()*2);
 					touch.initMatrix(intrImg, bitmap);
 
 					ObjectAnimator.ofFloat(view, "scaleX", 1, 1.3f).start();

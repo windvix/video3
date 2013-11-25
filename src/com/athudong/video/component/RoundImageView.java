@@ -1,6 +1,5 @@
 package com.athudong.video.component;
 
-import com.athudong.video.R;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -44,8 +43,15 @@ public class RoundImageView extends ImageView {
 		}
 
 		Bitmap b = ((BitmapDrawable) drawable).getBitmap();
+		
+		if(b==null){
+			return;
+		}
+		
 		Bitmap bitmap = b.copy(Bitmap.Config.ARGB_8888, true);
 
+		
+		
 		int w = getWidth();
 		int h = getHeight();
 

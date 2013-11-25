@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F5F4EF"
+    android:background="#ECECEC"
     android:orientation="vertical" >
 
     <RelativeLayout
@@ -18,40 +18,119 @@
             android:layout_centerInParent="true"
             android:gravity="center"
             android:text="发现"
-            android:textColor="#2C97CD"
+            android:textColor="#FFFFFF"
             android:textSize="24sp" />
     </RelativeLayout>
 
-    
-        <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="#909092" />
-        
     <LinearLayout
-        android:gravity="center"
-        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="1" >
+        android:layout_weight="1"
+        android:gravity="top"
+        android:orientation="vertical" >
 
-        <Button
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginTop="56dp"
+            android:background="#B7B3B2"
+            android:orientation="horizontal" />
+
+        <LinearLayout
             android:id="@+id/selectBtn"
-            android:layout_width="120dp"
-            android:layout_height="56dp"
-            android:text="海选" />
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@drawable/main_list"
+            android:gravity="center"
+            android:orientation="horizontal" >
 
-        <Button
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="45dp"
+                android:layout_weight="1"
+                android:gravity="left|center"
+                android:text="海选"
+                android:textColor="#363636"
+                android:textSize="17sp" />
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginRight="15dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/icon_main_list_arrow" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#777"
+            android:orientation="horizontal" />
+
+        <LinearLayout
             android:id="@+id/weekBtn"
-            android:layout_width="120dp"
-            android:layout_height="56dp"
-            android:text="周赛" />
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@drawable/main_list"
+            android:gravity="center"
+            android:orientation="horizontal" >
 
-        <Button
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="45dp"
+                android:layout_weight="1"
+                android:gravity="left|center"
+                android:text="周赛"
+                android:textColor="#363636"
+                android:textSize="17sp" />
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginRight="15dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/icon_main_list_arrow" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#777"
+            android:orientation="horizontal" />
+
+        <LinearLayout
             android:id="@+id/actBtn"
-            android:layout_width="120dp"
-            android:layout_height="56dp"
-            android:text="最近活动" />
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@drawable/main_list"
+            android:gravity="center"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="45dp"
+                android:layout_weight="1"
+                android:gravity="left|center"
+                android:text="活动预告"
+                android:textColor="#363636"
+                android:textSize="17sp" />
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginRight="15dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/icon_main_list_arrow" />
+        </LinearLayout>
+
+         <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#B7B3B2"
+            android:orientation="horizontal" />
     </LinearLayout>
 
 </LinearLayout>

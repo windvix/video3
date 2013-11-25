@@ -55,13 +55,15 @@ public class MainActivityCircle implements OnClickListener{
 
 		viewpager.setCurrentItem(0);
 		
-		root.findViewById(R.id.leftCircleBtn).setVisibility(View.INVISIBLE);
 		
-		root.findViewById(R.id.leftCircleBtn).setOnClickListener(this);
-		root.findViewById(R.id.rightCircleBtn).setOnClickListener(this);
+		root.findViewById(R.id.tab01).setOnClickListener(this);
+		root.findViewById(R.id.tab02).setOnClickListener(this);
 	
 		initV01();
 		initV02();
+		
+		root.findViewById(R.id.tab01).setSelected(true);
+		root.findViewById(R.id.tab02).setSelected(false);
 	}
 
 	
@@ -137,9 +139,9 @@ public class MainActivityCircle implements OnClickListener{
 	public void onClick(View v) {
 		
 		int id = v.getId();
-		if(id==R.id.leftCircleBtn){
+		if(id==R.id.tab01){
 			viewpager.setCurrentItem(0,false);
-		}else if(id==R.id.rightCircleBtn){
+		}else if(id==R.id.tab02){
 			viewpager.setCurrentItem(1,false);
 		}
 	}
@@ -189,11 +191,11 @@ public class MainActivityCircle implements OnClickListener{
 		@Override
 		public void onPageSelected(int page) {
 			if(page==0){
-				root.findViewById(R.id.leftCircleBtn).setVisibility(View.INVISIBLE);
-				root.findViewById(R.id.rightCircleBtn).setVisibility(View.VISIBLE);
+				root.findViewById(R.id.tab01).setSelected(true);
+				root.findViewById(R.id.tab02).setSelected(false);
 			}else if(page==1){
-				root.findViewById(R.id.leftCircleBtn).setVisibility(View.VISIBLE);
-				root.findViewById(R.id.rightCircleBtn).setVisibility(View.INVISIBLE);
+				root.findViewById(R.id.tab01).setSelected(false);
+				root.findViewById(R.id.tab02).setSelected(true);
 			}
 		}
 	}

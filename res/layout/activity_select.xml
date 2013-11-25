@@ -101,6 +101,7 @@
         <!-- end of  name and age layout -->
 
         <TextView
+            android:id="@+id/sayingTv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="65dp"

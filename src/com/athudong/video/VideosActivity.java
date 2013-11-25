@@ -22,9 +22,11 @@ import android.widget.ImageView;
 import android.widget.MediaController;
 import android.widget.VideoView;
 
+import com.athudong.video.bean.User;
 import com.athudong.video.component.ImageViewTouchListener;
 import com.athudong.video.component.VideoHelper;
 import com.athudong.video.task.BaseTask;
+import com.athudong.video.util.TestDataUtil;
 import com.nineoldandroids.animation.ObjectAnimator;
 
 /**
@@ -39,37 +41,88 @@ public class VideosActivity extends BaseActivity {
 	private ImageView videoBg;
 
 	private VideoHelper videoHelper;
+	
+	private User user;
 
 	@Override
 	protected void initView(Bundle savedInstanceState) {
+		
+		String id = getIntent().getStringExtra("id");
+		user = TestDataUtil.getUserById(id);
+		
 		setContentView(R.layout.activity_videos);
 		findViewById(R.id.backBtn).setOnClickListener(this);
 
 		viewpager = (ViewPager) findViewById(R.id.viewpager);
 
-		findViewById(R.id.defaultPlayBtn).setOnClickListener(this);
+		
 
 		videoBg = (ImageView) findViewById(R.id.videoBgImg);
+		videoBg.setImageBitmap(null);
 
 		imgViews = new ArrayList<View>();
 
-		View h01 = createView(R.layout.video_nav_imgveiw);
-		View h02 = createView(R.layout.video_nav_imgveiw);
+		final View h01 = createView(R.layout.video_nav_imgveiw);
+		
 
 		imgViews.add(h01);
-		imgViews.add(h02);
 
 		viewpager.setAdapter(new ViewPagerAdapter(imgViews));
 		viewpager.setOnPageChangeListener(new ViewPagerPageChangeListener());
 
 		initPage1(h01);
-		initPage2(h02);
-
-		videoHelper = new VideoHelper(this);
+		
+		videoHelper = new VideoHelper(this, findViewById(R.id.root));
 		
 		
 		findViewById(R.id.videoCoverLayout).setVisibility(View.VISIBLE);
 		findViewById(R.id.videoPlayerLayout).setVisibility(View.INVISIBLE);
+		
+		new Handler().postDelayed(new Runnable() {
+			
+			@Override
+			public void run() {
+				findViewById(R.id.defaultPlayBtn).setOnClickListener(VideosActivity.this);
+				
+				View btn01 = h01.findViewById(R.id.videoBtn01);
+				View btn02 = h01.findViewById(R.id.videoBtn02);
+				View btn03 = h01.findViewById(R.id.videoBtn03);
+				View btn04 = h01.findViewById(R.id.videoBtn04);
+
+				ImageView img01 = (ImageView) btn01.findViewWithTag("img");
+				ImageView img02 = (ImageView) btn02.findViewWithTag("img");
+				ImageView img03 = (ImageView) btn03.findViewWithTag("img");
+				ImageView img04 = (ImageView) btn04.findViewWithTag("img");
+
+				String userId = user.getId();
+				
+				Bitmap b01 = readBitmapAutoSize(getTestPath()+userId+"_video_01.jpg", img01.getWidth(), img01.getHeight());
+				Bitmap b02 = readBitmapAutoSize(getTestPath()+userId+"_video_02.jpg", img02.getWidth(), img02.getHeight());
+				Bitmap b03 = readBitmapAutoSize(getTestPath()+userId+"_video_03.jpg", img03.getWidth(), img03.getHeight());
+				Bitmap b04 = readBitmapAutoSize(getTestPath()+userId+"_video_04.jpg", img04.getWidth(), img04.getHeight());				
+				
+				img01.setImageBitmap(b01);
+				img02.setImageBitmap(b02);
+				img03.setImageBitmap(b03);
+				img04.setImageBitmap(b04);
+
+				btn01.setTag(getTestPath()+userId+"_video_01");
+				btn02.setTag(getTestPath()+userId+"_video_02");
+				btn03.setTag(getTestPath()+userId+"_video_03");
+				btn04.setTag(getTestPath()+userId+"_video_04");
+
+				btn01.setOnClickListener(VideosActivity.this);
+				btn02.setOnClickListener(VideosActivity.this);
+				btn03.setOnClickListener(VideosActivity.this);
+				btn04.setOnClickListener(VideosActivity.this);
+
+				Bitmap bg = readBitmapAutoSize(getTestPath()+userId+"_video_01.jpg", videoBg.getWidth()*2, videoBg.getHeight()*2);
+				videoBg.setImageBitmap(bg);
+				videoBg.setTag(getTestPath()+userId+"_video_01");
+				viewpager.setCurrentItem(0);
+				anim(btn01);
+			}
+		}, 600);
 	}
 
 	@Override
@@ -96,51 +149,18 @@ public class VideosActivity extends BaseActivity {
 		ImageView img03 = (ImageView) btn03.findViewWithTag("img");
 		ImageView img04 = (ImageView) btn04.findViewWithTag("img");
 
-		img01.setImageResource(R.drawable.intro_test_head_01);
-		img02.setImageResource(R.drawable.intro_test_head_02);
-		img03.setImageResource(R.drawable.intro_test_head_03);
-		img04.setImageResource(R.drawable.intro_test_head_04);
+		img01.setImageBitmap(null);
+		img02.setImageBitmap(null);
+		img03.setImageBitmap(null);
+		img04.setImageBitmap(null);
 
 		btn01.setTag("intro_test_img_01.jpg");
 		btn02.setTag("intro_test_img_02.jpg");
 		btn03.setTag("intro_test_img_03.jpg");
 		btn04.setTag("intro_test_img_04.jpg");
 
-		btn01.setOnClickListener(this);
-		btn02.setOnClickListener(this);
-		btn03.setOnClickListener(this);
-		btn04.setOnClickListener(this);
-
 		viewpager.setCurrentItem(0);
 		anim(btn01);
-	}
-
-	private void initPage2(View page) {
-
-		View btn01 = page.findViewById(R.id.videoBtn01);
-		View btn02 = page.findViewById(R.id.videoBtn02);
-		View btn03 = page.findViewById(R.id.videoBtn03);
-		View btn04 = page.findViewById(R.id.videoBtn04);
-
-		ImageView img01 = (ImageView) btn01.findViewWithTag("img");
-		ImageView img02 = (ImageView) btn02.findViewWithTag("img");
-		ImageView img03 = (ImageView) btn03.findViewWithTag("img");
-		ImageView img04 = (ImageView) btn04.findViewWithTag("img");
-
-		img01.setImageResource(R.drawable.intro_test_head_05);
-		img02.setImageResource(R.drawable.intro_test_head_06);
-		img03.setImageResource(R.drawable.intro_test_head_07);
-		img04.setImageResource(R.drawable.intro_test_head_08);
-
-		btn01.setTag("intro_test_img_05.jpg");
-		btn02.setTag("intro_test_img_06.jpg");
-		btn03.setTag("intro_test_img_07.jpg");
-		btn04.setTag("intro_test_img_08.jpg");
-
-		btn01.setOnClickListener(this);
-		btn02.setOnClickListener(this);
-		btn03.setOnClickListener(this);
-		btn04.setOnClickListener(this);
 	}
 
 	@Override
@@ -171,13 +191,14 @@ public class VideosActivity extends BaseActivity {
 		} else if (id == R.id.videoBtn01 || id == R.id.videoBtn02 || id == R.id.videoBtn03 || id == R.id.videoBtn04) {
 			anim(view);
 			Object path = view.getTag();
-			Bitmap bitmap = getBitmapFromAsset(path.toString());
+			Bitmap bitmap = readBitmapAutoSize(path.toString()+".jpg", videoBg.getWidth(), videoBg.getHeight());
 			findViewById(R.id.videoCoverLayout).setVisibility(View.VISIBLE);
 			findViewById(R.id.videoPlayerLayout).setVisibility(View.INVISIBLE);
 			videoBg.setImageBitmap(bitmap);
+			videoBg.setTag(path);
 			videoHelper.pause();
 		} else if (id == R.id.defaultPlayBtn) {
-			String path = Environment.getExternalStorageDirectory() + "/test.mp4";
+			String path = videoBg.getTag().toString()+".flv";
 			videoHelper.play(path);
 		}
 	}
@@ -226,8 +247,8 @@ public class VideosActivity extends BaseActivity {
 		public void onPageSelected(int page) {
 			View view = imgViews.get(page);
 			View btn01 = view.findViewById(R.id.videoBtn01);
-			Object path = btn01.getTag();
-			Bitmap bitmap = getBitmapFromAsset(path.toString());
+			String path = btn01.getTag().toString()+".jpg";
+			Bitmap bitmap = readBitmapAutoSize(path, videoBg.getWidth(), videoBg.getHeight());
 			findViewById(R.id.videoCoverLayout).setVisibility(View.VISIBLE);
 			findViewById(R.id.videoPlayerLayout).setVisibility(View.INVISIBLE);
 			videoBg.setImageBitmap(bitmap);

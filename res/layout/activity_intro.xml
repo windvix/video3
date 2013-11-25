@@ -73,26 +73,31 @@
                 android:orientation="horizontal" >
 
                 <ImageView
+                    android:id="@+id/star01"
                     android:layout_width="15dp"
                     android:layout_height="15dp"
                     android:src="@drawable/star" />
 
                 <ImageView
+                    android:id="@+id/star02"
                     android:layout_width="15dp"
                     android:layout_height="15dp"
                     android:src="@drawable/star" />
 
                 <ImageView
+                    android:id="@+id/star03"
                     android:layout_width="15dp"
                     android:layout_height="15dp"
                     android:src="@drawable/star" />
 
                 <ImageView
+                    android:id="@+id/star04"
                     android:layout_width="15dp"
                     android:layout_height="15dp"
                     android:src="@drawable/star" />
 
                 <ImageView
+                    android:id="@+id/star05"
                     android:layout_width="15dp"
                     android:layout_height="15dp"
                     android:src="@drawable/star" />
@@ -122,6 +127,7 @@
             android:orientation="vertical" >
 
             <TextView
+                android:id="@+id/popularTv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
@@ -153,6 +159,7 @@
             android:orientation="vertical" >
 
             <TextView
+                android:id="@+id/fansTv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"

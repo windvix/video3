@@ -18,14 +18,10 @@
             android:layout_centerInParent="true"
             android:gravity="center"
             android:text="我"
-            android:textColor="#2C97CD"
+                        android:textColor="#FFFFFF"
             android:textSize="24sp" />
     </RelativeLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="#909092" />
 
     <ScrollView
         android:layout_width="match_parent"

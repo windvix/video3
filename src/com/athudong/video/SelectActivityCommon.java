@@ -4,9 +4,12 @@ import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.athudong.video.bean.User;
 import com.athudong.video.component.FixedSpeedScroller;
+import com.athudong.video.util.TestDataUtil;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Handler;
 import android.sax.StartElementListener;
 import android.support.v4.view.PagerAdapter;
@@ -52,15 +55,41 @@ public class SelectActivityCommon implements OnClickListener{
 	private ImageView img05;
 	private ImageView img06;
 	
+	
+	private TextView nameTv;
+	private TextView ageTv;
+	private TextView sexTv;
+	private TextView despTv;
+	
+	
+	private View bottomBtn01;
+	private View bottomBtn02;
+	private View bottomBtn03;
+	
+	
+	private List<User> users;
+	
+	
 	public SelectActivityCommon(BaseActivity act, boolean isCreatemainActivity){
 		this.isCreateMainActivity = isCreatemainActivity;
 		this.act = act;
 		act.setContentView(R.layout.activity_select);
+		users = new ArrayList<User>();
+		nameTv = (TextView)act.findViewById(R.id.nameTv);
+		ageTv = (TextView)act.findViewById(R.id.ageTv);
+		sexTv = (TextView)act.findViewById(R.id.sexTv);
+		despTv = (TextView)act.findViewById(R.id.sayingTv);
+		
+		
+		
 		thumbCountTv = (TextView)act.findViewById(R.id.thumbCountTv);
 		
-		act.findViewById(R.id.main_select_btn_01).setOnClickListener(this);
-		act.findViewById(R.id.main_select_btn_02).setOnClickListener(this);
-		act.findViewById(R.id.main_select_btn_03).setOnClickListener(this);
+		bottomBtn01 = act.findViewById(R.id.main_select_btn_01);
+		bottomBtn01.setOnClickListener(this);
+		bottomBtn02 = act.findViewById(R.id.main_select_btn_02);
+		bottomBtn02.setOnClickListener(this);
+		bottomBtn03 = act.findViewById(R.id.main_select_btn_03);
+		bottomBtn03.setOnClickListener(this);
 
 		act.findViewById(R.id.backBtn).setOnClickListener(this);
 		
@@ -72,7 +101,6 @@ public class SelectActivityCommon implements OnClickListener{
 		viewpager = (ViewPager)act.findViewById(R.id.viewpager);
 		
 		headsView = new ArrayList<View>();
-		
 		
 		// D' A B C D A'
 		// 让D'和D、A'和A的内容保持相同
@@ -91,13 +119,6 @@ public class SelectActivityCommon implements OnClickListener{
 		img05 = (ImageView)head05.findViewWithTag("head");
 		img06 = (ImageView)head06.findViewWithTag("head");
 		
-		img01.setImageResource(R.drawable.test_head_01);
-		img02.setImageResource(R.drawable.test_head_02);
-		img03.setImageResource(R.drawable.test_head_03);
-		img04.setImageResource(R.drawable.test_head_04);
-		img05.setImageResource(R.drawable.test_head_01);
-		img06.setImageResource(R.drawable.test_head_02);
-		
 		
 		headsView.add(head01);
 		headsView.add(head02);
@@ -107,6 +128,17 @@ public class SelectActivityCommon implements OnClickListener{
 		headsView.add(head06);
 		
 		
+		User u01 = TestDataUtil.getRandomUser();
+		User u02 = TestDataUtil.getRandomUser();
+		User u03 = TestDataUtil.getRandomUser();
+		User u04 = TestDataUtil.getRandomUser();
+		
+		users.add(u04);
+		users.add(u01);
+		users.add(u02);
+		users.add(u03);
+		users.add(u04);
+		users.add(u01);
 		
 		viewpager.setOffscreenPageLimit(3);
 		viewpager.setPageMargin(act.getResources().getDimensionPixelSize(R.dimen.select_viewpager_margin));
@@ -125,7 +157,39 @@ public class SelectActivityCommon implements OnClickListener{
         } catch (Exception e) {
         	act.toast("wrong ");
         } 
+		
+
+		
+		
+		new Handler().postDelayed(new Runnable() {
+			@Override
+			public void run() {
+
+				// D' A B C D A'
+				// 让D'和D、A'和A的内容保持相同
+				int width = img01.getWidth();
+				int height = img01.getHeight();
+				String path = SelectActivityCommon.this.act.getTestPath();
+				Bitmap b01  = SelectActivityCommon.this.act.readBitmapAutoSize(path+users.get(0).getId()+"_head.jpg", width, height);
+				Bitmap b02  = SelectActivityCommon.this.act.readBitmapAutoSize(path+users.get(1).getId()+"_head.jpg", width, height);
+				Bitmap b03  = SelectActivityCommon.this.act.readBitmapAutoSize(path+users.get(2).getId()+"_head.jpg", width, height);
+				Bitmap b04  = SelectActivityCommon.this.act.readBitmapAutoSize(path+users.get(3).getId()+"_head.jpg", width, height);
+				
+				img02.setImageBitmap(b01);
+				img03.setImageBitmap(b02);
+				img04.setImageBitmap(b03);
+				img05.setImageBitmap(b04);
+				
+				img01.setImageBitmap(b04);
+				img06.setImageBitmap(b01);
+				
+
+			}
+		}, 500);
 	}
+	
+	
+	
 	
 	@Override
 	public void onClick(View v) {
@@ -154,9 +218,11 @@ public class SelectActivityCommon implements OnClickListener{
 			}
 		}else if(id==R.id.main_select_btn_01){
 			Intent intent  = new Intent(act, IntroActivity.class);
+			intent.putExtra("id", v.getTag().toString());
 			act.startActivity(intent);
 		}else if(id==R.id.main_select_btn_02){
 			Intent intent = new Intent(act, VideosActivity.class);
+			intent.putExtra("id", v.getTag().toString());
 			act.startActivity(intent);
 		}
 	}
@@ -169,7 +235,9 @@ public class SelectActivityCommon implements OnClickListener{
 		act.startActivity(intent);
 	}
 	
-	
+	/**
+	 * 释放视频资源
+	 */
 	public void releaseView(){
 		viewpager.setOnPageChangeListener(null);
 		viewpager.removeAllViews();
@@ -228,6 +296,14 @@ public class SelectActivityCommon implements OnClickListener{
 
 		@Override
 		public void onPageSelected(int page) {
+			User user = users.get(page);
+			sexTv.setText(user.getSexSimbol());
+			nameTv.setText(user.getName());
+			despTv.setText(user.getDescription());
+			ageTv.setText(user.getAge()+"");
+			
+			bottomBtn01.setTag(user.getId());
+			bottomBtn02.setTag(user.getId());
 			
 		}
 	}

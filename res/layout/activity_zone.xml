@@ -301,7 +301,7 @@
             <com.athudong.video.component.NoScrollViewpager
                 android:id="@+id/viewpager"
                 android:layout_width="match_parent"
-                android:layout_height="400dp" />
+                android:layout_height="450dp" />
         </LinearLayout>
         <!-- content Layout end -->
     </com.handmark.pulltorefresh.library.PullToRefreshScrollView>

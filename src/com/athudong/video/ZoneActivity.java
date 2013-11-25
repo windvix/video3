@@ -37,6 +37,9 @@ public class ZoneActivity extends BaseActivity implements OnRefreshListener<Scro
 	private View tab02;
 	private View tab03;
 
+	
+	private ZoneActivityVideo video;
+	
 	@Override
 	protected void initView(Bundle savedInstanceState) {
 		setContentView(R.layout.activity_zone);
@@ -73,7 +76,7 @@ public class ZoneActivity extends BaseActivity implements OnRefreshListener<Scro
 		
 		
 		new ZoneActivityPic(this, tab01);
-		new ZoneActivityVideo(this, tab02);
+		video = new ZoneActivityVideo(this, tab02);
 		new ZoneActivityPicGift(this, tab03);
 	}
 
@@ -87,6 +90,13 @@ public class ZoneActivity extends BaseActivity implements OnRefreshListener<Scro
 
 	}
 
+	
+	@Override
+	protected void onDestroy() {
+		video.release();
+		super.onDestroy();
+	}
+	
 	@Override
 	protected void beforeDestory() {
 
@@ -163,6 +173,7 @@ public class ZoneActivity extends BaseActivity implements OnRefreshListener<Scro
 
 		@Override
 		public void onPageSelected(int page) {
+			video.pause();
 			for (int i = 0; i < tabIndexView.size(); i++) {
 
 				View view = tabIndexView.get(i);

@@ -9,90 +9,88 @@ import com.athudong.video.ZoneActivity;
 import com.athudong.video.bean.Rank;
 
 import android.content.Intent;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.view.View.OnTouchListener;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-
 /**
  * adapter: 排行榜
  */
-public class ListRankAdapter extends ArrayAdapter<Rank> implements OnTouchListener , OnClickListener{
+public class ListRankAdapter extends ArrayAdapter<Rank> implements OnClickListener {
 
-	private int viewId;
 
 	private BaseActivity act;
+	
+	
+	private int type = 0;
 
-	public ListRankAdapter(BaseActivity act, int layoutId, List<Rank> objects) {
-		super(act, layoutId, objects);
+	public static final int TYPE_01 = 1;
+	public static final int TYPE_02 = 2;
+	
+	public ListRankAdapter(BaseActivity act, List<Rank> objects, int type) {
+		super(act, R.layout.list_rank_template, objects);
 		this.act = act;
-		this.viewId = layoutId;
+		this.type = type;
 	}
-
-	private static final String TAG_NUM = "num";
-	private static final String TAG_CONTENT = "content";
 
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
 		if (convertView == null) {
-			convertView = act.createView(viewId);
-		}
-		if (position == 0) {
-			convertView.findViewById(R.id.one).setVisibility(View.VISIBLE);
-			convertView.findViewWithTag(TAG_NUM).setVisibility(View.GONE);
-			convertView.findViewWithTag(TAG_CONTENT).setBackgroundResource(R.drawable.list_rank_item_bg_default);
-
-		} else if (position % 2 == 1) {
-			convertView.findViewById(R.id.one).setVisibility(View.GONE);
-			convertView.findViewWithTag(TAG_NUM).setBackgroundResource(R.drawable.list_rank_num_bg_selected);
-			convertView.findViewWithTag(TAG_NUM).setVisibility(View.VISIBLE);
-			convertView.findViewWithTag(TAG_CONTENT).setBackgroundResource(R.drawable.list_rank_item_bg_selected);
-
+			if (position % 2 == 0) {
+				convertView = act.createView(R.layout.list_rank_template);
+			} else {
+				convertView = act.createView(R.layout.list_rank_template_02);
+			}
 		} else {
-			convertView.findViewById(R.id.one).setVisibility(View.GONE);
-			convertView.findViewWithTag(TAG_NUM).setBackgroundResource(R.drawable.list_rank_num_bg_default);
-			convertView.findViewWithTag(TAG_NUM).setVisibility(View.VISIBLE);
-			convertView.findViewWithTag(TAG_CONTENT).setBackgroundResource(R.drawable.list_rank_item_bg_default);
+			if(position%2==0){
+				if(convertView.findViewWithTag("one")==null){
+					convertView = act.createView(R.layout.list_rank_template);
+				}
+			}else{
+				if(convertView.findViewWithTag("two")==null){
+					convertView = act.createView(R.layout.list_rank_template_02);
+				}
+			}
+			
 		}
-
-		TextView num = (TextView) convertView.findViewWithTag(TAG_NUM);
 		ImageView img = (ImageView) convertView.findViewById(R.id.head);
 		TextView name = (TextView) convertView.findViewById(R.id.name);
 		TextView count = (TextView) convertView.findViewById(R.id.count);
-
+		TextView tyTv = (TextView)convertView.findViewWithTag("unit");
+		
+		
+		
+		if(type==TYPE_01){
+			tyTv.setText("票");
+		}else{
+			tyTv.setText("人气");
+		}
 		Rank rank = getItem(position);
-		num.setText(rank.getNum() + "");
+
 		img.setImageResource(Integer.parseInt(rank.getImg()));
 		name.setText(rank.getName());
 		count.setText(rank.getCount());
-			
-		
-		convertView.findViewById(R.id.guessBtn).setOnTouchListener(this);
-		
+
+		convertView.findViewById(R.id.guessBtn).setOnClickListener(this);
+
 		convertView.setOnClickListener(this);
 		
+		
+
 		return convertView;
 	}
 
 	@Override
-	public boolean onTouch(View v, MotionEvent event) {
-
-		if (event.getAction() == MotionEvent.ACTION_DOWN) {
-			v.findViewWithTag("default").setVisibility(View.INVISIBLE);
-		} else{
-			v.findViewWithTag("default").setVisibility(View.VISIBLE);
-		}
-		return true;
-	}
-
-	@Override
 	public void onClick(View v) {
-		Intent  intent  = new Intent(act, ZoneActivity.class);
-		act.startActivity(intent);
+		int id = v.getId();
+		if (id == R.id.guessBtn) {
+
+		} else {
+			Intent intent = new Intent(act, ZoneActivity.class);
+			act.startActivity(intent);
+		}
 	}
 }

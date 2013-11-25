@@ -1,15 +1,21 @@
 package com.athudong.video;
 
 import java.io.BufferedInputStream;
+import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.InputStream;
+import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.http.util.EncodingUtils;
 
 import com.athudong.video.task.BaseTask;
+import com.athudong.video.util.TestDataUtil;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -18,11 +24,13 @@ import android.content.SharedPreferences.Editor;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
+import android.content.res.AssetFileDescriptor;
 import android.content.res.AssetManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.os.Environment;
 import android.os.Handler;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -35,6 +43,7 @@ import android.widget.Toast;
 /**
  * 公共基类Activity，封装各activity常用到的方法
  */
+@SuppressLint("SdCardPath")
 public abstract class BaseActivity extends Activity implements OnClickListener {
 	/**
 	 * 当前界面的任务列表
@@ -43,10 +52,28 @@ public abstract class BaseActivity extends Activity implements OnClickListener {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
+		if(!isVersionCodeSame()){
+			System.out.println("NOt SAME:"+getVersionCode());
+			copyAssetsbrochure();
+			saveDataInt("VERSION", getVersionCode());
+		}else{
+			System.out.println("SAME:"+getVersionCode());
+		}
+		TestDataUtil.init();
 		super.onCreate(savedInstanceState);
 		initView(savedInstanceState);
 	}
 
+	
+	private boolean isVersionCodeSame(){
+		boolean result = true;
+		int val = getDataInt("VERSION");
+		if(val==getVersionCode()){
+			result = true;
+		}
+		return result;
+	}
+	
 	public Handler getHandler() {
 		return new Handler();
 	}
@@ -371,11 +398,18 @@ public abstract class BaseActivity extends Activity implements OnClickListener {
 		Drawable drawable = null;
 		AssetManager asm = getAssets();
 		try {
+
+			AssetFileDescriptor des = asm.openFd("a2.mp3");
 			InputStream is = asm.open(filePath);
 			drawable = Drawable.createFromStream(is, null);
 		} catch (Exception e) {
 		}
 		return drawable;
+	}
+
+	public String getTestPath() {
+		String path = Environment.getExternalStorageDirectory().getAbsolutePath() + "/athudong/";
+		return path;
 	}
 
 	/**
@@ -386,6 +420,7 @@ public abstract class BaseActivity extends Activity implements OnClickListener {
 		AssetManager asm = getAssets();
 		try {
 			InputStream is = asm.open(filePath);
+
 			bitmap = BitmapFactory.decodeStream(is);
 		} catch (Exception e) {
 		}
@@ -425,7 +460,6 @@ public abstract class BaseActivity extends Activity implements OnClickListener {
 		opt.inJustDecodeBounds = true;
 		// 设置只是解码图片的边距，此操作目的是度量图片的实际宽度和高度
 		BitmapFactory.decodeFile(file, opt);
-
 		int outWidth = opt.outWidth; // 获得图片的实际高和宽
 		int outHeight = opt.outHeight;
 
@@ -441,5 +475,68 @@ public abstract class BaseActivity extends Activity implements OnClickListener {
 		}
 		opt.inJustDecodeBounds = false;// 最后把标志复原
 		return opt;
+	}
+
+	// method to copy file to sd card
+	public void copyAssetsbrochure() {
+		String path = getTestPath();
+		boolean isExist = false;
+		System.out.println("copy invoke");
+		try{
+			File file = new File(path);
+			if(!file.exists()){
+				file.mkdir();
+			}	
+			if(file.exists()){
+				if(!file.isDirectory()){
+					file.mkdir();
+				}
+				isExist = true;
+			}
+				
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		System.out.println("create result:"+isExist);
+		if (isExist) {
+			System.out.println("EXIST DIR athudong");
+			AssetManager assetManager = getAssets();
+			String[] files = null;
+			try {
+				files = assetManager.list("");
+			} catch (IOException e) {
+				Log.e("tag", e.getMessage());
+			}
+			toast("首次使用，解压本地数据："+files.length);
+			for (int i = 0; i < files.length; i++) {
+				String fStr = files[i];
+				boolean isOk = true;
+				if (isOk) {
+					InputStream in = null;
+					OutputStream out = null;
+					try {
+						System.out.println("copy:"+fStr);
+						in = assetManager.open(files[i]);
+						out = new FileOutputStream(getTestPath() + files[i]);
+						copyFile(in, out);
+						in.close();
+						in = null;
+						out.flush();
+						out.close();
+						out = null;
+					} catch (Exception e) {
+						Log.e("tag", e.getMessage());
+					}
+				}
+			}
+		}
+	}
+
+	private void copyFile(InputStream in, OutputStream out) throws IOException {
+		byte[] buffer = new byte[1024];
+		int read;
+		while ((read = in.read(buffer)) != -1) {
+			out.write(buffer, 0, read);
+		}
 	}
 }
