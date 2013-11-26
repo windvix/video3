@@ -35,16 +35,15 @@ public class ListCircleAdapter extends ArrayAdapter<CircleLine> implements OnCli
 			convertView = act.createView(viewId);
 		}
 		this.notifyDataSetChanged();
-		convertView.findViewById(R.id.starBtn01).setOnClickListener(this);
-		convertView.findViewById(R.id.starBtn02).setOnClickListener(this);
-		convertView.findViewById(R.id.starBtn03).setOnClickListener(this);
+		
+		convertView.findViewById(R.id.one).setOnClickListener(this);
+		convertView.findViewById(R.id.two).setOnClickListener(this);
+		convertView.findViewById(R.id.three).setOnClickListener(this);
 		return convertView;
 	}
 
 	@Override
 	public void onClick(View v) {
-		Intent  intent  = new Intent(act, ZoneActivity.class);
-		act.startActivity(intent);
 		
 	}
 

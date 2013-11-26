@@ -16,6 +16,7 @@ import android.support.v4.view.ViewPager.OnPageChangeListener;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.View.OnClickListener;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 
 /**
@@ -35,6 +36,7 @@ public class MainActivityCircle implements OnClickListener{
 	
 	private View v01;
 	private View v02;
+	private View v03;
 	
 	public MainActivityCircle(MainActivity act, View root){
 		this.act = act;
@@ -44,11 +46,13 @@ public class MainActivityCircle implements OnClickListener{
 		
 		viewList = new ArrayList<View>();
 		
-		v01 = act.createView(R.layout.circle_01);
-		v02 = act.createView(R.layout.circle_02);
+		v01 = act.createView(R.layout.main_circle_01);
+		v02 = act.createView(R.layout.main_circle_02);
+		v03 = act.createView(R.layout.main_circle_02);
 		
 		viewList.add(v01);
 		viewList.add(v02);
+		viewList.add(v03);
 		
 		viewpager.setAdapter(new ViewPagerAdapter(viewList));
 		viewpager.setOnPageChangeListener(new ViewPagerPageChangeListener());
@@ -58,42 +62,61 @@ public class MainActivityCircle implements OnClickListener{
 		
 		root.findViewById(R.id.tab01).setOnClickListener(this);
 		root.findViewById(R.id.tab02).setOnClickListener(this);
-	
-		initV01();
-		initV02();
+		root.findViewById(R.id.tab03).setOnClickListener(this);
+
 		
 		root.findViewById(R.id.tab01).setSelected(true);
 		root.findViewById(R.id.tab02).setSelected(false);
+		root.findViewById(R.id.tab03).setSelected(false);
+		
+		initTabOne();
+		initTabTwo();
+		initTabThree();
 	}
 
 	
-	private PullToRefreshListView listView01;
-	
-	
-	/**
-	 * 初始化我关注的明星
-	 */
-	private void initV01(){
-		listView01 = (PullToRefreshListView)v01.findViewById(R.id.pull_refresh_list);
+	private void initTabTwo(){
+		final PullToRefreshListView listView = (PullToRefreshListView)v02.findViewById(R.id.pull_refresh_list);
 		
 		List<CircleLine> list = new ArrayList<CircleLine>();
-		for(int i=0;i<10;i++){
+		
+		for(int i=0;i<2;i++){
 			list.add(new CircleLine());
 		}
 		
-		ListCircleAdapter adapter= new ListCircleAdapter(act, R.layout.list_star_template, list);
-		
-		listView01.setAdapter(adapter);
-		
-		listView01.setOnRefreshListener(new OnRefreshListener<ListView>() {
-
+		listView.setAdapter(new ListCircleAdapter(act,R.layout.list_main_circle_02_template, list));
+		listView.setOnRefreshListener(new OnRefreshListener<ListView>() {
 			@Override
 			public void onRefresh(PullToRefreshBase<ListView> refreshView) {
 				new Handler().postDelayed(new Runnable() {
 					
 					@Override
 					public void run() {
-						listView01.onRefreshComplete();
+						listView.onRefreshComplete();
+					}
+				}, 2000);
+			}
+		});
+	}
+	
+	private void initTabThree(){
+		final PullToRefreshListView listView = (PullToRefreshListView)v03.findViewById(R.id.pull_refresh_list);
+		
+		List<CircleLine> list = new ArrayList<CircleLine>();
+		
+		for(int i=0;i<1;i++){
+			list.add(new CircleLine());
+		}
+		
+		listView.setAdapter(new ListCircleAdapter(act,R.layout.list_main_circle_02_template, list));
+		listView.setOnRefreshListener(new OnRefreshListener<ListView>() {
+			@Override
+			public void onRefresh(PullToRefreshBase<ListView> refreshView) {
+				new Handler().postDelayed(new Runnable() {
+					
+					@Override
+					public void run() {
+						listView.onRefreshComplete();
 					}
 				}, 2000);
 			}
@@ -101,39 +124,37 @@ public class MainActivityCircle implements OnClickListener{
 	}
 	
 	
-	
-	
-	private PullToRefreshListView listView02;
-	
-	/**
-	 * 初始化我喜欢的明星
-	 */
-	private void initV02(){
-		listView02 = (PullToRefreshListView)v02.findViewById(R.id.pull_refresh_list);
-		
-		List<CircleLine> list = new ArrayList<CircleLine>();
-		for(int i=0;i<10;i++){
-			list.add(new CircleLine());
+	private void initTabOne(){
+		LinearLayout leftLayout = (LinearLayout)v01.findViewById(R.id.leftLayout);
+		LinearLayout rightLayout = (LinearLayout)v01.findViewById(R.id.rightLayout);
+		for(int i=0;i<4;i++){
+			View one  = act.createView(R.layout.list_main_circle_01_template1);
+			leftLayout.addView(one);
+			one.setOnClickListener(new OnClickListener() {
+				
+				@Override
+				public void onClick(View v) {
+					// TODO Auto-generated method stub
+					
+				}
+			});
 		}
 		
-		ListCircleAdapter adapter= new ListCircleAdapter(act, R.layout.list_star_template, list);
-		
-		listView02.setAdapter(adapter);
-		
-		listView02.setOnRefreshListener(new OnRefreshListener<ListView>() {
-
-			@Override
-			public void onRefresh(PullToRefreshBase<ListView> refreshView) {
-				new Handler().postDelayed(new Runnable() {
+		for(int i=0;i<4;i++){
+			View one  = act.createView(R.layout.list_main_circle_01_template1);
+			rightLayout.addView(one);
+			one.setOnClickListener(new OnClickListener() {
+				
+				@Override
+				public void onClick(View v) {
+					// TODO Auto-generated method stub
 					
-					@Override
-					public void run() {
-						listView02.onRefreshComplete();
-					}
-				}, 2000);
-			}
-		});
+				}
+			});
+		}
+		
 	}
+	
 
 	@Override
 	public void onClick(View v) {
@@ -143,6 +164,8 @@ public class MainActivityCircle implements OnClickListener{
 			viewpager.setCurrentItem(0,false);
 		}else if(id==R.id.tab02){
 			viewpager.setCurrentItem(1,false);
+		}else if(id==R.id.tab03){
+			viewpager.setCurrentItem(2, false);
 		}
 	}
 	
@@ -193,9 +216,15 @@ public class MainActivityCircle implements OnClickListener{
 			if(page==0){
 				root.findViewById(R.id.tab01).setSelected(true);
 				root.findViewById(R.id.tab02).setSelected(false);
+				root.findViewById(R.id.tab03).setSelected(false);
 			}else if(page==1){
 				root.findViewById(R.id.tab01).setSelected(false);
 				root.findViewById(R.id.tab02).setSelected(true);
+				root.findViewById(R.id.tab03).setSelected(false);
+			}else if(page==2){
+				root.findViewById(R.id.tab01).setSelected(false);
+				root.findViewById(R.id.tab02).setSelected(false);
+				root.findViewById(R.id.tab03).setSelected(true);
 			}
 		}
 	}

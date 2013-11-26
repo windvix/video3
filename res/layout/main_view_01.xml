@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ECECEC"
-    android:orientation="vertical" >
+    android:background="#282C35" >
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="56dp"
-        android:layout_weight="0"
+        android:layout_alignParentTop="true"
         android:background="@drawable/title_bar_bg" >
 
         <TextView
@@ -25,7 +24,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="1"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="56dp"
         android:gravity="top"
         android:orientation="vertical" >
 
@@ -33,7 +33,7 @@
             android:layout_width="match_parent"
             android:layout_height="2dp"
             android:layout_marginTop="56dp"
-            android:background="#B7B3B2"
+            android:background="#606163"
             android:orientation="horizontal" />
 
         <LinearLayout
@@ -44,14 +44,23 @@
             android:gravity="center"
             android:orientation="horizontal" >
 
+            
+            <ImageView 
+                android:layout_width="25dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/icon_select"
+                android:layout_marginLeft="15dp"
+                android:scaleType="fitCenter"
+                />
+            
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginLeft="45dp"
+                android:layout_marginLeft="15dp"
                 android:layout_weight="1"
                 android:gravity="left|center"
                 android:text="海选"
-                android:textColor="#363636"
+                android:textColor="#FEFFFF"
                 android:textSize="17sp" />
 
             <ImageView
@@ -75,15 +84,22 @@
             android:background="@drawable/main_list"
             android:gravity="center"
             android:orientation="horizontal" >
-
+            <ImageView 
+                android:layout_width="25dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/icon_cup"
+                android:layout_marginLeft="15dp"
+                android:scaleType="fitCenter"
+                />
+            
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginLeft="45dp"
+                android:layout_marginLeft="15dp"
                 android:layout_weight="1"
                 android:gravity="left|center"
                 android:text="周赛"
-                android:textColor="#363636"
+                android:textColor="#FEFFFF"
                 android:textSize="17sp" />
 
             <ImageView
@@ -108,14 +124,23 @@
             android:gravity="center"
             android:orientation="horizontal" >
 
+                        <ImageView 
+                android:layout_width="25dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/icon_act"
+                android:layout_marginLeft="15dp"
+                android:scaleType="fitCenter"
+                />
+            
+            
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginLeft="45dp"
+                android:layout_marginLeft="15dp"
                 android:layout_weight="1"
                 android:gravity="left|center"
                 android:text="活动预告"
-                android:textColor="#363636"
+                android:textColor="#FEFFFF"
                 android:textSize="17sp" />
 
             <ImageView
@@ -126,11 +151,40 @@
                 android:src="@drawable/icon_main_list_arrow" />
         </LinearLayout>
 
-         <LinearLayout
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="2dp"
-            android:background="#B7B3B2"
+            android:background="#606163"
             android:orientation="horizontal" />
     </LinearLayout>
 
-</LinearLayout>
+    <RelativeLayout
+        android:id="@+id/applyBtn"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="56dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/main_red_btn_01" >
+
+        <View 
+            
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/main_red_btn_click_bg"
+            android:alpha="0.2"
+            />
+        
+        
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:text="我要报名"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp" />
+    </RelativeLayout>
+
+</RelativeLayout>

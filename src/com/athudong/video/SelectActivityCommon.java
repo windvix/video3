@@ -233,6 +233,13 @@ public class SelectActivityCommon implements OnClickListener{
 	public void showMain(){
 		Intent intent = new Intent(act, MainActivity.class);
 		act.startActivity(intent);
+		new Handler().postDelayed(new Runnable() {
+			
+			@Override
+			public void run() {
+				act.finish();
+			}
+		}, 3500);
 	}
 	
 	/**

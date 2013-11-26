@@ -23,6 +23,7 @@ public class MainActivityDiscover implements OnClickListener{
 		root.findViewById(R.id.selectBtn).setOnClickListener(this);
 		root.findViewById(R.id.weekBtn).setOnClickListener(this);
 		root.findViewById(R.id.actBtn).setOnClickListener(this);
+		root.findViewById(R.id.applyBtn).setOnClickListener(this);
 	}
 
 

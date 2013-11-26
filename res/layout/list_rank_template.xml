@@ -1,134 +1,340 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="62dp" >
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="68dp"
-        android:tag="one"
-        android:layout_centerInParent="true"
-        android:orientation="horizontal" >
+        android:layout_height="68dp" >
 
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="0"
-            android:gravity="center"
-            android:padding="8dp" >
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#433E44"
+            android:orientation="horizontal" />
 
-            <com.athudong.video.component.RoundImageView
-                android:id="@+id/head"
-                android:layout_width="58dp"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="68dp"
+            android:layout_centerInParent="true"
+            android:orientation="horizontal"
+            android:tag="one" >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:scaleType="fitCenter"
-                android:src="@drawable/rank_head_01" />
+                android:layout_weight="0"
+                android:gravity="center"
+                android:padding="8dp" >
+
+                <com.athudong.video.component.RoundImageView
+                    android:id="@+id/head"
+                    android:layout_width="58dp"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/rank_head_01" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:orientation="vertical"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="8dp" >
+
+                    <TextView
+                        android:id="@+id/name"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="left|center"
+                        android:text="刘玲玲"
+                        android:textColor="#ffffff"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="left|center"
+                        android:tag="saying1"
+                        android:text="微笑在你我心中传递"
+                        android:textColor="#727272"
+                        android:textSize="14sp"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="left|center"
+                        android:tag="saying2"
+                        android:text="微笑在你我心中传递"
+                        android:textColor="#ffffff"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/guessBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:layout_weight="0"
+                    android:gravity="center"
+                    android:padding="11dp" >
+
+                    <LinearLayout
+                        android:layout_width="58dp"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/list_game_btn_press"
+                        android:gravity="center"
+                        android:orientation="vertical" >
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="$"
+                            android:textColor="#FFFFFD"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="竞猜"
+                            android:textColor="#FFFFFD"
+                            android:textSize="16sp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:layout_weight="0"
+                    android:gravity="center"
+                    android:paddingLeft="11dp"
+                    android:paddingRight="11dp" >
+
+                    <LinearLayout
+                        android:layout_width="58dp"
+                        android:layout_height="match_parent"
+                        android:gravity="bottom|center"
+                        android:orientation="vertical" >
+
+                        <ImageView
+                            android:id="@+id/arrow"
+                            android:layout_width="16dp"
+                            android:layout_height="8dp"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/icon_rank_arrow"
+                            android:visibility="invisible" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="150dp"
+                    android:layout_height="match_parent"
+                    android:layout_toLeftOf="@id/guessBtn"
+                    android:gravity="center|right"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="right|center"
+                        android:text="15,396"
+                        android:textColor="#fffeff"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="4dp"
+                        android:gravity="right|center"
+                        android:tag="unit1"
+                        android:text="票"
+                        android:textColor="#fffeff"
+                        android:textSize="15sp"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="4dp"
+                        android:gravity="right|center"
+                        android:tag="unit2"
+                        android:text="票"
+                        android:textColor="#727272"
+                        android:textSize="15sp" />
+                </LinearLayout>
+            </RelativeLayout>
         </LinearLayout>
 
-        <RelativeLayout
+        <!-- 加上蒙层 -->
+
+        <View
+            android:id="@+id/dimView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:alpha="0.6"
+            android:background="#000"
+            android:visibility="invisible" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/rank_line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:background="#0E0E18" />
+    <!-- 弹出框 -->
+
+    <LinearLayout
+        android:id="@+id/popup"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:orientation="vertical"
+        android:visibility="gone" >
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@drawable/list_bg_01" >
+            android:orientation="horizontal" >
 
-            <LinearLayout
+            <TextView
+                android:id="@+id/money01"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_alignParentLeft="true"
-                android:orientation="vertical"
-                android:paddingLeft="8dp"
-                android:paddingRight="8dp" >
+                android:layout_weight="1"
+                android:background="@drawable/game_money_default"
+                android:gravity="center"
+                android:text="$99"
+                android:textColor="#FEFFFF"
+                android:textSize="18sp" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0"
+                android:background="@drawable/game_select_line" />
+
+            <TextView
+                android:id="@+id/money02"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/game_money_selected"
+                android:gravity="center"
+                android:text="$399"
+                android:textColor="#FEFFFF"
+                android:textSize="18sp" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0"
+                android:background="@drawable/game_select_line" />
+
+            <TextView
+                android:id="@+id/money03"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/game_money_default"
+                android:gravity="center"
+                android:text="$999"
+                android:textColor="#FEFFFF"
+                android:textSize="18sp" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0"
+                android:background="@drawable/game_select_line" />
+
+            <TextView
+                android:id="@+id/money04"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/game_money_default"
+                android:gravity="center"
+                android:text="$1999"
+                android:textColor="#FEFFFF"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#282C35"
+            android:orientation="horizontal"
+            android:paddingTop="15dp" >
+
+            <LinearLayout
+                android:id="@+id/currentMoneyLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/game_money_btn"
+                android:gravity="center"
+                android:orientation="horizontal" >
 
                 <TextView
-                    android:id="@+id/name"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="left|center"
-                    android:text="刘玲玲"
-                    android:textColor="#fffeff"
+                    android:gravity="center"
+                    android:text="现有星币"
+                    android:textColor="#FEFFFF"
                     android:textSize="18sp" />
 
                 <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="left|center"
-                    android:text="微笑在你我心中传递"
-                    android:textColor="#fffeff"
-                    android:textSize="14sp" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/guessBtn"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_alignParentRight="true"
-                android:layout_weight="0"
-                android:gravity="center"
-                android:padding="10dp" >
-
-                <LinearLayout
-                    android:layout_width="58dp"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/list_game_btn_press"
-                    android:gravity="center"
-                    android:orientation="vertical" >
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:text="$"
-                        android:textColor="#47B7C5"
-                        android:textSize="16sp" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:text="竞猜"
-                        android:textColor="#47B7C5"
-                        android:textSize="16sp" />
-                </LinearLayout>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="150dp"
-                android:layout_height="match_parent"
-                android:layout_toLeftOf="@id/guessBtn"
-                android:gravity="center|right" 
-                android:orientation="horizontal">
-                
-                <TextView 
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:gravity="right|center"
-                    android:text="15,396"
-                    android:id="@+id/count"
-                    android:textSize="18sp"
-                    android:textColor="#fffeff"
-                    />
-                <TextView 
-                    android:tag="unit"
                     android:layout_marginLeft="4dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:gravity="right|center"
-                    android:text="票"
-                    android:textSize="15sp"
-                    android:textColor="#fffeff"
-                    />
-                
+                    android:gravity="center"
+                    android:text="$92"
+                    android:textColor="#FEFFFF"
+                    android:textSize="18sp" />
             </LinearLayout>
-        </RelativeLayout>
-    </LinearLayout>
 
-    
-    
-    <LinearLayout 
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="#C0C0C0"
-        android:layout_alignParentBottom="true"/>
-</RelativeLayout>
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0"
+                android:background="@drawable/game_select_line" />
+
+            <TextView
+                android:id="@+id/confirmBtn"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/game_money_btn"
+                android:gravity="center"
+                android:text="确认竞猜"
+                android:textColor="#FEFFFF"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignParentBottom="true"
+            android:background="#0E0E18" />
+    </LinearLayout>
+    <!-- 弹出弹 end -->
+
+</LinearLayout>

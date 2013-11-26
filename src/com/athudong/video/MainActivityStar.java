@@ -61,14 +61,17 @@ public class MainActivityStar implements OnClickListener {
 		initRank02();
 	}
 
-	private PullToRefreshListView listView01;
+	private ListView listView01;
 
 	/**
 	 * 初始化排行榜一
 	 */
 	private void initRank01() {
-		listView01 = (PullToRefreshListView) v01.findViewById(R.id.pull_refresh_list);
+		final PullToRefreshListView tempListview = (PullToRefreshListView) v01.findViewById(R.id.pull_refresh_list);
 
+		
+		listView01 = tempListview.getRefreshableView();
+		
 		List<Rank> list = new ArrayList<Rank>();
 		
 		Rank r01 = new Rank(1, R.drawable.rank_head_01+"", "朱玲玲", "15,396");
@@ -95,17 +98,20 @@ public class MainActivityStar implements OnClickListener {
 		list.add(r10);
 		
 		
-		ListRankAdapter adapter = new ListRankAdapter(act, list, ListRankAdapter.TYPE_01);
+		final ListRankAdapter adapter = new ListRankAdapter(act, list, ListRankAdapter.TYPE_01);
 
+		act.registerForContextMenu(listView01);
 		listView01.setAdapter(adapter);
-
-		listView01.setOnRefreshListener(new OnRefreshListener<ListView>() {
+		adapter.notifyDataSetChanged();
+		tempListview.setOnRefreshListener(new OnRefreshListener<ListView>() {
 			@Override
 			public void onRefresh(PullToRefreshBase<ListView> refreshView) {
+				adapter.hidePop();
 				new Handler().postDelayed(new Runnable() {
 					@Override
 					public void run() {
-						listView01.onRefreshComplete();
+						tempListview.onRefreshComplete();
+						adapter.notifyDataSetChanged();
 					}
 				}, 2000);
 			}
@@ -148,13 +154,14 @@ public class MainActivityStar implements OnClickListener {
 		list.add(r10);
 		
 		
-		ListRankAdapter adapter = new ListRankAdapter(act, list, ListRankAdapter.TYPE_02);
+		final ListRankAdapter adapter = new ListRankAdapter(act, list, ListRankAdapter.TYPE_02);
 
 		listView02.setAdapter(adapter);
 
 		listView02.setOnRefreshListener(new OnRefreshListener<ListView>() {
 			@Override
 			public void onRefresh(PullToRefreshBase<ListView> refreshView) {
+				adapter.hidePop();
 				new Handler().postDelayed(new Runnable() {
 					@Override
 					public void run() {
@@ -223,9 +230,11 @@ public class MainActivityStar implements OnClickListener {
 			if (page == 0) {
 				root.findViewById(R.id.tab01).setSelected(true);
 				root.findViewById(R.id.tab02).setSelected(false);
+				root.findViewById(R.id.msgLayout).setVisibility(View.VISIBLE);
 			} else if (page == 1) {
 				root.findViewById(R.id.tab02).setSelected(true);
 				root.findViewById(R.id.tab01).setSelected(false);
+				root.findViewById(R.id.msgLayout).setVisibility(View.GONE);
 			}
 		}
 	}
