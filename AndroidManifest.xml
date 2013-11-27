@@ -60,6 +60,12 @@
             android:name="com.athudong.video.ZoneActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
+        
+        <!-- 艺人注册信息界面 -->
+        <activity
+            android:name="com.athudong.video.RegisterActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
     </application>
 
 </manifest>

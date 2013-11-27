@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ScrollView;
 
+import com.athudong.video.bean.User;
 import com.athudong.video.component.ImageViewTouchListener;
 import com.athudong.video.task.BaseTask;
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
@@ -37,6 +38,8 @@ public class ZoneActivity extends BaseActivity implements OnRefreshListener<Scro
 	private View tab02;
 	private View tab03;
 
+	
+	private User user;
 	
 	private ZoneActivityVideo video;
 	
