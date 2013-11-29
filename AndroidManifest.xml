@@ -66,6 +66,63 @@
             android:name="com.athudong.video.RegisterActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
+        
+        
+        <!-- 账号管理界面 -->
+        <activity
+            android:name="com.athudong.video.AccountManageActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        
+        
+                
+        <!-- 消息通知界面 -->
+        <activity
+            android:name="com.athudong.video.NotificationActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        
+        
+        <!-- 明星商城界面 -->
+        <activity
+            android:name="com.athudong.video.ShopActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        
+        
+        <!-- 我的钱包界面 -->
+        <activity
+            android:name="com.athudong.video.MyWalletActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        
+        <!-- 通用设置界面 -->
+        <activity
+            android:name="com.athudong.video.CommonSettingActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        
+        
+        <!-- 活动预告界面 -->
+        <activity
+            android:name="com.athudong.video.ActNoticeActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        
+        
+        
+        <!-- 我要报名参加界面 -->
+        <activity
+            android:name="com.athudong.video.ApplyActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        
+        
+        <!-- 活动细节界面 -->
+        <activity
+            android:name="com.athudong.video.ActDetailActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
     </application>
 
 </manifest>

@@ -3,5 +3,18 @@
 
     <string name="app_name">我是明星</string>
     <string name="server_addr"></string>
+    
+    
+    <string name="upcoming_events">活动预告</string>
+    <string name="all_events">所有活动</string>
+
+    <string name="my_events">我的活动</string>
+    <string name="join_in">我要报名</string>
+    <string name="join_in2">报名参加</string>
+    <string name="submit_registration">提交报名</string>
+    <string name="declaration">参赛宣言</string>
+    <string name="participant_photos">照片写真</string>
+    <string name="participant_video">视频MV</string>
+    <string name="participant_music">声音MP3</string>
 
 </resources>

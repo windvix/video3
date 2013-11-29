@@ -20,6 +20,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.MediaController;
+import android.widget.TextView;
 import android.widget.VideoView;
 
 import com.athudong.video.bean.User;
@@ -43,6 +44,8 @@ public class VideosActivity extends BaseActivity {
 	private VideoHelper videoHelper;
 	
 	private User user;
+	
+	private TextView titleTv;
 
 	@Override
 	protected void initView(Bundle savedInstanceState) {
@@ -54,7 +57,10 @@ public class VideosActivity extends BaseActivity {
 		findViewById(R.id.backBtn).setOnClickListener(this);
 
 		viewpager = (ViewPager) findViewById(R.id.viewpager);
+		titleTv = (TextView)findViewById(R.id.titleTv);
 
+		
+		titleTv.setText(user.getName());
 		
 
 		videoBg = (ImageView) findViewById(R.id.videoBgImg);

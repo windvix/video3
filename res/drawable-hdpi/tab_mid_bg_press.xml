@@ -3,7 +3,7 @@
 
     <item>
         <shape>
-            <solid android:color="#C12320" />
+            <solid android:color="@color/title_bar_text_color" />
         </shape>
     </item>
 

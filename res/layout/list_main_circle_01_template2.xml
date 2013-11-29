@@ -1,117 +1,214 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal" >
+    android:layout_height="175dp" >
 
-    <LinearLayout
-        android:layout_width="8dp"
-        android:layout_height="8dp"
-        android:layout_weight="0"
-        android:orientation="horizontal" />
-
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:orientation="vertical" >
+        android:layout_height="170dp"
+        
+        android:layout_centerInParent="true" >
 
-        <LinearLayout
+        <View
             android:layout_width="match_parent"
-            android:layout_height="8dp"
-            android:orientation="horizontal" />
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="54dp"
+            android:background="#837E7B" />
 
         <RelativeLayout
+            android:id="@+id/imgLayout"
             android:layout_width="match_parent"
-            android:layout_height="150dp">
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_marginBottom="1dp"
+            android:layout_marginLeft="17dp"
+            android:layout_marginRight="17dp"
+            android:layout_marginTop="55dp" >
+
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="#1F1E23"
-                android:scaleType="center"
-                android:src="@drawable/pk_video_bg_01" />
-            
-            <View 
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/video_play_click_bg"
-                android:alpha="0.5"
-                />
-        </RelativeLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:background="@drawable/main_circle_list_click_default"
-            android:orientation="vertical" >
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="6dp"
-                android:layout_marginTop="6dp"
-                android:layout_weight="0"
-                android:text="Angle Liu, Shang Hai"
-                android:textColor="#FFFFFF"
-                android:textSize="16sp" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="8dp"
-                android:layout_marginTop="8dp"
-                android:layout_weight="0"
-                android:text="三天两夜的比赛，加油.."
-                android:textColor="#C9C9CB"
-                android:textSize="14sp" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="8dp"
-                android:layout_weight="1"
-                android:gravity="center_vertical"
-                android:orientation="horizontal" >
-
-                <ImageView
-                    android:layout_width="18dp"
-                    android:layout_height="18dp"
-                    android:src="@drawable/icon_hear_gray" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="8dp"
-                    android:gravity="center"
-                    android:text="236"
-                    android:textColor="#C9C9CB" />
-
-                <ImageView
-                    android:layout_width="18dp"
-                    android:layout_height="18dp"
-                    android:layout_marginLeft="20dp"
-                    android:src="@drawable/icon_chat_gray" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="8dp"
-                    android:gravity="center"
-                    android:text="236"
-                    android:textColor="#C9C9CB" />
-            </LinearLayout>
+                android:layout_alignParentTop="true"
+                android:scaleType="centerCrop"
+                android:src="@drawable/pk_video_bg_02" />
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="#453B3C" />
-        </LinearLayout>
-    </LinearLayout>
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:alpha="0.2"
+                android:background="@drawable/video_play_click_bg" />
+        </RelativeLayout>
 
-    <LinearLayout
-        android:layout_width="8dp"
-        android:layout_height="8dp"
-        android:layout_weight="0"
-        android:orientation="horizontal" />
+        <RelativeLayout
+            android:id="@+id/shortTextLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="17dp"
+            android:visibility="visible"
+            android:layout_marginRight="17dp" >
 
-</LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:alpha="0.6"
+                android:background="#000"
+                android:padding="4dp"
+                android:text="  " />
+
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:padding="4dp"
+                android:text="三天两夜的比赛终于结束了，感觉好累，但。。。"
+                android:textColor="#fff" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/longTextLayout"
+            android:visibility="invisible"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="17dp"
+            android:layout_marginTop="64dp" 
+            android:layout_marginRight="17dp" >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentBottom="true"
+                android:alpha="0.6"
+                android:background="#000"
+                android:padding="4dp"
+                android:text="  " />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentBottom="true"
+                android:padding="4dp"
+                android:text="三天两夜的比赛终于结束了，感觉好累，但是我觉得很值得。以后还要继续努力！加油！"
+                android:textColor="#fff" />
+        </RelativeLayout>
+        
+        
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="8dp" >
+
+            <com.athudong.video.component.RoundImageView
+                android:id="@+id/headImg"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_alignParentLeft="true"
+                android:scaleType="fitCenter"
+                android:src="@drawable/test_head_01" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginLeft="16dp"
+                android:layout_toRightOf="@id/headImg"
+                android:background="@color/theme_color"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="刘玲玲"
+                    android:textSize="16sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="left|center"
+                        android:text="15分钟前"
+                        android:textColor="#BABABA"
+                        android:textSize="14sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="right|center"
+                        android:orientation="horizontal" >
+
+                        <ImageView
+                            android:layout_width="10dp"
+                            android:layout_height="10dp"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/icon_hear_gray" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="4dp"
+                            android:gravity="center"
+                            android:text="236"
+                            android:textColor="#BABABA" />
+
+                        <ImageView
+                            android:layout_width="10dp"
+                            android:layout_height="10dp"
+                            android:layout_marginLeft="16dp"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/icon_chat_red" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="4dp"
+                            android:gravity="center"
+                            android:text="68"
+                            android:textColor="#BABABA" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:layout_alignParentBottom="true"
+                android:orientation="horizontal" >
+
+                <View
+                    android:layout_width="15dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/theme_color" />
+
+                <View
+                    android:layout_width="15dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/icon_zone_arrow" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@color/theme_color" />
+            </LinearLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

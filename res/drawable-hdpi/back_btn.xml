@@ -2,6 +2,6 @@
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item android:drawable="@drawable/icon_back_press" android:state_pressed="true"/>
-    <item android:drawable="@drawable/icon_back" android:state_pressed="false"/>
+    <item android:drawable="@drawable/icon_back_red" android:state_pressed="false"/>
 
 </selector>

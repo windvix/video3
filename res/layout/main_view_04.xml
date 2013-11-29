@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#272B34"
+    android:background="@color/theme_color"
     android:orientation="vertical" >
 
     <RelativeLayout
@@ -18,10 +18,14 @@
             android:layout_centerInParent="true"
             android:gravity="center"
             android:text="我"
-            android:textColor="#FFFFFF"
+            android:textColor="@color/title_bar_text_color"
             android:textSize="24sp" />
     </RelativeLayout>
-
+	<LinearLayout 
+	    android:layout_width="match_parent"
+	    android:layout_height="1dp"
+	    android:background="#875755"/>
+    
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -78,7 +82,7 @@
                         android:layout_alignParentTop="true"
                         android:layout_marginTop="25dp"
                         android:text="Angle Liu"
-                        android:textColor="#FFFFFD"
+                        android:textColor="#5D5D5D"
                         android:textSize="25sp" />
 
                     <TextView
@@ -88,7 +92,7 @@
                         android:layout_below="@id/nameTv"
                         android:layout_marginTop="8dp"
                         android:text="atAngle Liu"
-                        android:textColor="#A81F27"
+                        android:textColor="@color/title_bar_text_color"
                         android:textSize="16sp" />
 
                     <RelativeLayout
@@ -102,7 +106,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="8,282"
-                            android:textColor="#FFFEFF"
+                            android:textColor="@color/me_fans_text_color"
                             android:textSize="16sp" />
 
                         <TextView
@@ -111,7 +115,7 @@
                             android:layout_marginLeft="8dp"
                             android:layout_toRightOf="@id/fansTv"
                             android:text="粉丝"
-                            android:textColor="#FFFEFF"
+                            android:textColor="@color/me_fans_text_color"
                             android:textSize="16sp" />
 
                         <TextView
@@ -122,7 +126,7 @@
                             android:layout_marginLeft="8dp"
                             android:layout_marginRight="25dp"
                             android:text="关注"
-                            android:textColor="#FFFEFF"
+                            android:textColor="@color/me_fans_text_color"
                             android:textSize="16sp" />
 
                         <TextView
@@ -131,7 +135,7 @@
                             android:layout_height="wrap_content"
                             android:layout_toLeftOf="@id/foText"
                             android:text="39"
-                            android:textColor="#FFFEFF"
+                            android:textColor="@color/me_fans_text_color"
                             android:textSize="16sp" />
                     </RelativeLayout>
                 </RelativeLayout>
@@ -142,7 +146,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:layout_marginTop="5dp"
-                android:background="#595355"
+                android:background="@color/main_list_line_color"
                 android:orientation="horizontal" />
 
             <!-- one btn -->
@@ -171,7 +175,7 @@
                     android:layout_weight="1"
                     android:gravity="left|center"
                     android:text="账号管理"
-                    android:textColor="#FDFFFC"
+                    android:textColor="@color/me_fans_text_color"
                     android:textSize="16sp" />
 
                 <ImageView
@@ -185,7 +189,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="#595355"
+                android:background="@color/main_list_line_color"
                 android:orientation="horizontal" />
             <!-- one btn end -->
 
@@ -216,7 +220,7 @@
                     android:layout_weight="1"
                     android:gravity="left|center"
                     android:text="消息通知"
-                    android:textColor="#FDFFFC"
+                    android:textColor="@color/me_fans_text_color"
                     android:textSize="16sp" />
 
                 <ImageView
@@ -230,7 +234,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="#595355"
+                android:background="@color/main_list_line_color"
                 android:orientation="horizontal" />
             <!-- one btn end -->
 
@@ -261,7 +265,7 @@
                     android:layout_weight="1"
                     android:gravity="left|center"
                     android:text="明星商城"
-                    android:textColor="#FDFFFC"
+                    android:textColor="@color/me_fans_text_color"
                     android:textSize="16sp" />
 
                 <ImageView
@@ -275,7 +279,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="#595355"
+                android:background="@color/main_list_line_color"
                 android:orientation="horizontal" />
             <!-- one btn end -->
 
@@ -306,7 +310,7 @@
                     android:layout_weight="0"
                     android:gravity="left|center"
                     android:text="我的钱包"
-                    android:textColor="#FDFFFC"
+                    android:textColor="@color/me_fans_text_color"
                     android:textSize="16sp" />
 
                 <TextView
@@ -315,7 +319,7 @@
                     android:layout_weight="1"
                     android:gravity="right|center"
                     android:text="16,282"
-                    android:textColor="#FDFFFC"
+                    android:textColor="@color/me_fans_text_color"
                     android:textSize="16sp" />
 
                 <TextView
@@ -326,7 +330,7 @@
                     android:layout_weight="0"
                     android:gravity="left|center"
                     android:text="星币"
-                    android:textColor="#FDFFFC"
+                    android:textColor="@color/me_fans_text_color"
                     android:textSize="16sp" />
 
                 <ImageView
@@ -340,7 +344,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="#595355"
+                android:background="@color/main_list_line_color"
                 android:orientation="horizontal" />
             <!-- one btn end -->
 
@@ -371,7 +375,7 @@
                     android:layout_weight="1"
                     android:gravity="left|center"
                     android:text="通用设置"
-                    android:textColor="#FDFFFC"
+                    android:textColor="@color/me_fans_text_color"
                     android:textSize="16sp" />
 
                 <ImageView
@@ -385,7 +389,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="#595355"
+                android:background="@color/main_list_line_color"
                 android:orientation="horizontal" />
             <!-- one btn end -->
 
@@ -393,7 +397,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:layout_marginTop="20dp"
-                android:background="#595355"
+                android:background="@color/main_list_line_color"
                 android:orientation="horizontal" />
             <!-- one btn -->
 
@@ -421,7 +425,7 @@
                     android:layout_weight="1"
                     android:gravity="left|center"
                     android:text="退出登录"
-                    android:textColor="#FDFFFC"
+                    android:textColor="@color/me_fans_text_color"
                     android:textSize="16sp" />
 
                 <ImageView
@@ -435,7 +439,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="#595355"
+                android:background="@color/main_list_line_color"
                 android:orientation="horizontal" />
             <!-- one btn end -->
 

@@ -2,6 +2,7 @@ package com.athudong.video;
 
 import com.athudong.video.dialog.ConfirmDialog;
 
+import android.content.Intent;
 import android.view.View;
 import android.view.View.OnClickListener;
 /**
@@ -24,6 +25,7 @@ public class MainActivityMe implements OnClickListener{
 		root.findViewById(R.id.meBtn04).setOnClickListener(this);
 		root.findViewById(R.id.meBtn05).setOnClickListener(this);
 		root.findViewById(R.id.meBtn06).setOnClickListener(this);
+		root.findViewById(R.id.headLayout).setOnClickListener(this);
 	}
 
 
@@ -39,11 +41,8 @@ public class MainActivityMe implements OnClickListener{
 				@Override
 				public void onClick(View v) {
 					dialog.dismiss();
-					act.finish();
-					if(SelectFirstActivity.self!=null){
-						SelectFirstActivity.self.finish();
-					}
-					System.exit(0);// 使虚拟机停止运行并退出程序
+					Intent intent = new Intent(act, RegisterActivity.class);
+					act.startActivity(intent);
 				}
 			});
 			dialog.getRightBtn().setOnClickListener(new OnClickListener() {
@@ -55,6 +54,25 @@ public class MainActivityMe implements OnClickListener{
 			});
 			
 			dialog.show();
+		}else if(id==R.id.meBtn01){
+			Intent intent  = new Intent(act, AccountManageActivity.class);
+			act.startActivity(intent);
+			
+		}else if(id==R.id.meBtn02){
+			Intent intent  = new Intent(act, NotificationActivity.class);
+			act.startActivity(intent);
+		}else if(id==R.id.meBtn03){
+			Intent intent  = new Intent(act, ShopActivity.class);
+			act.startActivity(intent);
+		}else if(id==R.id.meBtn04){
+			Intent intent  = new Intent(act, MyWalletActivity.class);
+			act.startActivity(intent);
+		}else if(id==R.id.meBtn05){
+			Intent intent  = new Intent(act, CommonSettingActivity.class);
+			act.startActivity(intent);
+		}else if(id==R.id.headLayout){
+			Intent intent  = new Intent(act, NotificationActivity.class);
+			act.startActivity(intent);
 		}
 	}
 }

@@ -37,4 +37,6 @@
     
     <dimen name="zone_star_size">12dp</dimen>
     
+    <dimen name="pk_component_size">55dp</dimen>
+    
 </resources>

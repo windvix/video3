@@ -47,7 +47,7 @@
             android:layout_centerInParent="true"
             android:gravity="center"
             android:text="个人空间"
-            android:textColor="#2C97CD"
+            android:textColor="@color/title_bar_text_color"
             android:textSize="24sp" />
     </RelativeLayout>
 

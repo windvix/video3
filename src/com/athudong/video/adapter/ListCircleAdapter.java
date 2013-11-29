@@ -44,7 +44,8 @@ public class ListCircleAdapter extends ArrayAdapter<CircleLine> implements OnCli
 
 	@Override
 	public void onClick(View v) {
-		
+		Intent intent  = new Intent(act,ZoneActivity.class);
+		act.startActivity(intent);
 	}
 
 }

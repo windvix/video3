@@ -3,6 +3,6 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
     
     
-    <item android:drawable="@drawable/title_bar_bg_blue"/>
+    <item android:drawable="@drawable/title_bar_bg_white"/>
     
 </selector>

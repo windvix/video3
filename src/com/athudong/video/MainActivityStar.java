@@ -9,6 +9,7 @@ import com.handmark.pulltorefresh.library.PullToRefreshBase;
 import com.handmark.pulltorefresh.library.PullToRefreshBase.OnRefreshListener;
 import com.handmark.pulltorefresh.library.PullToRefreshListView;
 
+import android.content.Intent;
 import android.os.Handler;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
@@ -16,12 +17,14 @@ import android.support.v4.view.ViewPager.OnPageChangeListener;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.View.OnClickListener;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 
 /**
  * 明星界面操作
  */
-public class MainActivityStar implements OnClickListener {
+public class MainActivityStar implements OnClickListener, OnItemClickListener{
 
 	private MainActivity act;
 
@@ -116,6 +119,8 @@ public class MainActivityStar implements OnClickListener {
 				}, 2000);
 			}
 		});
+		
+		tempListview.setOnItemClickListener(this);
 	}
 
 	
@@ -170,7 +175,8 @@ public class MainActivityStar implements OnClickListener {
 				}, 2000);
 			}
 		});
-
+		
+		listView02.setOnItemClickListener(this);
 	}
 
 	
@@ -237,5 +243,11 @@ public class MainActivityStar implements OnClickListener {
 				root.findViewById(R.id.msgLayout).setVisibility(View.GONE);
 			}
 		}
+	}
+
+	@Override
+	public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
+		Intent intent = new Intent(act, ZoneActivity.class);
+		act.startActivity(intent);
 	}
 }

@@ -49,7 +49,8 @@ public class SelectFirstActivity extends BaseActivity {
 	// 重写Activity中onKeyDown（）方法
 	@Override
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
-		if (keyCode == KeyEvent.KEYCODE_BACK) {// 当keyCode等于退出事件值时
+		if (keyCode == KeyEvent.KEYCODE_BACK) {
+			// 当keyCode等于退出事件值时
 			common.showMain();
 			return false;
 		} 

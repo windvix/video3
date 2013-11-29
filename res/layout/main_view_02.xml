@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#272B34"
+    android:background="@color/theme_color"
     android:orientation="vertical" >
 
     <RelativeLayout
@@ -18,7 +18,7 @@
             android:layout_centerInParent="true"
             android:gravity="center"
             android:text="明星"
-            android:textColor="#FFFFFF"
+            android:textColor="@color/title_bar_text_color"
             android:textSize="24sp" />
     </RelativeLayout>
 
@@ -93,7 +93,7 @@
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:text="离决赛还有"
-                android:textColor="#FEFEFE"
+                android:textColor="@color/me_fans_text_color"
                 android:textSize="15sp" />
 
             <TextView
@@ -103,7 +103,7 @@
                 android:layout_marginRight="2dp"
                 android:gravity="center"
                 android:text="4"
-                android:textColor="#FEFEFE"
+                android:textColor="@color/me_fans_text_color"
                 android:textSize="15sp" />
 
             <TextView
@@ -111,18 +111,16 @@
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:text="天"
-                android:textColor="#FEFEFE"
+                android:textColor="@color/me_fans_text_color"
                 android:textSize="15sp" />
         </LinearLayout>
-
-
     </LinearLayout>
-    
+
     <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_weight="0"
-            android:background="#1C1F28" />
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_weight="0"
+        android:background="#1C1F28" />
 
     <com.athudong.video.component.NoScrollViewpager
         android:id="@+id/starviewpager"

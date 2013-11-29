@@ -37,6 +37,12 @@ public class MainActivityDiscover implements OnClickListener{
 		}else if(id==R.id.weekBtn){
 			Intent intent = new Intent(act, WeekActivity.class);
 			act.startActivity(intent);
+		}else if(id==R.id.actBtn){
+			Intent intent = new Intent(act, ActNoticeActivity.class);
+			act.startActivity(intent);
+		}else if(id==R.id.applyBtn){
+			Intent intent = new Intent(act, ApplyActivity.class);
+			act.startActivity(intent);
 		}
 	}
 }

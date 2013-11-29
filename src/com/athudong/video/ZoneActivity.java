@@ -3,84 +3,79 @@ package com.athudong.video;
 import java.util.ArrayList;
 import java.util.List;
 
-import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.os.Handler;
+
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
 import android.view.View;
 import android.view.ViewGroup;
+
 import android.widget.ScrollView;
 
-import com.athudong.video.bean.User;
-import com.athudong.video.component.ImageViewTouchListener;
 import com.athudong.video.task.BaseTask;
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
 import com.handmark.pulltorefresh.library.PullToRefreshBase.OnRefreshListener;
 import com.handmark.pulltorefresh.library.PullToRefreshScrollView;
-import com.nineoldandroids.animation.ObjectAnimator;
 
 /**
  * 个人空间界面
  */
 public class ZoneActivity extends BaseActivity implements OnRefreshListener<ScrollView> {
 
-	private PullToRefreshScrollView scrollView;
+	private ViewPager viewpager;
 
-	private ViewPager viewpager = null;
+	private View v01;
+	private View v02;
+	private View v03;
 
-	private List<View> tabViews = null;
+	private List<View> views;
 
-	private List<View> tabIndexView = null;
+	private List<View> arrows;
 
-	private View tab01;
-	private View tab02;
-	private View tab03;
+	private ZoneActivityPic zonePic;
+	private ZoneActivityVideo zoneVideo;
+	private ZoneActivityStar zoneStar;
 
-	
-	private User user;
-	
-	private ZoneActivityVideo video;
-	
+	private PullToRefreshScrollView scrollview;
+
 	@Override
 	protected void initView(Bundle savedInstanceState) {
-		setContentView(R.layout.activity_zone);
+		setContentView(R.layout.activity_personres);
 		findViewById(R.id.backBtn).setOnClickListener(this);
-		scrollView = (PullToRefreshScrollView) findViewById(R.id.scrollview);
-		scrollView.setOnRefreshListener(this);
+
+		views = new ArrayList<View>();
+		arrows = new ArrayList<View>();
+
+		arrows.add(findViewById(R.id.arrow01));
+		arrows.add(findViewById(R.id.arrow02));
+		arrows.add(findViewById(R.id.arrow03));
+
+		v01 = createView(R.layout.personres_01);
+		v02 = createView(R.layout.personres_02);
+		v03 = createView(R.layout.personres_03);
+
+		findViewById(R.id.tab01).setOnClickListener(this);
+		findViewById(R.id.tab02).setOnClickListener(this);
+		findViewById(R.id.tab03).setOnClickListener(this);
+
+		views.add(v01);
+		views.add(v02);
+		views.add(v03);
 
 		viewpager = (ViewPager) findViewById(R.id.viewpager);
 
-		tabViews = new ArrayList<View>();
-
-		View tab01 = createView(R.layout.zone_pic);
-		View tab02 = createView(R.layout.zone_video);
-		View tab03 = createView(R.layout.zone_gift);
-
-		tabViews.add(tab01);
-		tabViews.add(tab02);
-		tabViews.add(tab03);
-
-		tabIndexView = new ArrayList<View>();
-		tabIndexView.add(findViewById(R.id.tab01));
-		tabIndexView.add(findViewById(R.id.tab02));
-		tabIndexView.add(findViewById(R.id.tab03));
-
-		viewpager.setAdapter(new ViewPagerAdapter(tabViews));
+		viewpager.setAdapter(new ViewPagerAdapter(views));
 		viewpager.setOnPageChangeListener(new ViewPagerPageChangeListener());
 
-		for (View tab : tabIndexView) {
-			tab.setOnClickListener(this);
-		}
+		scrollview = (PullToRefreshScrollView) findViewById(R.id.scrollview);
 
-		viewpager.setCurrentItem(0);
-		tabIndexView.get(0).setSelected(true);
-		
-		
-		new ZoneActivityPic(this, tab01);
-		video = new ZoneActivityVideo(this, tab02);
-		new ZoneActivityPicGift(this, tab03);
+		scrollview.setOnRefreshListener(this);
+
+		zonePic = new ZoneActivityPic(this, v01);
+		zoneVideo = new ZoneActivityVideo(this, v02);
+		zoneStar = new ZoneActivityStar(this, v03);
 	}
 
 	@Override
@@ -93,13 +88,11 @@ public class ZoneActivity extends BaseActivity implements OnRefreshListener<Scro
 
 	}
 
-	
 	@Override
 	protected void onDestroy() {
-		video.release();
 		super.onDestroy();
 	}
-	
+
 	@Override
 	protected void beforeDestory() {
 
@@ -126,10 +119,12 @@ public class ZoneActivity extends BaseActivity implements OnRefreshListener<Scro
 
 	@Override
 	public void onRefresh(PullToRefreshBase<ScrollView> refreshView) {
+
 		new Handler().postDelayed(new Runnable() {
+
 			@Override
 			public void run() {
-				scrollView.onRefreshComplete();
+				scrollview.onRefreshComplete();
 			}
 		}, 2000);
 	}
@@ -161,13 +156,11 @@ public class ZoneActivity extends BaseActivity implements OnRefreshListener<Scro
 		public boolean isViewFromObject(View arg0, Object arg1) {
 			return arg0 == arg1;
 		}
-
 	}
 
 	class ViewPagerPageChangeListener implements OnPageChangeListener {
 		@Override
 		public void onPageScrollStateChanged(int state) {
-
 		}
 
 		@Override
@@ -176,17 +169,12 @@ public class ZoneActivity extends BaseActivity implements OnRefreshListener<Scro
 
 		@Override
 		public void onPageSelected(int page) {
-			video.pause();
-			for (int i = 0; i < tabIndexView.size(); i++) {
-
-				View view = tabIndexView.get(i);
-
-				if (i == page) {
-					view.setSelected(true);
+			for (int i = 0; i < arrows.size(); i++) {
+				if (page == i) {
+					arrows.get(i).setVisibility(View.VISIBLE);
 				} else {
-					view.setSelected(false);
+					arrows.get(i).setVisibility(View.INVISIBLE);
 				}
-
 			}
 		}
 	}

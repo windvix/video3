@@ -4,18 +4,133 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
-    <ImageView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_centerInParent="true"
-        android:scaleType="centerCrop"
-        android:src="@drawable/pk_video_bg_01" />
+        android:orientation="vertical" >
+
+        <com.athudong.video.component.NoScrollViewpager
+            android:id="@+id/viewpager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="2" >
+        </com.athudong.video.component.NoScrollViewpager>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="5"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_weight="1"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:text="刘玲玲"
+                    android:textColor="@color/me_fans_text_color"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="4dp"
+                    android:text="微笑在你我面前传递，歌声在你我心中荡漾!我就是Angle Liu， 我在这里等你！"
+                    android:textColor="#7C7C7C"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:gravity="center" >
+
+                <RelativeLayout
+                    android:id="@+id/changeBtn"
+                    android:layout_width="130dp"
+                    android:layout_height="45dp"
+                    android:layout_marginRight="10dp" >
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_centerInParent="true"
+                        android:background="@drawable/main_black_btn_01"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:alpha="0.3"
+                        android:background="@drawable/main_red_btn_click_bg" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="换一个"
+                        android:textColor="@color/theme_color"
+                        android:textSize="17sp" />
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/thumbCountTv"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:background="@drawable/circle_red"
+                    android:gravity="center"
+                    android:text="10"
+                    android:textColor="@color/theme_color"
+                    android:textSize="18sp" />
+
+                <RelativeLayout
+                    android:id="@+id/thumbBtn"
+                    android:layout_width="130dp"
+                    android:layout_height="45dp"
+                    android:layout_marginLeft="10dp" >
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_centerInParent="true"
+                        android:background="@drawable/main_red_btn_01" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:alpha="0.3"
+                        android:background="@drawable/main_red_btn_click_bg" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="投一票"
+                        android:textColor="@color/theme_color"
+                        android:textSize="17sp" />
+                </RelativeLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- title bar -->
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:layout_alignParentTop="true"
-        android:alpha="0.8"
+        android:alpha="0.9"
         android:background="@drawable/title_bar_bg" />
 
     <RelativeLayout
@@ -24,13 +139,14 @@
         android:layout_alignParentTop="true" >
 
         <ImageView
+            android:id="@+id/backBtn"
             android:layout_width="65dp"
             android:layout_height="28dp"
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
             android:layout_marginLeft="12dp"
             android:scaleType="fitStart"
-            android:src="@drawable/icon_back" />
+            android:src="@drawable/icon_back_red" />
 
         <TextView
             android:id="@+id/titleTv"
@@ -39,47 +155,25 @@
             android:layout_centerInParent="true"
             android:gravity="center"
             android:text="海选"
-            android:textColor="#FFFFFF"
+            android:textColor="@color/title_bar_text_color"
             android:textSize="24sp" />
 
         <ImageView
+            android:id="@+id/zoneBtn"
             android:layout_width="65dp"
             android:layout_height="28dp"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_marginRight="12dp"
             android:scaleType="fitEnd"
-            android:src="@drawable/icon_info" />
+            android:src="@drawable/icon_bottom_item_04_press" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/title_bar_text_color" />
     </RelativeLayout>
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="100dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp" >
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:alpha="0.6"
-            android:background="@drawable/select_name_layout_bg"
-            android:orientation="horizontal" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical" >
-            
-            <TextView 
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="0"
-                android:text="刘玲玲"
-                android:textColor="#FEFFFF"
-                />
-        </LinearLayout>
-    </RelativeLayout>
+    <!-- title bar end -->
 
 </RelativeLayout>

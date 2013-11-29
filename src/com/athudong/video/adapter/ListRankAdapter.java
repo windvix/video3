@@ -4,13 +4,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.athudong.video.BaseActivity;
-import com.athudong.video.IntroActivity;
+import com.athudong.video.MyWalletActivity;
 import com.athudong.video.R;
 import com.athudong.video.ZoneActivity;
 import com.athudong.video.bean.Rank;
 import com.athudong.video.dialog.ConfirmDialog;
 
 import android.content.Intent;
+import android.net.Uri;
+import android.text.Html;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
@@ -105,8 +107,8 @@ public class ListRankAdapter extends ArrayAdapter<Rank> implements OnClickListen
 			if (arrow.getVisibility() != View.VISIBLE) {
 				hidePop();
 				showPop(view);
-				for(View itemView:views){
-					if(itemView!=view){
+				for (View itemView : views) {
+					if (itemView != view) {
 						itemView.findViewById(R.id.dimView).setVisibility(View.VISIBLE);
 					}
 				}
@@ -133,71 +135,81 @@ public class ListRankAdapter extends ArrayAdapter<Rank> implements OnClickListen
 		root.findViewById(R.id.rank_line).setVisibility(View.GONE);
 		initPopupClick(root);
 	}
-	
-	
-	private void initPopupClick(final View root){
-		View money01 = root.findViewById(R.id.money01);
-		View money02 = root.findViewById(R.id.money02);
-		View money03 = root.findViewById(R.id.money03);
-		View money04 = root.findViewById(R.id.money04);
-		
-		final List<View> mViews = new ArrayList<View>();
-		
+
+	private void initPopupClick(final View root) {
+		TextView money01 = (TextView) root.findViewById(R.id.money01);
+		TextView money02 = (TextView) root.findViewById(R.id.money02);
+		TextView money03 = (TextView) root.findViewById(R.id.money03);
+		TextView money04 = (TextView) root.findViewById(R.id.money04);
+
+		final List<TextView> mViews = new ArrayList<TextView>();
+
 		mViews.add(money01);
 		mViews.add(money02);
 		mViews.add(money03);
 		mViews.add(money04);
-		
-		for(View v:mViews){
+
+		for (View v : mViews) {
 			v.setOnClickListener(new OnClickListener() {
 				@Override
 				public void onClick(View v) {
-					for(View one:mViews){
-						if(one!=v){
+					for (TextView one : mViews) {
+						String text = one.getText().toString();
+						if (one != v) {
 							one.setBackgroundResource(R.drawable.game_money_default);
-						}else{
+							one.setText(Html.fromHtml("<font color='#CC1F28'>"+text+"</font>"));
+						} else {
 							one.setBackgroundResource(R.drawable.game_money_selected);
+							one.setText(Html.fromHtml("<font color='#FFFFFF'>"+text+"</font>"));
 						}
 					}
 				}
 			});
 		}
-		
-		root.findViewById(R.id.confirmBtn).setOnClickListener(new OnClickListener() {
-			
+
+		root.findViewById(R.id.confirmGuessBtn).setOnClickListener(new OnClickListener() {
+
 			@Override
 			public void onClick(View v) {
 				showDialog();
 			}
 		});
-		
-		root.findViewById(R.id.currentMoneyLayout).setOnClickListener(new OnClickListener() {
-			
+
+		root.findViewById(R.id.myGuessBtn).setOnClickListener(new OnClickListener() {
+
 			@Override
 			public void onClick(View arg0) {
-				// TODO Auto-generated method stub
-				
+				Intent intent = new Intent(act, MyWalletActivity.class);
+				act.startActivity(intent);
+			}
+		});
+		
+		root.findViewById(R.id.cancelGuessBtn).setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				hidePop();
 			}
 		});
 	}
-	
-	
-	private void showDialog(){
+
+	private void showDialog() {
 		final ConfirmDialog dialog = new ConfirmDialog(act, R.style.DimDialog, "");
 		dialog.show();
 		dialog.getLeftBtn().setOnClickListener(new OnClickListener() {
-			
+
 			@Override
 			public void onClick(View v) {
 				dialog.dismiss();
 			}
 		});
 		dialog.getRightBtn().setOnClickListener(new OnClickListener() {
-			
+
 			@Override
 			public void onClick(View v) {
 				dialog.dismiss();
-				act.toast("开发中");
+				Uri uri = Uri.parse("http://mobile.alipay.com/");
+				Intent it = new Intent(Intent.ACTION_VIEW, uri);
+				act.startActivity(it);
 				hidePop();
 			}
 		});

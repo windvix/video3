@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#282C35"
+    android:background="@color/theme_color"
     android:orientation="vertical" >
 
     <RelativeLayout
@@ -18,7 +18,7 @@
             android:layout_centerInParent="true"
             android:gravity="center"
             android:text="娱乐圈"
-            android:textColor="#FFFFFF"
+            android:textColor="@color/title_bar_text_color"
             android:textSize="24sp" />
     </RelativeLayout>
 

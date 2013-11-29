@@ -1,15 +1,13 @@
 package com.athudong.video;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
-import android.widget.ImageView;
-import android.widget.TextView;
 
 import com.athudong.video.bean.User;
 import com.athudong.video.task.BaseTask;
-import com.athudong.video.util.AppConst;
 import com.athudong.video.util.TestDataUtil;
 import com.nineoldandroids.animation.ObjectAnimator;
 
@@ -18,55 +16,80 @@ import com.nineoldandroids.animation.ObjectAnimator;
  */
 public class WeekActivity extends BaseActivity {
 
-	private View leftHead;
-	private View rightHead;
-	private View leftVideoLayout;
-	private View rightVideoLayout;
-	private TextView leftName;
-	private TextView rightName;
+	private View ringLayout;
 
-	private View leftStarLayout;
-	private View rightStarLayout;
+	private View leftComLayout;
 
-	private View leftThumbBtn;
-	private View rightThumbBtn;
+	private View rightComLayout;
 
-	private View vsTv;
-	private View andTv;
+	private View pkRing;
 
-	private User user01;
-	private User user02;
+	private View leftBg;
+
+	private View rightBg;
+
+	private View leftName;
+
+	private View rightNeme;
+
+	private View thumbBtn;
+
+	private User user;
 
 	@Override
 	protected void initView(Bundle savedInstanceState) {
-		setContentView(R.layout.activity_week_pk);
+		setContentView(R.layout.activity_week_pk_back);
 		findViewById(R.id.backBtn).setOnClickListener(this);
 
-		user01 = TestDataUtil.getRandomUser();
-		user02 = TestDataUtil.getRandomUser();
+		ringLayout = findViewById(R.id.ringLayout);
+		leftName = findViewById(R.id.leftNameTv);
+		rightNeme = findViewById(R.id.rightNameTv);
 
-		vsTv = findViewById(R.id.vsTv);
-		andTv = findViewById(R.id.andTv);
+		leftComLayout = findViewById(R.id.leftComLayout);
+		thumbBtn = findViewById(R.id.thumbBtn);
 
-		leftThumbBtn = findViewById(R.id.leftThumbBtn);
-		leftName = (TextView) findViewById(R.id.leftNameTv);
-		leftHead = findViewById(R.id.leftHeadImg);
-		leftVideoLayout = findViewById(R.id.left_play_btn);
-		leftStarLayout = findViewById(R.id.leftFiveStar);
-		leftThumbBtn.setOnClickListener(this);
-		leftVideoLayout.setOnClickListener(this);
+		leftBg = findViewById(R.id.leftBg);
+		rightBg = findViewById(R.id.rightBg);
 
-		rightThumbBtn = findViewById(R.id.rightThumbBtn);
-		rightName = (TextView) findViewById(R.id.rightNameTv);
-		rightHead = findViewById(R.id.rightHeadImg);
-		rightVideoLayout = findViewById(R.id.right_play_btn);
-		rightStarLayout = findViewById(R.id.rightFiveStar);
-		rightThumbBtn.setOnClickListener(this);
-		rightVideoLayout.setOnClickListener(this);
+		rightComLayout = findViewById(R.id.rightComLayout);
 
-		leftHead.setOnClickListener(this);
-		rightHead.setOnClickListener(this);
+		pkRing = findViewById(R.id.pkRing);
 
+		leftBg.setOnClickListener(this);
+		rightBg.setOnClickListener(this);
+
+		findViewById(R.id.leftVideoBtn).setOnClickListener(this);
+		findViewById(R.id.rightVideoBtn).setOnClickListener(this);
+		findViewById(R.id.leftZoneBtn).setOnClickListener(this);
+		findViewById(R.id.rightZoneBtn).setOnClickListener(this);
+		thumbBtn.setOnClickListener(this);
+
+		user = TestDataUtil.getRandomUser();
+
+		leftComLayout.setVisibility(View.INVISIBLE);
+		rightComLayout.setVisibility(View.INVISIBLE);
+
+		new Handler().postDelayed(new Runnable() {
+
+			@Override
+			public void run() {
+				initComLayout();
+			}
+		}, 600);
+		thumbBtn.setVisibility(View.INVISIBLE);
+
+	}
+
+	/**
+	 * 初始化组件（让背景分成两半。隐藏左右的按钮）
+	 */
+	private void initComLayout() {
+		int dis = getScreenWidth() - leftComLayout.getLeft();
+		ObjectAnimator.ofFloat(leftComLayout, "translationX", 0, -dis).start();
+		ObjectAnimator.ofFloat(rightComLayout, "translationX", 0, dis).start();
+
+		ObjectAnimator.ofFloat(leftBg, "translationX", 0, -getScreenWidth() / 2).start();
+		ObjectAnimator.ofFloat(rightBg, "translationX", 0, getScreenWidth() / 2).start();
 	}
 
 	@Override
@@ -89,114 +112,279 @@ public class WeekActivity extends BaseActivity {
 
 	}
 
+	private boolean isShowLeft = false;
+
+	private boolean isShowRight = false;
+
 	@Override
 	public void onClick(View v) {
 		int id = v.getId();
 		if (id == R.id.backBtn) {
 			finish();
-		} else if (id == R.id.leftThumbBtn) {
-			moveRight();
-		} else if (id == R.id.rightThumbBtn) {
+		} else if (id == R.id.leftBg && !isShowRight) {
 			moveLeft();
-		} else if (id == R.id.leftHeadImg) {
-			Intent intent = new Intent(this, IntroActivity.class);
-			intent.putExtra("id", user01.getId());
+		} else if (id == R.id.rightBg && !isShowLeft) {
+			moveRight();
+		} else if (id == R.id.leftVideoBtn) {
+			playVideo(getTestPath() + user.getId() + "_video_03.flv");
+		} else if (id == R.id.rightVideoBtn) {
+			playVideo(getTestPath() + user.getId() + "_video_02.flv");
+		} else if (id == R.id.leftZoneBtn) {
+			Intent intent = new Intent(this, ZoneActivity.class);
 			startActivity(intent);
-		} else if (id == R.id.rightHeadImg) {
-			Intent intent = new Intent(this, IntroActivity.class);
-			intent.putExtra("id", user02.getId());
+		} else if (id == R.id.rightZoneBtn) {
+			Intent intent = new Intent(this, ZoneActivity.class);
 			startActivity(intent);
-		} else if (id == R.id.left_play_btn) {
-			Intent intent = new Intent(this, VideosActivity.class);
-			intent.putExtra("id", user01.getId());
-			startActivity(intent);
-		} else if (id == R.id.right_play_btn) {
-			Intent intent = new Intent(this, VideosActivity.class);
-			intent.putExtra("id", user02.getId());
-			startActivity(intent);
+		} else if (id == R.id.thumbBtn) {
+			if (thumbBtn.getVisibility() == View.VISIBLE) {
+				// 左边投票
+				if (isShowLeft) {
+					moveLeft();
+
+					new Handler().postDelayed(new Runnable() {
+						@Override
+						public void run() {
+							changeRight();
+						}
+					}, DUR_TIME + 100);
+
+				}
+				// 右边投票
+				if (isShowRight) {
+					
+					moveRight();
+					new Handler().postDelayed(new Runnable() {
+						@Override
+						public void run() {
+							changeLeft();
+						}
+					}, DUR_TIME + 100);
+				}
+			}
 		}
+	}
+
+	private void changeLeft() {
+		ObjectAnimator anim1 = ObjectAnimator.ofFloat(leftBg, "translationX", -getScreenWidth()/2, -getScreenWidth());
+		anim1.setDuration(DUR_TIME);
+		anim1.start();
+
+		ObjectAnimator anim2 = ObjectAnimator.ofFloat(leftName, "translationX", 0, -getScreenWidth()/2);
+		anim2.setDuration(DUR_TIME);
+		anim2.start();
+
+		new Handler().postDelayed(new Runnable() {
+
+			@Override
+			public void run() {
+				ObjectAnimator anim1 = ObjectAnimator.ofFloat(leftBg, "translationX", -getScreenWidth(), -getScreenWidth()/2);
+				anim1.setDuration(DUR_TIME);
+				anim1.start();
+
+				ObjectAnimator anim2 = ObjectAnimator.ofFloat(leftName, "translationX", -getScreenWidth()/2, 0);
+				anim2.setDuration(DUR_TIME);
+				anim2.start();
+			}
+		}, 2000);
+
+	}
+
+	private void changeRight() {
+		ObjectAnimator anim1 = ObjectAnimator.ofFloat(rightBg, "translationX", getScreenWidth()/2, getScreenWidth());
+		anim1.setDuration(DUR_TIME);
+		anim1.start();
+
+		ObjectAnimator anim2 = ObjectAnimator.ofFloat(rightNeme, "translationX", 0, getScreenWidth()/2);
+		anim2.setDuration(DUR_TIME);
+		anim2.start();
+
+		new Handler().postDelayed(new Runnable() {
+
+			@Override
+			public void run() {
+				ObjectAnimator anim1 = ObjectAnimator.ofFloat(rightBg, "translationX", getScreenWidth(), getScreenWidth()/2);
+				anim1.setDuration(DUR_TIME);
+				anim1.start();
+
+				ObjectAnimator anim2 = ObjectAnimator.ofFloat(rightNeme, "translationX", getScreenWidth()/2, 0);
+				anim2.setDuration(DUR_TIME);
+				anim2.start();
+			}
+		}, 2000);
+	}
+
+	/**
+	 * 播放视频
+	 */
+	private void playVideo(String path) {
+		Uri uri = Uri.parse(path);
+		// 调用系统自带的播放器
+		Intent intent = new Intent(Intent.ACTION_VIEW);
+		intent.setDataAndType(uri, "video/mp4");
+		startActivity(intent);
 	}
 
 	private static final int DUR_TIME = 500;
 
-	private static final int DELAY_TIME = 100;
-
 	/**
-	 * 移动右边的组件
-	 */
-	private void moveRight() {
-		ObjectAnimator.ofFloat(rightHead, AppConst.ANIM_TRANSLATION_X, 0, getScreenWidth()).setDuration(DUR_TIME).start();
-		ObjectAnimator.ofFloat(rightVideoLayout, AppConst.ANIM_TRANSLATION_X, 0, getScreenWidth()).setDuration(DUR_TIME).start();
-		ObjectAnimator anim1 = ObjectAnimator.ofFloat(rightStarLayout, AppConst.ANIM_TRANSLATION_X, 0, getScreenWidth()).setDuration(DUR_TIME);
-		ObjectAnimator anim2 = ObjectAnimator.ofFloat(rightName, AppConst.ANIM_TRANSLATION_X, 0, getScreenWidth()).setDuration(DUR_TIME);
-		anim1.setStartDelay(DELAY_TIME);
-		anim2.setStartDelay(DELAY_TIME);
-		anim1.start();
-		anim2.start();
-		zoomInAnim();
-
-		new Handler().postDelayed(new Runnable() {
-			@Override
-			public void run() {
-				ObjectAnimator.ofFloat(rightStarLayout, AppConst.ANIM_TRANSLATION_X, getScreenWidth(), 0).setDuration(DUR_TIME).start();
-				ObjectAnimator.ofFloat(rightName, AppConst.ANIM_TRANSLATION_X, getScreenWidth(), 0).setDuration(DUR_TIME).start();
-
-				ObjectAnimator anim1 = ObjectAnimator.ofFloat(rightHead, "translationX", getScreenWidth(), 0).setDuration(DUR_TIME);
-				anim1.setStartDelay(DELAY_TIME);
-				anim1.start();
-
-				ObjectAnimator anim2 = ObjectAnimator.ofFloat(rightVideoLayout, "translationX", getScreenWidth(), 0).setDuration(DUR_TIME);
-				anim2.setStartDelay(DELAY_TIME);
-				anim2.start();
-				zoomOutAnim();
-			}
-		}, 2000);
-	}
-
-	/**
-	 * 移动左边的组件
+	 * 移动左边组件
 	 */
 	private void moveLeft() {
-		ObjectAnimator.ofFloat(leftHead, AppConst.ANIM_TRANSLATION_X, 0, -leftHead.getLeft() - leftHead.getWidth()).setDuration(DUR_TIME).start();
-		ObjectAnimator.ofFloat(leftVideoLayout, AppConst.ANIM_TRANSLATION_X, 0, -leftVideoLayout.getLeft() - leftVideoLayout.getWidth()).setDuration(DUR_TIME).start();
-		ObjectAnimator anim1 = ObjectAnimator.ofFloat(leftStarLayout, AppConst.ANIM_TRANSLATION_X, 0, -leftStarLayout.getLeft() - leftStarLayout.getWidth()).setDuration(DUR_TIME);
-		ObjectAnimator anim2 = ObjectAnimator.ofFloat(leftName, AppConst.ANIM_TRANSLATION_X, 0, -leftName.getLeft() - leftName.getWidth()).setDuration(DUR_TIME);
-		anim1.setStartDelay(DELAY_TIME);
-		anim2.setStartDelay(DELAY_TIME);
-		anim1.start();
-		anim2.start();
-		zoomInAnim();
+		leftComLayout.setVisibility(View.VISIBLE);
+		rightComLayout.setVisibility(View.VISIBLE);
 
-		new Handler().postDelayed(new Runnable() {
-			@Override
-			public void run() {
-				ObjectAnimator.ofFloat(leftStarLayout, AppConst.ANIM_TRANSLATION_X, -leftStarLayout.getLeft() - leftStarLayout.getWidth(), 0).setDuration(DUR_TIME).start();
-				ObjectAnimator.ofFloat(leftName, AppConst.ANIM_TRANSLATION_X, -leftName.getLeft() - leftName.getWidth(), 0).setDuration(DUR_TIME).start();
+		if (!isShowLeft) {
+			int dis = getScreenWidth() - leftComLayout.getLeft();
+			ObjectAnimator anim1 = ObjectAnimator.ofFloat(leftComLayout, "translationX", -dis, 0);
+			anim1.setDuration(DUR_TIME);
+			anim1.start();
 
-				ObjectAnimator anim1 = ObjectAnimator.ofFloat(leftHead, "translationX", -leftHead.getLeft() - leftHead.getWidth(), 0).setDuration(DUR_TIME);
-				anim1.setStartDelay(DELAY_TIME);
-				anim1.start();
+			int nW = getScreenWidth() - (ringLayout.getWidth() / 2) - 10;
+			ObjectAnimator anim21 = ObjectAnimator.ofFloat(leftName, "translationX", 0, nW);
+			anim21.setDuration(DUR_TIME);
+			anim21.start();
 
-				ObjectAnimator anim2 = ObjectAnimator.ofFloat(leftVideoLayout, "translationX", -leftVideoLayout.getLeft() - leftVideoLayout.getWidth(), 0).setDuration(DUR_TIME);
-				anim2.setStartDelay(DELAY_TIME);
-				anim2.start();
-				zoomOutAnim();
-			}
-		}, 2000);
+			ObjectAnimator anim22 = ObjectAnimator.ofFloat(rightNeme, "translationX", 0, nW);
+			anim22.setDuration(DUR_TIME);
+			anim22.start();
+
+			int w = (getScreenWidth() / 2);
+			ObjectAnimator anim3 = ObjectAnimator.ofFloat(ringLayout, "translationX", 0, w);
+			anim3.setDuration(DUR_TIME);
+			anim3.start();
+
+			ObjectAnimator anim41 = ObjectAnimator.ofFloat(leftBg, "translationX", -w, 0);
+			anim41.setDuration(DUR_TIME);
+			anim41.start();
+			ObjectAnimator anim42 = ObjectAnimator.ofFloat(rightBg, "translationX", w, 2 * w);
+			anim42.setDuration(DUR_TIME);
+			anim42.start();
+
+			// 显示投票按钮
+			ObjectAnimator anim5 = ObjectAnimator.ofFloat(thumbBtn, "alpha", 0, 1);
+			anim5.setDuration(DUR_TIME);
+			anim5.setStartDelay(250);
+			anim5.start();
+			thumbBtn.setVisibility(View.VISIBLE);
+
+			isShowLeft = true;
+
+		} else {
+			int dis = getScreenWidth() - leftComLayout.getLeft();
+			ObjectAnimator anim1 = ObjectAnimator.ofFloat(leftComLayout, "translationX", 0, -dis);
+			anim1.setDuration(DUR_TIME);
+			anim1.start();
+
+			int nW = getScreenWidth() - (ringLayout.getWidth() / 2) - 10;
+			ObjectAnimator anim21 = ObjectAnimator.ofFloat(leftName, "translationX", nW, 0);
+			anim21.setDuration(DUR_TIME);
+			anim21.start();
+			ObjectAnimator anim22 = ObjectAnimator.ofFloat(rightNeme, "translationX", nW, 0);
+			anim22.setDuration(DUR_TIME);
+			anim22.start();
+
+			int w = (getScreenWidth() / 2);
+			ObjectAnimator anim3 = ObjectAnimator.ofFloat(ringLayout, "translationX", w, 0);
+			anim3.setDuration(DUR_TIME);
+			anim3.start();
+
+			ObjectAnimator anim41 = ObjectAnimator.ofFloat(leftBg, "translationX", 0, -w);
+			anim41.setDuration(DUR_TIME);
+			anim41.start();
+			ObjectAnimator anim42 = ObjectAnimator.ofFloat(rightBg, "translationX", 2 * w, w);
+			anim42.setDuration(DUR_TIME);
+			anim42.start();
+
+			// 隐藏投票按钮
+			ObjectAnimator anim5 = ObjectAnimator.ofFloat(thumbBtn, "alpha", 1, 0);
+			anim5.setDuration(DUR_TIME);
+			anim5.start();
+			thumbBtn.setVisibility(View.INVISIBLE);
+
+			isShowLeft = false;
+		}
 	}
 
-	private void zoomInAnim() {
-		ObjectAnimator.ofFloat(vsTv, AppConst.ANIM_SCALE_X, 1, 0).setDuration(DUR_TIME).start();
-		ObjectAnimator.ofFloat(vsTv, AppConst.ANIM_SCALE_Y, 1, 0).setDuration(DUR_TIME).start();
-		ObjectAnimator.ofFloat(andTv, AppConst.ANIM_SCALE_X, 1, 0).setDuration(DUR_TIME).start();
-		ObjectAnimator.ofFloat(andTv, AppConst.ANIM_SCALE_Y, 1, 0).setDuration(DUR_TIME).start();
-	}
+	/**
+	 * 移动右边组件
+	 */
+	private void moveRight() {
+		leftComLayout.setVisibility(View.VISIBLE);
+		rightComLayout.setVisibility(View.VISIBLE);
 
-	private void zoomOutAnim() {
-		ObjectAnimator.ofFloat(vsTv, AppConst.ANIM_SCALE_X, 0, 1).setDuration(DUR_TIME).start();
-		ObjectAnimator.ofFloat(vsTv, AppConst.ANIM_SCALE_Y, 0, 1).setDuration(DUR_TIME).start();
-		ObjectAnimator.ofFloat(andTv, AppConst.ANIM_SCALE_X, 0, 1).setDuration(DUR_TIME).start();
-		ObjectAnimator.ofFloat(andTv, AppConst.ANIM_SCALE_Y, 0, 1).setDuration(DUR_TIME).start();
-	}
+		if (!isShowRight) {
+			// 移动右边的组件过来
+			int dis = getScreenWidth() - leftComLayout.getLeft();
+			ObjectAnimator anim1 = ObjectAnimator.ofFloat(rightComLayout, "translationX", dis, 0);
+			anim1.setDuration(DUR_TIME);
+			anim1.start();
 
+			// 将名字往左移
+			int nW = getScreenWidth() - (ringLayout.getWidth() / 2) - 10;
+			ObjectAnimator anim21 = ObjectAnimator.ofFloat(leftName, "translationX", 0, -nW);
+			anim21.setDuration(DUR_TIME);
+			anim21.start();
+			ObjectAnimator anim22 = ObjectAnimator.ofFloat(rightNeme, "translationX", 0, -nW);
+			anim22.setDuration(DUR_TIME);
+			anim22.start();
+
+			// 将环入左移
+			int w = (getScreenWidth() / 2);
+			ObjectAnimator anim3 = ObjectAnimator.ofFloat(ringLayout, "translationX", 0, -w);
+			anim3.setDuration(DUR_TIME);
+			anim3.start();
+
+			ObjectAnimator anim41 = ObjectAnimator.ofFloat(leftBg, "translationX", -w, -2 * w);
+			anim41.setDuration(DUR_TIME);
+			anim41.start();
+			ObjectAnimator anim42 = ObjectAnimator.ofFloat(rightBg, "translationX", w, 0);
+			anim42.setDuration(DUR_TIME);
+			anim42.start();
+
+			
+			// 显示投票按钮
+			ObjectAnimator anim5 = ObjectAnimator.ofFloat(thumbBtn, "alpha", 0, 1);
+			anim5.setDuration(DUR_TIME);
+			anim5.setStartDelay(250);
+			anim5.start();
+			thumbBtn.setVisibility(View.VISIBLE);
+			
+			isShowRight = true;
+
+		} else {
+			int dis = getScreenWidth() - leftComLayout.getLeft();
+			ObjectAnimator anim1 = ObjectAnimator.ofFloat(rightComLayout, "translationX", 0, dis);
+			anim1.setDuration(DUR_TIME);
+			anim1.start();
+
+			int nW = getScreenWidth() - (ringLayout.getWidth() / 2) - 10;
+			ObjectAnimator anim21 = ObjectAnimator.ofFloat(leftName, "translationX", -nW, 0);
+			anim21.setDuration(DUR_TIME);
+			anim21.start();
+			ObjectAnimator anim22 = ObjectAnimator.ofFloat(rightNeme, "translationX", -nW, 0);
+			anim22.setDuration(DUR_TIME);
+			anim22.start();
+
+			int w = (getScreenWidth() / 2);
+			ObjectAnimator anim3 = ObjectAnimator.ofFloat(ringLayout, "translationX", -w, 0);
+			anim3.setDuration(DUR_TIME);
+			anim3.start();
+
+			ObjectAnimator anim41 = ObjectAnimator.ofFloat(leftBg, "translationX", -2 * w, -w);
+			anim41.setDuration(DUR_TIME);
+			anim41.start();
+			ObjectAnimator anim42 = ObjectAnimator.ofFloat(rightBg, "translationX", 0, w);
+			anim42.setDuration(DUR_TIME);
+			anim42.start();
+			
+			
+			// 隐藏投票按钮
+			ObjectAnimator anim5 = ObjectAnimator.ofFloat(thumbBtn, "alpha", 1, 0);
+			anim5.setDuration(DUR_TIME);
+			anim5.start();
+			thumbBtn.setVisibility(View.INVISIBLE);
+
+			isShowRight = false;
+		}
+	}
 }
