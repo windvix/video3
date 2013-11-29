@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical" >
+
+    <com.athudong.video.component.LoadingCircleView
+        android:id="@+id/big_pic_loading"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_centerInParent="true" />
+
+        <ImageView
+            android:id="@+id/big_pic_noimg"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/post_default_img"
+            android:visibility="gone" />
+           
+        <ImageView 
+            android:id="@+id/big_pic_img"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="matrix"
+            android:visibility="gone"
+            android:src="@drawable/post_default_img"
+            android:layout_gravity="center"
+            />
+</LinearLayout>
