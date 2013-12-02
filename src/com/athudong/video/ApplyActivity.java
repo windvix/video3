@@ -23,8 +23,15 @@ public class ApplyActivity extends BaseActivity {
 	}
 
 	@Override
-	public void onClick(View arg0) {
-		
+	public void onClick(View v) {
+		int id = v.getId();
+		if(id==R.id.btn01){
+			
+		}else if(id==R.id.btn02){
+			
+		}else if(id==R.id.btn03){
+			
+		}
 		
 	}
 
@@ -33,6 +40,9 @@ public class ApplyActivity extends BaseActivity {
 		setContentView(R.layout.activity_apply);
 		TextView tvTitle = (TextView) findViewById(R.id.title_bar_tv);
 		tvTitle.setText(getString(R.string.join_in2));
+		findViewById(R.id.btn01).setOnClickListener(this);
+		findViewById(R.id.btn02).setOnClickListener(this);
+		findViewById(R.id.btn03).setOnClickListener(this);
 	}
 
 	@Override

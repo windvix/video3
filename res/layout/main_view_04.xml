@@ -66,6 +66,7 @@
                         android:paddingRight="10dp"
                         android:paddingTop="4dp"
                         android:text="12"
+                        android:visibility="gone"
                         android:textColor="#FFFFFD" />
                 </RelativeLayout>
 
@@ -194,14 +195,21 @@
             <!-- one btn end -->
 
 
-            <!-- one btn -->
+        <!-- one btn -->
+
+        <LinearLayout
+            android:id="@+id/meBtn02"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/main_list2"
+            android:gravity="center"
+            android:orientation="horizontal" >
 
             <LinearLayout
-                android:id="@+id/meBtn02"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:background="@drawable/main_list2"
-                android:gravity="center"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="top"
                 android:orientation="horizontal" >
 
                 <ImageView
@@ -212,31 +220,51 @@
                     android:layout_marginTop="10dp"
                     android:scaleType="fitCenter"
                     android:src="@drawable/icon_msg" />
-
+                
                 <TextView
-                    android:layout_width="match_parent"
+                    android:layout_width="75dp"
                     android:layout_height="match_parent"
-                    android:layout_marginLeft="16dp"
-                    android:layout_weight="1"
+                    android:layout_marginLeft="15dp"
                     android:gravity="left|center"
                     android:text="消息通知"
                     android:textColor="@color/me_fans_text_color"
                     android:textSize="16sp" />
 
-                <ImageView
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:layout_marginRight="15dp"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/icon_main_list_arrow" />
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="top"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginTop="6dp"
+                        android:background="@drawable/red_msg_bg"
+                        android:paddingBottom="4dp"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:paddingTop="4dp"
+                        android:text="12"
+                        android:textColor="#FFFFFD" />
+                </LinearLayout>
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/main_list_line_color"
-                android:orientation="horizontal" />
-            <!-- one btn end -->
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginRight="15dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/icon_main_list_arrow" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/main_list_line_color"
+            android:orientation="horizontal" />
+        <!-- one btn end -->
 
 
             <!-- one btn -->

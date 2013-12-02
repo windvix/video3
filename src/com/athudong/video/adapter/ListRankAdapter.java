@@ -6,9 +6,11 @@ import java.util.List;
 import com.athudong.video.BaseActivity;
 import com.athudong.video.MyWalletActivity;
 import com.athudong.video.R;
+import com.athudong.video.ShopActivity;
 import com.athudong.video.ZoneActivity;
 import com.athudong.video.bean.Rank;
 import com.athudong.video.dialog.ConfirmDialog;
+import com.athudong.video.dialog.GameGuessDialog;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -79,8 +81,47 @@ public class ListRankAdapter extends ArrayAdapter<Rank> implements OnClickListen
 		count.setText(rank.getCount());
 
 		convertView.setTag(position);
-		convertView.findViewById(R.id.guessBtn).setOnClickListener(new GuessClick(convertView));
 
+		View guessBtn = convertView.findViewById(R.id.guessBtn);
+		if (TYPE_01 == type) {
+			guessBtn.setOnClickListener(new GuessClick(rank, position));
+		} else {
+			((TextView)guessBtn.findViewWithTag("text")).setText("送花");
+			guessBtn.findViewWithTag("gold").setVisibility(View.GONE);
+			guessBtn.findViewWithTag("flower").setVisibility(View.VISIBLE);
+			guessBtn.setOnClickListener(new OnClickListener() {
+				
+				@Override
+				public void onClick(View v) {
+					Intent intent = new Intent(act, ShopActivity.class);
+					act.startActivity(intent);
+				}
+			});
+		}
+		
+		if(position==0){
+			convertView.findViewWithTag("rank01").setVisibility(View.VISIBLE);
+			convertView.findViewWithTag("rank02").setVisibility(View.INVISIBLE);
+			convertView.findViewWithTag("rank03").setVisibility(View.INVISIBLE);
+			convertView.findViewWithTag("rank04").setVisibility(View.INVISIBLE);
+		}else if(position==1){
+			convertView.findViewWithTag("rank01").setVisibility(View.INVISIBLE);
+			convertView.findViewWithTag("rank02").setVisibility(View.VISIBLE);
+			convertView.findViewWithTag("rank03").setVisibility(View.INVISIBLE);
+			convertView.findViewWithTag("rank04").setVisibility(View.INVISIBLE);
+		}else if(position==2){
+			convertView.findViewWithTag("rank01").setVisibility(View.INVISIBLE);
+			convertView.findViewWithTag("rank02").setVisibility(View.INVISIBLE);
+			convertView.findViewWithTag("rank03").setVisibility(View.VISIBLE);
+			convertView.findViewWithTag("rank04").setVisibility(View.INVISIBLE);
+		}else{
+			convertView.findViewWithTag("rank01").setVisibility(View.INVISIBLE);
+			convertView.findViewWithTag("rank02").setVisibility(View.INVISIBLE);
+			convertView.findViewWithTag("rank03").setVisibility(View.INVISIBLE);
+			convertView.findViewWithTag("rank04").setVisibility(View.VISIBLE);
+			((TextView)convertView.findViewWithTag("rank04")).setText((position+1)+"");
+		}
+		
 		views.add(convertView);
 
 		return convertView;
@@ -94,124 +135,24 @@ public class ListRankAdapter extends ArrayAdapter<Rank> implements OnClickListen
 	}
 
 	private class GuessClick implements OnClickListener {
-		private View view;
 
-		public GuessClick(View root) {
-			this.view = root;
+		private Rank rank;
+
+		private int position;
+
+		public GuessClick(Rank rank, int position) {
+			this.rank = rank;
+			this.position = position;
 		}
 
 		@Override
 		public void onClick(View v) {
 
-			View arrow = view.findViewById(R.id.arrow);
-			if (arrow.getVisibility() != View.VISIBLE) {
-				hidePop();
-				showPop(view);
-				for (View itemView : views) {
-					if (itemView != view) {
-						itemView.findViewById(R.id.dimView).setVisibility(View.VISIBLE);
-					}
-				}
-			} else {
-				hidePop();
-			}
+			GameGuessDialog dialog = new GameGuessDialog(act, rank, position);
+			dialog.show();
+
 		}
 
 	}
 
-	public void hidePop() {
-		for (View itemView : views) {
-			itemView.findViewById(R.id.dimView).setVisibility(View.INVISIBLE);
-			itemView.findViewById(R.id.arrow).setVisibility(View.INVISIBLE);
-			itemView.findViewById(R.id.popup).setVisibility(View.GONE);
-			itemView.findViewById(R.id.rank_line).setVisibility(View.VISIBLE);
-		}
-	}
-
-	private void showPop(View root) {
-		root.findViewById(R.id.dimView).setVisibility(View.INVISIBLE);
-		root.findViewById(R.id.arrow).setVisibility(View.VISIBLE);
-		root.findViewById(R.id.popup).setVisibility(View.VISIBLE);
-		root.findViewById(R.id.rank_line).setVisibility(View.GONE);
-		initPopupClick(root);
-	}
-
-	private void initPopupClick(final View root) {
-		TextView money01 = (TextView) root.findViewById(R.id.money01);
-		TextView money02 = (TextView) root.findViewById(R.id.money02);
-		TextView money03 = (TextView) root.findViewById(R.id.money03);
-		TextView money04 = (TextView) root.findViewById(R.id.money04);
-
-		final List<TextView> mViews = new ArrayList<TextView>();
-
-		mViews.add(money01);
-		mViews.add(money02);
-		mViews.add(money03);
-		mViews.add(money04);
-
-		for (View v : mViews) {
-			v.setOnClickListener(new OnClickListener() {
-				@Override
-				public void onClick(View v) {
-					for (TextView one : mViews) {
-						String text = one.getText().toString();
-						if (one != v) {
-							one.setBackgroundResource(R.drawable.game_money_default);
-							one.setText(Html.fromHtml("<font color='#CC1F28'>"+text+"</font>"));
-						} else {
-							one.setBackgroundResource(R.drawable.game_money_selected);
-							one.setText(Html.fromHtml("<font color='#FFFFFF'>"+text+"</font>"));
-						}
-					}
-				}
-			});
-		}
-
-		root.findViewById(R.id.confirmGuessBtn).setOnClickListener(new OnClickListener() {
-
-			@Override
-			public void onClick(View v) {
-				showDialog();
-			}
-		});
-
-		root.findViewById(R.id.myGuessBtn).setOnClickListener(new OnClickListener() {
-
-			@Override
-			public void onClick(View arg0) {
-				Intent intent = new Intent(act, MyWalletActivity.class);
-				act.startActivity(intent);
-			}
-		});
-		
-		root.findViewById(R.id.cancelGuessBtn).setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				hidePop();
-			}
-		});
-	}
-
-	private void showDialog() {
-		final ConfirmDialog dialog = new ConfirmDialog(act, R.style.DimDialog, "");
-		dialog.show();
-		dialog.getLeftBtn().setOnClickListener(new OnClickListener() {
-
-			@Override
-			public void onClick(View v) {
-				dialog.dismiss();
-			}
-		});
-		dialog.getRightBtn().setOnClickListener(new OnClickListener() {
-
-			@Override
-			public void onClick(View v) {
-				dialog.dismiss();
-				Uri uri = Uri.parse("http://mobile.alipay.com/");
-				Intent it = new Intent(Intent.ACTION_VIEW, uri);
-				act.startActivity(it);
-				hidePop();
-			}
-		});
-	}
 }

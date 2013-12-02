@@ -123,6 +123,13 @@
             android:name="com.athudong.video.ActDetailActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
+        
+        
+        <!-- 活动细节界面 -->
+        <activity
+            android:name="com.athudong.video.NotificationDetailActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
     </application>
 
 </manifest>

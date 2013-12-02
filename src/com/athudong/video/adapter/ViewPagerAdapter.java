@@ -6,10 +6,6 @@ import android.support.v4.view.PagerAdapter;
 import android.view.View;
 import android.view.ViewGroup;
 
-/**
- * viewPagerÊÊÅäÆ÷
- * @author Ğ»ÆôÏé
- */
 public class ViewPagerAdapter extends PagerAdapter {
 
 	private ArrayList<View> views;

@@ -109,7 +109,6 @@ public class MainActivityStar implements OnClickListener, OnItemClickListener{
 		tempListview.setOnRefreshListener(new OnRefreshListener<ListView>() {
 			@Override
 			public void onRefresh(PullToRefreshBase<ListView> refreshView) {
-				adapter.hidePop();
 				new Handler().postDelayed(new Runnable() {
 					@Override
 					public void run() {
@@ -166,7 +165,6 @@ public class MainActivityStar implements OnClickListener, OnItemClickListener{
 		listView02.setOnRefreshListener(new OnRefreshListener<ListView>() {
 			@Override
 			public void onRefresh(PullToRefreshBase<ListView> refreshView) {
-				adapter.hidePop();
 				new Handler().postDelayed(new Runnable() {
 					@Override
 					public void run() {
