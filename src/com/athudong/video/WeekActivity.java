@@ -60,8 +60,13 @@ public class WeekActivity extends BaseActivity {
 
 		findViewById(R.id.leftVideoBtn).setOnClickListener(this);
 		findViewById(R.id.rightVideoBtn).setOnClickListener(this);
+		
 		findViewById(R.id.leftZoneBtn).setOnClickListener(this);
 		findViewById(R.id.rightZoneBtn).setOnClickListener(this);
+		
+		findViewById(R.id.leftAudioBtn).setOnClickListener(this);
+		findViewById(R.id.rightAudioBtn).setOnClickListener(this);
+		
 		thumbBtn.setOnClickListener(this);
 
 		user = TestDataUtil.getRandomUser();
@@ -126,7 +131,7 @@ public class WeekActivity extends BaseActivity {
 		} else if (id == R.id.rightBg && !isShowLeft) {
 			moveRight();
 		} else if (id == R.id.leftVideoBtn) {
-			playVideo(getTestPath() + user.getId() + "_video_03.flv");
+			playVideo(getTestPath() + user.getId() + "_video_01.flv");
 		} else if (id == R.id.rightVideoBtn) {
 			playVideo(getTestPath() + user.getId() + "_video_02.flv");
 		} else if (id == R.id.leftZoneBtn) {

@@ -125,9 +125,16 @@
             android:theme="@style/AppTheme" />
         
         
-        <!-- 活动细节界面 -->
+        <!-- 通知列表细节界面 -->
         <activity
             android:name="com.athudong.video.NotificationDetailActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        
+        
+        <!-- 比赛时点击图片按钮，展示图片界面 -->
+        <activity
+            android:name="com.athudong.video.PictureShowActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
     </application>

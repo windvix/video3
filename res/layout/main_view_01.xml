@@ -156,8 +156,9 @@
 
     <RelativeLayout
         android:id="@+id/applyBtn"
-        android:layout_width="match_parent"
+        android:layout_width="120dp"
         android:layout_height="56dp"
+        android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="56dp"
         android:layout_marginLeft="10dp"

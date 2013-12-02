@@ -66,7 +66,7 @@ public abstract class BaseActivity extends Activity implements OnClickListener {
 
 	
 	private boolean isVersionCodeSame(){
-		boolean result = true;
+		boolean result = false;
 		int val = getDataInt("VERSION");
 		if(val==getVersionCode()){
 			result = true;
@@ -477,7 +477,7 @@ public abstract class BaseActivity extends Activity implements OnClickListener {
 		return opt;
 	}
 
-	// method to copy file to sd card
+	//复制assets目录下的文件到SD卡
 	public void copyAssetsbrochure() {
 		String path = getTestPath();
 		boolean isExist = false;

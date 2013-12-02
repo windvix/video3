@@ -1,5 +1,6 @@
 package com.athudong.video;
 
+import com.athudong.video.dialog.SelectResDialog;
 import com.athudong.video.task.BaseTask;
 
 import android.app.Activity;
@@ -26,11 +27,14 @@ public class ApplyActivity extends BaseActivity {
 	public void onClick(View v) {
 		int id = v.getId();
 		if(id==R.id.btn01){
-			
+			SelectResDialog dialog = new SelectResDialog(this, SelectResDialog.TYPE_PIC);
+			dialog.show();
 		}else if(id==R.id.btn02){
-			
+			SelectResDialog dialog = new SelectResDialog(this, SelectResDialog.TYPE_VIDEO);
+			dialog.show();
 		}else if(id==R.id.btn03){
-			
+			SelectResDialog dialog = new SelectResDialog(this, SelectResDialog.TYPE_AUDIO);
+			dialog.show();
 		}
 		
 	}

@@ -273,6 +273,7 @@
             android:src="@drawable/icon_pk_02" />
 
         <ImageView
+            android:id="@+id/leftAudioBtn"
             android:layout_width="@dimen/pk_component_size"
             android:layout_height="@dimen/pk_component_size"
             android:layout_marginRight="8dp"
@@ -296,6 +297,7 @@
         android:visibility="visible" >
 
         <ImageView
+            android:id="@+id/rightAudioBtn"
             android:layout_width="@dimen/pk_component_size"
             android:layout_height="@dimen/pk_component_size"
             android:layout_marginLeft="8dp"

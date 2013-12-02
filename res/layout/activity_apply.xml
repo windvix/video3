@@ -98,6 +98,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="15dp"
+                android:scaleType="fitCenter"
                 android:layout_centerInParent="true"
                 android:background="@drawable/icon_pk_01"
                 android:contentDescription="@null" />
@@ -125,6 +126,7 @@
                 android:layout_height="match_parent"
                 android:layout_centerInParent="true"
                 android:layout_margin="15dp"
+                android:scaleType="fitCenter"
                 android:background="@drawable/icon_pk_02"
                 android:contentDescription="@null" />
         </RelativeLayout>
@@ -151,6 +153,7 @@
                 android:layout_height="match_parent"
                 android:layout_centerInParent="true"
                 android:layout_margin="15dp"
+                android:scaleType="fitCenter"
                 android:background="@drawable/icon_pk_03"
                 android:contentDescription="@null" />
         </RelativeLayout>
