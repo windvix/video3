@@ -1,10 +1,14 @@
 package com.athudong.video;
 
+import com.athudong.video.bean.User;
 import com.athudong.video.dialog.ConfirmDialog;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.ImageView;
+import android.widget.TextView;
 /**
  * 我界面操作
  */
@@ -14,6 +18,18 @@ public class MainActivityMe implements OnClickListener{
 	
 	private BaseActivity act;
 	
+	private ImageView headImg;
+	
+	private TextView nameTv;
+	
+	private TextView atNameTv;
+	
+	private TextView fansCountTv;
+	
+	private TextView focusCountTv;
+	
+	
+	private User currentUser;
 	
 	public MainActivityMe(BaseActivity act, View root){
 		this.act = act;
@@ -26,6 +42,30 @@ public class MainActivityMe implements OnClickListener{
 		root.findViewById(R.id.meBtn05).setOnClickListener(this);
 		root.findViewById(R.id.meBtn06).setOnClickListener(this);
 		root.findViewById(R.id.headLayout).setOnClickListener(this);
+		
+		
+		headImg = (ImageView)root.findViewById(R.id.headImg);
+		nameTv  = (TextView)root.findViewById(R.id.nameTv);
+		atNameTv = (TextView)root.findViewById(R.id.atNameTv);
+		fansCountTv = (TextView)root.findViewById(R.id.fansTv);
+		focusCountTv = (TextView)root.findViewById(R.id.focusTv);
+		
+		currentUser = act.getUser();
+		
+		/**
+		 * 设置头像
+		 */
+		String path = act.getTestPath()+currentUser.getId()+"_head.jpg";
+		Bitmap bitmap = act.readBitmapAutoSize(path, headImg.getWidth(), headImg.getHeight());
+		headImg.setImageBitmap(bitmap);
+		
+		/**
+		 * 设置名称
+		 */
+		nameTv.setText(currentUser.getName());
+		atNameTv.setText("@"+currentUser.getName());
+		fansCountTv.setText(currentUser.getFans()+"");
+		focusCountTv.setText(currentUser.getFocusCount()+"");
 	}
 
 

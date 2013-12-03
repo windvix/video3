@@ -15,9 +15,7 @@ public class TestDataUtil {
 	public static void init() {
 
 		if (users.size() == 0) {
-
 			User user = new User();
-
 			// //////////////////////////////////////////////////////////////////////
 			// 编号
 			user.setId("01");
@@ -44,12 +42,16 @@ public class TestDataUtil {
 			// 星级(1~9级)
 			user.setStarLevel(4);
 			// 视频数量（1~8个左右）
-			user.setVideoCount(4);
+			user.setVideoCount(2);
 			// 票数
 			user.setVote(12356);
-			// ////////////////////////////////////////////////////////////////////////
-
+			// 关注了多少个人
+			user.setFocusCount(256);
+			
 			users.add(user);
+			//////////////////////////////////////////////////////////////////////////
+
+
 		}
 
 	}

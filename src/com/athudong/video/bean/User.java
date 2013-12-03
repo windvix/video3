@@ -64,6 +64,16 @@ public class User {
 	 * 明星自我描述
 	 */
 	private String description;
+	
+	
+	/**
+	 * 剩余票数
+	 */
+	private int voteCount = 10;
+	
+	private int focusCount;
+	
+	
 
 	private int imgCount;
 	private int videoCount;
@@ -71,6 +81,17 @@ public class User {
 	public int getImgCount() {
 		return imgCount;
 	}
+
+	
+	public int getFocusCount() {
+		return focusCount;
+	}
+
+
+	public void setFocusCount(int focusCount) {
+		this.focusCount = focusCount;
+	}
+
 
 	public void setImgCount(int imgCount) {
 		this.imgCount = imgCount;
@@ -225,5 +246,13 @@ public class User {
 			gender = "♂";
 		}
 		return gender;
+	}
+
+	public int getVoteCount() {
+		return voteCount;
+	}
+
+	public void setVoteCount(int voteCount) {
+		this.voteCount = voteCount;
 	}
 }

@@ -3,28 +3,28 @@
 
     <item>
         <shape>
-            <solid android:color="#666" />
+            <solid android:color="#6C6A6B" />
 
             <corners android:radius="26dp" />
         </shape>
     </item>
-    <item android:top="26dp">
+    <item android:top="25dp">
         <shape>
-            <solid android:color="#666" />
+            <solid android:color="#6C6A6B" />
         </shape>
     </item>
     <item android:right="2dp">
         <shape>
-            <solid android:color="#ccc" />
+            <solid android:color="#B1B1B1" />
 
             <corners android:radius="26dp" />
         </shape>
     </item>
     <item
         android:right="2dp"
-        android:top="26dp">
+        android:top="25dp">
         <shape>
-            <solid android:color="#ccc" />
+            <solid android:color="#B1B1B1" />
         </shape>
     </item>
 

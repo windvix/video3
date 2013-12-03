@@ -43,6 +43,8 @@ public class RegisterActivity extends BaseActivity{
 		int id = v.getId();
 		if(id==R.id.submitBtn){
 			finish();
+		}else if(id==R.id.backBtn){
+			finish();
 		}
 	}
 

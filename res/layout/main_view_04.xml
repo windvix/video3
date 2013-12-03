@@ -54,6 +54,7 @@
                         android:layout_height="85dp"
                         android:layout_centerVertical="true"
                         android:scaleType="fitCenter"
+                        android:id="@+id/headImg"
                         android:src="@drawable/test_head_01" />
 
                     <TextView

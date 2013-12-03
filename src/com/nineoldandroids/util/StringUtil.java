@@ -75,4 +75,92 @@ public class StringUtil {
 		return dateStr;
 	}
 
+	/**
+	 * 从日期中获取星座
+	 */
+	public static String getStarSignFromDate(int month, int day){
+		if(month<0|| month>12){
+			month=1;
+		}
+		if(day<0 || day>31){
+			day = 1;
+		}
+		String sign = "";
+		
+		if(month==1){
+			if(day<=19){
+				sign = "水瓶";
+			}else{
+				sign = "双鱼";
+			}
+		}else if(month==2){
+			if(day<=18){
+				sign = "双鱼";
+			}else{
+				sign = "白羊";
+			}
+		}else if(month==3){
+			if(day<=20){
+				sign = "白羊";
+			}else{
+				sign = "金牛";
+			}
+		}else if(month==4){
+			if(day<=19){
+				sign = "金牛";
+			}else{
+				sign = "双子";
+			}
+		}else if(month==5){
+			if(day<=20){
+				sign = "双子";
+			}else{
+				sign = "巨蟹";
+			}
+		}else if(month==6){
+			if(day<=21){
+				sign = "巨蟹";
+			}else{
+				sign = "狮子";
+			}
+		}else if(month==7){
+			if(day<=22){
+				sign = "狮子";
+			}else{
+				sign = "处女";
+			}
+		}else if(month==8){
+			if(day<=22){
+				sign = "处女";
+			}else{
+				sign = "天枰";
+			}
+		}else if(month==9){
+			if(day<=22){
+				sign = "天枰";
+			}else{
+				sign = "天蝎";
+			}
+		}else if(month==10){
+			if(day<=23){
+				sign = "天蝎";
+			}else{
+				sign = "射手";
+			}
+		}else if(month==11){
+			if(day<=22){
+				sign = "射手";
+			}else{
+				sign = "摩羯";
+			}
+		}else if(month==12){
+			if(day<=21){
+				sign = "摩羯";
+			}else{
+				sign = "水瓶";
+			}
+		}
+		return sign;
+
+	}
 }

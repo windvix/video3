@@ -12,6 +12,7 @@ import java.util.List;
 
 import org.apache.http.util.EncodingUtils;
 
+import com.athudong.video.bean.User;
 import com.athudong.video.task.BaseTask;
 import com.athudong.video.util.TestDataUtil;
 
@@ -221,6 +222,18 @@ public abstract class BaseActivity extends Activity implements OnClickListener {
 		return getLayoutInflater();
 	}
 
+	
+	
+	private static User currentUser;
+	
+	//获取当前的用户
+	public User getUser(){
+		if(currentUser==null){
+			currentUser = TestDataUtil.getRandomUser();
+		}
+		return currentUser;
+	}
+	
 	/**
 	 * 获取标题栏高度
 	 */
