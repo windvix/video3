@@ -3,9 +3,12 @@ package com.athudong.video;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.athudong.video.bean.User;
 import com.athudong.video.dialog.ConfirmDialog;
+import com.athudong.video.util.TestDataUtil;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Handler;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
@@ -27,30 +30,44 @@ public class SelectActivityCommon implements OnClickListener {
 
 	private ViewPager viewpager;
 
-	private List<View> views;
+	private List<View> imageViews;
 
 	private TextView thumbCount;
 
 	private int count = 10;
+	
+	private User me;
+	
+	private User currentStar;
+	
+	private User nextStar;
+	
+	
+	private TextView nameTv;
+	
+	private TextView sayingTv;
 
 	public SelectActivityCommon(BaseActivity act, boolean isCreatemainActivity) {
 		this.isCreateMainActivity = isCreatemainActivity;
 		this.act = act;
+		me = act.getUser();
+		nextStar = TestDataUtil.getRandomUser();
+		
 		act.setContentView(R.layout.activity_select_back);
-
+		
 		viewpager = (ViewPager) act.findViewById(R.id.viewpager);
+		
+		nameTv = (TextView)act.findViewById(R.id.nameTv);
+		sayingTv = (TextView)act.findViewById(R.id.sayingTv);
 
-		views = new ArrayList<View>();
+		imageViews = new ArrayList<View>();
 
-		views.add(act.createView(R.layout.imgageview_centercrop));
-		views.add(act.createView(R.layout.imgageview_centercrop));
-		views.add(act.createView(R.layout.imgageview_centercrop));
-		views.add(act.createView(R.layout.imgageview_centercrop));
+		imageViews.add(act.createView(R.layout.imgageview_centercrop));
+		imageViews.add(act.createView(R.layout.imgageview_centercrop));
+		imageViews.add(act.createView(R.layout.imgageview_centercrop));
+		imageViews.add(act.createView(R.layout.imgageview_centercrop));
 
-		((ImageView) views.get(0).findViewById(R.id.img)).setImageResource(R.drawable.pk_video_bg_02);
-		((ImageView) views.get(2).findViewById(R.id.img)).setImageResource(R.drawable.pk_video_bg_02);
-
-		viewpager.setAdapter(new ViewPagerAdapter(views));
+		viewpager.setAdapter(new ViewPagerAdapter(imageViews));
 		viewpager.setOnPageChangeListener(new ViewPagerPageChangeListener());
 		viewpager.setCurrentItem(1);
 
@@ -61,9 +78,77 @@ public class SelectActivityCommon implements OnClickListener {
 
 		thumbCount = (TextView) act.findViewById(R.id.thumbCountTv);
 
+		
+		initContent();
+		
 		count = Integer.parseInt(thumbCount.getText().toString());
+		
+		
 	}
 
+	
+	private void initContent(){
+		thumbCount.setText(me.getVoteCount()+"");
+		
+		for(View v:imageViews){
+			((ImageView) v.findViewById(R.id.img)).setImageBitmap(null);
+		}
+		
+		new Handler().postDelayed(new Runnable() {
+			@Override
+			public void run() {
+				changeStar();
+			}
+		}, 500);
+	}
+	
+	private void changeStar(){
+		int page = viewpager.getCurrentItem();
+		
+		//当前明星变成下一个明星，下一个明星再抽一个出来
+		currentStar = nextStar;
+		nextStar = TestDataUtil.getRandomUser();
+		
+		currentStarId = currentStar.getId();
+		
+		ImageView img01 = ((ImageView)imageViews.get(0).findViewById(R.id.img)); 
+		ImageView img02 = ((ImageView)imageViews.get(1).findViewById(R.id.img)); 
+		ImageView img03 = ((ImageView)imageViews.get(2).findViewById(R.id.img)); 
+		ImageView img04 = ((ImageView)imageViews.get(3).findViewById(R.id.img)); 
+		
+		//当前是第一页，将看不见的页改变
+		if(page==1){
+			String p1 = act.getTestPath()+currentStar.getId()+"_01.jpg";
+			Bitmap b1 = act.readBitmapAutoSize(p1, img01.getWidth(), img01.getHeight());
+			img02.setImageBitmap(b1);
+			img04.setImageBitmap(b1);
+			
+			
+			String p2 = act.getTestPath()+nextStar.getId()+"_01.jpg";
+			Bitmap b2 = act.readBitmapAutoSize(p2, img01.getWidth(), img01.getHeight());
+			img01.setImageBitmap(b2);
+			img03.setImageBitmap(b2);
+		}
+		else if(page==2){
+			
+			
+			String p2 = act.getTestPath()+currentStar.getId()+"_01.jpg";
+			Bitmap b2 = act.readBitmapAutoSize(p2, img01.getWidth(), img01.getHeight());
+			img01.setImageBitmap(b2);
+			img03.setImageBitmap(b2);
+			
+			
+			String p1 = act.getTestPath()+nextStar.getId()+"_01.jpg";
+			Bitmap b1 = act.readBitmapAutoSize(p1, img01.getWidth(), img01.getHeight());
+			img02.setImageBitmap(b1);
+			img04.setImageBitmap(b1);
+		}
+		nameTv.setText(currentStar.getName());
+		sayingTv.setText(currentStar.getSaying());
+	}
+	
+	private String currentStarId;
+	
 	@Override
 	public void onClick(View v) {
 		int id = v.getId();
@@ -84,6 +169,7 @@ public class SelectActivityCommon implements OnClickListener {
 				nextOne();
 				count--;
 				thumbCount.setText(count + "");
+				me.setVoteCount(count);
 			} else {
 				showDialog();
 			}
@@ -91,6 +177,8 @@ public class SelectActivityCommon implements OnClickListener {
 			act.finish();
 		}else if(id==R.id.zoneBtn){
 			Intent intent = new Intent(act, ZoneActivity.class);
+			intent.putExtra("id", currentStarId);
+			
 			act.startActivity(intent);
 		}
 	}
@@ -124,8 +212,9 @@ public class SelectActivityCommon implements OnClickListener {
 	 */
 	private void nextOne() {
 		int cur = viewpager.getCurrentItem();
-		if (cur <= (views.size() - 2)) {
+		if (cur <= (imageViews.size() - 2)) {
 			viewpager.setCurrentItem(cur + 1);
+			changeStar();
 		}
 	}
 
@@ -202,7 +291,7 @@ public class SelectActivityCommon implements OnClickListener {
 
 		@Override
 		public void onPageSelected(int page) {
-
+			
 		}
 	}
 }

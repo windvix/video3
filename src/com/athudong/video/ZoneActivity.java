@@ -3,6 +3,7 @@ package com.athudong.video;
 import java.util.ArrayList;
 import java.util.List;
 
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.os.Handler;
 
@@ -12,9 +13,14 @@ import android.support.v4.view.ViewPager.OnPageChangeListener;
 import android.view.View;
 import android.view.ViewGroup;
 
+import android.widget.ImageView;
 import android.widget.ScrollView;
+import android.widget.TextView;
 
+import com.athudong.video.bean.User;
 import com.athudong.video.task.BaseTask;
+import com.athudong.video.util.StringUtil;
+import com.athudong.video.util.TestDataUtil;
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
 import com.handmark.pulltorefresh.library.PullToRefreshBase.OnRefreshListener;
 import com.handmark.pulltorefresh.library.PullToRefreshScrollView;
@@ -37,14 +43,45 @@ public class ZoneActivity extends BaseActivity implements OnRefreshListener<Scro
 	private ZoneActivityPic zonePic;
 	private ZoneActivityVideo zoneVideo;
 	private ZoneActivityStar zoneStar;
+	
+	private TextView titleTv;
+	private ImageView headImg;
+	private TextView fansCountTv;
+	private TextView popCountTv;
+	private TextView ageTv;
+	private TextView starSignTv;
+	private TextView sayingTv;
+	
+	
+	
 
 	private PullToRefreshScrollView scrollview;
+	
+	private User star;
 
 	@Override
 	protected void initView(Bundle savedInstanceState) {
 		setContentView(R.layout.activity_personres);
 		findViewById(R.id.backBtn).setOnClickListener(this);
 
+		
+		
+		String id = getIntent().getStringExtra("id");
+		
+		if(StringUtil.isEmpty(id)){
+			id = "01";
+		}
+		
+		star = TestDataUtil.getUserById(id);
+		
+		titleTv = (TextView)findViewById(R.id.titleTv);
+		headImg = (ImageView)findViewById(R.id.headImg);
+		fansCountTv = (TextView)findViewById(R.id.fansCountTv);
+		popCountTv = (TextView)findViewById(R.id.popCountTv);
+		ageTv = (TextView)findViewById(R.id.ageTv);
+		starSignTv = (TextView)findViewById(R.id.starSignTv);
+		sayingTv = (TextView)findViewById(R.id.sayingTv);
+		
 		views = new ArrayList<View>();
 		arrows = new ArrayList<View>();
 
@@ -73,11 +110,38 @@ public class ZoneActivity extends BaseActivity implements OnRefreshListener<Scro
 
 		scrollview.setOnRefreshListener(this);
 
-		zonePic = new ZoneActivityPic(this, v01);
+		zonePic = new ZoneActivityPic(this, v01, star);
 		zoneVideo = new ZoneActivityVideo(this, v02);
 		zoneStar = new ZoneActivityStar(this, v03);
+		
+		initContent();
 	}
 
+	
+	private void initContent(){
+		
+		titleTv.setText(star.getName());
+		ageTv.setText(star.getAge());
+		fansCountTv.setText(star.getFans()+"");
+		popCountTv.setText(star.getPopular()+"");
+		starSignTv.setText(star.getStarSign());
+		sayingTv.setText(star.getSaying());
+		
+		headImg.setImageBitmap(null);
+		
+		
+		new Handler().postDelayed(new Runnable() {
+			
+			@Override
+			public void run() {
+				String path = getTestPath()+star.getId()+"_head.jpg";
+				Bitmap bitmap = readBitmapAutoSize(path, headImg.getWidth(), headImg.getHeight());
+				headImg.setImageBitmap(bitmap);
+			}
+		}, 500);
+
+	}
+	
 	@Override
 	protected void beforeEveryVisable() {
 

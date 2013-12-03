@@ -1,7 +1,13 @@
 package com.athudong.video.bean;
 
+import android.annotation.SuppressLint;
+
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+
+import com.athudong.video.util.StringUtil;
 
 public class User {
 
@@ -19,11 +25,6 @@ public class User {
 	 * 性别
 	 */
 	private String sex;
-
-	/**
-	 * 年龄
-	 */
-	private int age;
 
 	/**
 	 * 星级
@@ -64,6 +65,12 @@ public class User {
 	 * 明星自我描述
 	 */
 	private String description;
+	
+	/**
+	 * 生日(yyyymmdd)
+	 */
+	private String birthday;
+
 	
 	
 	/**
@@ -117,6 +124,16 @@ public class User {
 		return name;
 	}
 
+	public String getBirthday() {
+		return birthday;
+	}
+
+
+	public void setBirthday(String birthday) {
+		this.birthday = birthday;
+	}
+
+
 	public void setName(String name) {
 		this.name = name;
 	}
@@ -127,14 +144,6 @@ public class User {
 
 	public void setSex(String sex) {
 		this.sex = sex;
-	}
-
-	public int getAge() {
-		return age;
-	}
-
-	public void setAge(int age) {
-		this.age = age;
 	}
 
 	public int getStarLevel() {
@@ -204,16 +213,18 @@ public class User {
 	public static final int MAN = 1;
 	public static final int WOMAN = 2;
 
-	public static int getSex(String sex) {
-		int gender = 2;
+	public static int getSexInt(String sex) {
+		int gender = WOMAN;
 		if (sex == null) {
 			sex = "男";
 		}
 		if (sex.equals("男")) {
-			gender = 1;
+			gender = MAN;
 		}
 		return gender;
 	}
+	
+	
 	
 	public static String getSexSimbol(String sex){
 		String gender = "♀";
@@ -254,5 +265,39 @@ public class User {
 
 	public void setVoteCount(int voteCount) {
 		this.voteCount = voteCount;
+	}
+	
+	@SuppressLint("SimpleDateFormat")
+	public String getAge(){
+		String age = "20";
+		
+		if(birthday!=null){
+			SimpleDateFormat df = new SimpleDateFormat("yyyyMMdd");
+			Date date = null;
+			try{
+				date = df.parse(birthday);
+			}catch(Exception e){
+				
+			}
+			if(date!=null){
+				SimpleDateFormat df2 = new SimpleDateFormat("yyyy");
+				Date cDate = new Date(System.currentTimeMillis());
+				String one  =df2.format(date);
+				String two = df2.format(cDate);
+				age = (Integer.parseInt(two)-Integer.parseInt(one))+"";
+			}
+		}
+		return age;
+	}
+	
+	public String getStarSign(){
+		int month = 01;
+		int day = 01;
+		
+		if(birthday!=null){
+			month = Integer.parseInt(birthday.substring(4, 6));
+			day = Integer.parseInt(birthday.substring(6, 8));
+		}
+		return StringUtil.getStarSignFromDate(month, day);
 	}
 }

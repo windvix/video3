@@ -80,6 +80,7 @@
                     android:layout_width="90dp"
                     android:layout_height="90dp"
                     android:layout_weight="0"
+                    android:id="@+id/headImg"
                     android:scaleType="fitCenter"
                     android:src="@drawable/test_head_01" />
 
@@ -92,6 +93,7 @@
                     android:orientation="vertical" >
 
                     <TextView
+                        android:id="@+id/nameTv"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
@@ -109,6 +111,7 @@
                         android:orientation="horizontal" >
 
                         <TextView
+                            android:id="@+id/ageTv"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="23"
@@ -122,6 +125,7 @@
                             android:textColor="@color/me_fans_text_color" />
 
                         <TextView
+                            android:id="@+id/starSignTv"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="10dp"
@@ -136,6 +140,7 @@
                             android:src="@drawable/icon_rank_02" />
 
                         <ImageView
+                            android:id="@+id/sexImg"
                             android:layout_width="25dp"
                             android:layout_height="25dp"
                             android:layout_marginLeft="10dp"
@@ -145,47 +150,16 @@
                 </LinearLayout>
             </LinearLayout>
 
+            
+            
+              <!-- one -->
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
                 android:layout_marginLeft="15dp"
                 android:layout_marginRight="15dp"
                 android:layout_marginTop="15dp"
-                android:background="@drawable/bg_account_manager_list_item"
-                android:gravity="left|center"
-                android:orientation="horizontal" >
-
-                <TextView
-                    android:layout_width="65dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="15dp"
-                    android:layout_weight="0"
-                    android:gravity="center|left"
-                    android:text="昵称"
-                    android:textSize="16sp" />
-
-                <EditText
-                    android:id="@+id/nameEt"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginRight="8dp"
-                    android:layout_weight="1"
-                    android:gravity="right|center"
-                    android:text="刘玲玲"
-                    android:background="@null"
-                    android:textColor="#727071"
-                    android:textSize="15sp" />
-            </LinearLayout>
-
-            <!-- one -->
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp"
-                android:layout_marginTop="4dp"
                 android:background="@drawable/bg_account_manager_list_item"
                 android:gravity="left|center"
                 android:orientation="horizontal" >
@@ -216,10 +190,81 @@
                     android:textSize="15sp" />
             </LinearLayout>
             <!-- one end -->
+            
+            
+            <!--  one  -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/bg_account_manager_list_item"
+                android:gravity="left|center"
+                android:orientation="horizontal" >
 
+                <TextView
+                    android:layout_width="65dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="15dp"
+                    android:layout_weight="0"
+                    android:gravity="center|left"
+                    android:text="昵称"
+                    android:textSize="16sp" />
+
+                <EditText
+                    android:id="@+id/nameEt"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_weight="1"
+                    android:gravity="right|center"
+                    android:text="刘玲玲"
+                    android:background="@null"
+                    android:textColor="#727071"
+                    android:textSize="15sp" />
+            </LinearLayout>
+			<!--  one end -->
+          
+          
+          	<!--  one  -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/bg_account_manager_list_item"
+                android:gravity="left|center"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="65dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="15dp"
+                    android:layout_weight="0"
+                    android:gravity="center|left"
+                    android:text="性别"
+                    android:textSize="16sp" />
+
+                <EditText
+                    android:id="@+id/sexEt"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_weight="1"
+                    android:gravity="right|center"
+                    android:text="女"
+                    android:background="@null"
+                    android:textColor="#727071"
+                    android:textSize="15sp" />
+            </LinearLayout>
+			<!--  one end -->
+          
 
             <!-- one -->
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
@@ -333,6 +378,7 @@
             <!-- one -->
 
             <LinearLayout
+                android:id="@+id/weiboBtn"
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
                 android:layout_marginLeft="15dp"
@@ -371,6 +417,7 @@
             <!-- one -->
 
             <LinearLayout
+                android:id="@+id/qqBtn"
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
                 android:layout_marginLeft="15dp"
