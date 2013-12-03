@@ -223,9 +223,6 @@ public class WeekActivity extends BaseActivity {
 				
 				leftBgImg.setImageBitmap(bitmap);
 				
-				String name = leftUser.getName();
-				toast(name);
-				leftName.setText(name);
 				
 				ObjectAnimator anim1 = ObjectAnimator.ofFloat(leftBg, "translationX", -getScreenWidth(), -getScreenWidth()/2);
 				anim1.setDuration(DUR_TIME);
@@ -234,6 +231,13 @@ public class WeekActivity extends BaseActivity {
 				ObjectAnimator anim2 = ObjectAnimator.ofFloat(leftName, "translationX", -getScreenWidth()/2, 0);
 				anim2.setDuration(DUR_TIME);
 				anim2.start();
+				
+				
+				
+				String name = leftUser.getName();
+				leftName.clearAnimation();
+				leftName.setText(name);
+				leftName.invalidate();
 			}
 		}, 2000);
 
@@ -273,10 +277,8 @@ public class WeekActivity extends BaseActivity {
 				
 				
 				String name = rightUser.getName();
-				toast(name);
-				
 				rightName.clearAnimation();
-				rightName.setText(rightUser.getName());
+				rightName.setText(name);
 				rightName.invalidate();
 			}
 		}, 2000);
