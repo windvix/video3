@@ -60,6 +60,7 @@
         android:layout_marginTop="56dp" >
 
         <ImageView
+            android:tag="img"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="centerCrop"
@@ -80,6 +81,7 @@
         android:layout_marginTop="56dp" >
 
         <ImageView
+            android:tag="img"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="centerCrop"

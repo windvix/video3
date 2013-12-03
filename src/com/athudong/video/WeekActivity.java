@@ -1,10 +1,13 @@
 package com.athudong.video;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.athudong.video.bean.User;
 import com.athudong.video.task.BaseTask;
@@ -28,13 +31,18 @@ public class WeekActivity extends BaseActivity {
 
 	private View rightBg;
 
-	private View leftName;
+	private TextView leftName;
 
-	private View rightNeme;
+	private TextView rightName;
 
 	private View thumbBtn;
 
-	private User user;
+	private User leftUser;
+	private User rightUser;
+	
+	
+	private ImageView leftBgImg;
+	private ImageView rightBgImg;
 
 	@Override
 	protected void initView(Bundle savedInstanceState) {
@@ -42,14 +50,18 @@ public class WeekActivity extends BaseActivity {
 		findViewById(R.id.backBtn).setOnClickListener(this);
 
 		ringLayout = findViewById(R.id.ringLayout);
-		leftName = findViewById(R.id.leftNameTv);
-		rightNeme = findViewById(R.id.rightNameTv);
+		leftName = (TextView)findViewById(R.id.leftNameTv);
+		rightName = (TextView)findViewById(R.id.rightNameTv);
 
 		leftComLayout = findViewById(R.id.leftComLayout);
 		thumbBtn = findViewById(R.id.thumbBtn);
 
 		leftBg = findViewById(R.id.leftBg);
 		rightBg = findViewById(R.id.rightBg);
+		
+		leftBgImg = (ImageView)leftBg.findViewWithTag("img");
+		rightBgImg = (ImageView)rightBg.findViewWithTag("img");
+		
 
 		rightComLayout = findViewById(R.id.rightComLayout);
 
@@ -69,7 +81,8 @@ public class WeekActivity extends BaseActivity {
 		
 		thumbBtn.setOnClickListener(this);
 
-		user = TestDataUtil.getRandomUser();
+		leftUser = TestDataUtil.getRandomUser();
+		rightUser = TestDataUtil.getRandomUser();
 
 		leftComLayout.setVisibility(View.INVISIBLE);
 		rightComLayout.setVisibility(View.INVISIBLE);
@@ -82,19 +95,35 @@ public class WeekActivity extends BaseActivity {
 			}
 		}, 600);
 		thumbBtn.setVisibility(View.INVISIBLE);
-
+		
+		leftBgImg.setImageBitmap(null);
+		rightBgImg.setImageBitmap(null);
+		
+		leftName.setText(leftUser.getName());
+		rightName.setText(rightUser.getName());
 	}
 
 	/**
 	 * 初始化组件（让背景分成两半。隐藏左右的按钮）
 	 */
 	private void initComLayout() {
+		
+		String p1 = getTestPath()+leftUser.getId()+"_01.jpg";
+		Bitmap b1 = readBitmapAutoSize(p1, leftBgImg.getWidth(), leftBgImg.getHeight());
+		
+		String p2 = getTestPath()+rightUser.getId()+"_01.jpg";
+		Bitmap b2 = readBitmapAutoSize(p2, rightBgImg.getWidth(), rightBgImg.getHeight());
+		
+		leftBgImg.setImageBitmap(b1);
+		rightBgImg.setImageBitmap(b2);
+		
 		int dis = getScreenWidth() - leftComLayout.getLeft();
 		ObjectAnimator.ofFloat(leftComLayout, "translationX", 0, -dis).start();
 		ObjectAnimator.ofFloat(rightComLayout, "translationX", 0, dis).start();
 
 		ObjectAnimator.ofFloat(leftBg, "translationX", 0, -getScreenWidth() / 2).start();
 		ObjectAnimator.ofFloat(rightBg, "translationX", 0, getScreenWidth() / 2).start();
+	
 	}
 
 	@Override
@@ -131,14 +160,16 @@ public class WeekActivity extends BaseActivity {
 		} else if (id == R.id.rightBg && !isShowLeft) {
 			moveRight();
 		} else if (id == R.id.leftVideoBtn) {
-			playVideo(getTestPath() + user.getId() + "_video_01.flv");
+			playVideo(getTestPath()  + "01_video_01.flv");
 		} else if (id == R.id.rightVideoBtn) {
-			playVideo(getTestPath() + user.getId() + "_video_02.flv");
+			playVideo(getTestPath() +  "01_video_02.flv");
 		} else if (id == R.id.leftZoneBtn) {
 			Intent intent = new Intent(this, ZoneActivity.class);
+			intent.putExtra("id", leftUser.getId());
 			startActivity(intent);
 		} else if (id == R.id.rightZoneBtn) {
 			Intent intent = new Intent(this, ZoneActivity.class);
+			intent.putExtra("id", rightUser.getId());
 			startActivity(intent);
 		} else if (id == R.id.thumbBtn) {
 			if (thumbBtn.getVisibility() == View.VISIBLE) {
@@ -170,6 +201,7 @@ public class WeekActivity extends BaseActivity {
 	}
 
 	private void changeLeft() {
+		leftUser = TestDataUtil.getRandomUser();
 		ObjectAnimator anim1 = ObjectAnimator.ofFloat(leftBg, "translationX", -getScreenWidth()/2, -getScreenWidth());
 		anim1.setDuration(DUR_TIME);
 		anim1.start();
@@ -178,10 +210,23 @@ public class WeekActivity extends BaseActivity {
 		anim2.setDuration(DUR_TIME);
 		anim2.start();
 
+
+		
 		new Handler().postDelayed(new Runnable() {
 
 			@Override
 			public void run() {
+				
+				
+				String path = getTestPath()+leftUser.getId()+"_01.jpg";
+				Bitmap bitmap = readBitmapAutoSize(path, leftBgImg.getWidth(), leftBgImg.getHeight());
+				
+				leftBgImg.setImageBitmap(bitmap);
+				
+				String name = leftUser.getName();
+				toast(name);
+				leftName.setText(name);
+				
 				ObjectAnimator anim1 = ObjectAnimator.ofFloat(leftBg, "translationX", -getScreenWidth(), -getScreenWidth()/2);
 				anim1.setDuration(DUR_TIME);
 				anim1.start();
@@ -195,11 +240,12 @@ public class WeekActivity extends BaseActivity {
 	}
 
 	private void changeRight() {
+		rightUser = TestDataUtil.getRandomUser();
 		ObjectAnimator anim1 = ObjectAnimator.ofFloat(rightBg, "translationX", getScreenWidth()/2, getScreenWidth());
 		anim1.setDuration(DUR_TIME);
 		anim1.start();
 
-		ObjectAnimator anim2 = ObjectAnimator.ofFloat(rightNeme, "translationX", 0, getScreenWidth()/2);
+		ObjectAnimator anim2 = ObjectAnimator.ofFloat(rightName, "translationX", 0, getScreenWidth()/2);
 		anim2.setDuration(DUR_TIME);
 		anim2.start();
 
@@ -207,13 +253,31 @@ public class WeekActivity extends BaseActivity {
 
 			@Override
 			public void run() {
+				
+				
+				String path = getTestPath()+rightUser.getId()+"_01.jpg";
+				Bitmap bitmap = readBitmapAutoSize(path, rightBgImg.getWidth(), rightBgImg.getHeight());
+				
+				rightBgImg.setImageBitmap(bitmap);
+				
+
+				
 				ObjectAnimator anim1 = ObjectAnimator.ofFloat(rightBg, "translationX", getScreenWidth(), getScreenWidth()/2);
 				anim1.setDuration(DUR_TIME);
 				anim1.start();
 
-				ObjectAnimator anim2 = ObjectAnimator.ofFloat(rightNeme, "translationX", getScreenWidth()/2, 0);
+				ObjectAnimator anim2 = ObjectAnimator.ofFloat(rightName, "translationX", getScreenWidth()/2, 0);
 				anim2.setDuration(DUR_TIME);
 				anim2.start();
+				
+				
+				
+				String name = rightUser.getName();
+				toast(name);
+				
+				rightName.clearAnimation();
+				rightName.setText(rightUser.getName());
+				rightName.invalidate();
 			}
 		}, 2000);
 	}
@@ -249,7 +313,7 @@ public class WeekActivity extends BaseActivity {
 			anim21.setDuration(DUR_TIME);
 			anim21.start();
 
-			ObjectAnimator anim22 = ObjectAnimator.ofFloat(rightNeme, "translationX", 0, nW);
+			ObjectAnimator anim22 = ObjectAnimator.ofFloat(rightName, "translationX", 0, nW);
 			anim22.setDuration(DUR_TIME);
 			anim22.start();
 
@@ -284,7 +348,7 @@ public class WeekActivity extends BaseActivity {
 			ObjectAnimator anim21 = ObjectAnimator.ofFloat(leftName, "translationX", nW, 0);
 			anim21.setDuration(DUR_TIME);
 			anim21.start();
-			ObjectAnimator anim22 = ObjectAnimator.ofFloat(rightNeme, "translationX", nW, 0);
+			ObjectAnimator anim22 = ObjectAnimator.ofFloat(rightName, "translationX", nW, 0);
 			anim22.setDuration(DUR_TIME);
 			anim22.start();
 
@@ -329,7 +393,7 @@ public class WeekActivity extends BaseActivity {
 			ObjectAnimator anim21 = ObjectAnimator.ofFloat(leftName, "translationX", 0, -nW);
 			anim21.setDuration(DUR_TIME);
 			anim21.start();
-			ObjectAnimator anim22 = ObjectAnimator.ofFloat(rightNeme, "translationX", 0, -nW);
+			ObjectAnimator anim22 = ObjectAnimator.ofFloat(rightName, "translationX", 0, -nW);
 			anim22.setDuration(DUR_TIME);
 			anim22.start();
 
@@ -366,7 +430,7 @@ public class WeekActivity extends BaseActivity {
 			ObjectAnimator anim21 = ObjectAnimator.ofFloat(leftName, "translationX", -nW, 0);
 			anim21.setDuration(DUR_TIME);
 			anim21.start();
-			ObjectAnimator anim22 = ObjectAnimator.ofFloat(rightNeme, "translationX", -nW, 0);
+			ObjectAnimator anim22 = ObjectAnimator.ofFloat(rightName, "translationX", -nW, 0);
 			anim22.setDuration(DUR_TIME);
 			anim22.start();
 

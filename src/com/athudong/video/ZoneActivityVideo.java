@@ -8,7 +8,6 @@ import com.athudong.video.VideosActivity.ViewPagerPageChangeListener;
 import com.athudong.video.bean.User;
 import com.athudong.video.component.VideoHelper;
 import com.athudong.video.util.TestDataUtil;
-import com.nineoldandroids.animation.ObjectAnimator;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -50,7 +49,7 @@ public class ZoneActivityVideo implements OnClickListener{
 	public void onClick(View view) {
 		int id = view.getId();
 		
-		String path = act.getTestPath()+user.getId()+"_video_02.flv";
+		String path = act.getTestPath()+"01_video_02.flv";
 		if(id==R.id.video01){
 			
 		}else if(id==R.id.video02){
