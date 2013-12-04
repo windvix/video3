@@ -13,6 +13,7 @@ import com.athudong.video.dialog.ConfirmDialog;
 import com.athudong.video.dialog.GameGuessDialog;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.net.Uri;
 import android.text.Html;
 import android.view.View;
@@ -61,6 +62,7 @@ public class ListRankAdapter extends ArrayAdapter<Rank> implements OnClickListen
 			convertView.findViewWithTag("saying1").setVisibility(View.GONE);
 
 			tyTv = (TextView) convertView.findViewWithTag("unit1");
+			sayTv = (TextView) convertView.findViewWithTag("saying2");
 		} else {
 			convertView.findViewWithTag("unit1").setVisibility(View.GONE);
 			convertView.findViewWithTag("saying2").setVisibility(View.GONE);
@@ -76,9 +78,17 @@ public class ListRankAdapter extends ArrayAdapter<Rank> implements OnClickListen
 		}
 		Rank rank = getItem(position);
 
-		img.setImageResource(Integer.parseInt(rank.getImg()));
+		Bitmap b = act.readBitmapAutoSize(rank.getImg(), img.getWidth(), img.getHeight());
+		
+		img.setImageBitmap(b);
 		name.setText(rank.getName());
 		count.setText(rank.getCount());
+		
+		String say = rank.getSaying();
+		if(say.length()>9){
+			say = say.substring(0, 10)+"...";
+		}
+		sayTv.setText(say);
 
 		convertView.setTag(position);
 

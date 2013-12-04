@@ -6,7 +6,6 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="170dp"
-        
         android:layout_centerInParent="true" >
 
         <View
@@ -29,6 +28,7 @@
             android:layout_marginTop="55dp" >
 
             <ImageView
+                android:id="@+id/contentImg"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_alignParentTop="true"
@@ -49,8 +49,8 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_marginLeft="17dp"
-            android:visibility="visible"
-            android:layout_marginRight="17dp" >
+            android:layout_marginRight="17dp"
+            android:visibility="visible" >
 
             <TextView
                 android:layout_width="match_parent"
@@ -62,7 +62,7 @@
                 android:text="  " />
 
             <TextView
-
+                android:id="@+id/shortContentTv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
@@ -73,13 +73,13 @@
 
         <RelativeLayout
             android:id="@+id/longTextLayout"
-            android:visibility="invisible"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_alignParentBottom="true"
             android:layout_marginLeft="17dp"
-            android:layout_marginTop="64dp" 
-            android:layout_marginRight="17dp" >
+            android:layout_marginRight="17dp"
+            android:layout_marginTop="64dp"
+            android:visibility="invisible" >
 
             <TextView
                 android:layout_width="match_parent"
@@ -91,6 +91,7 @@
                 android:text="  " />
 
             <TextView
+                android:id="@+id/longContentTv"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_alignParentBottom="true"
@@ -98,8 +99,7 @@
                 android:text="三天两夜的比赛终于结束了，感觉好累，但是我觉得很值得。以后还要继续努力！加油！"
                 android:textColor="#fff" />
         </RelativeLayout>
-        
-        
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="55dp"
@@ -125,6 +125,7 @@
                 android:orientation="vertical" >
 
                 <TextView
+                    android:id="@+id/nameTv"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
@@ -139,6 +140,7 @@
                     android:orientation="horizontal" >
 
                     <TextView
+                        android:id="@+id/timeTv"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
@@ -161,6 +163,7 @@
                             android:src="@drawable/icon_hear_gray" />
 
                         <TextView
+                            android:id="@+id/favCountTv"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:layout_marginLeft="4dp"
@@ -176,6 +179,7 @@
                             android:src="@drawable/icon_chat_red" />
 
                         <TextView
+                            android:id="@+id/commentCountTv"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:layout_marginLeft="4dp"

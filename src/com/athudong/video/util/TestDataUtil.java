@@ -491,4 +491,9 @@ public class TestDataUtil {
 		
 		return user;
 	}
+	
+	
+	public static List<User> getAllUsers(){
+		return users;
+	}
 }

@@ -5,12 +5,15 @@ import java.util.List;
 
 import com.athudong.video.adapter.ListCircleAdapter;
 import com.athudong.video.bean.CircleLine;
+import com.athudong.video.bean.User;
+import com.athudong.video.util.TestDataUtil;
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
 import com.handmark.pulltorefresh.library.PullToRefreshBase.OnRefreshListener;
 import com.handmark.pulltorefresh.library.PullToRefreshListView;
 import com.nineoldandroids.animation.ObjectAnimator;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Handler;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
@@ -18,8 +21,10 @@ import android.support.v4.view.ViewPager.OnPageChangeListener;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.View.OnClickListener;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.TextView;
 
 /**
  * 娱乐圈界面操作
@@ -66,9 +71,15 @@ public class MainActivityCircle implements OnClickListener {
 		root.findViewById(R.id.tab02).setSelected(false);
 		root.findViewById(R.id.tab03).setSelected(false);
 
-		initTabOne();
-		initTabTwo();
-		initTabThree();
+		new Handler().postDelayed(new Runnable() {
+			
+			@Override
+			public void run() {
+				initTabOne();
+				initTabTwo();
+				initTabThree();
+			}
+		}, 1500);
 	}
 
 	private void initTabTwo() {
@@ -76,9 +87,20 @@ public class MainActivityCircle implements OnClickListener {
 
 		List<CircleLine> list = new ArrayList<CircleLine>();
 
-		for (int i = 0; i < 2; i++) {
-			list.add(new CircleLine());
-		}
+		
+		List<User> users = TestDataUtil.getAllUsers();
+		
+		User u01 = users.get(5);
+		User u02 = users.get(6);
+		User u03 = users.get(7);
+		User u04 = users.get(8);
+		User u05 = users.get(9);
+		User u06 = users.get(4);
+		
+		
+		String hd = "_head.jpg";
+		list.add(new CircleLine(u04.getId(), u04.getName(), act.getTestPath()+u04.getId()+hd, u05.getId(), u05.getName(), act.getTestPath()+u05.getId()+hd,u06.getId(), u06.getName(), act.getTestPath()+u06.getId()+hd));
+		list.add(new CircleLine(u03.getId(), u03.getName(), act.getTestPath()+u03.getId()+hd,u01.getId(), u01.getName(), act.getTestPath()+u01.getId()+hd,u02.getId(), u02.getName(), act.getTestPath()+u02.getId()+hd));
 
 		listView.setAdapter(new ListCircleAdapter(act, R.layout.list_main_circle_02_template, list));
 		listView.setOnRefreshListener(new OnRefreshListener<ListView>() {
@@ -100,10 +122,17 @@ public class MainActivityCircle implements OnClickListener {
 
 		List<CircleLine> list = new ArrayList<CircleLine>();
 
-		for (int i = 0; i < 1; i++) {
-			list.add(new CircleLine());
-		}
-
+		
+		List<User> users = TestDataUtil.getAllUsers();
+		
+		User u01 = users.get(2);
+		User u02 = users.get(3);
+		User u03 = users.get(4);
+		
+		
+		String hd = "_head.jpg";
+		list.add(new CircleLine(u01.getId(), u01.getName(), act.getTestPath()+u01.getId()+hd, u02.getId(), u02.getName(), act.getTestPath()+u02.getId()+hd,u03.getId(), u03.getName(), act.getTestPath()+u03.getId()+hd));
+		
 		listView.setAdapter(new ListCircleAdapter(act, R.layout.list_main_circle_02_template, list));
 		listView.setOnRefreshListener(new OnRefreshListener<ListView>() {
 			@Override
@@ -122,10 +151,55 @@ public class MainActivityCircle implements OnClickListener {
 	private void initTabOne() {
 		LinearLayout contentLayout = (LinearLayout) v01.findViewById(R.id.contentLayout);
 
-		for (int i = 0; i < 4; i++) {
+		List<User> users = TestDataUtil.getAllUsers();
+		
+		for (int i = 2; i < 6; i++) {
 
+			final User user = users.get(i);
+			
 			final View view = act.createView(R.layout.list_main_circle_01_template2);
-
+			
+			TextView shortContentTv = (TextView)view.findViewById(R.id.shortContentTv);
+			TextView longContentTv = (TextView)view.findViewById(R.id.longContentTv);
+			ImageView headImg = (ImageView)view.findViewById(R.id.headImg);
+			TextView nameTv = (TextView)view.findViewById(R.id.nameTv);
+			TextView timeTv = (TextView)view.findViewById(R.id.timeTv);
+			TextView favCountTv  = (TextView)view.findViewById(R.id.favCountTv);
+			TextView commentCountTv = (TextView)view.findViewById(R.id.commentCountTv);
+			ImageView contentImg = (ImageView)view.findViewById(R.id.contentImg);
+			
+			
+			
+			String content  = user.getSaying();
+			longContentTv.setText(content);
+			if(content.length()>18){
+				content = content.subSequence(0, 19)+"...";
+			}
+			shortContentTv.setText(content);
+			
+			Bitmap headBm = act.readBitmapAutoSize(act.getTestPath()+user.getId()+"_head.jpg", headImg.getWidth(), headImg.getHeight());
+			
+			headImg.setImageBitmap(headBm);
+			
+			Bitmap contentBm = act.readBitmapAutoSize(act.getTestPath()+user.getId()+"_02.jpg", contentImg.getWidth(), contentImg.getHeight());
+			
+			contentImg.setImageBitmap(contentBm);
+			nameTv.setText(user.getName()+"");
+			favCountTv.setText(user.getFans()+"");
+			commentCountTv.setText(user.getPopular()+"");
+			
+			String tm = "30分钟前";
+			if(i==2){
+				tm = "2小时之前";
+			}else if(i==3){
+				tm = "昨天18:45";
+			}else if(i==4){
+				tm = "昨天09:04";
+			}else if(i==5){
+				tm = "前天14:03";
+			}
+			timeTv.setText(tm);
+			
 			contentLayout.addView(view);
 			
 			view.setOnClickListener(new OnClickListener() {
@@ -133,6 +207,7 @@ public class MainActivityCircle implements OnClickListener {
 				@Override
 				public void onClick(View v) {
 					Intent intent = new Intent(act, ZoneActivity.class);
+					intent.putExtra("id", user.getId());
 					act.startActivity(intent);
 				}
 			});

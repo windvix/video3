@@ -4,6 +4,8 @@
     android:layout_height="95dp"
     android:background="@color/theme_color"
     android:orientation="horizontal"
+    android:layout_marginTop="8dp"
+    android:paddingTop="8dp"
     android:gravity="center">
 
     <!-- one -->
@@ -17,6 +19,7 @@
         android:layout_weight="1" >
 
         <ImageView
+            android:tag="img"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_alignParentBottom="true"
@@ -42,6 +45,7 @@
             android:layout_alignParentBottom="true" >
 
             <TextView
+                android:tag="name"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="6dp"
@@ -75,6 +79,7 @@
         android:layout_weight="1" >
 
         <ImageView
+            android:tag="img"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_alignParentBottom="true"
@@ -100,6 +105,7 @@
             android:layout_alignParentBottom="true" >
 
             <TextView
+                android:tag="name"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="6dp"
@@ -133,6 +139,7 @@
         android:layout_weight="1" >
 
         <ImageView
+            android:tag="img"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_alignParentBottom="true"
@@ -158,6 +165,7 @@
             android:layout_alignParentBottom="true" >
 
             <TextView
+                android:tag="name"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="6dp"

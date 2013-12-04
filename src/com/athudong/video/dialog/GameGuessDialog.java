@@ -12,6 +12,7 @@ import com.athudong.video.bean.User;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Handler;
 import android.text.Html;
@@ -67,6 +68,7 @@ public class GameGuessDialog extends Dialog implements OnClickListener{
 			convertView.findViewWithTag("saying1").setVisibility(View.GONE);
 
 			tyTv = (TextView) convertView.findViewWithTag("unit1");
+			sayTv = (TextView) convertView.findViewWithTag("saying2");
 		} else {
 			convertView.findViewWithTag("unit1").setVisibility(View.GONE);
 			convertView.findViewWithTag("saying2").setVisibility(View.GONE);
@@ -99,8 +101,18 @@ public class GameGuessDialog extends Dialog implements OnClickListener{
 		}
 		
 		
-
-		img.setImageResource(Integer.parseInt(rank.getImg()));
+		Bitmap b = act.readBitmapAutoSize(rank.getImg(), img.getWidth(), img.getHeight());
+		
+		img.setImageBitmap(b);
+		name.setText(rank.getName());
+		count.setText(rank.getCount());
+		
+		String say = rank.getSaying();
+		if(say.length()>9){
+			say = say.substring(0, 10)+"...";
+		}
+		sayTv.setText(say);
+		
 		name.setText(rank.getName());
 		count.setText(rank.getCount());
 

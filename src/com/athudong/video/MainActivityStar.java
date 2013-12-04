@@ -5,6 +5,8 @@ import java.util.List;
 
 import com.athudong.video.adapter.ListRankAdapter;
 import com.athudong.video.bean.Rank;
+import com.athudong.video.bean.User;
+import com.athudong.video.util.TestDataUtil;
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
 import com.handmark.pulltorefresh.library.PullToRefreshBase.OnRefreshListener;
 import com.handmark.pulltorefresh.library.PullToRefreshListView;
@@ -24,7 +26,7 @@ import android.widget.ListView;
 /**
  * 明星界面操作
  */
-public class MainActivityStar implements OnClickListener, OnItemClickListener{
+public class MainActivityStar implements OnClickListener, OnItemClickListener {
 
 	private MainActivity act;
 
@@ -59,12 +61,20 @@ public class MainActivityStar implements OnClickListener, OnItemClickListener{
 		root.findViewById(R.id.tab02).setOnClickListener(this);
 		root.findViewById(R.id.tab01).setSelected(true);
 		root.findViewById(R.id.tab02).setSelected(false);
-		
-		initRank01();
-		initRank02();
+
+		new Handler().postDelayed(new Runnable() {
+			@Override
+			public void run() {
+				initRank01();
+				initRank02();
+			}
+		}, 1000);
+
 	}
 
 	private ListView listView01;
+
+	private List<Rank> rankList01;
 
 	/**
 	 * 初始化排行榜一
@@ -72,36 +82,38 @@ public class MainActivityStar implements OnClickListener, OnItemClickListener{
 	private void initRank01() {
 		final PullToRefreshListView tempListview = (PullToRefreshListView) v01.findViewById(R.id.pull_refresh_list);
 
-		
 		listView01 = tempListview.getRefreshableView();
-		
-		List<Rank> list = new ArrayList<Rank>();
-		
-		Rank r01 = new Rank(1, R.drawable.rank_head_01+"", "朱玲玲", "15,396");
-		Rank r02 = new Rank(2, R.drawable.rank_head_02+"", "李倩倩", "14,000");
-		Rank r03 = new Rank(3, R.drawable.rank_head_03+"", "Belly", "10,845");
-		Rank r04 = new Rank(4, R.drawable.rank_head_04+"", "温嘉宝", "9,566");
-		Rank r05 = new Rank(5, R.drawable.rank_head_05+"", "梁亦", "9,423");
-		Rank r06 = new Rank(6, R.drawable.rank_head_06+"", "Candy", "5,226");
-		Rank r07 = new Rank(7, R.drawable.rank_head_07+"", "张可", "4,123");
-		Rank r08 = new Rank(8, R.drawable.rank_head_08+"", "南南", "3,564");
-		Rank r09 = new Rank(9, R.drawable.rank_head_09+"", "孙小利", "1,396");
-		Rank r10 = new Rank(10, R.drawable.rank_head_01+"", "黄朋仔", "875");
-		
-		
-		list.add(r01);
-		list.add(r02);
-		list.add(r03);
-		list.add(r04);
-		list.add(r05);
-		list.add(r06);
-		list.add(r07);
-		list.add(r08);
-		list.add(r09);
-		list.add(r10);
-		
-		
-		final ListRankAdapter adapter = new ListRankAdapter(act, list, ListRankAdapter.TYPE_01);
+
+		rankList01 = new ArrayList<Rank>();
+
+		List<User> users01 = TestDataUtil.getAllUsers();
+
+		String path = act.getTestPath();
+		String head = "_head.jpg";
+
+		Rank r01 = new Rank(1, path + users01.get(01).getId() + head, users01.get(01).getName(), "15,396", users01.get(01).getSaying(), users01.get(01).getId());
+		Rank r02 = new Rank(2, path + users01.get(02).getId() + head, users01.get(02).getName(), "14,000", users01.get(02).getSaying(), users01.get(02).getId());
+		Rank r03 = new Rank(3, path + users01.get(03).getId() + head, users01.get(03).getName(), "10,845", users01.get(03).getSaying(), users01.get(03).getId());
+		Rank r04 = new Rank(4, path + users01.get(04).getId() + head, users01.get(04).getName(), "9,566", users01.get(04).getSaying(), users01.get(04).getId());
+		Rank r05 = new Rank(5, path + users01.get(05).getId() + head, users01.get(05).getName(), "9,423", users01.get(05).getSaying(), users01.get(05).getId());
+		Rank r06 = new Rank(6, path + users01.get(06).getId() + head, users01.get(06).getName(), "5,226", users01.get(06).getSaying(), users01.get(06).getId());
+		Rank r07 = new Rank(7, path + users01.get(07).getId() + head, users01.get(07).getName(), "4,123", users01.get(07).getSaying(), users01.get(07).getId());
+		Rank r08 = new Rank(8, path + users01.get(8).getId() + head, users01.get(8).getName(), "3,564", users01.get(8).getSaying(), users01.get(8).getId());
+		Rank r09 = new Rank(9, path + users01.get(9).getId() + head, users01.get(9).getName(), "1,396", users01.get(9).getSaying(), users01.get(9).getId());
+		Rank r10 = new Rank(10, path + users01.get(0).getId() + head, users01.get(0).getName(), "875", users01.get(0).getSaying(), users01.get(0).getId());
+
+		rankList01.add(r01);
+		rankList01.add(r02);
+		rankList01.add(r03);
+		rankList01.add(r04);
+		rankList01.add(r05);
+		rankList01.add(r06);
+		rankList01.add(r07);
+		rankList01.add(r08);
+		rankList01.add(r09);
+		rankList01.add(r10);
+
+		final ListRankAdapter adapter = new ListRankAdapter(act, rankList01, ListRankAdapter.TYPE_01);
 
 		act.registerForContextMenu(listView01);
 		listView01.setAdapter(adapter);
@@ -118,13 +130,12 @@ public class MainActivityStar implements OnClickListener, OnItemClickListener{
 				}, 2000);
 			}
 		});
-		
+
 		tempListview.setOnItemClickListener(this);
 	}
 
-	
-
 	private PullToRefreshListView listView02;
+	private List<Rank> rankList02;
 
 	/**
 	 * 初始化排行榜二
@@ -132,33 +143,35 @@ public class MainActivityStar implements OnClickListener, OnItemClickListener{
 	private void initRank02() {
 		listView02 = (PullToRefreshListView) v02.findViewById(R.id.pull_refresh_list);
 
-		List<Rank> list = new ArrayList<Rank>();
+		rankList02 = new ArrayList<Rank>();
+		List<User> users01 = TestDataUtil.getAllUsers();
+
+		String path = act.getTestPath();
+		String head = "_head.jpg";
+
+		Rank r01 = new Rank(1, path + users01.get(9).getId() + head, users01.get(9).getName(), "15,396", users01.get(9).getSaying(), users01.get(9).getId());
+		Rank r02 = new Rank(2, path + users01.get(8).getId() + head, users01.get(8).getName(), "14,000", users01.get(8).getSaying(), users01.get(8).getId());
+		Rank r03 = new Rank(3, path + users01.get(7).getId() + head, users01.get(7).getName(), "10,845", users01.get(7).getSaying(), users01.get(7).getId());
+		Rank r04 = new Rank(4, path + users01.get(06).getId() + head, users01.get(6).getName(), "9,566", users01.get(6).getSaying(), users01.get(6).getId());
+		Rank r05 = new Rank(5, path + users01.get(05).getId() + head, users01.get(5).getName(), "9,423", users01.get(5).getSaying(), users01.get(5).getId());
+		Rank r06 = new Rank(6, path + users01.get(04).getId() + head, users01.get(4).getName(), "5,226", users01.get(4).getSaying(), users01.get(4).getId());
+		Rank r07 = new Rank(7, path + users01.get(03).getId() + head, users01.get(3).getName(), "4,123", users01.get(3).getSaying(), users01.get(3).getId());
+		Rank r08 = new Rank(8, path + users01.get(2).getId() + head, users01.get(2).getName(), "3,564", users01.get(2).getSaying(), users01.get(2).getId());
+		Rank r09 = new Rank(9, path + users01.get(1).getId() + head, users01.get(1).getName(), "1,396", users01.get(1).getSaying(), users01.get(1).getId());
+		Rank r10 = new Rank(10, path + users01.get(0).getId() + head, users01.get(0).getName(), "875", users01.get(0).getSaying(), users01.get(0).getId());
+
+		rankList02.add(r01);
+		rankList02.add(r02);
+		rankList02.add(r03);
+		rankList02.add(r04);
+		rankList02.add(r05);
+		rankList02.add(r06);
+		rankList02.add(r07);
+		rankList02.add(r08);
+		rankList02.add(r09);
+		rankList02.add(r10);
 		
-		Rank r01 = new Rank(1, R.drawable.rank_head_09+"", "陈家怡", "15,396");
-		Rank r02 = new Rank(2, R.drawable.rank_head_08+"", "刘小明", "14,000");
-		Rank r03 = new Rank(3, R.drawable.rank_head_07+"", "Belly", "10,845");
-		Rank r04 = new Rank(4, R.drawable.rank_head_06+"", "阿Li", "9,566");
-		Rank r05 = new Rank(5, R.drawable.rank_head_05+"", "梁亦", "9,423");
-		Rank r06 = new Rank(6, R.drawable.rank_head_04+"", "Candy", "5,226");
-		Rank r07 = new Rank(7, R.drawable.rank_head_03+"", "Gogo", "4,123");
-		Rank r08 = new Rank(8, R.drawable.rank_head_02+"", "卖火柴的明星", "3,564");
-		Rank r09 = new Rank(9, R.drawable.rank_head_01+"", "小贫友", "1,396");
-		Rank r10 = new Rank(10, R.drawable.rank_head_09+"", "阿宝", "875");
-		
-		
-		list.add(r01);
-		list.add(r02);
-		list.add(r03);
-		list.add(r04);
-		list.add(r05);
-		list.add(r06);
-		list.add(r07);
-		list.add(r08);
-		list.add(r09);
-		list.add(r10);
-		
-		
-		final ListRankAdapter adapter = new ListRankAdapter(act, list, ListRankAdapter.TYPE_02);
+		final ListRankAdapter adapter = new ListRankAdapter(act, rankList02, ListRankAdapter.TYPE_02);
 
 		listView02.setAdapter(adapter);
 
@@ -173,19 +186,18 @@ public class MainActivityStar implements OnClickListener, OnItemClickListener{
 				}, 2000);
 			}
 		});
-		
+
 		listView02.setOnItemClickListener(this);
 	}
 
-	
 	@Override
 	public void onClick(View v) {
 
 		int id = v.getId();
 		if (id == R.id.tab01) {
-			viewpager.setCurrentItem(0,false);
+			viewpager.setCurrentItem(0, false);
 		} else if (id == R.id.tab02) {
-			viewpager.setCurrentItem(1,false);
+			viewpager.setCurrentItem(1, false);
 		}
 	}
 
@@ -244,8 +256,17 @@ public class MainActivityStar implements OnClickListener, OnItemClickListener{
 	}
 
 	@Override
-	public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
+	public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 		Intent intent = new Intent(act, ZoneActivity.class);
+		String userId = "01";
+		Rank rank = null;
+		if (viewpager.getCurrentItem() == 0) {
+			rank = rankList01.get(position - 1);
+		} else {
+			rank = rankList02.get(position - 1);
+		}
+		userId = rank.getId();
+		intent.putExtra("id", userId);
 		act.startActivity(intent);
 	}
 }
