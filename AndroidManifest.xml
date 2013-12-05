@@ -89,6 +89,12 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
         
+        <!-- 明星商城具体物品界面 -->
+        <activity
+            android:name="com.athudong.video.ShopItemActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        
         
         <!-- 我的钱包界面 -->
         <activity

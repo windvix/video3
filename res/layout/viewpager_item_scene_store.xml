@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="4" >
+
+        <LinearLayout
+            android:id="@+id/scene_store_goods1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="1dp"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:tag="img"
+                android:layout_width="match_parent"
+                android:layout_height="76dp"
+                android:layout_margin="1dp"
+                android:background="@drawable/transparent"
+                android:scaleType="fitCenter"
+                android:src="@drawable/icon_gift_locator" />
+
+            <TextView
+                android:tag="name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="1dp"
+                android:background="@drawable/textview_bg"
+                android:gravity="center"
+                android:padding="3dp"
+                android:text="定位搜索器"
+                android:textColor="#f00"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/scene_store_goods2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="1dp"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:tag="img"
+                android:layout_width="match_parent"
+                android:layout_height="76dp"
+                android:layout_margin="1dp"
+                android:background="@drawable/transparent"
+                android:scaleType="fitCenter"
+                android:src="@drawable/icon_gift_voicer" />
+
+            <TextView
+                android:tag="name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="1dp"
+                android:background="@drawable/textview_bg"
+                android:gravity="center"
+                android:padding="3dp"
+                android:text="活动通知器"
+                android:textColor="#f00"
+                android:textSize="15sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="4" >
+
+        <LinearLayout
+            android:id="@+id/scene_store_goods3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="1dp"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:tag="img"
+                android:layout_width="match_parent"
+                android:layout_height="76dp"
+                android:layout_margin="1dp"
+                android:background="@drawable/textview_bg"
+                android:padding="1dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/icon_gift_rose" />
+
+            <TextView
+                android:tag="name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="1dp"
+                android:background="@drawable/textview_bg"
+                android:gravity="center"
+                android:padding="3dp"
+                android:text="玫瑰"
+                android:textColor="#f00"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/scene_store_goods4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="1dp"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:tag="img"
+                android:layout_width="match_parent"
+                android:layout_height="76dp"
+                android:layout_margin="1dp"
+                android:background="@drawable/textview_bg"
+                android:padding="1dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/icon_gift_rose_3" />
+
+            <TextView
+                android:tag="name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="1dp"
+                android:background="@drawable/textview_bg"
+                android:gravity="center"
+                android:padding="3dp"
+                android:text="玫瑰(3支)"
+                android:textColor="#f00"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/scene_store_goods5"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="1dp"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:tag="img"
+                android:layout_width="match_parent"
+                android:layout_height="76dp"
+                android:layout_margin="1dp"
+                android:background="@drawable/textview_bg"
+                android:padding="1dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/icon_gift_flower" />
+
+            <TextView
+                android:tag="name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="1dp"
+                android:background="@drawable/textview_bg"
+                android:gravity="center"
+                android:padding="3dp"
+                android:text="优雅花束"
+                android:textColor="#f00"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/scene_store_goods6"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="1dp"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:tag="img"
+                android:layout_width="match_parent"
+                android:layout_height="76dp"
+                android:layout_margin="1dp"
+                android:background="@drawable/textview_bg"
+                android:padding="1dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/icon_gift_basketer" />
+
+            <TextView
+                android:tag="name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="1dp"
+                android:background="@drawable/textview_bg"
+                android:gravity="center"
+                android:padding="3dp"
+                android:text="高档花篮"
+                android:textColor="#f00"
+                android:textSize="15sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

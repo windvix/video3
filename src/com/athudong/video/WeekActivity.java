@@ -6,6 +6,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -35,7 +36,7 @@ public class WeekActivity extends BaseActivity {
 
 	private TextView rightName;
 
-	private View thumbBtn;
+	private Button thumbBtn;
 
 	private User leftUser;
 	private User rightUser;
@@ -54,7 +55,7 @@ public class WeekActivity extends BaseActivity {
 		rightName = (TextView)findViewById(R.id.rightNameTv);
 
 		leftComLayout = findViewById(R.id.leftComLayout);
-		thumbBtn = findViewById(R.id.thumbBtn);
+		thumbBtn = (Button)findViewById(R.id.thumbBtn);
 
 		leftBg = findViewById(R.id.leftBg);
 		rightBg = findViewById(R.id.rightBg);
@@ -252,7 +253,7 @@ public class WeekActivity extends BaseActivity {
 		ObjectAnimator anim2 = ObjectAnimator.ofFloat(rightName, "translationX", 0, getScreenWidth()/2);
 		anim2.setDuration(DUR_TIME);
 		anim2.start();
-
+		
 		new Handler().postDelayed(new Runnable() {
 
 			@Override
@@ -338,6 +339,15 @@ public class WeekActivity extends BaseActivity {
 			anim5.start();
 			thumbBtn.setVisibility(View.VISIBLE);
 
+			//改变投票按钮的性别，清除动画后内容变化才能显示
+			thumbBtn.clearAnimation();
+			if(User.getSexInt(leftUser.getSex())==User.MAN){
+				thumbBtn.setText("投他");
+			}else{
+				thumbBtn.setText("投她");
+			}
+			thumbBtn.invalidate();
+			
 			isShowLeft = true;
 
 		} else {
@@ -419,6 +429,15 @@ public class WeekActivity extends BaseActivity {
 			anim5.setStartDelay(250);
 			anim5.start();
 			thumbBtn.setVisibility(View.VISIBLE);
+			
+			//改变投票按钮的性别，清除动画后内容变化才能显示
+			thumbBtn.clearAnimation();
+			if(User.getSexInt(rightUser.getSex())==User.MAN){
+				thumbBtn.setText("投他");
+			}else{
+				thumbBtn.setText("投她");
+			}
+			thumbBtn.invalidate();
 			
 			isShowRight = true;
 

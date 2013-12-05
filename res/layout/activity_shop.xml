@@ -1,33 +1,105 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/theme_color" >
+    android:orientation="vertical" >
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:layout_alignParentTop="true"
-        android:background="@drawable/title_bar_bg" >
+        android:layout_height="56dp" >
 
         <ImageView
-            android:id="@+id/backBtn"
-            android:layout_width="60dp"
-            android:layout_height="30dp"
+            android:id="@+id/start_store_back_btn"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
             android:layout_centerVertical="true"
-            android:layout_marginLeft="10dp"
-            android:scaleType="fitStart"
-            android:src="@drawable/back_btn" />
+            android:layout_marginLeft="16dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/icon_back_red" />
 
         <TextView
-            android:id="@+id/titleTv"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_centerInParent="true"
             android:gravity="center"
             android:text="明星商城"
-            android:textColor="@color/title_bar_text_color"
-            android:textSize="24sp" />
+            android:textColor="#f00"
+            android:textSize="22sp" />
     </RelativeLayout>
 
-</RelativeLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="#f00" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginTop="12dp"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/start_store_left_select"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/tab_left_bg"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="道具商城"
+            android:textColor="@drawable/tab_text_color"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/start_store_right_select"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/tab_right_bg"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="我的物品"
+            android:textColor="@drawable/tab_text_color"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+
+        <ImageView
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_marginRight="5dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/gold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="我的星币："
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/start_store_gold_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="688"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/start_store_viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" >
+    </android.support.v4.view.ViewPager>
+
+</LinearLayout>
