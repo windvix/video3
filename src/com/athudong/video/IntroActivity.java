@@ -79,43 +79,6 @@ public class IntroActivity extends BaseActivity {
 			imgViews.add(head);
 		}
 		
-		/*
-		View h1 = createView(R.layout.intro_nav_imgveiw);
-		View h2 = createView(R.layout.intro_nav_imgveiw);
-		View h3 = createView(R.layout.intro_nav_imgveiw);
-		View h4 = createView(R.layout.intro_nav_imgveiw);
-		View h5 = createView(R.layout.intro_nav_imgveiw);
-		View h6 = createView(R.layout.intro_nav_imgveiw);
-		View h7 = createView(R.layout.intro_nav_imgveiw);
-		View h8 = createView(R.layout.intro_nav_imgveiw);
-
-		((ImageView) h1.findViewById(R.id.intro_headimg)).setImageResource(R.drawable.intro_test_head_05);
-		((ImageView) h2.findViewById(R.id.intro_headimg)).setImageResource(R.drawable.intro_test_head_02);
-		((ImageView) h3.findViewById(R.id.intro_headimg)).setImageResource(R.drawable.intro_test_head_03);
-		((ImageView) h4.findViewById(R.id.intro_headimg)).setImageResource(R.drawable.intro_test_head_04);
-		((ImageView) h5.findViewById(R.id.intro_headimg)).setImageResource(R.drawable.intro_test_head_01);
-		((ImageView) h6.findViewById(R.id.intro_headimg)).setImageResource(R.drawable.intro_test_head_06);
-		((ImageView) h7.findViewById(R.id.intro_headimg)).setImageResource(R.drawable.intro_test_head_07);
-		((ImageView) h8.findViewById(R.id.intro_headimg)).setImageResource(R.drawable.intro_test_head_08);
-
-		h1.setTag("intro_test_img_05.jpg");
-		h2.setTag("intro_test_img_02.jpg");
-		h3.setTag("intro_test_img_03.jpg");
-		h4.setTag("intro_test_img_04.jpg");
-		h5.setTag("intro_test_img_01.jpg");
-		h6.setTag("intro_test_img_06.jpg");
-		h7.setTag("intro_test_img_07.jpg");
-		h8.setTag("intro_test_img_08.jpg");
-
-		imgViews.add(h1);
-		imgViews.add(h2);
-		imgViews.add(h3);
-		imgViews.add(h4);
-		imgViews.add(h5);
-		imgViews.add(h6);
-		imgViews.add(h7);
-		imgViews.add(h8);
-		*/
 		viewpager.setAdapter(new ViewPagerAdapter(imgViews));
 		viewpager.setOnPageChangeListener(new ViewPagerPageChangeListener());
 		viewpager.setOffscreenPageLimit(5);

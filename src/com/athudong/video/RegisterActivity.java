@@ -1,6 +1,5 @@
 package com.athudong.video;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
