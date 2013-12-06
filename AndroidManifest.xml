@@ -143,6 +143,12 @@
             android:name="com.athudong.video.PictureShowActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
+        
+        <!-- 发表动态界面 -->
+        <activity
+            android:name="com.athudong.video.SayingActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
     </application>
 
 </manifest>

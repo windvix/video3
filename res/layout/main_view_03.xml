@@ -20,9 +20,20 @@
             android:text="娱乐圈"
             android:textColor="@color/title_bar_text_color"
             android:textSize="24sp" />
+        
+        
+          <ImageView
+            android:id="@+id/sayingBtn"
+            android:layout_width="100dp"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="12dp"
+            android:scaleType="fitEnd"
+            android:src="@drawable/icon_saying" />
     </RelativeLayout>
 
-        <LinearLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="54dp"
         android:layout_weight="0"
@@ -48,8 +59,6 @@
                 android:textSize="18sp" />
         </LinearLayout>
 
-        
-        
         <LinearLayout
             android:id="@+id/tab02"
             android:layout_width="match_parent"
@@ -67,8 +76,7 @@
                 android:textColor="@drawable/tab_text_color"
                 android:textSize="18sp" />
         </LinearLayout>
-        
-        
+
         <LinearLayout
             android:id="@+id/tab03"
             android:layout_width="match_parent"
@@ -87,8 +95,6 @@
                 android:textSize="18sp" />
         </LinearLayout>
     </LinearLayout>
-    
-    
 
     <com.athudong.video.component.NoScrollViewpager
         android:id="@+id/circleviewpager"

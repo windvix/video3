@@ -78,6 +78,7 @@ public class MainActivityCircle implements OnClickListener {
 		root.findViewById(R.id.tab01).setOnClickListener(this);
 		root.findViewById(R.id.tab02).setOnClickListener(this);
 		root.findViewById(R.id.tab03).setOnClickListener(this);
+		root.findViewById(R.id.sayingBtn).setOnClickListener(this);
 
 		root.findViewById(R.id.tab01).setSelected(true);
 		root.findViewById(R.id.tab02).setSelected(false);
@@ -314,6 +315,11 @@ public class MainActivityCircle implements OnClickListener {
 			viewpager.setCurrentItem(1, false);
 		} else if (id == R.id.tab03) {
 			viewpager.setCurrentItem(2, false);
+		}
+		//发表动态按钮
+		else if(id==R.id.sayingBtn){
+			Intent intent = new Intent(act, SayingActivity.class);
+			act.startActivity(intent);
 		}
 	}
 

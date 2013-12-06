@@ -31,7 +31,6 @@ public class NotificationActivity extends BaseActivity{
 		findViewById(R.id.msgBtn03).setOnClickListener(this);
 		findViewById(R.id.msgBtn04).setOnClickListener(this);
 		findViewById(R.id.msgBtn05).setOnClickListener(this);
-		findViewById(R.id.msgBtn06).setOnClickListener(this);
 	}
 
 
