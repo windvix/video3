@@ -24,7 +24,7 @@ import com.athudong.video.util.TestDataUtil;
 import com.nineoldandroids.animation.ObjectAnimator;
 
 /**
- * 个人资料界面（主要展示个人图片）
+ * 个人资料界面（界面已改动，暂时不需要）
  */
 public class IntroActivity extends BaseActivity {
 

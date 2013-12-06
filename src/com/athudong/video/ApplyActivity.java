@@ -10,13 +10,14 @@ import android.widget.TextView;
 
 
 /**
- * 报名参加活动
+ * 报名参加活动界面
  */
 public class ApplyActivity extends BaseActivity {
 	
 	
 	public void controlClick(View view){
 		switch(view.getId()){
+		//返回按钮
 		case R.id.title_bar_left:
 			this.finish();
 			break;
@@ -26,13 +27,18 @@ public class ApplyActivity extends BaseActivity {
 	@Override
 	public void onClick(View v) {
 		int id = v.getId();
+		//个人图片上传按钮
 		if(id==R.id.btn01){
 			SelectResDialog dialog = new SelectResDialog(this, SelectResDialog.TYPE_PIC);
 			dialog.show();
-		}else if(id==R.id.btn02){
+		}
+		//个人视频上传按钮
+		else if(id==R.id.btn02){
 			SelectResDialog dialog = new SelectResDialog(this, SelectResDialog.TYPE_VIDEO);
 			dialog.show();
-		}else if(id==R.id.btn03){
+		}
+		//个人音频上传按钮
+		else if(id==R.id.btn03){
 			SelectResDialog dialog = new SelectResDialog(this, SelectResDialog.TYPE_AUDIO);
 			dialog.show();
 		}

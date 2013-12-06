@@ -18,7 +18,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 /**
- * Adapter: 娱乐圈明星列表
+ * Adapter: 用于娱乐圈界面的第二个tab和第三个tab列表
  */
 public class ListCircleAdapter extends ArrayAdapter<CircleLine> implements OnClickListener {
 
@@ -57,6 +57,9 @@ public class ListCircleAdapter extends ArrayAdapter<CircleLine> implements OnCli
 		two.setOnClickListener(this);
 		three.setOnClickListener(this);
 		
+		/**
+		 * 因为模版中。一行有三个人，所以一个CircleLine对象就有三个人。以下分别初始化每一个部件
+		 */
 		oneView(one, circleLine.getId1(), circleLine.getName1(), circleLine.getImg1());
 		oneView(two, circleLine.getId2(), circleLine.getName2(), circleLine.getImg2());
 		oneView(three, circleLine.getId3(), circleLine.getName3(), circleLine.getImg3());
@@ -67,7 +70,9 @@ public class ListCircleAdapter extends ArrayAdapter<CircleLine> implements OnCli
 		ImageView imgV = (ImageView)one.findViewWithTag("img");
 		TextView nameTv = (TextView)one.findViewWithTag("name");
 		
-		
+		/**
+		 * 加载用户头像
+		 */
 		Bitmap bm =act.readBitmapAutoSize(img, imgV.getWidth(), imgV.getHeight());
 		imgV.setImageBitmap(bm);
 		
@@ -83,7 +88,7 @@ public class ListCircleAdapter extends ArrayAdapter<CircleLine> implements OnCli
 	@Override
 	public void onClick(View v) {
 		Intent intent  = new Intent(act,ZoneActivity.class);
-		
+		//明星的个人空间界面，进入时传入明星的ID
 		if(v.getTag()!=null){
 			intent.putExtra("id", v.getTag().toString());
 		}

@@ -7,7 +7,7 @@ import android.view.View.OnClickListener;
 
 
 /**
- * 发现界面操作
+ * 主界面第一个tab:发现界面操作
  */
 public class MainActivityDiscover implements OnClickListener{
 
@@ -30,17 +30,23 @@ public class MainActivityDiscover implements OnClickListener{
 	@Override
 	public void onClick(View v) {
 		int id = v.getId();
-		//跳转
+		//海选按钮
 		if(id==R.id.selectBtn){
 			Intent intent = new Intent(act, SelectNormalActivity.class);
 			act.startActivity(intent);
-		}else if(id==R.id.weekBtn){
+		}
+		//周赛按钮
+		else if(id==R.id.weekBtn){
 			Intent intent = new Intent(act, WeekActivity.class);
 			act.startActivity(intent);
-		}else if(id==R.id.actBtn){
+		}
+		//最近活动按钮
+		else if(id==R.id.actBtn){
 			Intent intent = new Intent(act, ActNoticeActivity.class);
 			act.startActivity(intent);
-		}else if(id==R.id.applyBtn){
+		}
+		//我要报名按钮
+		else if(id==R.id.applyBtn){
 			Intent intent = new Intent(act, ApplyActivity.class);
 			act.startActivity(intent);
 		}

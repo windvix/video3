@@ -7,12 +7,10 @@ import com.athudong.video.adapter.ViewPagerAdapter;
 import com.athudong.video.task.BaseTask;
 
 import android.os.Bundle;
-import android.app.Activity;
 import android.content.Intent;
 import android.support.v4.view.ViewPager;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
 import android.view.LayoutInflater;
-import android.view.Menu;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
@@ -21,12 +19,17 @@ import android.widget.ListView;
 
 
 /**
- * 活动主界面
+ * 活动列表主界面
  */
 public class ActNoticeActivity extends BaseActivity {
 
 	private ViewPager vp;
+	
+	/**
+	 * 两个tab
+	 */
 	private Button btnLeft, btnRight;
+	
 	private UEAdap adapter;
 	private ViewPagerAdapter vpAdap;
 	private ListView listView, listView2;
@@ -78,20 +81,26 @@ public class ActNoticeActivity extends BaseActivity {
 		});
 	}
 
+	/**
+	 * 初始化数据
+	 */
 	private void initData() {
 
 	}
 
 	public void controlClick(View view) {
 		switch (view.getId()) {
+		//返回按钮
 		case R.id.title_bar_left:
 			this.finish();
 			break;
+		//最近活动tab
 		case R.id.uem_all_events:
 			vp.setCurrentItem(0);
 			btnLeft.setSelected(true);
 			btnRight.setSelected(false);
 			break;
+		//我的活动tab
 		case R.id.uem_my_events:
 			vp.setCurrentItem(1);
 			btnLeft.setSelected(false);

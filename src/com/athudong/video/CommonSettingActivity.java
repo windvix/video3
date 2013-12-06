@@ -5,11 +5,16 @@ import android.view.View;
 
 import com.athudong.video.task.BaseTask;
 
+
+/**
+ * 通用设置界面（主界面第四个tab,点击通用设置进入）
+ */
 public class CommonSettingActivity extends BaseActivity{
 
 	@Override
 	public void onClick(View v) {
 		int id = v.getId();
+		//返回按钮
 		if(id==R.id.backBtn){
 			finish();
 		}

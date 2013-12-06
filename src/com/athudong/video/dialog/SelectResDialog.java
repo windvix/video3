@@ -18,14 +18,31 @@ import android.view.WindowManager;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.Button;
 
+/**
+ * 资源选择对话框，（从底部弹出，三个选项）
+ */
 public class SelectResDialog extends Dialog implements android.view.View.OnClickListener {
 
 	private BaseActivity activity;
 
+	/**
+	 * 资源类型：图片，（相册，拍照，取消）
+	 */
 	public static final int TYPE_PIC = 0;
+	
+	/**
+	 * 资源类型：视频，（录制，本地视频，取消）
+	 */
 	public static final int TYPE_VIDEO = 1;
+	
+	/**
+	 * 资源类型：音频，（录音，本地音频，取消）
+	 */
 	public static final int TYPE_AUDIO = 2;
 
+	/**
+	 * 以下是调用外部程序后的返回码，用于onActivityResult
+	 */
 	public static final int PIC_SELECT = 3;
 	public static final int PIC_TAKE = 4;
 	public static final int VIDEO_SELECT = 5;
@@ -49,6 +66,10 @@ public class SelectResDialog extends Dialog implements android.view.View.OnClick
 		layout.findViewById(R.id.btn_02).setOnClickListener(this);
 		layout.findViewById(R.id.btn_03).setOnClickListener(this);
 
+		
+		/**
+		 * 根据创建的类型，改变三个按钮的文本
+		 */
 		if (type == TYPE_VIDEO) {
 			((Button) layout.findViewById(R.id.btn_01)).setText("录制");
 			((Button) layout.findViewById(R.id.btn_02)).setText("视频选择");
@@ -77,9 +98,14 @@ public class SelectResDialog extends Dialog implements android.view.View.OnClick
 	public void onClick(View v) {
 		int id = v.getId();
 		dismiss();
+		
+		//取消按钮
 		if (id == R.id.btn_03) {
 			
-		} else if (id == R.id.btn_01) {
+		} 
+		
+		//拍照/录制/录音按钮， 不同的类型会调用不同的外部程序完成任务
+		else if (id == R.id.btn_01) {
 			if (type == TYPE_PIC) {
 				takePhoto();
 			} else if (type == TYPE_VIDEO) {
@@ -87,7 +113,9 @@ public class SelectResDialog extends Dialog implements android.view.View.OnClick
 			} else if (type == TYPE_AUDIO) {
 				takeAudio();
 			}
-		} else if (id == R.id.btn_02) {
+		}
+		//本地资源选择按钮
+		else if (id == R.id.btn_02) {
 			if (type == TYPE_PIC) {
 				selectPhoto();
 			} else if (type == TYPE_VIDEO) {
@@ -98,13 +126,20 @@ public class SelectResDialog extends Dialog implements android.view.View.OnClick
 		}
 	}
 
+	/**
+	 * 调用系统录音机进行录音
+	 */
 	private void takeAudio() {
+		
 		Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
 		intent.setType("audio/amr");
 		intent.setClassName("com.android.soundrecorder", "com.android.soundrecorder.SoundRecorder");
 		activity.startActivityForResult(intent, AUDIO_TAKE);
 	}
 
+	/**
+	 * 选择外部的音频文件
+	 */
 	private void selectAudio() {
 		Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
 		intent.setType("audio/amr");
@@ -112,9 +147,15 @@ public class SelectResDialog extends Dialog implements android.view.View.OnClick
 		activity.startActivityForResult(wrapperIntent, AUDIO_SELECT);
 	}
 
+	/**
+	 * 调用系统的录影程序录制视频
+	 */
 	private void takeVideo() {
+		//这个文件是录制视频后保存的文件，根据实际情况进行修改
 		File file = new File(activity.getExternalCacheDir() + "athudongvideo.mp4");
+		
 		try {
+			//如果本地存在同名的文件，会删除文件
 			if (file.exists()) {
 				file.delete();
 			}
@@ -132,9 +173,12 @@ public class SelectResDialog extends Dialog implements android.view.View.OnClick
 		}
 	}
 
+	/**
+	 * 选择本地视频
+	 */
 	private void selectVideo() {
 		Intent innerIntent = new Intent(Intent.ACTION_GET_CONTENT);
-
+		//设定intent的类型，如果外部程序具有打开此类型文件的功能，那就可以进行浏览
 		innerIntent.setType("video/*");
 
 		Intent wrapperIntent = Intent.createChooser(innerIntent, null);
@@ -142,9 +186,14 @@ public class SelectResDialog extends Dialog implements android.view.View.OnClick
 		activity.startActivityForResult(wrapperIntent, VIDEO_SELECT);
 	}
 
+	/**
+	 * 调用系统相机拍照
+	 */
 	private void takePhoto() {
+		//这个文件是拍照后保存的文件，根据实际情况进行修改
 		File file = new File(activity.getExternalCacheDir() + "athudongvideo.jpg");
 		try {
+			//如果本地存在同名的文件，会删除文件
 			if (file.exists()) {
 				file.delete();
 			}
@@ -159,9 +208,13 @@ public class SelectResDialog extends Dialog implements android.view.View.OnClick
 		}
 	}
 
+	/**
+	 * 本地图片选择
+	 */
 	private void selectPhoto() {
 		Intent intent = new Intent();
 		intent.setAction(Intent.ACTION_GET_CONTENT);
+		//设定intent的类型，如果外部程序具有打开此类型文件的功能，那就可以进行浏览
 		intent.setType("image/*");
 		activity.startActivityForResult(Intent.createChooser(intent, "选择图片"), PIC_SELECT);
 	}

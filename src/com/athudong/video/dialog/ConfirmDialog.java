@@ -11,6 +11,10 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.TextView;
 
+
+/**
+ * 确认对话框，包括消息，左键，右键
+ */
 public class ConfirmDialog extends Dialog{
 
 	private String msg;

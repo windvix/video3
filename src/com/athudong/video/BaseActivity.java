@@ -53,28 +53,32 @@ public abstract class BaseActivity extends Activity implements OnClickListener {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		if(!isVersionCodeSame()){
-			System.out.println("NOt SAME:"+getVersionCode());
+		
+		//判断是否是第一次运行，如果是第一次运行，则将项目asset目录下的文件复制到手机的SD卡中
+		if (!isVersionCodeSame()) {
 			copyAssetsbrochure();
 			saveDataInt("VERSION", getVersionCode());
-		}else{
-			System.out.println("SAME:"+getVersionCode());
-		}
+		} 
+		//下面是初始化本地数据
 		TestDataUtil.init();
 		super.onCreate(savedInstanceState);
-		initView(savedInstanceState);
+
+		try {
+			initView(savedInstanceState);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
-	
-	private boolean isVersionCodeSame(){
+	private boolean isVersionCodeSame() {
 		boolean result = false;
 		int val = getDataInt("VERSION");
-		if(val==getVersionCode()){
+		if (val == getVersionCode()) {
 			result = true;
 		}
 		return result;
 	}
-	
+
 	public Handler getHandler() {
 		return new Handler();
 	}
@@ -222,18 +226,16 @@ public abstract class BaseActivity extends Activity implements OnClickListener {
 		return getLayoutInflater();
 	}
 
-	
-	
 	private static User currentUser;
-	
-	//获取当前的用户
-	public User getUser(){
-		if(currentUser==null){
+
+	// 获取当前的用户
+	public User getUser() {
+		if (currentUser == null) {
 			currentUser = TestDataUtil.getRandomUser();
 		}
 		return currentUser;
 	}
-	
+
 	/**
 	 * 获取标题栏高度
 	 */
@@ -420,6 +422,9 @@ public abstract class BaseActivity extends Activity implements OnClickListener {
 		return drawable;
 	}
 
+	/**
+	 * 这个是测试目录，单机版使用，用于保存assets得到出来的文件
+	 */
 	public String getTestPath() {
 		String path = Environment.getExternalStorageDirectory().getAbsolutePath() + "/athudong/";
 		return path;
@@ -490,27 +495,30 @@ public abstract class BaseActivity extends Activity implements OnClickListener {
 		return opt;
 	}
 
-	//复制assets目录下的文件到SD卡
+	/**
+	 * 复制assets目录下的文件到SD卡，
+	 * （因为assets目录下的文件只能进行简单的读取，不能进行复杂的操作，
+	 * 如图片的压缩读取，所以要将asset下的文件全部复制到SD卡）
+	 */
 	public void copyAssetsbrochure() {
 		String path = getTestPath();
 		boolean isExist = false;
-		System.out.println("copy invoke");
-		try{
+		try {
 			File file = new File(path);
-			if(!file.exists()){
+			if (!file.exists()) {
 				file.mkdir();
-			}	
-			if(file.exists()){
-				if(!file.isDirectory()){
+			}
+			if (file.exists()) {
+				if (!file.isDirectory()) {
 					file.mkdir();
 				}
 				isExist = true;
 			}
-				
-		}catch(Exception e){
+
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		System.out.println("create result:"+isExist);
+		System.out.println("create result:" + isExist);
 		if (isExist) {
 			System.out.println("EXIST DIR athudong");
 			AssetManager assetManager = getAssets();
@@ -520,7 +528,6 @@ public abstract class BaseActivity extends Activity implements OnClickListener {
 			} catch (IOException e) {
 				Log.e("tag", e.getMessage());
 			}
-			toast("首次使用，解压本地数据："+files.length);
 			for (int i = 0; i < files.length; i++) {
 				String fStr = files[i];
 				boolean isOk = true;
@@ -528,7 +535,7 @@ public abstract class BaseActivity extends Activity implements OnClickListener {
 					InputStream in = null;
 					OutputStream out = null;
 					try {
-						System.out.println("copy:"+fStr);
+						System.out.println("copy:" + fStr);
 						in = assetManager.open(files[i]);
 						out = new FileOutputStream(getTestPath() + files[i]);
 						copyFile(in, out);
@@ -544,7 +551,8 @@ public abstract class BaseActivity extends Activity implements OnClickListener {
 			}
 		}
 	}
-
+	
+	//复制文件
 	private void copyFile(InputStream in, OutputStream out) throws IOException {
 		byte[] buffer = new byte[1024];
 		int read;

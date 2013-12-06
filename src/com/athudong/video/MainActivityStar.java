@@ -24,7 +24,7 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 
 /**
- * 明星界面操作
+ * 主界面第二个tab：排行榜界面操作
  */
 public class MainActivityStar implements OnClickListener, OnItemClickListener {
 
@@ -36,7 +36,14 @@ public class MainActivityStar implements OnClickListener, OnItemClickListener {
 
 	private List<View> viewList;
 
+	/**
+	 * 第一个tab：票数榜
+	 */
 	private View v01;
+	
+	/**
+	 * 第二个tab:人气榜
+	 */
 	private View v02;
 
 	public MainActivityStar(MainActivity act, View root) {
@@ -77,7 +84,7 @@ public class MainActivityStar implements OnClickListener, OnItemClickListener {
 	private List<Rank> rankList01;
 
 	/**
-	 * 初始化排行榜一
+	 * 初始化票数旁数据
 	 */
 	private void initRank01() {
 		final PullToRefreshListView tempListview = (PullToRefreshListView) v01.findViewById(R.id.pull_refresh_list);
@@ -86,6 +93,10 @@ public class MainActivityStar implements OnClickListener, OnItemClickListener {
 
 		rankList01 = new ArrayList<Rank>();
 
+
+		/**
+		 * 创建10个测试明星
+		 */
 		List<User> users01 = TestDataUtil.getAllUsers();
 
 		String path = act.getTestPath();
@@ -118,6 +129,9 @@ public class MainActivityStar implements OnClickListener, OnItemClickListener {
 		act.registerForContextMenu(listView01);
 		listView01.setAdapter(adapter);
 		adapter.notifyDataSetChanged();
+		
+		
+		//增加下拉刷新事件 
 		tempListview.setOnRefreshListener(new OnRefreshListener<ListView>() {
 			@Override
 			public void onRefresh(PullToRefreshBase<ListView> refreshView) {
@@ -131,6 +145,7 @@ public class MainActivityStar implements OnClickListener, OnItemClickListener {
 			}
 		});
 
+		//设置列表项的点击事件
 		tempListview.setOnItemClickListener(this);
 	}
 
@@ -149,6 +164,9 @@ public class MainActivityStar implements OnClickListener, OnItemClickListener {
 		String path = act.getTestPath();
 		String head = "_head.jpg";
 
+		/**
+		 * 创建10个测试明星
+		 */
 		Rank r01 = new Rank(1, path + users01.get(9).getId() + head, users01.get(9).getName(), "15,396", users01.get(9).getSaying(), users01.get(9).getId());
 		Rank r02 = new Rank(2, path + users01.get(8).getId() + head, users01.get(8).getName(), "14,000", users01.get(8).getSaying(), users01.get(8).getId());
 		Rank r03 = new Rank(3, path + users01.get(7).getId() + head, users01.get(7).getName(), "10,845", users01.get(7).getSaying(), users01.get(7).getId());
@@ -187,6 +205,7 @@ public class MainActivityStar implements OnClickListener, OnItemClickListener {
 			}
 		});
 
+		//设置列表项的点击事件
 		listView02.setOnItemClickListener(this);
 	}
 
@@ -194,9 +213,12 @@ public class MainActivityStar implements OnClickListener, OnItemClickListener {
 	public void onClick(View v) {
 
 		int id = v.getId();
+		//选择第一个tab：票数榜
 		if (id == R.id.tab01) {
 			viewpager.setCurrentItem(0, false);
-		} else if (id == R.id.tab02) {
+		}
+		//选择第二个tab:人气榜
+		else if (id == R.id.tab02) {
 			viewpager.setCurrentItem(1, false);
 		}
 	}
@@ -246,20 +268,27 @@ public class MainActivityStar implements OnClickListener, OnItemClickListener {
 			if (page == 0) {
 				root.findViewById(R.id.tab01).setSelected(true);
 				root.findViewById(R.id.tab02).setSelected(false);
+				//第一个tab的时候，距离决赛的天数
 				root.findViewById(R.id.msgLayout).setVisibility(View.VISIBLE);
 			} else if (page == 1) {
 				root.findViewById(R.id.tab02).setSelected(true);
 				root.findViewById(R.id.tab01).setSelected(false);
+				//隐藏距离决赛的天数
 				root.findViewById(R.id.msgLayout).setVisibility(View.GONE);
 			}
 		}
 	}
 
+	
+	/**
+	 * 点击具体的列表项，进入对应明星的个人空间
+	 */
 	@Override
 	public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 		Intent intent = new Intent(act, ZoneActivity.class);
 		String userId = "01";
 		Rank rank = null;
+
 		if (viewpager.getCurrentItem() == 0) {
 			rank = rankList01.get(position - 1);
 		} else {

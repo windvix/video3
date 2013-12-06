@@ -24,18 +24,36 @@ public class MainActivity extends BaseActivity{
 	
 	private List<View> list;
 	
+	/**
+	 * 发现界面
+	 */
 	private View v01;
+	
+	/**
+	 * 排行榜界面
+	 */
 	private View v02;
+	
+	/**
+	 * 娱乐圈界面
+	 */
 	private View v03;
+	
+	/**
+	 * 关于我的界面
+	 */
 	private View v04;
 	
+	
+	/**
+	 * 主界面底部的四个tab
+	 */
 	private List<View>  bottomBtnList;
 	
 	@Override
 	protected void initView(Bundle savedInstanceState) {
 		setContentView(R.layout.activity_main);
 		viewpager = (ViewPager)findViewById(R.id.viewpager);
-		
 		
 		list = new ArrayList<View>();
 		bottomBtnList = new ArrayList<View>();
@@ -76,7 +94,7 @@ public class MainActivity extends BaseActivity{
 		
 		
 		/**
-		 * 释放SelectFirstActivity的资源
+		 * 系统默认进入的不是主界面，而是SelectFirstActivity,释放SelectFirstActivity的资源
 		 */
 		new Handler().postDelayed(new Runnable() {
 			@Override
@@ -112,23 +130,29 @@ public class MainActivity extends BaseActivity{
 	public void onClick(View view) {
 		int id = view.getId();
 		
+		//底部发现tab
 		if(id==R.id.bottomBtn01){
 			viewpager.setCurrentItem(0,false);
-		}else if(id==R.id.bottomBtn02){
+		}
+		//底部排行榜tab
+		else if(id==R.id.bottomBtn02){
 			viewpager.setCurrentItem(1,false);
-		}else if(id==R.id.bottomBtn03){
+		}
+		//底部娱乐圈tab
+		else if(id==R.id.bottomBtn03){
 			viewpager.setCurrentItem(2,false);
-		}else if(id==R.id.bottomBtn04){
+		}
+		//底部我tab
+		else if(id==R.id.bottomBtn04){
 			viewpager.setCurrentItem(3,false);
 		}
 	}
 	
-
-	
-	// 重写Activity中onKeyDown（）方法
 	@Override
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
-		if (keyCode == KeyEvent.KEYCODE_BACK) {// 当keyCode等于退出事件值时
+		
+		//再按一次退出系统
+		if (keyCode == KeyEvent.KEYCODE_BACK) {
 			ToQuitTheApp();
 			return false;
 		} else {
@@ -137,10 +161,9 @@ public class MainActivity extends BaseActivity{
 	}
 	private boolean isExit = false;
 
-	// 封装ToQuitTheApp方法
+	// 退出程序
 	private void ToQuitTheApp() {
 		if (isExit) {
-			// ACTION_MAIN with category CATEGORY_HOME 启动主屏幕
 			Intent intent = new Intent(Intent.ACTION_MAIN);
 			intent.addCategory(Intent.CATEGORY_HOME);
 			startActivity(intent);
@@ -152,7 +175,8 @@ public class MainActivity extends BaseActivity{
 					if(SelectFirstActivity.self!=null){
 						SelectFirstActivity.self.finish();
 					}
-					System.exit(0);// 使虚拟机停止运行并退出程序
+					// 使虚拟机停止运行并退出程序
+					System.exit(0);
 				}
 			}, 1500);
 		} else {

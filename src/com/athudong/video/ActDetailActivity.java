@@ -17,9 +17,11 @@ public class ActDetailActivity extends BaseActivity {
 	
 	public void controlClick(View view){
 		switch(view.getId()){
+		//返回按钮
 		case R.id.title_bar_left:
 			this.finish();
 			break;
+		//我要报名按钮
 		case R.id.detail_sign:
 			Intent intent = new Intent(this,ApplyActivity.class);
 			startActivity(intent);
@@ -37,6 +39,7 @@ public class ActDetailActivity extends BaseActivity {
 		setContentView(R.layout.viewpage_item_detail);
 
 		TextView tvTitle = (TextView) findViewById(R.id.title_bar_tv);
+		//设置当前页面标题
 		tvTitle.setText(getString(R.string.upcoming_events));
 	}
 
