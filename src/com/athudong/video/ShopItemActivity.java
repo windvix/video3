@@ -11,8 +11,11 @@ import android.widget.TextView;
 import com.athudong.video.dialog.ConfirmDialog;
 import com.athudong.video.task.BaseTask;
 
-public class ShopItemActivity extends BaseActivity{
 
+/**
+ * 具体商品界面
+ */
+public class ShopItemActivity extends BaseActivity{
 
 	private ImageView imgV;
 	

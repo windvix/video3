@@ -19,7 +19,7 @@ import android.view.View.OnClickListener;
 import android.widget.ImageView;
 
 /**
- * 个人空间图片
+ * 个人空间图片(备份版)
  */
 public class ZoneActivityPicBack {
 

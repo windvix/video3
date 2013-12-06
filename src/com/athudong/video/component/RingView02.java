@@ -11,10 +11,7 @@ import android.util.AttributeSet;
 import android.view.View;
 
 /**
- * 圆形加载进度条
- * 
- * @author way
- * 
+ * 圆环2
  */
 public class RingView02 extends View {
 

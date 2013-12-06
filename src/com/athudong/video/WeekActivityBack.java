@@ -14,7 +14,7 @@ import com.athudong.video.util.TestDataUtil;
 import com.nineoldandroids.animation.ObjectAnimator;
 
 /**
- * 周赛PK界面
+ * 周赛PK界面(备份版 ，已过时)
  */
 public class WeekActivityBack extends BaseActivity {
 

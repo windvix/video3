@@ -23,6 +23,10 @@ import android.view.View.OnClickListener;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+
+/**
+ * 竞猜对话框
+ */
 public class GameGuessDialog extends Dialog implements OnClickListener{
 
 	private BaseActivity act;

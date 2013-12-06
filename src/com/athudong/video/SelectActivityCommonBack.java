@@ -23,7 +23,7 @@ import android.widget.Scroller;
 import android.widget.TextView;
 
 /**
- * 海选界面通用部分
+ * 海选界面通用部分（备份版）
  */
 public class SelectActivityCommonBack implements OnClickListener{
 

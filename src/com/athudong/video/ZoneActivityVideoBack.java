@@ -21,6 +21,9 @@ import android.view.ViewGroup;
 import android.view.View.OnClickListener;
 import android.widget.ImageView;
 
+/**
+ * 个人空间视频（备份版 ）
+ */
 public class ZoneActivityVideoBack implements OnClickListener{
 
 	private ZoneActivity act;

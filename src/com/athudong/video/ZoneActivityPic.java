@@ -11,7 +11,7 @@ import android.view.View.OnClickListener;
 import android.widget.ImageView;
 
 /**
- * 个人空间图片
+ * 个人空间图片操作
  */
 public class ZoneActivityPic implements OnClickListener {
 
@@ -20,6 +20,9 @@ public class ZoneActivityPic implements OnClickListener {
 
 	private User user;
 
+	/**
+	 * 所有图片
+	 */
 	private ImageView img01;
 	private ImageView img02;
 	private ImageView img03;
@@ -43,7 +46,7 @@ public class ZoneActivityPic implements OnClickListener {
 	public ZoneActivityPic(final ZoneActivity act, final View root, final User user) {
 		this.act = act;
 		this.root = root;
-
+		//当前用户
 		this.user = user;
 
 		pic01 = root.findViewById(R.id.pic01);
@@ -76,10 +79,15 @@ public class ZoneActivityPic implements OnClickListener {
 		img08.setImageBitmap(null);
 		img09.setImageBitmap(null);
 
+		
+		/**
+		 * 延迟加载图片和图片点击事件
+		 */
 		new Handler().postDelayed(new Runnable() {
 
 			@Override
 			public void run() {
+				
 				String p1 = act.getTestPath() + user.getId() + "_01.jpg";
 				String p2 = act.getTestPath() + user.getId() + "_02.jpg";
 				String p3 = act.getTestPath() + user.getId() + "_03.jpg";
@@ -149,7 +157,9 @@ public class ZoneActivityPic implements OnClickListener {
 			path = v.getTag().toString();
 
 		}
-
+		/**
+		 * 点击图片，显示大图片对话框
+		 */
 		BigPictureDialog dialog = new BigPictureDialog(act, "", path);
 		dialog.show();
 	}

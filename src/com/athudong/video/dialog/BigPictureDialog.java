@@ -40,6 +40,10 @@ import android.view.ViewGroup.LayoutParams;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
+
+/**
+ * 显示大图片浏览对话框
+ */
 @SuppressLint("HandlerLeak")
 public class BigPictureDialog extends Dialog implements OnClickListener {
 

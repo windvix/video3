@@ -40,8 +40,19 @@ public class ZoneActivity extends BaseActivity implements OnRefreshListener<Scro
 
 	private List<View> arrows;
 
+	/**
+	 * 图片view
+	 */
 	private ZoneActivityPic zonePic;
+	
+	/**
+	 * 视频view
+	 */
 	private ZoneActivityVideo zoneVideo;
+	
+	/**
+	 * 
+	 */
 	private ZoneActivityStar zoneStar;
 	
 	private TextView titleTv;
@@ -64,14 +75,12 @@ public class ZoneActivity extends BaseActivity implements OnRefreshListener<Scro
 		setContentView(R.layout.activity_personres);
 		findViewById(R.id.backBtn).setOnClickListener(this);
 
-		
-		
 		String id = getIntent().getStringExtra("id");
 		
 		if(StringUtil.isEmpty(id)){
 			id = "01";
 		}
-		
+		//当前空间用户
 		star = TestDataUtil.getUserById(id);
 		
 		titleTv = (TextView)findViewById(R.id.titleTv);
@@ -110,6 +119,9 @@ public class ZoneActivity extends BaseActivity implements OnRefreshListener<Scro
 
 		scrollview.setOnRefreshListener(this);
 
+		/**
+		 * 当前页面中包括三个tab ，分别初始化tab内容
+		 */
 		zonePic = new ZoneActivityPic(this, v01, star);
 		zoneVideo = new ZoneActivityVideo(this, v02);
 		zoneStar = new ZoneActivityStar(this, v03);
@@ -117,21 +129,34 @@ public class ZoneActivity extends BaseActivity implements OnRefreshListener<Scro
 		initContent();
 	}
 
-	
+	/**
+	 * 初始化个人空间头部内容
+	 */
 	private void initContent(){
-		
+		//设置标题(当前用户名)
 		titleTv.setText(star.getName());
+		
+		//设置年龄
 		ageTv.setText(star.getAge());
+		
+		//设置粉丝数
 		fansCountTv.setText(star.getFans()+"");
+		
+		//设置人气
 		popCountTv.setText(star.getPopular()+"");
+		
+		//设置星座
 		starSignTv.setText(star.getStarSign());
+		
+		//设置明星动态
 		sayingTv.setText(star.getSaying());
 		
+		//设置头像为空
 		headImg.setImageBitmap(null);
 		
 		
+		//延迟加载头像图片
 		new Handler().postDelayed(new Runnable() {
-			
 			@Override
 			public void run() {
 				String path = getTestPath()+star.getId()+"_head.jpg";
@@ -170,13 +195,20 @@ public class ZoneActivity extends BaseActivity implements OnRefreshListener<Scro
 	@Override
 	public void onClick(View v) {
 		int id = v.getId();
+		//返回按钮
 		if (id == R.id.backBtn) {
 			finish();
-		} else if (id == R.id.tab01) {
+		}
+		//第一个tab
+		else if (id == R.id.tab01) {
 			viewpager.setCurrentItem(0, false);
-		} else if (id == R.id.tab02) {
+		}
+		//第二个tab
+		else if (id == R.id.tab02) {
 			viewpager.setCurrentItem(1, false);
-		} else if (id == R.id.tab03) {
+		}
+		//第三个tab
+		else if (id == R.id.tab03) {
 			viewpager.setCurrentItem(2, false);
 		}
 	}

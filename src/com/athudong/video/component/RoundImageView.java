@@ -15,6 +15,9 @@ import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 import android.widget.ImageView;
 
+/**
+ * 圆形ImageView
+ */
 public class RoundImageView extends ImageView {
 
 	public RoundImageView(Context context) {

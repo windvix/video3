@@ -31,7 +31,7 @@ import com.athudong.video.util.TestDataUtil;
 import com.nineoldandroids.animation.ObjectAnimator;
 
 /**
- * 参赛者的视频列表界面（主要是参赛者的视频）
+ * 参赛者的视频列表界面（主要是参赛者的视频，当前已不使用）
  */
 public class VideosActivity extends BaseActivity {
 

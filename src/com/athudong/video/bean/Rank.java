@@ -1,5 +1,8 @@
 package com.athudong.video.bean;
 
+/**
+ * 排行榜用户
+ */
 public class Rank {
 
 	private int num;

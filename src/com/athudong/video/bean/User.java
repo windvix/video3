@@ -9,6 +9,9 @@ import java.util.List;
 
 import com.athudong.video.util.StringUtil;
 
+/**
+ * 用户
+ */
 public class User {
 
 	/**

@@ -24,7 +24,7 @@ import com.handmark.pulltorefresh.library.PullToRefreshScrollView;
 import com.nineoldandroids.animation.ObjectAnimator;
 
 /**
- * 个人空间界面
+ * 个人空间界面 (备份版 ，已过 )
  */
 public class ZoneActivityBackup extends BaseActivity implements OnRefreshListener<ScrollView> {
 

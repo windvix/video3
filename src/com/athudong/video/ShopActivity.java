@@ -17,6 +17,9 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+/**
+ * 明星商城界面
+ */
 public class ShopActivity extends BaseActivity {
 	private ViewPager viewPager;
 	private LayoutInflater inflater;

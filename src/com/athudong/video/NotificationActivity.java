@@ -6,6 +6,9 @@ import android.view.View;
 
 import com.athudong.video.task.BaseTask;
 
+/**
+ * 消息通知界面
+ */
 public class NotificationActivity extends BaseActivity{
 
 	@Override

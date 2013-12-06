@@ -24,6 +24,12 @@ public class CommonSettingActivity extends BaseActivity{
 	protected void initView(Bundle savedInstanceState) {
 		setContentView(R.layout.activity_common_setting);
 		findViewById(R.id.backBtn).setOnClickListener(this);
+		
+		findViewById(R.id.setBtn01).setOnClickListener(this);
+		findViewById(R.id.setBtn02).setOnClickListener(this);
+		findViewById(R.id.setBtn03).setOnClickListener(this);
+		findViewById(R.id.setBtn04).setOnClickListener(this);
+		findViewById(R.id.setBtn05).setOnClickListener(this);
 	}
 
 	@Override

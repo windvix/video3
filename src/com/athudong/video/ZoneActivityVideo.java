@@ -22,6 +22,10 @@ import android.view.ViewGroup;
 import android.view.View.OnClickListener;
 import android.widget.ImageView;
 
+
+/**
+ * 个人空间界面视频操作
+ */
 public class ZoneActivityVideo implements OnClickListener{
 
 	private ZoneActivity act;
@@ -33,6 +37,8 @@ public class ZoneActivityVideo implements OnClickListener{
 	public ZoneActivityVideo(final ZoneActivity act, final View root) {
 		this.act = act;
 		this.root = root;
+		
+		//当前用户
 		user = TestDataUtil.getRandomUser();
 
 		root.findViewById(R.id.video01).setOnClickListener(this);
@@ -48,7 +54,7 @@ public class ZoneActivityVideo implements OnClickListener{
 	@Override
 	public void onClick(View view) {
 		int id = view.getId();
-		
+		//点击视频，播放
 		String path = act.getTestPath()+"01_video_02.flv";
 		if(id==R.id.video01){
 			

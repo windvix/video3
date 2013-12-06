@@ -19,11 +19,18 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+/**
+ * 我的钱包界面
+ */
 public class MyWalletActivity extends BaseActivity {
 
 	private ViewPager viewPager;
 	private List<View> views;
 	private LayoutInflater inflater;
+	
+	/**
+	 * 四个子界面
+	 */
 	private View viewBuy, viewOnline, viewFriend, viewPk;
 	private ImageView select1, select2, select3, select4;
 	private ImageView[] imageViews;

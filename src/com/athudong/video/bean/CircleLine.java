@@ -1,5 +1,9 @@
 package com.athudong.video.bean;
 
+
+/**
+ * 娱乐圈的一行数据
+ */
 public class CircleLine {
 
 	private String id1;
