@@ -149,6 +149,21 @@
             android:name="com.athudong.video.SayingActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
+        
+        
+        
+        <!-- 欢迎界面 -->
+        <activity
+            android:name="com.athudong.video.WelcomeActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        
+        
+        <!-- 周赛投票结果界面 -->
+        <activity
+            android:name="com.athudong.video.WeekResultActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
     </application>
 
 </manifest>
