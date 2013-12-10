@@ -53,13 +53,13 @@ public abstract class BaseActivity extends Activity implements OnClickListener {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		
-		//判断是否是第一次运行，如果是第一次运行，则将项目asset目录下的文件复制到手机的SD卡中
+
+		// 判断是否是第一次运行，如果是第一次运行，则将项目asset目录下的文件复制到手机的SD卡中
 		if (!isVersionCodeSame()) {
 			copyAssetsbrochure();
 			saveDataInt("VERSION", getVersionCode());
-		} 
-		//下面是初始化本地数据
+		}
+		// 下面是初始化本地数据
 		TestDataUtil.init();
 		super.onCreate(savedInstanceState);
 
@@ -109,6 +109,20 @@ public abstract class BaseActivity extends Activity implements OnClickListener {
 			}
 			taskList.clear();
 		}
+	}
+
+	public int getSystemVersionCode() {
+		int currentapiVersion = android.os.Build.VERSION.SDK_INT;
+		return currentapiVersion;
+	}
+
+	public boolean isSystemVersionLess4(){
+		boolean smaller = false;
+		int  currentapiVersion = android.os.Build.VERSION.SDK_INT;
+		if(currentapiVersion<=android.os.Build.VERSION_CODES.HONEYCOMB_MR2){
+			smaller = true;
+		}
+		return smaller;
 	}
 
 	/**
@@ -496,8 +510,7 @@ public abstract class BaseActivity extends Activity implements OnClickListener {
 	}
 
 	/**
-	 * 复制assets目录下的文件到SD卡，
-	 * （因为assets目录下的文件只能进行简单的读取，不能进行复杂的操作，
+	 * 复制assets目录下的文件到SD卡， （因为assets目录下的文件只能进行简单的读取，不能进行复杂的操作，
 	 * 如图片的压缩读取，所以要将asset下的文件全部复制到SD卡）
 	 */
 	public void copyAssetsbrochure() {
@@ -551,8 +564,8 @@ public abstract class BaseActivity extends Activity implements OnClickListener {
 			}
 		}
 	}
-	
-	//复制文件
+
+	// 复制文件
 	private void copyFile(InputStream in, OutputStream out) throws IOException {
 		byte[] buffer = new byte[1024];
 		int read;

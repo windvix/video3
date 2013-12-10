@@ -164,6 +164,13 @@
             android:name="com.athudong.video.WeekResultActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
+        
+        <!-- 动态详细界面 -->
+        <activity
+            android:name="com.athudong.video.SayingDetailActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        
     </application>
 
 </manifest>

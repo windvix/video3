@@ -97,6 +97,15 @@ public class WeekActivity extends BaseActivity {
 			return;
 		}
 		
+		
+		if(isSystemVersionLess4()){
+			
+			
+			
+			return;
+		}
+		
+		
 		setContentView(R.layout.activity_week_pk_back);
 		
 		

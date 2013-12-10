@@ -60,11 +60,11 @@
         android:layout_marginTop="56dp" >
 
         <ImageView
-            android:tag="img"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="centerCrop"
-            android:src="@drawable/pk_video_bg_01" />
+            android:src="@drawable/pk_video_bg_01"
+            android:tag="img" />
 
         <View
             android:layout_width="match_parent"
@@ -81,11 +81,11 @@
         android:layout_marginTop="56dp" >
 
         <ImageView
-            android:tag="img"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="centerCrop"
-            android:src="@drawable/pk_video_bg_02" />
+            android:src="@drawable/pk_video_bg_02"
+            android:tag="img" />
 
         <View
             android:layout_width="match_parent"
@@ -324,17 +324,16 @@
     </LinearLayout>
     <!-- right com end -->
 
+    <Button
+        android:id="@+id/thumbBtn"
+        android:layout_width="100dp"
+        android:layout_height="45dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/red_btn_selector"
+        android:text="投她"
+        android:textColor="@drawable/text_color_selector" />
 
-	<Button 
-	    android:id="@+id/thumbBtn"
-	    android:layout_width="100dp"
-	    android:layout_height="45dp"
-	    android:text="投她"
-	    android:layout_alignParentBottom="true"
-	    android:layout_centerHorizontal="true"
-	    android:layout_marginBottom="20dp"
-	    android:textColor="@drawable/text_color_selector"
-	    android:background="@drawable/red_btn_selector"
-	    />
 
 </RelativeLayout>
