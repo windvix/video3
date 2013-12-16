@@ -263,6 +263,10 @@ public class VideosActivity extends BaseActivity {
 		}
 	}
 
+	
+	/**
+	 * 按钮动画
+	 */
 	private void anim(View btn) {
 		View view = imgViews.get(viewpager.getCurrentItem());
 		View btn01 = view.findViewById(R.id.videoBtn01);
@@ -279,7 +283,8 @@ public class VideosActivity extends BaseActivity {
 		if (btn == currentVideoView) {
 			return;
 		}
-
+		
+		//
 		if (btn01 == btn) {
 			animBig(btn01.findViewWithTag("img"));
 			animSmall(btn02.findViewWithTag("img"));
@@ -311,12 +316,18 @@ public class VideosActivity extends BaseActivity {
 
 	private View currentVideoView;
 
+	/**
+	 * 放大动画
+	 */
 	private void animBig(View btn) {
 		ObjectAnimator.ofFloat(btn, "scaleX", small, big).start();
 		ObjectAnimator.ofFloat(btn, "scaleY", small, big).start();
 
 	}
 
+	/**
+	 * 缩小动画
+	 */
 	private void animSmall(View btn) {
 		if (btn == currentVideoView) {
 			ObjectAnimator.ofFloat(btn, "scaleX", big, small).start();
