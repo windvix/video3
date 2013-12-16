@@ -98,10 +98,9 @@ public class WeekActivity extends BaseActivity {
 		}
 		
 		
+		//以下是3.0版本的操作（动画效果在3.0版本以下与4.0的操作不一样）
 		if(isSystemVersionLess4()){
-			
-			
-			
+			new WeekActivityLess4(this);
 			return;
 		}
 		

@@ -79,6 +79,7 @@ public abstract class BaseActivity extends Activity implements OnClickListener {
 		return result;
 	}
 
+	
 	public Handler getHandler() {
 		return new Handler();
 	}

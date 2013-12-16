@@ -3,6 +3,7 @@ package com.athudong.video.task;
 import com.athudong.video.BaseActivity;
 
 import android.os.AsyncTask;
+import android.os.Handler;
 
 /**
  * 公共任务基础类，封装基本方法
@@ -10,18 +11,39 @@ import android.os.AsyncTask;
 public abstract class BaseTask extends AsyncTask<Void, Void, Void> {
 
 	private BaseActivity act;
+	
+	
+	private Handler handler;
+	
+	private boolean isFinished = false;
+	
+	private Runnable cancelRun;
 
 	public BaseTask(BaseActivity act) {
 		this.act = act;
+		handler =act.getHandler();
+		
+		cancelRun = new Runnable() {
+			@Override
+			public void run() {
+				stopTask();
+			}
+		};
+		
+		handler.postDelayed(cancelRun, 60*1000);
 	}
 
 	@Override
 	protected Void doInBackground(Void... params) {
 		if (!isCancelled() && !act.isFinished()) {
 			doInBackground();
+			isFinished = true;
 		}
 		return null;
 	}
+	
+	
+	
 
 	/**
 	 * 后台执行的任务
